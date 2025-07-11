@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="sketches.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/resource/view.php?id=45172"></script>
+  </head>
+  <body>
+    <p>test</p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+      const sketchName = params.get("sketch");
+
+      if (typeof window[sketchName] === "function") {
+        new p5(window[sketchName]);
+      } else {
+        document.body.innerHTML = `<p>Sketch "${sketchName}" nicht gefunden.</p>`;
+      }
+      //   const script = document.createElement("script");
+      //   script.src = `${sketchName}.js`;
+      //   document.body.appendChild(script);
+    </script>
+  </body>
+</html>
