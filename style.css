@@ -5,7 +5,6 @@ body {
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
-    background-color: #000000;
 }
 
 *,
@@ -203,7 +202,7 @@ div.info {
 }
 
 canvas {
-    border: 3px black ridge;
+    border: 13px black ridge;
 }
 
 #right {
