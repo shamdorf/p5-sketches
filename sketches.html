@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>p5 Sketches</title>
+    <script src="p5.min.js"></script>
+    <style>
+      canvas {
+        display: block;
+        margin: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="sketch-container"></div>
+
+    <script>
+      const sketches = {
+        sketch1: (p) => {
+          p.setup = () => {
+            p.createCanvas(300, 300);
+            p.background("lightblue");
+            p.ellipse(150, 150, 100, 100);
+          };
+        },
+        sketch2: (p) => {
+          p.setup = () => {
+            p.createCanvas(300, 300);
+            p.background("pink");
+            p.rect(100, 100, 100, 100);
+          };
+        },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const sketchName = params.get("sketch");
+
+      if (sketchName && sketches[sketchName]) {
+        new p5(sketches[sketchName], "sketch-container");
+      } else {
+        document.body.innerHTML = "<p>Kein gültiger Sketch angegeben.</p>";
+      }
+    </script>
+  </body>
+</html>

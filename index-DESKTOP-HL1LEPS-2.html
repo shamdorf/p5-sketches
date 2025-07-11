@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/style.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/p5.min.js"></script>
+    <script src="sketches.js"></script>
+    <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/sketches.js"></script>
+
+    <!-- Skript, um die Größe des Canvas an das Iframe zu übermitteln -->
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            // Prüfen, ob Nachricht von diesem iframe kam
+            if (iframe.contentWindow === event.source) {3 ä
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    test
+    <div>
+      <details class="top">
+        <summary id="info">📦 Formen in Processing</summary>
+
+        <!-- POINT -->
+        <details class="box-info">
+          <summary>🔹 point(x, y)</summary>
+          <ul>
+            <li>x - Wert des Punktes</li>
+            <li>y - Wert des Punktes</li>
+          </ul>
+          <pre>point(50, 50);</pre>
+          <div id="sketch-point" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchPoint"></iframe>
+          <iframe
+            src="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/template.html?sketch=sketchPoint"
+          ></iframe>
+        </details>
+
+        <!-- LINE -->
+        <details class="box-info">
+          <summary>📏 line(x1, y1, x2, y2)</summary>
+          <ul>
+            <li>x1, y1 - Koordinaten des Startpunkts</li>
+            <li>x2, y2 - Koordinaten des Zielpunkts</li>
+          </ul>
+          <pre>line(20, 80, 80, 20);</pre>
+          <div id="sketch-line" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchLine"></iframe>
+        </details>
+
+        <!-- TRIANGLE -->
+        <details class="box-info">
+          <summary>🔺 triangle(x1, y1, x2, y2, x3, y3)</summary>
+          <ul>
+            <li>x1, y1 - Koordinaten des ersten Punkts</li>
+            <li>x2, y2 - Koordinaten des zweiten Punkts</li>
+            <li>x3, y3 - Koordinaten des dritten Punkts</li>
+          </ul>
+          <pre>triangle(10, 90, 50, 10, 90, 90);</pre>
+          <!-- <iframe
+          src="https://lms2.schulcampus-rlp.de/SN-63755/mod/resource/view.php?id=45172#sketch2"
+          width="100%"
+          height="250"
+          style="border: none"
+        ></iframe> -->
+          <div id="sketch-triangle" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchTriangle"></iframe>
+        </details>
+
+        <!-- RECT -->
+        <details class="box-info">
+          <summary>⬛ rect(x, y, breite, höhe)</summary>
+          <ul>
+            <li>x1, y2 - Koordinaten der linken oberen Ecke</li>
+            <li>breite - Breite des Rechtecks</li>
+            <li>höhe - Höhe des Rechtecks</li>
+          </ul>
+          <pre>rect(20, 30, 60, 40);</pre>
+          <div id="sketch-rect" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchRect"></iframe>
+        </details>
+
+        <!-- RECTMODE -->
+        <details id="right" class="box-info">
+          <summary>🧭 rectMode(MODE)</summary>
+          <ul>
+            <li>
+              CORNER -
+              <code
+                >rect(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
+                Rechtecks gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CENTER -
+              <code
+                >rect(x1, y1, b, h) - x1 und y1 der Mittelpunkt des Rechtecks
+                gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CORNERS -
+              <code
+                >rect(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke gefolgt
+                von x2, y2 als rechte untere Ecke des Rechtecks.</code
+              >
+            </li>
+          </ul>
+          <pre>
+size(600, 400);
+//Standard ist Modus CORNER. Daher muss man ihn nicht angeben
+//Linke obere Ecke + Breite und Höhe
+rectMode(CORNER); 
+rect(150, 80, 60, 20);
+
+//Mitelpunkt + Breite und Höhe
+rectMode(CENTER);
+rect(50, 50, 20, 60);
+
+//linke obere Ecke + rechte untere Ecke
+rectMode(CORNERS);
+rect(100, 200, 200, 300);</pre
+          >
+          <div id="sketch-rectMode" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchRectMode"></iframe>
+        </details>
+
+        <!-- ELLIPSE -->
+        <details class="box-info">
+          <summary>⚪ ellipse(x, y, breite, höhe)</summary>
+          <pre>ellipse(50, 50, 60, 30);</pre>
+          <div id="sketch-ellipse" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchEllipse"></iframe>
+        </details>
+
+        <!-- ELLIPSEMODE -->
+        <details id="right" class="box-info">
+          <summary>📐 ellipseMode(MODE)</summary>
+          <ul>
+            <li>
+              CENTER -
+              <code
+                >ellipse(x1, y1, b, h) - x1 und y1 der Mittelpunkt der Ellipse
+                gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CORNER -
+              <code
+                >ellipse(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
+                umgebenden Rechtecks gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CORNERS -
+              <code
+                >ellipse(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke
+                gefolgt von x2, y2 als linke untere Ecke des umgebenden
+                Rechtecks.</code
+              >
+            </li>
+          </ul>
+          <pre>
+size(600, 400);
+//Standard ist Modus CENTER daher muss man ihn nicht angeben
+//Mittelpunkt + Breite und Höhe
+ellipse(50, 50, 20, 60);
+
+//Linke obere Ecke + Breite und Höhe
+ellipseMode(CORNER);
+ellipse(150, 80, 60, 20);
+
+//linke obere Ecke + rechte untere Ecke
+ellipseMode(CORNERS);
+ellipse(100, 200, 200, 300);</pre
+          >
+          <div id="sketch-ellipseMode" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchEllipseMode"></iframe>
+        </details>
+
+        <!-- CIRCLE -->
+        <details class="box-info">
+          <summary>🔵 circle(x, y, durchmesser)</summary>
+          <pre>circle(50, 50, 40);</pre>
+          <div id="sketch-circle" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchCircle"></iframe>
+        </details>
+
+        <!-- ARC -->
+        <details class="box-info">
+          <summary>
+            🌙 arc(x, y, breite, höhe, radians(start), radians(stop))
+          </summary>
+          <ul>
+            <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
+            <li><code>radians(start)</code> gibt den Startwinkel in Grad an</li>
+            <li><code>radians(stop)</code> gibt den Endwinkel in Grad an</li>
+            <li>Der Winkel wächst im Uhrzeigersinn.</li>
+          </ul>
+
+          <pre>
+      arc(100, 100, 80, 80, radians(0), radians(90));
+</pre
+          >
+
+          <div id="sketch-arc" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchArc"></iframe>
+          <ul class="box-warning">
+            <li>
+              Winkel starten bei 0° rechts (3-Uhr-Position) und wachsen
+              <u>im Uhrzeigersinn</u>
+            </li>
+            <li>Der Startwinkel muss kleiner sein als der Endwinkel.</li>
+            <li>Die Winkel können aber größer als 360 Grad sein.</li>
+          </ul>
+        </details>
+
+        <!-- BEGINSHAPE -->
+        <details class="box-info">
+          <summary>🔷 beginShape() ... vertex(...) ... endShape()</summary>
+          <ul>
+            <li><code>beginShape()</code>startet das Zeichnen des Polygons</li>
+            <li>
+              <code>vertex(x1, y1)</code>gibt den nächsten Punkt an, der zum
+              Polygon gehört (Malen nach Zahlen)
+            </li>
+            <li><code>endShape()</code>beendet das Zeichnen des Polygons.</li>
+            <li>
+              <code>endShape(CLOSE)</code>beendet das Zeichnen und verbindet
+              außerdem den letzten mit dem ersten Punkt.
+            </li>
+          </ul>
+          <pre>
+size(400, 400);
+//Ein Polygon (Vieleck)
+beginShape();
+  vertex(50, 10);
+  vertex(80, 80);
+  vertex(5, 35);
+  vertex(10, 0);  // neue Ecke
+  vertex(30, 30); // neue Ecke
+endShape(CLOSE);
+
+//Das Haus vom Nikolaus
+noFill();
+beginShape();
+  vertex(100, 300);
+  vertex(100, 100);
+  vertex(200, 300);
+  vertex(100, 300);
+  vertex(200, 100);
+  vertex(100, 100);
+  vertex(150, 50);
+  vertex(200, 100);
+  vertex(200, 300);
+endShape();</pre
+          >
+          <div id="sketch-beginShape" class="sketch"></div>
+          <iframe src="template.html?sketch=sketchBeginShape"></iframe>
+        </details>
+      </details>
+      <script>
+        // new p5(sketchPoint, "sketch-point");
+        // new p5(sketchLine, "sketch-line");
+        // new p5(sketchTriangle, "sketch-triangle");
+        // new p5(sketchRect, "sketch-rect");
+        // new p5(sketchRectMode, "sketch-rectMode");
+        // new p5(sketchEllipse, "sketch-ellipse");
+        // new p5(sketchEllipseMode, "sketch-ellipseMode");
+        // new p5(sketchCircle, "sketch-circle");
+        // new p5(sketchArc, "sketch-arc");
+        // new p5(sketchBeginShape, "sketch-beginShape");
+      </script>
+      <!-- <script>
+          new p5((p) => {
+            p.setup = () => {
+              p.createCanvas(100, 100);
+              p.strokeWeight(6);
+              p.strokeWeight(5);
+              p.point(50, 50);
+            };
+          }, "sketch-point");
+
+          new p5((p) => {
+            p.setup = () => {
+              p.createCanvas(100, 100);
+              p.line(20, 80, 80, 20);
+              p.strokeWeight(5);
+              p.point(20, 80);
+              p.point(80, 20);
+            };
+          }, "sketch-line");
+
+          new p5((p) => {
+            p.setup = () => {
+              p.createCanvas(100, 100);
+              p.triangle(10, 90, 50, 10, 90, 90);
+              p.strokeWeight(5);
+              p.point(10, 90);
+              p.point(50, 10);
+              p.point(90, 90);
+            };
+          }, "sketch-triangle");
+      </script>
+    --></div>
+  </body>
+</html>
