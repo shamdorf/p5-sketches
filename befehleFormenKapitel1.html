@@ -109,13 +109,11 @@
 
         <!-- RECT -->
         <details class="box-command">
-          <summary>
-            ⬛ rect(x, y, breite, höhe) - <strong>Rechteck</strong>
-          </summary>
+          <summary>⬛ rect(x, y, b, h) - <strong>Rechteck</strong></summary>
           <ul>
             <li>x1, y2 - Koordinaten der linken oberen Ecke</li>
-            <li>breite - Breite des Rechtecks</li>
-            <li>höhe - Höhe des Rechtecks</li>
+            <li>b - Breite des Rechtecks</li>
+            <li>h - Höhe des Rechtecks</li>
           </ul>
           <pre>rect(20, 30, 60, 40);</pre>
           <div id="sketch-rect" class="sketch"></div>
@@ -175,9 +173,12 @@ rect(100, 200, 200, 300);</pre
 
         <!-- ELLIPSE -->
         <details class="box-command">
-          <summary>
-            ⚪ ellipse(x, y, breite, höhe) - <strong>Ellipse</strong>
-          </summary>
+          <summary>⚪ ellipse(x, y, b, h) - <strong>Ellipse</strong></summary>
+          <ul>
+            <li>x1, y2 - Koordinaten Mittelpunkts</li>
+            <li>b - Durchmesser der Breite</li>
+            <li>h - Durchmesser der Höhe</li>
+          </ul>
           <pre>ellipse(50, 50, 60, 30);</pre>
           <div id="sketch-ellipse" class="sketch"></div>
           <iframe
@@ -330,6 +331,7 @@ endShape();</pre
       </details>
     </div>
 
+    <!-- Wichtige Befehle in Processing -->
     <details class="top">
       <summary id="command">
         🛠️ Wichtige Befehle/Funktionen in Processing
@@ -362,12 +364,6 @@ print("einer ");
 print("Zeile!");
 println(); //eine Leere Zeile + Sprung in die nächste Zeile.
 println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
-          <img
-            src="https://lms2.schulcampus-rlp.de/SN-63755/draftfile.php/5989/user/draft/340266662/grafik%20%281%29.png"
-            alt=""
-            role="presentation"
-            class="img-fluid"
-          />
         </div>
       </details>
       <!-- Size -->

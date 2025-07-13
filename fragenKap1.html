@@ -83,9 +83,10 @@ Es sei denn es kommt ein */
       </details>
       <details class="box-question">
         <summary>
-          Wie kann ich etwas auf der <strong>Konsole</strong> ausgeben?
+          Mit welchem Befehl kann ich etwas auf der
+          <strong>Konsole</strong> ausgeben?
         </summary>
-        <div class="box-info">
+        <div class="box-command">
           <p>
             <strong
               ><code>print() <br />println()</code></strong
@@ -121,17 +122,15 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
           Mit welchem Befehl zeichne ich eine <strong>Ellipse</strong> und
           welche Parameter werden benöltigt?
         </summary>
-        <div class="box-answer">
+        <div class="box-command">
           <p>
             <strong><code>ellipse(x1, y1, b, h)</code></strong
             >.
           </p>
           <ul>
-            <li><code>x1, y1</code>sind Koordinaten für den Mittelpunkt</li>
-            <li>
-              <code>b, h</code>stehen für den Durchmesser der Breite und der
-              Höhe der Ellipse
-            </li>
+            <li>x1, y2 - Koordinaten Mittelpunkts</li>
+            <li>b - Durchmesser der Breite</li>
+            <li>h - Durchmesser der Höhe</li>
           </ul>
           <p>Teste es aus !</p>
           <pre><code>size(400, 400);
@@ -139,6 +138,9 @@ ellipse(50, 50, 20, 60);
 ellipse(150, 50, 60, 20);
 ellipse(200, 200, 100, 100); // ein Kreis, wenn b und h gleich sind.</code></pre>
         </div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipse"
+        ></iframe>
       </details>
       <details class="box-question">
         <summary>
@@ -146,7 +148,7 @@ ellipse(200, 200, 100, 100); // ein Kreis, wenn b und h gleich sind.</code></pre
           <strong>Zeichenmodus für die Ellipse</strong> ändern und welche Modi
           gibt es?
         </summary>
-        <div class="box-answer">
+        <div class="box-command">
           <p>
             <strong><code>ellipseMode(MODUS)</code></strong
             >. <br /><br />"MODUS"steht hier für die drei Modi CENTER
@@ -176,33 +178,25 @@ ellipse(200, 200, 100, 100); // ein Kreis, wenn b und h gleich sind.</code></pre
               >
             </li>
           </ul>
-          <p>Teste es aus !</p>
-          <pre><code>size(600, 400);
-//Standard ist Modus CENTER daher muss ihn nicht angeben
+          <pre>
+size(600, 400);
+//Standard ist Modus CENTER daher muss man ihn nicht angeben
+//Mittelpunkt + Breite und Höhe
 ellipse(50, 50, 20, 60);
+
+//Linke obere Ecke + Breite und Höhe
 ellipseMode(CORNER);
 ellipse(150, 80, 60, 20);
+
+//linke obere Ecke + rechte untere Ecke
 ellipseMode(CORNERS);
-ellipse(100, 200, 200, 300);
-
-//Die folgenden Befehle dienen nur dazu, 
-//euch die verschiedenen Modiillustrieren
-
-text("CORNER, Linke obere Ecke 150, 80 +Breite und 20 Höhe", 150, 70);
-text("CORNERS, Linke obere Ecke 100, 2080, 190);
-text("CORNERS, Rechte untere Ecke 2300", 210, 310);
-
-noFill(); //Sorgt dafür, dass Fortransparent sind
-rect(150, 80, 60, 20);
-rect(100, 200, 100, 100);
-
-strokeWeight(5); //Dicke von Linien oPunkten auf 3 Pixel setzen
-point(50, 50);
-point(150, 80);
-point(100, 200);
-point(200, 300);
-</code></pre>
+ellipse(100, 200, 200, 300);</pre
+          >
+          <div id="sketch-ellipseMode" class="sketch"></div>
         </div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipseMode"
+        ></iframe>
       </details>
       <details class="box-question">
         <summary>

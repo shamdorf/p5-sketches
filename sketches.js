@@ -186,18 +186,12 @@ function sketchRectMode(p) {
 
 function sketchEllipse(p) {
   p.setup = () => {
-    window.parent.postMessage(
-      {
-        type: "resize-iframe",
-        width: p.width,
-        height: p.height,
-      },
-      "*"
-    );
     p.createCanvas(100, 100);
     p.ellipse(50, 50, 60, 30);
     p.strokeWeight(5);
     p.point(50, 50);
+
+    autoResizeCanvas(p);
   };
 }
 
