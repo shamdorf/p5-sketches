@@ -178,8 +178,48 @@ details summary {
     top: var(--box-symbol-position-top);
 }
 
-h4 {
-    margin: 0;
+#command {
+    font-weight: 900;
+    background-color: #e6fff7;
+    background: linear-gradient(to right, #33cc99 40%, #f0fff4 100%);
+    position: relative;
+    display: block;
+    border-left: 6px solid #009966;
+    padding: var(--box-padding);
+    margin-top: 2rem;
+    border-radius: var(--box-radius);
+    font-size: 1.3rem;
+    color: #00664d;
+    box-shadow: 0 2px 10px rgba(51, 204, 153, 0.08);
+}
+
+#command::before {
+    content: "\2699";
+    /* Zahnrad als Symbol für Befehls-Oberkategorie */
+    position: absolute;
+    font-size: 2rem;
+    left: 0.2rem;
+    top: 0.5rem;
+}
+
+.box-command {
+    position: relative;
+    background-color: #f0fff4;
+    background: linear-gradient(to right, #d2ffe6, #f0fff4);
+    border-left: 4px solid #33cc99;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
+}
+
+.box-command::before {
+    content: "\2699";
+    /* Zahnrad als Symbol für Befehl */
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 900;
+    left: var(--box-symbol-position-left);
+    top: var(--box-symbol-position-top);
 }
 
 div.info {
@@ -222,4 +262,27 @@ canvas {
 
 #right {
     margin-left: var(--box-right);
+}
+
+a {
+    display: inline-block;
+    padding: 0.5em 1.2em;
+    margin: 0.3em 0.2em;
+    background: linear-gradient(to right, #528efc, #bed1f5);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.4em;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(80, 120, 200, 0.12);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+}
+
+a:hover,
+a:focus {
+    background: linear-gradient(to right, #3a6edc, #a7c4e8);
+    box-shadow: 0 4px 12px rgba(80, 120, 200, 0.18);
+    transform: translateY(-2px) scale(1.03);
+    outline: none;
 }

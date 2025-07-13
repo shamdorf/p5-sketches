@@ -36,12 +36,20 @@
   </head>
   <body>
     <div>
+      <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          document.querySelectorAll(".box-info").forEach(function (el) {
+            el.classList.remove("box-info");
+            el.classList.add("box-command");
+          });
+        });
+      </script> -->
       <details class="top">
         <summary id="info">📦 Formen in Processing</summary>
 
         <!-- POINT -->
-        <details class="box-info">
-          <summary>🔹 point(x, y)</summary>
+        <details class="box-command">
+          <summary>🔹 point(x, y) - <strong>Punkt</strong></summary>
           <ul>
             <li>x - Wert des Punktes</li>
             <li>y - Wert des Punktes</li>
@@ -58,8 +66,8 @@
         </details>
 
         <!-- LINE -->
-        <details class="box-info">
-          <summary>📏 line(x1, y1, x2, y2)</summary>
+        <details class="box-command">
+          <summary>📏 line(x1, y1, x2, y2) - <strong>Linie</strong></summary>
           <ul>
             <li>x1, y1 - Koordinaten des Startpunkts</li>
             <li>x2, y2 - Koordinaten des Zielpunkts</li>
@@ -73,8 +81,10 @@
         </details>
 
         <!-- TRIANGLE -->
-        <details class="box-info">
-          <summary>🔺 triangle(x1, y1, x2, y2, x3, y3)</summary>
+        <details class="box-command">
+          <summary>
+            🔺 triangle(x1, y1, x2, y2, x3, y3) - <strong>Dreieck</strong>
+          </summary>
           <ul>
             <li>x1, y1 - Koordinaten des ersten Punkts</li>
             <li>x2, y2 - Koordinaten des zweiten Punkts</li>
@@ -94,8 +104,10 @@
         </details>
 
         <!-- RECT -->
-        <details class="box-info">
-          <summary>⬛ rect(x, y, breite, höhe)</summary>
+        <details class="box-command">
+          <summary>
+            ⬛ rect(x, y, breite, höhe) - <strong>Rechteck</strong>
+          </summary>
           <ul>
             <li>x1, y2 - Koordinaten der linken oberen Ecke</li>
             <li>breite - Breite des Rechtecks</li>
@@ -109,8 +121,10 @@
         </details>
 
         <!-- RECTMODE -->
-        <details id="right" class="box-info">
-          <summary>🧭 rectMode(MODE)</summary>
+        <details id="right" class="box-command">
+          <summary>
+            🧭 rectMode(MODE) - <strong>Rechteck-Zeichenmodus</strong>
+          </summary>
           <ul>
             <li>
               CORNER -
@@ -156,8 +170,10 @@ rect(100, 200, 200, 300);</pre
         </details>
 
         <!-- ELLIPSE -->
-        <details class="box-info">
-          <summary>⚪ ellipse(x, y, breite, höhe)</summary>
+        <details class="box-command">
+          <summary>
+            ⚪ ellipse(x, y, breite, höhe) - <strong>Ellipse</strong>
+          </summary>
           <pre>ellipse(50, 50, 60, 30);</pre>
           <div id="sketch-ellipse" class="sketch"></div>
           <iframe
@@ -166,8 +182,10 @@ rect(100, 200, 200, 300);</pre
         </details>
 
         <!-- ELLIPSEMODE -->
-        <details id="right" class="box-info">
-          <summary>📐 ellipseMode(MODE)</summary>
+        <details id="right" class="box-command">
+          <summary>
+            📐 ellipseMode(MODE) - <strong>Ellipsen-Zeichenmodus</strong>
+          </summary>
           <ul>
             <li>
               CENTER -
@@ -213,8 +231,10 @@ ellipse(100, 200, 200, 300);</pre
         </details>
 
         <!-- CIRCLE -->
-        <details class="box-info">
-          <summary>🔵 circle(x, y, durchmesser)</summary>
+        <details class="box-command">
+          <summary>
+            🔵 circle(x, y, durchmesser) - <strong>Kreis</strong>
+          </summary>
           <pre>circle(50, 50, 40);</pre>
           <div id="sketch-circle" class="sketch"></div>
           <iframe
@@ -223,16 +243,17 @@ ellipse(100, 200, 200, 300);</pre
         </details>
 
         <!-- ARC -->
-        <details class="box-info">
+        <details class="box-command">
           <summary>
-            🌙 arc(x, y, breite, höhe, radians(start), radians(stop))
+            🌙 arc(x, y, breite, höhe, radians(start), radians(stop)) -
+            Kreisbogen
           </summary>
           <ul>
             <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
             <li><code>radians(start)</code> gibt den Startwinkel in Grad an</li>
             <li><code>radians(stop)</code> gibt den Endwinkel in Grad an</li>
           </ul>
-          <img src="https://p5-sketches-demo.netlify.app/arcKreis.png" alt="" />
+          <img src="https://p5-sketches-demo.netlify.app/arc.png" alt="" />
           <br />
 
           <pre>
@@ -255,8 +276,11 @@ ellipse(100, 200, 200, 300);</pre
         </details>
 
         <!-- BEGINSHAPE -->
-        <details class="box-info">
-          <summary>🔷 beginShape() ... vertex(...) ... endShape()</summary>
+        <details class="box-command">
+          <summary>
+            🔷 beginShape() ... vertex(...) ... endShape() -
+            <strong>Polygon(Vieleck)</strong>
+          </summary>
           <ul>
             <li><code>beginShape()</code>startet das Zeichnen des Polygons</li>
             <li>
@@ -305,13 +329,47 @@ endShape();</pre
     <details class="top">
       <summary id="info">🛠️ Wichtige Befehle/Funktionen in Processing</summary>
 
+      <details class="box-command">
+        <summary>
+          🖥️ print(), println() - <strong>Konsolenausgabe</strong>
+        </summary>
+        <div>
+          <p>
+            <strong
+              ><code>print() <br />println()</code></strong
+            >.
+          </p>
+          <ul>
+            <li>
+              print() schreibt Text in einer Zeile der Konsole bis zum Ende und
+              springt dann in die nächste Zeile.
+            </li>
+            <li>
+              println() schreibt Text in die Konsole und springt danach direkt
+              in die nächste Zeile.
+            </li>
+          </ul>
+          <p>Teste es aus !</p>
+          <pre><code>print("Text ");
+print("in ");
+print("einer ");
+print("Zeile!");
+println(); //eine Leere Zeile + Sprung in die nächste Zeile.
+println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
+          <img
+            src="https://lms2.schulcampus-rlp.de/SN-63755/draftfile.php/5989/user/draft/340266662/grafik%20%281%29.png"
+            alt=""
+            role="presentation"
+            class="img-fluid"
+          />
+        </div>
+      </details>
       <!-- Size -->
-      <details class="box-info">
-        <summary>🔲 size(x, y)</summary>
+      <details class="box-command">
+        <summary>🔲 size(x, y) - <strong>Bildschirmauflösung</strong></summary>
         <p>
-          Mit dem Befehl size(b, h) kann man die Größe des Ausgabebildschirms
-          festsetzen. Insgesamt erhält man einen Ausgabebildschirm mit b*h
-          Pixeln.
+          Mit dem Befehl size(b, h) kann man die Bildschirmauflösung festsetzen.
+          Insgesamt erhält man einen Ausgabebildschirm mit b*h Pixeln.
         </p>
         <ul>
           <li>b - Breite des Bildschirms in Pixeln</li>
@@ -324,8 +382,8 @@ endShape();</pre
       </details>
 
       <!-- STROKE -->
-      <details class="box-info">
-        <summary>🖊️ stroke(farbe)</summary>
+      <details class="box-command">
+        <summary>🖊️ stroke(farbe) - <strong>Konturfarbe</strong></summary>
         <p>
           Mit <code>stroke(farbe)</code> setzt man die Farbe der Linien und
           Konturen von Formen.
@@ -349,9 +407,8 @@ line(10, 60, 110, 40);</pre
         ></iframe>
       </details>
 
-      <!-- NOSTROKE -->
-      <details class="box-info">
-        <summary>🚫 noStroke()</summary>
+      <details class="box-command">
+        <summary>🚫 noStroke() - <strong>keine Kontur</strong></summary>
         <p>
           Mit <code>noStroke()</code> werden keine Linien oder Konturen mehr
           gezeichnet.
@@ -366,8 +423,8 @@ rect(30, 30, 60, 40); // Rechteck ohne Rand</pre
       </details>
 
       <!-- FILL -->
-      <details class="box-info">
-        <summary>🎨 fill(farbe)</summary>
+      <details class="box-command">
+        <summary>🎨 fill(farbe) - <strong>Füllfarbe</strong></summary>
         <p>Mit <code>fill(farbe)</code> setzt man die Füllfarbe für Formen.</p>
         <br />farbe kann wie bei stroke unterschieldich genutzt werden.
         <ul>
@@ -386,8 +443,8 @@ rect(60, 60, 30, 30);</pre
       </details>
 
       <!-- NOFILL -->
-      <details class="box-info">
-        <summary>🚫 noFill()</summary>
+      <details class="box-command">
+        <summary>🚫 noFill() - <strong>keine Füllfarbe</strong></summary>
         <p>
           Mit <code>noFill()</code> werden Formen ohne Füllung gezeichnet (nur
           Rand sichtbar).
