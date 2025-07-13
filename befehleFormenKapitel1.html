@@ -4,15 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+    <!-- <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/style.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    /> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
     <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/p5.min.js"></script>
     <script src="sketches.js"></script>
-    <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/resource/view.php?id=45172"></script>
+    <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/resource/view.php?id=45172"></script> -->
 
     <!-- Skript, um die Größe des Canvas an das Iframe zu übermitteln -->
     <script>
@@ -63,7 +67,7 @@
           <pre>line(20, 80, 80, 20);</pre>
           <div id="sketch-line" class="sketch"></div>
           <iframe
-            src="https://github.com/shamdorf/p5-sketches/blob/main/template.html?sketch=sketchLine"
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchLine"
             target="blank"
           ></iframe>
         </details>
@@ -84,7 +88,9 @@
           style="border: none"
         ></iframe> -->
           <div id="sketch-triangle" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchTriangle"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchTriangle"
+          ></iframe>
         </details>
 
         <!-- RECT -->
@@ -97,7 +103,9 @@
           </ul>
           <pre>rect(20, 30, 60, 40);</pre>
           <div id="sketch-rect" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchRect"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRect"
+          ></iframe>
         </details>
 
         <!-- RECTMODE -->
@@ -142,7 +150,9 @@ rectMode(CORNERS);
 rect(100, 200, 200, 300);</pre
           >
           <div id="sketch-rectMode" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchRectMode"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRectMode"
+          ></iframe>
         </details>
 
         <!-- ELLIPSE -->
@@ -150,7 +160,9 @@ rect(100, 200, 200, 300);</pre
           <summary>⚪ ellipse(x, y, breite, höhe)</summary>
           <pre>ellipse(50, 50, 60, 30);</pre>
           <div id="sketch-ellipse" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchEllipse"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipse"
+          ></iframe>
         </details>
 
         <!-- ELLIPSEMODE -->
@@ -195,7 +207,9 @@ ellipseMode(CORNERS);
 ellipse(100, 200, 200, 300);</pre
           >
           <div id="sketch-ellipseMode" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchEllipseMode"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipseMode"
+          ></iframe>
         </details>
 
         <!-- CIRCLE -->
@@ -203,7 +217,9 @@ ellipse(100, 200, 200, 300);</pre
           <summary>🔵 circle(x, y, durchmesser)</summary>
           <pre>circle(50, 50, 40);</pre>
           <div id="sketch-circle" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchCircle"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchCircle"
+          ></iframe>
         </details>
 
         <!-- ARC -->
@@ -215,8 +231,9 @@ ellipse(100, 200, 200, 300);</pre
             <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
             <li><code>radians(start)</code> gibt den Startwinkel in Grad an</li>
             <li><code>radians(stop)</code> gibt den Endwinkel in Grad an</li>
-            <li>Der Winkel wächst im Uhrzeigersinn.</li>
           </ul>
+          <img src="https://p5-sketches-demo.netlify.app/arcKreis.png" alt="" />
+          <br />
 
           <pre>
       arc(100, 100, 80, 80, radians(0), radians(90));
@@ -224,7 +241,9 @@ ellipse(100, 200, 200, 300);</pre
           >
 
           <div id="sketch-arc" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchArc"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchArc"
+          ></iframe>
           <ul class="box-warning">
             <li>
               Winkel starten bei 0° rechts (3-Uhr-Position) und wachsen
@@ -276,52 +295,111 @@ beginShape();
 endShape();</pre
           >
           <div id="sketch-beginShape" class="sketch"></div>
-          <iframe src="template.html?sketch=sketchBeginShape"></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBeginShape"
+          ></iframe>
         </details>
       </details>
-      <script>
-        // new p5(sketchPoint, "sketch-point");
-        // new p5(sketchLine, "sketch-line");
-        // new p5(sketchTriangle, "sketch-triangle");
-        // new p5(sketchRect, "sketch-rect");
-        // new p5(sketchRectMode, "sketch-rectMode");
-        // new p5(sketchEllipse, "sketch-ellipse");
-        // new p5(sketchEllipseMode, "sketch-ellipseMode");
-        // new p5(sketchCircle, "sketch-circle");
-        // new p5(sketchArc, "sketch-arc");
-        // new p5(sketchBeginShape, "sketch-beginShape");
-      </script>
-      <!-- <script>
-          new p5((p) => {
-            p.setup = () => {
-              p.createCanvas(100, 100);
-              p.strokeWeight(6);
-              p.strokeWeight(5);
-              p.point(50, 50);
-            };
-          }, "sketch-point");
+    </div>
 
-          new p5((p) => {
-            p.setup = () => {
-              p.createCanvas(100, 100);
-              p.line(20, 80, 80, 20);
-              p.strokeWeight(5);
-              p.point(20, 80);
-              p.point(80, 20);
-            };
-          }, "sketch-line");
+    <details class="top">
+      <summary id="info">🛠️ Wichtige Befehle/Funktionen in Processing</summary>
 
-          new p5((p) => {
-            p.setup = () => {
-              p.createCanvas(100, 100);
-              p.triangle(10, 90, 50, 10, 90, 90);
-              p.strokeWeight(5);
-              p.point(10, 90);
-              p.point(50, 10);
-              p.point(90, 90);
-            };
-          }, "sketch-triangle");
-      </script>
-    --></div>
+      <!-- Size -->
+      <details class="box-info">
+        <summary>🔲 size(x, y)</summary>
+        <p>
+          Mit dem Befehl size(b, h) kann man die Größe des Ausgabebildschirms
+          festsetzen. Insgesamt erhält man einen Ausgabebildschirm mit b*h
+          Pixeln.
+        </p>
+        <ul>
+          <li>b - Breite des Bildschirms in Pixeln</li>
+          <li>h - Höhe des Bildschirms in Pixeln</li>
+        </ul>
+        <pre>size(200, 100);</pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSize"
+        ></iframe>
+      </details>
+
+      <!-- STROKE -->
+      <details class="box-info">
+        <summary>🖊️ stroke(farbe)</summary>
+        <p>
+          Mit <code>stroke(farbe)</code> setzt man die Farbe der Linien und
+          Konturen von Formen.
+          <br />
+          farbe kann unterschieldich genutzt werden.
+        </p>
+        <ul>
+          <li>RGB-Wert, (Rot, Grün, Blau)-Wert</li>
+          <li>Grauwert, Zahl zwischen 0 und 255</li>
+        </ul>
+        <pre>
+stroke(255, 255, 0); // gelbe Linien
+line(10, 20, 110, 40);
+stroke(0, 255, 0); // grüne Linien
+line(10, 40, 110, 40);
+stroke(0); // schwarze Linien
+line(10, 60, 110, 40);</pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStroke"
+        ></iframe>
+      </details>
+
+      <!-- NOSTROKE -->
+      <details class="box-info">
+        <summary>🚫 noStroke()</summary>
+        <p>
+          Mit <code>noStroke()</code> werden keine Linien oder Konturen mehr
+          gezeichnet.
+        </p>
+        <pre>
+noStroke();
+rect(30, 30, 60, 40); // Rechteck ohne Rand</pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoStroke"
+        ></iframe>
+      </details>
+
+      <!-- FILL -->
+      <details class="box-info">
+        <summary>🎨 fill(farbe)</summary>
+        <p>Mit <code>fill(farbe)</code> setzt man die Füllfarbe für Formen.</p>
+        <br />farbe kann wie bei stroke unterschieldich genutzt werden.
+        <ul>
+          <li>RGB-Wert, (Rot, Grün, Blau)-Wert</li>
+          <li>Grauwert, Zahl zwischen 0 und 255</li>
+        </ul>
+        <pre>
+fill(255, 0, 0); // rote Füllung
+rect(20, 20, 30, 30);
+fill(128); // graue Füllung
+rect(60, 60, 30, 30);</pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFill"
+        ></iframe>
+      </details>
+
+      <!-- NOFILL -->
+      <details class="box-info">
+        <summary>🚫 noFill()</summary>
+        <p>
+          Mit <code>noFill()</code> werden Formen ohne Füllung gezeichnet (nur
+          Rand sichtbar).
+        </p>
+        <pre>
+noFill();
+ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoFill"
+        ></iframe>
+      </details>
+    </details>
   </body>
 </html>

@@ -21,6 +21,8 @@ function sketchStroke(p) {
   p.setup = () => {
     p.createCanvas(120, 80);
     p.background(255);
+    p.stroke(255, 255, 0);
+    p.line(10, 20, 110, 40);
     p.stroke(0, 255, 0);
     p.line(10, 40, 110, 40);
     p.stroke(0);

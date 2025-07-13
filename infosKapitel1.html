@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+  </head>
+  <body>
+    <details class="top">
+      <summary id="info">
+        <strong>Kommentare, Anweisungen, Funktionen</strong> und
+        <strong>Befehlsblöcke</strong>
+      </summary>
+
+      <details class="box-info">
+        <summary>
+          <h4>Kommentare</h4>
+        </summary>
+        <p>
+          Kommentare kann man zur Beschreibung oder zum Debuggen in sein
+          Programm einfügen. Beim Starten des Programms werden die kommentierten
+          Zeilen ignoriert und nicht ausgeführt.
+        </p>
+        <ul>
+          <li>
+            Kommentare sind nützlich, weil das Programm zum einen dadurch sehr
+            viel verständlicher wird. das gilt für einen selbst aber auch für
+            andere, die sich das Programm anschauen.
+          </li>
+          <li>
+            Zum anderen kann man Teile seines Codes auskommentieren, um zum
+            Beispiel Fehler zu suchen oder mit neuen Features zu
+            experimentieren.
+          </li>
+          <li>
+            In Processing gibt es einzeilige ("//") und mehrzeilige Kommentare (
+            /* ... */ ).
+          </li>
+        </ul>
+        <p>Teste es aus !</p>
+        <pre><code> //Das wird ein Beispiel für einen einzeiligen Kommentar
+
+/* Hier wird ein Mehrzeiliger Kommentar geschrieben.
+Alles was jetzt kommt, wird ignoriert
+und nicht als Befehl ausgeführt.
+Es sei denn es kommt ein */
+</code></pre>
+      </details>
+
+      <details class="box-info">
+        <summary>
+          <h4>Anweisungen</h4>
+        </summary>
+        <div class="info">
+          <p>
+            Ein Computerprogramm besteht aus unterschiedlichen
+            <strong>Anweisungen</strong>.
+          </p>
+          <ul>
+            <li class="important">
+              <strong>Funktionsaufrufe</strong> (Kapitel 1)
+            </li>
+            <li>
+              <strong>Variablendeklarationen </strong>und<strong>
+                Wertzuweisungen</strong
+              >
+              (Kapitel 2)
+            </li>
+            <li><strong>Verzweigungen (if, else)</strong> (Kapitel 3)</li>
+            <li><strong>Schleifen</strong> (Kapitel 5)</li>
+            <li>und weitere</li>
+          </ul>
+          <p>
+            Hier ein paar Beispiele für <strong>Funktionsaufrufe</strong>:
+            <br /><br />Teste es aus!
+          </p>
+          <pre><code>print("Hallo Welt!"); //Eine Anweisung, um "Hallo Welt" auf der Konsole auszugeben
+
+ellipse(50, 50, 20, 20); //Eine Anweisung, um einen Kreis auf dem Bildschirm zu zeichnen</code></pre>
+        </div>
+      </details>
+      <details class="box-info">
+        <summary>
+          <h4>Funktionen</h4>
+        </summary>
+        <div class="info">
+          <p>
+            Wir werden uns in Kapitel 7 intensiver mit Funktionen beschäftigen
+            und auch selbst Funktionen erstellen. Fürs erste schauen wir uns
+            aber ein paar Funktionen an, die bereits in Processing integriert
+            sind, um deren Aufbau zu verstehen.
+          </p>
+          <ul>
+            <li>
+              Funktionen haben einen <strong>Namen</strong> gefolgt von runden
+              <strong>Klammern "\( \)"</strong>
+            </li>
+            <li>
+              In den Klammern steht die Parameterliste. Sie kann leer sein oder
+              verschiedene Werte haben.
+            </li>
+          </ul>
+          <p>
+            Beispiele für Funktionen in Processing:
+            <br /><br />Teste es aus!
+          </p>
+          <pre><code>size(800, 800) //Funktion, um den Ausgabebildschirm auf 800*800 Pixel zu setzen
+point(20, 10); //Funktion, um einen Punkt an der Koordinate 20, 10 zu zeichnen
+noFill(); //Funktion mit leerer Parameterliste. Die Funktion sorgt dafür, dass nachfolgende Objekte transparent sind
+rect(30, 30, 20, 10); //Funktion, die ein Rechteck an der Stelle 30, 30 mit Breit 20 und Höhe 10 zeichnet</code></pre>
+          <img
+            src="https://lms2.schulcampus-rlp.de/SN-63755/draftfile.php/5989/user/draft/340266662/grafik%20%281%29.png"
+            alt=""
+            role="presentation"
+            class="img-fluid"
+          />
+        </div>
+      </details>
+      <details class="box-info">
+        <summary>
+          <h4>Befehlsblöcke</h4>
+        </summary>
+        <div class="info">
+          <ul>
+            <li>
+              Viele Anweisungen zusammen bilden einen
+              <strong>Befehlsblock</strong>.
+            </li>
+            <li>
+              Wenn Befehlsblöcke in Funktionen, Verzweigungen oder Schleifen
+              stehen, werden sie in Processing von geschweiften Klammern "{ }"
+              umgeben.
+            </li>
+          </ul>
+
+          <p>
+            Hier ein Beispiele für einen Befehlsblock: <br /><br />Teste es aus!
+          </p>
+          <pre><code>{
+  print("Hallo Welt!");
+  println("Informatik macht Spaß!");
+  println("Wenigstens manchmal ;-)");
+}
+</code></pre>
+          <img
+            src="https://lms2.schulcampus-rlp.de/SN-63755/draftfile.php/5989/user/draft/340266662/grafik%20%281%29.png"
+            alt=""
+            role="presentation"
+            class="img-fluid"
+          />
+        </div>
+      </details>
+    </details>
+  </body>
+</html>
