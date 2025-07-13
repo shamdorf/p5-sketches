@@ -52,12 +52,10 @@
           farbe kann unterschieldich genutzt werden.
         </p>
         <ul>
-          <li>Farbname wie "yellow"</li>
           <li>RGB-Wert, (Rot, Grün, Blau)-Wert</li>
           <li>Grauwert, Zahl zwischen 0 und 255</li>
         </ul>
         <pre>
-stroke("red"); // rote Linien
 stroke(0, 255, 0); // grüne Linien
 stroke(0); // schwarze Linien</pre
         >
@@ -75,7 +73,7 @@ stroke(0); // schwarze Linien</pre
         </p>
         <pre>
 noStroke();
-      rect(30, 30, 60, 40); // Rechteck ohne Rand</pre
+rect(30, 30, 60, 40); // Rechteck ohne Rand</pre
         >
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoStroke"
@@ -86,15 +84,16 @@ noStroke();
       <details class="box-info">
         <summary>🎨 fill(farbe)</summary>
         <p>Mit <code>fill(farbe)</code> setzt man die Füllfarbe für Formen.</p>
+        <br />farbe kann wie bei stroke unterschieldich genutzt werden.
         <ul>
-          <li>
-            <code>farbe</code> kann ein Name, ein RGB-Wert oder eine Zahl sein.
-          </li>
+          <li>RGB-Wert, (Rot, Grün, Blau)-Wert</li>
+          <li>Grauwert, Zahl zwischen 0 und 255</li>
         </ul>
         <pre>
-fill("yellow"); // gelbe Füllung
-      fill(255, 0, 0); // rote Füllung
-      fill(128); // graue Füllung</pre
+fill(255, 0, 0); // rote Füllung
+rect(20, 20, 30, 30);
+fill(128); // graue Füllung
+rect(60, 60, 30, 30);</pre
         >
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFill"
@@ -110,7 +109,7 @@ fill("yellow"); // gelbe Füllung
         </p>
         <pre>
 noFill();
-      ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
+ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
         >
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoFill"
