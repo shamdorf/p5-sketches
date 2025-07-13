@@ -60,6 +60,40 @@ circle(50, 50, 40);</code></pre>
         </div>
       </details>
 
+      <!-- IDE -->
+      <details class="box-info">
+        <summary>Was ist eine IDE?</summary>
+        <div>
+          <p>
+            Eine <strong>IDE</strong> (<em
+              >Integrated Development Environment</em
+            >
+            - Integrierte Entwicklungsumgebung) ist eine Software, die
+            Programmierer beim Entwickeln von Programmen unterstützt.
+          </p>
+          <ul>
+            <li>
+              Sie enthält einen <strong>Editor</strong> zum Schreiben von Code.
+            </li>
+            <li>
+              Oft gibt es Funktionen zum <strong>Kompilieren</strong> und
+              <strong>Ausführen</strong> des Programms.
+            </li>
+            <li>
+              Weitere Werkzeuge sind z.&nbsp;B.
+              <strong>Fehlersuche (Debugging)</strong>,
+              <strong>Syntaxhervorhebung</strong> und
+              <strong>Projektverwaltung</strong>.
+            </li>
+            <li>
+              Beispiele für IDEs sind <strong>Processing</strong>,
+              <strong>Visual Studio Code</strong> und <strong>Eclipse</strong>.
+            </li>
+          </ul>
+          <p>Eine IDE macht das Programmieren einfacher und übersichtlicher.</p>
+        </div>
+      </details>
+
       <!-- Koordinaten in Processing -->
       <details class="box-info">
         <summary>Das Koordinatensystem in Processing</summary>
@@ -196,6 +230,68 @@ ellipse(50, 50, 20, 20); //Eine Anweisung, um einen Kreis auf dem Bildschirm zu 
   println("Wenigstens manchmal ;-)");
 }
 </code></pre>
+        </div>
+      </details>
+    </details>
+
+    <!-- Farbmodelle -->
+    <details class="top">
+      <summary id="info"><strong>Farbmodelle</strong></summary>
+
+      <!-- RGB-Farbraum -->
+      <details class="box-info">
+        <summary>RGB-Farbraum</summary>
+        <div class="info">
+          <p>
+            Der <strong>RGB-Farbraum</strong> beschreibt Farben durch die
+            Mischung von <strong>Rot</strong>, <strong>Grün</strong> und
+            <strong>Blau</strong>. Jeder Farbanteil kann einen Wert von
+            <code>0</code> bis <code>255</code> haben.
+          </p>
+          <ul>
+            <li><strong>Rot:</strong> <code>color(255, 0, 0)</code></li>
+            <li><strong>Grün:</strong> <code>color(0, 255, 0)</code></li>
+            <li><strong>Blau:</strong> <code>color(0, 0, 255)</code></li>
+            <li><strong>Weiß:</strong> <code>color(255, 255, 255)</code></li>
+            <li><strong>Schwarz:</strong> <code>color(0, 0, 0)</code></li>
+          </ul>
+          <p>
+            Beispiel in Processing:<br />
+            <code>fill(255, 0, 0); // Rot</code>
+          </p>
+        </div>
+      </details>
+
+      <!-- HSB-Farbraum -->
+      <details class="box-info">
+        <summary>HSB-Farbraum</summary>
+        <div class="info">
+          <p>
+            Der <strong>HSB-Farbraum</strong> beschreibt Farben mit
+            <strong>Hue (Farbton)</strong>,
+            <strong>Saturation (Sättigung)</strong> und
+            <strong>Brightness (Helligkeit)</strong>.
+          </p>
+          <ul>
+            <li>
+              <strong>Hue:</strong> Farbton (0–360 Grad, z.B. 0=Rot, 120=Grün,
+              240=Blau)
+            </li>
+            <li>
+              <strong>Saturation:</strong> Sättigung (0=Grau, 100=volle Farbe)
+            </li>
+            <li>
+              <strong>Brightness:</strong> Helligkeit (0=Schwarz, 100=volle
+              Helligkeit)
+            </li>
+          </ul>
+          <p>
+            Beispiel in Processing:<br />
+            <code>
+              colorMode(HSB);<br />
+              fill(120, 100, 100); // Sattes Grün
+            </code>
+          </p>
         </div>
       </details>
     </details>

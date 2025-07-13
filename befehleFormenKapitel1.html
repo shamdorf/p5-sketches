@@ -46,6 +46,31 @@
         });
       </script> -->
 
+    <!-- Koordinatensystem -->
+    <details class="box-command">
+      <summary>🗺️ Koordinatensystem zeichnen</summary>
+      <p>
+        Mit folgendem Code kannst du ein einfaches Koordinatensystem mit Achsen
+        und Beschriftung zeichnen:
+      </p>
+      <pre>
+size(800, 600);
+int abstand = 50;
+textSize(20)
+for (float i = 0; i < width; i += abstand) {
+  line(i, 0, i, height);
+  text((int)i, i, 20);
+}
+for (float i = 0; i < height; i += abstand) {
+  line(0, i, width, i);
+  text((int)i, 10, i);
+}
+      </pre>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchKoordinatensystem"
+      ></iframe>
+    </details>
+
     <!-- Befehle für Formen in Processing -->
     <details class="top">
       <summary id="command">📦 Formen in Processing</summary>
