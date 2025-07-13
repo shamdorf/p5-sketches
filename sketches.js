@@ -44,7 +44,7 @@ function sketchNoStroke(p) {
 
 function sketchFill(p) {
   p.setup = () => {
-    p.createCanvas(120, 80);
+    p.createCanvas(100, 100);
     p.background(255);
     p.fill(255, 0, 0);
     p.rect(20, 20, 30, 30);
