@@ -38,6 +38,20 @@ function sketchStrokeWeight(p) {
   };
 }
 
+function sketchBackground(p) {
+  p.setup = () => {
+    p.createCanvas(120, 80);
+
+    p.background(255); // weißer Hintergrund
+    p.rect(30, 30, 60, 40);
+
+    p.background(0, 255, 0); // grüner Hintergrund
+    p.ellipse(50, 50, 40, 40);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchStroke(p) {
   p.setup = () => {
     p.createCanvas(120, 80);

@@ -46,6 +46,8 @@
           });
         });
       </script> -->
+
+      <!-- Befehle für Formen in Processing -->
       <details class="top">
         <summary id="command">📦 Formen in Processing</summary>
 
@@ -384,104 +386,142 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSize"
         ></iframe>
       </details>
+    </details>
 
-      <!-- STROKE -->
-      <details class="box-command">
-        <summary>🖊️ stroke(farbe) - <strong>Konturfarbe</strong></summary>
-        <p>
-          Mit <code>stroke(farbe)</code> setzt man die Farbe der Linien und
-          Konturen von Formen.
-          <br />
-          farbe kann unterschieldich genutzt werden.
-        </p>
-        <ul>
-          <li>RGB-Wert, (Rot, Grün, Blau)-Wert</li>
-          <li>Grauwert, Zahl zwischen 0 und 255</li>
-        </ul>
-        <pre>
+    <!-- Farben und Konturen in Processing -->
+    <details class="top">
+      <summary id="command">🎨 Farben in Processing</summary>
+
+      <p>
+        <details class="box-command">
+          <summary>
+            🌄 background(farbe) - <strong>Hintergrundfarbe</strong>
+          </summary>
+          <p>
+            Mit <code>background(farbe)</code> setzt man die Hintergrundfarbe
+            des Zeichenbereichs.<br />
+            <code>farbe</code> kann als Grauwert oder als RGB-Wert angegeben
+            werden.
+          </p>
+          <ul>
+            <li>Grauwert: <code>background(200);</code> // hellgrau</li>
+            <li>RGB-Wert: <code>background(0, 255, 255);</code> // türkis</li>
+          </ul>
+          <pre>
+background(255); // weißer Hintergrund
+rect(30, 30, 60, 40);
+
+background(0, 255, 0); // grüner Hintergrund
+ellipse(50, 50, 40, 40);</pre
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBackground"
+          ></iframe>
+        </details>
+
+        <!-- STROKE -->
+        <details class="box-command">
+          <summary>🖊️ stroke(farbe) - <strong>Konturfarbe</strong></summary>
+          <p>
+            Mit <code>stroke(farbe)</code> setzt man die Farbe der Linien und
+            Konturen von Formen.
+            <br />
+            <code>farbe</code> kann als Grauwert oder als RGB-Wert angegeben
+            werden.
+          </p>
+          <ul>
+            <li>Grauwert: <code>background(50);</code> // dunkelgrau</li>
+            <li>RGB-Wert: <code>background(255, 255, 0);</code> // gelb</li>
+          </ul>
+          <pre>
 stroke(255, 255, 0); // gelbe Linien
 line(10, 20, 110, 20);
 stroke(0, 255, 0); // grüne Linien
 line(10, 40, 110, 40);
 stroke(0); // schwarze Linien
 line(10, 60, 110, 40);</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStroke"
-        ></iframe>
-      </details>
-      <details class="box-command">
-        <summary>
-          📏 strokeWeight(dicke) - <strong>Linienstärke</strong>
-        </summary>
-        <p>
-          Mit <code>strokeWeight(dicke)</code> setzt man die Stärke (Dicke) der
-          Linien und Konturen von Formen.
-        </p>
-        <ul>
-          <li>dicke - Wert für die Linienstärke in Pixeln</li>
-        </ul>
-        <pre>
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStroke"
+          ></iframe>
+        </details>
+        <details class="box-command">
+          <summary>
+            📏 strokeWeight(dicke) - <strong>Linienstärke</strong>
+          </summary>
+          <p>
+            Mit <code>strokeWeight(dicke)</code> setzt man die Stärke (Dicke)
+            der Linien und Konturen von Formen.
+          </p>
+          <ul>
+            <li>dicke - Wert für die Linienstärke in Pixeln</li>
+          </ul>
+          <pre>
     strokeWeight(1); // dünne Linie
     line(10, 20, 110, 20);
     strokeWeight(5); // dicke Linie
     line(10, 40, 110, 40);</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStrokeWeight"
-        ></iframe>
-      </details>
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStrokeWeight"
+          ></iframe>
+        </details>
 
-      <details class="box-command">
-        <summary>🚫 noStroke() - <strong>keine Kontur</strong></summary>
-        <p>
-          Mit <code>noStroke()</code> werden keine Linien oder Konturen mehr
-          gezeichnet.
-        </p>
-        <pre>
+        <details class="box-command">
+          <summary>🚫 noStroke() - <strong>keine Kontur</strong></summary>
+          <p>
+            Mit <code>noStroke()</code> werden keine Linien oder Konturen mehr
+            gezeichnet.
+          </p>
+          <pre>
 noStroke();
 rect(30, 30, 60, 40); // Rechteck ohne Rand</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoStroke"
-        ></iframe>
-      </details>
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoStroke"
+          ></iframe>
+        </details>
 
-      <!-- FILL -->
-      <details class="box-command">
-        <summary>🎨 fill(farbe) - <strong>Füllfarbe</strong></summary>
-        <p>Mit <code>fill(farbe)</code> setzt man die Füllfarbe für Formen.</p>
-        <br />farbe kann wie bei stroke unterschieldich genutzt werden.
-        <ul>
-          <li>RGB-Wert, (Rot, Grün, Blau)-Wert</li>
-          <li>Grauwert, Zahl zwischen 0 und 255</li>
-        </ul>
-        <pre>
+        <!-- FILL -->
+        <details class="box-command">
+          <summary>🎨 fill(farbe) - <strong>Füllfarbe</strong></summary>
+          <p>
+            Mit <code>fill(farbe)</code> setzt man die Füllfarbe für Formen.
+            <br />
+            <code>farbe</code> kann als Grauwert oder als RGB-Wert angegeben
+            werden.
+          </p>
+          <ul>
+            <li>Grauwert: <code>background(255);</code> // weiß</li>
+            <li>RGB-Wert: <code>background(0, 0, 255);</code> // blau</li>
+          </ul>
+          <pre>
 fill(255, 0, 0); // rote Füllung
 rect(20, 20, 30, 30);
 fill(128); // graue Füllung
 rect(60, 60, 30, 30);</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFill"
-        ></iframe>
-      </details>
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFill"
+          ></iframe>
+        </details>
 
-      <!-- NOFILL -->
-      <details class="box-command">
-        <summary>🚫 noFill() - <strong>keine Füllfarbe</strong></summary>
-        <p>
-          Mit <code>noFill()</code> werden Formen ohne Füllung gezeichnet (nur
-          Rand sichtbar).
-        </p>
-        <pre>
+        <!-- NOFILL -->
+        <details class="box-command">
+          <summary>🚫 noFill() - <strong>keine Füllfarbe</strong></summary>
+          <p>
+            Mit <code>noFill()</code> werden Formen ohne Füllung gezeichnet (nur
+            Rand sichtbar).
+          </p>
+          <pre>
 noFill();
 ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoFill"
-        ></iframe>
-      </details>
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchNoFill"
+          ></iframe>
+        </details>
+      </p>
     </details>
   </body>
 </html>
