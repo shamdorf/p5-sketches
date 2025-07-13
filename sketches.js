@@ -17,6 +17,27 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchStrokeWeight(p) {
+  p.setup = () => {
+    p.createCanvas(120, 80);
+    p.background(255);
+
+    p.strokeWeight(1); // dünne Linie
+    p.line(10, 20, 110, 20);
+
+    p.strokeWeight(5); // dicke Linie
+    p.line(10, 40, 110, 40);
+
+    p.noStroke();
+    p.fill(0);
+    p.textSize(12);
+    p.text("strokeWeight(1)", 10, 15);
+    p.text("strokeWeight(5)", 10, 55);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchStroke(p) {
   p.setup = () => {
     p.createCanvas(120, 80);

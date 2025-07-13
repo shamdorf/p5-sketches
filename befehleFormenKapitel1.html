@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
+    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://p5-sketches-demo.netlify.app/style.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <!-- <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
@@ -45,7 +47,7 @@
         });
       </script> -->
       <details class="top">
-        <summary id="info">📦 Formen in Processing</summary>
+        <summary id="command">📦 Formen in Processing</summary>
 
         <!-- POINT -->
         <details class="box-command">
@@ -327,7 +329,9 @@ endShape();</pre
     </div>
 
     <details class="top">
-      <summary id="info">🛠️ Wichtige Befehle/Funktionen in Processing</summary>
+      <summary id="command">
+        🛠️ Wichtige Befehle/Funktionen in Processing
+      </summary>
 
       <details class="box-command">
         <summary>
@@ -404,6 +408,27 @@ line(10, 60, 110, 40);</pre
         >
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStroke"
+        ></iframe>
+      </details>
+      <details class="box-command">
+        <summary>
+          📏 strokeWeight(dicke) - <strong>Linienstärke</strong>
+        </summary>
+        <p>
+          Mit <code>strokeWeight(dicke)</code> setzt man die Stärke (Dicke) der
+          Linien und Konturen von Formen.
+        </p>
+        <ul>
+          <li>dicke - Wert für die Linienstärke in Pixeln</li>
+        </ul>
+        <pre>
+    strokeWeight(1); // dünne Linie
+    line(10, 20, 110, 20);
+    strokeWeight(5); // dicke Linie
+    line(10, 40, 110, 40);</pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStrokeWeight"
         ></iframe>
       </details>
 
