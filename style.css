@@ -265,7 +265,7 @@ canvas {
     margin-left: var(--box-right);
 }
 
-a {
+a.button {
     display: inline-block;
     padding: 0.5em 1.2em;
     margin: 0.3em 0.2em;
@@ -280,8 +280,8 @@ a {
     cursor: pointer;
 }
 
-a:hover,
-a:focus {
+.button:hover,
+.button:focus {
     background: linear-gradient(to right, #3a6edc, #a7c4e8);
     box-shadow: 0 4px 12px rgba(80, 120, 200, 0.18);
     transform: translateY(-2px) scale(1.03);
