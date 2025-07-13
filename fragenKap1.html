@@ -13,58 +13,18 @@
     <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/resource/view.php?id=45169"></script>
   </head>
   <body>
-    <div>
-      <h2>Sketch 1</h2>
-      <div id="sketch1"></div>
-      <h2>Sketch 2</h2>
-      <div id="sketch2"></div>
-      <script>
-        // Sketch 1
-
-        const s1 = (p) => {
-          p.setup = () => {
-            p.createCanvas(200, 200);
-            p.background(100);
-          };
-
-          p.draw = () => {
-            p.fill(255, 0, 0);
-            p.ellipse(p.mouseX, p.mouseY, 50, 50);
-          };
-        };
-
-        new p5(s1, "sketch1");
-      </script>
-      <script>
-        // Sketch 2
-
-        const s2 = (p) => {
-          p.setup = () => {
-            p.createCanvas(200, 200);
-            p.background(200);
-          };
-
-          p.draw = () => {
-            p.fill(0, 0, 255);
-            p.rect(p.mouseX, p.mouseY, 50, 50);
-          };
-        };
-
-        new p5(s2, "sketch2");
-      </script>
-    </div>
-
     <details class="top">
       <summary><strong id="question">Fragen zu Kapitel 1</strong></summary>
       <details class="box-question">
         <summary>
-          Was ist der Unterschied zwischen einem <strong>Interpreter</strong>und
-          einem <strong>Compiler?</strong><br />
+          Was ist der Unterschied zwischen einem
+          <strong>Interpreter</strong> und einem <strong>Compiler?</strong
+          ><br />
         </summary>
-        <div class="box-answer">
+        <div class="box-info">
           <p>
             Sowohl Interpreter als auch Compiler <strong>übersetzen</strong> die
-            <strong>Hochsprache</strong>wie Processing/Java/C++in
+            <strong>Hochsprache</strong> wie Processing/Java/C++in
             <strong>Maschinencode</strong>, der dann von der
             <strong>CPU</strong>bearbeitet werden kann.
           </p>
@@ -85,7 +45,7 @@
           Wofür brauche ich <strong>Kommentare</strong> und welche zwei Arten
           gibt es in Processing? <br />
         </summary>
-        <div class="box-answer">
+        <div class="box-info">
           <ul>
             <li>
               Kommentare sind nützlich, weil das Programm zum einen dadurch sehr
@@ -116,7 +76,7 @@ Es sei denn es kommt ein */
         <summary>
           Wie kann ich etwas auf der <strong>Konsole</strong> ausgeben?
         </summary>
-        <div class="box-answer">
+        <div class="box-info">
           <p>
             <strong
               ><code>print() <br />println()</code></strong
