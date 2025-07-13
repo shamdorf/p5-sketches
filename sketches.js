@@ -17,6 +17,58 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchStroke(p) {
+  p.setup = () => {
+    p.createCanvas(120, 80);
+    p.background(255);
+    p.stroke("red");
+    p.line(10, 20, 110, 20);
+    p.stroke(0, 255, 0);
+    p.line(10, 40, 110, 40);
+    p.stroke(0);
+    p.line(10, 60, 110, 60);
+
+    autoResizeCanvas(p);
+  };
+}
+
+function sketchNoStroke(p) {
+  p.setup = () => {
+    p.createCanvas(120, 80);
+    p.background(255);
+    p.noStroke();
+    p.rect(30, 20, 60, 40);
+
+    autoResizeCanvas(p);
+  };
+}
+
+function sketchFill(p) {
+  p.setup = () => {
+    p.createCanvas(120, 80);
+    p.background(255);
+    p.fill("yellow");
+    p.rect(10, 10, 30, 30);
+    p.fill(255, 0, 0);
+    p.rect(50, 10, 30, 30);
+    p.fill(128);
+    p.rect(90, 10, 20, 30);
+
+    autoResizeCanvas(p);
+  };
+}
+
+function sketchNoFill(p) {
+  p.setup = () => {
+    p.createCanvas(120, 80);
+    p.background(255);
+    p.noFill();
+    p.ellipse(60, 40, 60, 30);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchSize(p) {
   p.setup = () => {
     p.createCanvas(200, 100);
