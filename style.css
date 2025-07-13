@@ -54,12 +54,23 @@ code {
     color: black;
 }
 
+ul {
+    margin: 1rem 1rem;
+}
+
 details {
     margin: var(--box-margin);
 }
 
 details.top {
     margin: 1rem 0;
+}
+
+.important {
+    padding: 0.2rem;
+    background: linear-gradient(to right, #528efc, #bed1f5);
+    border-radius: 0.2rem;
+    text-decoration: underline;
 }
 
 details summary {
@@ -172,8 +183,8 @@ h4 {
 }
 
 div.info {
-    border: 1px dashed black;
-    margin: 1rem;
+    border: 0px solid black;
+    margin: 0rem;
     padding: 1rem;
 }
 
@@ -211,8 +222,4 @@ canvas {
 
 #right {
     margin-left: var(--box-right);
-}
-
-iframe {
-    overflow: hidden;
 }

@@ -4,24 +4,66 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
   </head>
   <body>
     <details class="top">
       <summary id="info">
-        <strong>Anweisungen, Funktionen</strong> und
+        <strong>Kommentare, Anweisungen, Funktionen</strong> und
         <strong>Befehlsblöcke</strong>
       </summary>
+
+      <details class="box-info">
+        <summary>
+          <h4>Kommentare</h4>
+        </summary>
+        <p>
+          Kommentare kann man zur Beschreibung oder zum Debuggen in sein
+          Programm einfügen. Beim Starten des Programms werden die kommentierten
+          Zeilen ignoriert und nicht ausgeführt.
+        </p>
+        <ul>
+          <li>
+            Kommentare sind nützlich, weil das Programm zum einen dadurch sehr
+            viel verständlicher wird. das gilt für einen selbst aber auch für
+            andere, die sich das Programm anschauen.
+          </li>
+          <li>
+            Zum anderen kann man Teile seines Codes auskommentieren, um zum
+            Beispiel Fehler zu suchen oder mit neuen Features zu
+            experimentieren.
+          </li>
+          <li>
+            In Processing gibt es einzeilige ("//") und mehrzeilige Kommentare (
+            /* ... */ ).
+          </li>
+        </ul>
+        <p>Teste es aus !</p>
+        <pre><code> //Das wird ein Beispiel für einen einzeiligen Kommentar
+
+/* Hier wird ein Mehrzeiliger Kommentar geschrieben.
+Alles was jetzt kommt, wird ignoriert
+und nicht als Befehl ausgeführt.
+Es sei denn es kommt ein */
+</code></pre>
+      </details>
+
       <details class="box-info">
         <summary>
           <h4>Anweisungen</h4>
         </summary>
         <div class="info">
           <p>
-            Ein Computerprogramm besteht aus <strong>Anweisungen</strong>.
-            <br />Es gibt unterschiedliche Arten von Anweisungen:
+            Ein Computerprogramm besteht aus unterschiedlichen
+            <strong>Anweisungen</strong>.
           </p>
           <ul>
-            <li><strong>Funktionsaufrufe</strong> (Kapitel 1)</li>
+            <li class="important">
+              <strong>Funktionsaufrufe</strong> (Kapitel 1)
+            </li>
             <li>
               <strong>Variablendeklarationen </strong>und<strong>
                 Wertzuweisungen</strong
@@ -83,12 +125,18 @@ rect(30, 30, 20, 10); //Funktion, die ein Rechteck an der Stelle 30, 30 mit Brei
           <h4>Befehlsblöcke</h4>
         </summary>
         <div class="info">
-          <p>
-            Viele Anweisungen zusammen bilden einen
-            <strong>Befehlsblock</strong>. <br />Wenn Befehlsblöcke in
-            Funktionen, Verzweigungen oder Schleifen stehen, werden sie in
-            Processing von geschweiften Klammern "{ }" umgeben.
-          </p>
+          <ul>
+            <li>
+              Viele Anweisungen zusammen bilden einen
+              <strong>Befehlsblock</strong>.
+            </li>
+            <li>
+              Wenn Befehlsblöcke in Funktionen, Verzweigungen oder Schleifen
+              stehen, werden sie in Processing von geschweiften Klammern "{ }"
+              umgeben.
+            </li>
+          </ul>
+
           <p>
             Hier ein Beispiele für einen Befehlsblock: <br /><br />Teste es aus!
           </p>
@@ -107,198 +155,5 @@ rect(30, 30, 20, 10); //Funktion, die ein Rechteck an der Stelle 30, 30 mit Brei
         </div>
       </details>
     </details>
-    <script>
-      (function () {
-        const css = `
-
-        * {
-        margin: 0;
-        padding: 0}
- :root {
-    --box-padding: 1.5rem;
-    --box-symbol-position-left: 0.2rem;
-    --box-symbol-position-top: 0.2rem;
-    --box-margin: 1rem 0 0 1.2rem;
-    --box-margin-answer: 0 0 0 2.2rem;
-    --box-right: 4rem;
-    --box-radius: 6px;
-    --border-width: 5px;
-}
-
-pre {
-    background-color: darkgray;
-    border-radius: var(--box-radius);
-    padding: 0.5rem;
-}
-
-code {
-    color: black;
-}
-
-details {
-    margin: var(--box-margin);
-}
-
-details.top {
-    margin: 1rem 0;
-}
-
-details summary {
-    list-style: none;
-    /* Entfernt das Standard-Dreieck */
-    cursor: pointer;
-    /* position: relative; */
-    /* padding-left: .2em; */
-}
-
-#question {
-    font-weight: 900;
-    background-color: #ffefb0;
-    background: linear-gradient(to right, #fbe29d, #fff4cc);
-    position: relative;
-    display: block;
-    border-left: 4px solid #ffcc00;
-    padding: var(--box-padding);
-    margin-top: 2rem;
-    border-radius: var(--box-radius);
-}
-
-#question::before {
-    content: "\\2753";
-    position: absolute;
-    font-size: 1rem;
-    left: 0.2rem;
-    top: 0.5rem;
-}
-
-.box-question {
-    position: relative;
-    background-color: #fff9e6;
-    background: linear-gradient(to right, #fffbe0, #ffffff);
-    border-left: 4px solid #ffcc00;
-    padding: var(--box-padding);
-    margin: var(--box-margin);
-    border-radius: var(--box-radius);
-}
-
-.box-question::before {
-    content: "\\2753";
-    position: absolute;
-    font-size: 1rem;
-    font-weight: 100;
-    left: var(--box-symbol-position-left);
-    top: var(--box-symbol-position-top);
-}
-
-.box-answer {
-    position: relative;
-    background-color: #f5f5f5;
-    /* border-left: 4px solid #b3b3b3; */
-    border: 2px ridge black;
-    padding: var(--box-padding);
-    margin: var(--box-margin);
-    border-radius: var(--box-radius);
-}
-
-.box-answer::before {
-    content: "";
-    position: absolute;
-    font-size: 1.5rem;
-    font-weight: 100;
-    left: var(--box-symbol-position-left);
-    top: var(--box-symbol-position-top);
-}
-
-#info {
-    font-weight: 900;
-    background-color: #000000;
-    background: linear-gradient(to right, #3399ff, #b7d2ec);
-    position: relative;
-    display: block;
-    border-left: 4px solid #002c58;
-    padding: var(--box-padding);
-    margin-top: 2rem;
-    border-radius: var(--box-radius);
-}
-
-#info::before {
-    content: "\\2139";
-    position: absolute;
-    font-size: 2rem;
-    left: 0.2rem;
-    top: 0.5rem;
-}
-
-.box-info {
-    position: relative;
-    background-color: #e6f4ff;
-    background: linear-gradient(to right, #e0f2ff, #f0f9ff);
-    border-left: 4px solid #3399ff;
-    padding: var(--box-padding);
-    margin: var(--box-margin);
-    border-radius: var(--box-radius);
-}
-
-.box-info::before {
-    content: "\\2139";
-    position: absolute;
-    font-size: 1rem;
-    font-weight: 900;
-    left: var(--box-symbol-position-left);
-    top: var(--box-symbol-position-top);
-}
-
-h4 {
-    margin: 0;
-}
-
-div.info {
-    border: 1px dashed black;
-    margin: 1rem;
-    padding: 1rem;
-}
-
-.box-warning {
-    position: relative;
-    background-color: #ffe6e6;
-    border-left: 4px solid #ffcc00;
-    padding: var(--box-padding);
-    margin: var(--box-margin);
-    border-radius: var(--box-radius);
-}
-
-.box-warning::before {
-    content: "\\2757";
-    position: absolute;
-    font-size: 1rem;
-    font-weight: 100;
-    left: var(--box-symbol-position-left);
-    top: var(--box-symbol-position-top);
-}
-
-
-
-.box-task {
-    background-color: #e6ffe6;
-    border-left: 4px solid #33cc33;
-    padding: var(--box-padding);
-    margin: var(--box-margin);
-    border-radius: var(--box-radius);
-}
-
-canvas {
-    border: 3px black ridge;
-}
-
-.right {
-    margin-left: var(--box-right);
-}
-  `;
-
-        const style = document.createElement("style");
-        style.innerText = css;
-        document.head.appendChild(style);
-      })();
-    </script>
   </body>
 </html>

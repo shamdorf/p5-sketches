@@ -17,6 +17,14 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchSize(p) {
+  p.setup = () => {
+    p.createCanvas(200, 100);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchPoint(p) {
   p.setup = () => {
     p.createCanvas(100, 100);
