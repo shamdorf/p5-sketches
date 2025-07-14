@@ -303,11 +303,11 @@ function keyReleased() {
         🛠️ Wichtige Befehle/Funktionen in Processing
       </summary>
       <!-- RANDOM -->
-      <details class="box-command">
+      <details class="box-info">
         <summary>🎲 random(min, max)</summary>
         <ul>
           <li>
-            Erzeugt eine **Fließkommazahl (float)** zwischen
+            Erzeugt eine <strong>Fließkommazahl (float)</strong> zwischen
             <code>min</code> und <code>max</code>.
           </li>
           <li>
@@ -326,14 +326,20 @@ void setup() {
   float x = random(width);
   float y = random(height);
   ellipse(x, y, 50, 50);
-}</pre
+}
+
+void keyPressed() {
+  float x = random(width);
+  float y = random(height);
+  ellipse(x, y, 50, 50);
+}
+  </pre
         >
         <div id="sketch-random" class="sketch"></div>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRandom"
         ></iframe>
       </details>
-
       <!-- Size -->
       <details class="box-command">
         <summary>🔲 size(x, y) - <strong>Bildschirmauflösung</strong></summary>

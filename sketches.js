@@ -20,19 +20,16 @@ function autoResizeCanvas(p) {
 function sketchRandom(p) {
   p.setup = () => {
     p.createCanvas(300, 200);
-
     const x = p.random(p.width);
     const y = p.random(p.height);
-
-    p.fill(100, 150, 255);
     p.ellipse(x, y, 50, 50);
-
-    p.fill(0);
-    p.textSize(12);
-    p.textAlign(p.CENTER);
-    p.text("Zufallsposition", x, y + 35);
-
     autoResizeCanvas(p);
+  };
+
+  p.keyPressed = () => {
+    const x = p.random(p.width);
+    const y = p.random(p.height);
+    p.ellipse(x, y, 50, 50);
   };
 }
 
