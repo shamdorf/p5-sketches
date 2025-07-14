@@ -129,8 +129,10 @@ void draw() {
           </li>
         </ul>
         <p>
-          Ein Beispiel mit den Systemvariablen <code>width</code> und
-          <code>height</code>
+          Im folgenden Beispiel wird mit den Systemvariablen
+          <code>width</code> und <code>height</code> ein Kreis in der Mitte des
+          Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
+          Zeichenfensters keine Rolle.
         </p>
         <pre>
 void setup() {
@@ -293,6 +295,61 @@ function keyReleased() {
 }
   </code></pre>
       </div>
+    </details>
+
+    <!-- Wichtige Befehle in Processing -->
+    <details class="top">
+      <summary id="command">
+        🛠️ Wichtige Befehle/Funktionen in Processing
+      </summary>
+      <!-- RANDOM -->
+      <details class="box-command">
+        <summary>🎲 random(min, max)</summary>
+        <ul>
+          <li>
+            Erzeugt eine **Fließkommazahl (float)** zwischen
+            <code>min</code> und <code>max</code>.
+          </li>
+          <li>
+            <code>random(100)</code> → Zahl zwischen <code>0</code> und
+            <code>100</code>.
+          </li>
+          <li>
+            <code>random(50, 100)</code> → Zahl zwischen <code>50</code> und
+            <code>100</code>.
+          </li>
+          <li>Für ganzzahlige Zufallswerte: <code>int(random(...))</code></li>
+        </ul>
+        <pre>
+void setup() {
+  size(300, 200);
+  float x = random(width);
+  float y = random(height);
+  ellipse(x, y, 50, 50);
+}</pre
+        >
+        <div id="sketch-random" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRandom"
+        ></iframe>
+      </details>
+
+      <!-- Size -->
+      <details class="box-command">
+        <summary>🔲 size(x, y) - <strong>Bildschirmauflösung</strong></summary>
+        <p>
+          Mit dem Befehl size(b, h) kann man die Bildschirmauflösung festsetzen.
+          Insgesamt erhält man einen Ausgabebildschirm mit b*h Pixeln.
+        </p>
+        <ul>
+          <li>b - Breite des Bildschirms in Pixeln</li>
+          <li>h - Höhe des Bildschirms in Pixeln</li>
+        </ul>
+        <pre>size(200, 100);</pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSize"
+        ></iframe>
+      </details>
     </details>
   </body>
 </html>
