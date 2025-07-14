@@ -17,6 +17,44 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchMouseInteraction(p) {
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.background(220);
+    autoResizeCanvas(p);
+  };
+  p.draw = () => {
+    p.background(220);
+    p.ellipse(p.mouseX, p.mouseY, 20);
+  };
+}
+
+function sketchVariables(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    let count = 0;
+    p.frameRate(2);
+    p.textSize(20);
+    p.text("Count:", 10, 30);
+    autoResizeCanvas(p);
+  };
+  p.draw = () => {
+    p.clear();
+    p.text("Count: " + p.round(p.frameCount / 2), 10, 50);
+  };
+}
+
+function sketchKeyPress(p) {
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.background(200);
+    autoResizeCanvas(p);
+  };
+  p.keyPressed = () => {
+    p.background(p.random(255), p.random(255), p.random(255));
+  };
+}
+
 function sketchStrokeWeight(p) {
   p.setup = () => {
     p.createCanvas(120, 80);

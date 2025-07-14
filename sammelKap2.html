@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            // Prüfen, ob Nachricht von diesem iframe kam
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <details class="box-info">
+      <summary>🖱 Maus-Tracking</summary>
+      <pre>ellipse(mouseX, mouseY, 20);</pre>
+      <iframe
+        src="https://.../template.html?sketch=sketchMouseInteraction"
+      ></iframe>
+    </details>
+
+    <details class="box-info">
+      <summary>🔢 Variablen & frameCount</summary>
+      <pre>let count = frameCount/2;</pre>
+      <iframe src="https://.../template.html?sketch=sketchVariables"></iframe>
+    </details>
+
+    <details class="box-info">
+      <summary>🎹 Tastendruck verändert Farbe</summary>
+      <pre>void keyPressed() { background(random()); }</pre>
+      <iframe src="https://.../template.html?sketch=sketchKeyPress"></iframe>
+    </details>
+  </body>
+</html>
