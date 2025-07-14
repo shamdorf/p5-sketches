@@ -17,6 +17,20 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchWidthHeight(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    p.ellipse(p.width / 2, p.height / 2, 50, 50);
+
+    p.fill(0);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(12);
+    p.text("Mittelpunkt: width/2, height/2", p.width / 2, p.height / 2 + 40);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchActiveStatic(p) {
   p.setup = () => {
     p.createCanvas(200, 100);
@@ -30,7 +44,7 @@ function sketchActiveStatic(p) {
 
     p.fill(0);
     p.textSize(12);
-    p.text("Aktiver Modus – ellipse folgt Maus", 10, 20);
+    p.text("Aktiver Modus – Ellipse folgt der Maus", 10, 20);
 
     autoResizeCanvas(p);
   };
@@ -82,33 +96,6 @@ function sketchKeyPressed(p) {
   };
 
   autoResizeCanvas(p);
-}
-
-function sketchMouseInteraction(p) {
-  p.setup = () => {
-    p.createCanvas(200, 200);
-    p.background(220);
-    autoResizeCanvas(p);
-  };
-  p.draw = () => {
-    p.background(220);
-    p.ellipse(p.mouseX, p.mouseY, 20);
-  };
-}
-
-function sketchVariables(p) {
-  p.setup = () => {
-    p.createCanvas(300, 100);
-    let count = 0;
-    p.frameRate(2);
-    p.textSize(20);
-    p.text("Count:", 10, 30);
-    autoResizeCanvas(p);
-  };
-  p.draw = () => {
-    p.clear();
-    p.text("Count: " + p.round(p.frameCount / 2), 10, 50);
-  };
 }
 
 function sketchKeyPress(p) {
