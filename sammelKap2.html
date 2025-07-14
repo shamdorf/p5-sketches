@@ -25,24 +25,148 @@
     </script>
   </head>
   <body>
+    <!-- statischer vs aktiver Modus -->
+    <details class="box-info">
+      <summary>🌀 Statischer vs. Aktiver Modus</summary>
+      <p>
+        <strong>Statischer Modus</strong> verwendet nur die
+        <code>setup()</code>-Funktion. Der Code wird einmalig ausgeführt.
+      </p>
+      <pre>
+void setup() {
+  size(200, 200);
+  background(255);
+  ellipse(100, 100, 80, 80);
+}</pre
+      >
+      <p>
+        <strong>Aktiver Modus</strong> nutzt <code>setup()</code> und
+        <code>draw()</code>. Der Code in <code>draw()</code> wird kontinuierlich
+        wiederholt.
+      </p>
+      <pre>
+void setup() {
+  size(200, 200);
+}
+
+void draw() {
+  background(255);
+  ellipse(mouseX, mouseY, 80, 80);
+}</pre
+      >
+      <p>
+        💡 <strong>Draw = Animation oder Interaktion</strong>, weil der
+        Bildschirm viele Male pro Sekunde aktualisiert wird.
+      </p>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActiveStatic"
+        style="border: none"
+      ></iframe>
+    </details>
+
+    <!-- mausinteraktion -->
+    <details class="box-info">
+      <summary>🖱️ Mausinteraktion: mousePressed() und mouseReleased()</summary>
+      <ul>
+        <li>
+          <code>mousePressed()</code>: wird aufgerufen, wenn eine Maustaste
+          gedrückt wird
+        </li>
+        <li>
+          <code>mouseReleased()</code>: wird aufgerufen, wenn die Maustaste
+          losgelassen wird
+        </li>
+      </ul>
+      <pre>
+void setup() {
+  size(200, 200);
+  background(220);
+}
+
+void draw() {
+  // leer
+}
+
+void mousePressed() {
+  fill(0);
+  ellipse(mouseX, mouseY, 20, 20);
+}
+
+void mouseReleased() {
+  fill(255, 0, 0);
+  rect(mouseX - 10, mouseY - 10, 20, 20);
+}</pre
+      >
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMousePressed"
+        style="border: none"
+      ></iframe>
+    </details>
+
+    <!-- Tastaturinteraktion -->
+    <details class="box-info">
+      <summary>⌨️ Tastaturinteraktion: keyPressed() und keyReleased()</summary>
+      <ul>
+        <li>
+          <code>keyPressed()</code>: wird ausgeführt, wenn eine Taste gedrückt
+          wird
+        </li>
+        <li>
+          <code>keyReleased()</code>: wird ausgeführt, wenn die Taste
+          losgelassen wird
+        </li>
+      </ul>
+      <pre>
+void setup() {
+  size(200, 200);
+  background(240);
+}
+
+void draw() {
+  // leer
+}
+
+void keyPressed() {
+  fill(0);
+  textSize(20);
+  text("Taste: " + key, 50, 100);
+}
+
+void keyReleased() {
+  println("Losgelassen: " + key);
+}</pre
+      >
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchKeyPressed"
+        style="border: none"
+      ></iframe>
+    </details>
+
+    <!-- Maustracking -->
     <details class="box-info">
       <summary>🖱 Maus-Tracking</summary>
       <pre>ellipse(mouseX, mouseY, 20);</pre>
       <iframe
-        src="https://.../template.html?sketch=sketchMouseInteraction"
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMouseInteraction"
       ></iframe>
     </details>
 
+    <!-- Variablen -->
     <details class="box-info">
       <summary>🔢 Variablen & frameCount</summary>
       <pre>let count = frameCount/2;</pre>
-      <iframe src="https://.../template.html?sketch=sketchVariables"></iframe>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariables"
+      ></iframe>
     </details>
 
+    <!-- Keyboard -->
     <details class="box-info">
       <summary>🎹 Tastendruck verändert Farbe</summary>
       <pre>void keyPressed() { background(random()); }</pre>
-      <iframe src="https://.../template.html?sketch=sketchKeyPress"></iframe>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchKeyPress"
+      ></iframe>
     </details>
   </body>
 </html>

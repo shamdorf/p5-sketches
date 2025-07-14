@@ -17,6 +17,73 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchActiveStatic(p) {
+  p.setup = () => {
+    p.createCanvas(200, 100);
+    p.background(255);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(100, 150, 200);
+    p.ellipse(p.mouseX, p.mouseY, 40, 40);
+
+    p.fill(0);
+    p.textSize(12);
+    p.text("Aktiver Modus – ellipse folgt Maus", 10, 20);
+
+    autoResizeCanvas(p);
+  };
+}
+
+function sketchMousePressed(p) {
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.background(240);
+  };
+
+  p.draw = () => {
+    // nichts
+  };
+
+  p.mousePressed = () => {
+    p.fill(0);
+    p.ellipse(p.mouseX, p.mouseY, 20, 20);
+  };
+
+  p.mouseReleased = () => {
+    p.fill(255, 0, 0);
+    p.rect(p.mouseX - 10, p.mouseY - 10, 20, 20);
+  };
+
+  autoResizeCanvas(p);
+}
+
+function sketchKeyPressed(p) {
+  let lastKey = "";
+
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.background(255);
+    p.textSize(32);
+    p.textAlign(p.CENTER, p.CENTER);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+    p.text("Taste: " + lastKey, p.width / 2, p.height / 2);
+
+    autoResizeCanvas(p);
+  };
+
+  p.keyPressed = () => {
+    lastKey = p.key;
+  };
+
+  autoResizeCanvas(p);
+}
+
 function sketchMouseInteraction(p) {
   p.setup = () => {
     p.createCanvas(200, 200);
