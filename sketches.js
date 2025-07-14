@@ -17,6 +17,24 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchVariablen(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+
+    let x = 100;
+    let y = 150.5;
+    let text = "Hallo!";
+    let sichtbar = true;
+
+    if (sichtbar) {
+      p.textSize(20);
+      p.text(text, x, y);
+    }
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchText(p) {
   p.setup = () => {
     p.createCanvas(300, 200);

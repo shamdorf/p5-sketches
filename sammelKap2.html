@@ -344,8 +344,11 @@ void keyPressed() {
       </details>
 
       <!-- TEXT -->
-      <details class="box-info">
-        <summary>📝 text(txt, x, y)</summary>
+      <details class="box-command">
+        <summary>
+          📝 <code>text(txt, x, y)</code> -
+          <strong>Textausgabe auf dem Bildschirm</strong>
+        </summary>
         <ul>
           <li>
             <code>text(txt, x, y)</code>: Zeigt den Text <code>txt</code> an
@@ -372,6 +375,73 @@ void setup() {
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchText"
         ></iframe>
       </details>
+    </details>
+
+    <!-- Variablen -->
+    <!-- VARIABLEN -->
+    <details class="box-info">
+      <summary>📦 Variablen verstehen und verwenden</summary>
+      <ul>
+        <li>
+          <strong>Wofür?</strong> Variablen speichern Werte, die sich ändern
+          oder mehrfach verwendet werden.
+        </li>
+        <li>
+          <strong>Deklaration</strong>: Festlegen des Namens und Typs einer
+          Variable. <br /><code>int x;</code>
+        </li>
+        <li>
+          <strong>Initialisierung</strong>: Zuweisen eines Anfangswerts.
+          <br /><code>int x = 50;</code>
+        </li>
+        <li>
+          <strong>Verwendung</strong>: Danach kann der Wert gelesen oder
+          verändert werden.
+        </li>
+      </ul>
+
+      <p><strong>Wichtige Datentypen:</strong></p>
+      <ul>
+        <li>
+          <code>int</code> – ganze Zahl (z. B. <code>int zahl = 10;</code>)
+        </li>
+        <li>
+          <code>float</code> – Kommazahl (z. B. <code>float x = 3.14;</code>)
+        </li>
+        <li>
+          <code>char</code> – einzelnes Zeichen (z. B.
+          <code>char c = 'A';</code>)
+        </li>
+        <li>
+          <code>boolean</code> – wahr/falsch (z. B.
+          <code>boolean aktiv = true;</code>)
+        </li>
+        <li>
+          <code>String</code> – Textkette (z. B.
+          <code>String name = "Anna";</code>)
+        </li>
+      </ul>
+
+      <pre>
+int x = 100;
+float y = 150.5;
+String text = "Hallo!";
+boolean sichtbar = true;
+
+void setup() {
+  size(300, 200);
+  if (sichtbar) {
+    textSize(20);
+    text(text, x, y);
+  }
+}
+  </pre
+      >
+
+      <div id="sketch-variablen" class="sketch"></div>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
+      ></iframe>
     </details>
   </body>
 </html>
