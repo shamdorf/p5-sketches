@@ -303,8 +303,10 @@ function keyReleased() {
         🛠️ Wichtige Befehle/Funktionen in Processing
       </summary>
       <!-- RANDOM -->
-      <details class="box-info">
-        <summary>🎲 random(min, max)</summary>
+      <details class="box-command">
+        <summary>
+          🎲 <code>random(min, max)</code> - <strong>Zufallszahlen</strong>
+        </summary>
         <ul>
           <li>
             Erzeugt eine <strong>Fließkommazahl (float)</strong> zwischen
@@ -340,20 +342,34 @@ void keyPressed() {
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRandom"
         ></iframe>
       </details>
-      <!-- Size -->
-      <details class="box-command">
-        <summary>🔲 size(x, y) - <strong>Bildschirmauflösung</strong></summary>
-        <p>
-          Mit dem Befehl size(b, h) kann man die Bildschirmauflösung festsetzen.
-          Insgesamt erhält man einen Ausgabebildschirm mit b*h Pixeln.
-        </p>
+
+      <!-- TEXT -->
+      <details class="box-info">
+        <summary>📝 text(txt, x, y)</summary>
         <ul>
-          <li>b - Breite des Bildschirms in Pixeln</li>
-          <li>h - Höhe des Bildschirms in Pixeln</li>
+          <li>
+            <code>text(txt, x, y)</code>: Zeigt den Text <code>txt</code> an
+            Position <code>x</code>, <code>y</code>.
+          </li>
+          <li><code>textSize(größe)</code>: Legt die Schriftgröße fest.</li>
+          <li>
+            <code>textAlign(horiz, vert)</code>: Textausrichtung – z. B.
+            <code>LEFT</code>, <code>CENTER</code>, <code>RIGHT</code> und
+            <code>TOP</code>, <code>BOTTOM</code>, <code>CENTER</code>.
+          </li>
         </ul>
-        <pre>size(200, 100);</pre>
+        <pre>
+void setup() {
+  size(300, 200);
+  textSize(24);
+  textAlign(CENTER, CENTER);
+  text("Hallo Welt", width / 2, height / 2);
+}
+  </pre
+        >
+        <div id="sketch-text" class="sketch"></div>
         <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSize"
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchText"
         ></iframe>
       </details>
     </details>

@@ -17,6 +17,17 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchText(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    p.textSize(24);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.text("Hallo Welt", p.width / 2, p.height / 2);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchRandom(p) {
   p.setup = () => {
     p.createCanvas(300, 200);
