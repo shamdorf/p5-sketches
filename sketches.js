@@ -107,6 +107,7 @@ function sketchRandom(p) {
     const x = p.random(p.width);
     const y = p.random(p.height);
     p.ellipse(x, y, 50, 50);
+    p.text("Drücke eine Taste!", 20, 20);
     autoResizeCanvas(p);
   };
 

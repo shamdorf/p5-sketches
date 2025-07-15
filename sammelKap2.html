@@ -44,17 +44,19 @@
           </li>
         </ul>
 
-        <pre>
+        <div class="example">
+          <pre>
 size(300, 200);
 background(240);
 fill(255, 0, 0);
 ellipse(150, 100, 100, 100);</pre
-        >
+          >
 
-        <div id="sketch-static" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStatic"
-        ></iframe>
+          <div id="sketch-static" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStatic"
+          ></iframe>
+        </div>
       </details>
 
       <!-- statischer vs aktiver Modus -->
@@ -81,7 +83,13 @@ ellipse(150, 100, 100, 100);</pre
             Standardmäßig mit 60 FPS (Frames Per Second).
           </li>
         </ul>
-        <pre>
+
+        <div class="example">
+          <p>
+            Beispiel für eine Interaktion mit der Maus. Die Ellipse wird immer
+            wieder neu an den Mauskordinaten gerendert.
+          </p>
+          <pre>
 void setup() {
   size(300, 200);
 }
@@ -91,11 +99,12 @@ void draw() {
   ellipse(mouseX, mouseY, 50, 50);
 }
   </pre
-        >
+          >
 
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
-        ></iframe>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
+          ></iframe>
+        </div>
         <ul class="box-warning">
           <li>
             Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
@@ -290,6 +299,7 @@ void setup() {
   float x = random(width);
   float y = random(height);
   ellipse(x, y, 50, 50);
+  text("Drücke eine Taste!", 20, 20);
 }
 
 void keyPressed() {
@@ -373,7 +383,7 @@ void setup() {
             bewegt. Mit einem Tastendruck startet er von vorne.
           </p>
           <pre>
-int x = 0;
+int x = 0;  //Deklaration mit Initialisierung
 
 void setup() {
   size(400, 200);
@@ -383,7 +393,7 @@ void draw() {
   background(255);
   text("Drücke eine Taste!", 40, 40);
   ellipse(x, 100, 50, 50);
-  x = x + 2;
+  x = x + 2;  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
 }
 
 void keyPressed() {
