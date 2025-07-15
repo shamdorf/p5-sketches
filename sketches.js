@@ -17,6 +17,20 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchSystemDisplaySize(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.background(240);
+
+    p.textSize(12);
+    p.textAlign(p.LEFT, p.TOP);
+    p.text("displayWidth: " + p.displayWidth, 10, 20);
+    p.text("displayHeight: " + p.displayHeight, 10, 40);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchSystemWidth(p) {
   p.setup = () => {
     p.createCanvas(300, 100);
