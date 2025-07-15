@@ -17,6 +17,22 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchIncrement(p) {
+  let x = 0;
+
+  p.setup = () => {
+    p.createCanvas(300, 100);
+  };
+
+  p.draw = () => {
+    p.background(240);
+    p.ellipse(x, p.height / 2, 30, 30);
+    x += 2;
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchVariableExample(p) {
   let x = 100;
 

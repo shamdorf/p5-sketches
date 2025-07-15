@@ -584,6 +584,41 @@ void setup() {
         </div>
       </details>
 
+      <details class="box-info">
+  <summary>🧮 Wertzuweisung & Erhöhung von Variablen</summary>
+  <ul>
+    <li>Eine **Wertzuweisung** ändert den aktuellen Wert einer Variable.</li>
+    <li><code>x = 5;</code> – x bekommt den Wert 5.</li>
+  </ul>
+
+  <h4>📈 Variable erhöhen</h4>
+  <ul>
+    <li><code>x = x + 1;</code> – Addiert 1 zu x (Standardform)</li>
+    <li><code>x++;</code> – Kurzform für <code>x = x + 1</code></li>
+    <li><code>x += 1;</code> – Addiert ebenfalls 1, funktioniert aber auch mit anderen Werten (<code>x += 5;</code>)</li>
+  </ul>
+
+  <h4>📚 Beispiel</h4>
+  <pre>
+int x = 0;
+
+void setup() {
+  size(300, 100);
+}
+
+void draw() {
+  background(240);
+  ellipse(x, height/2, 30, 30);
+  x += 2;
+}
+  </pre>
+
+  <div id="sketch-increment" class="sketch"></div>
+  <iframe
+    src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIncrement"
+  ></iframe>
+</details>
+
       
     </details>
   </body>
