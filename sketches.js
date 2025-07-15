@@ -17,6 +17,197 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchSystemWidth(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textSize(16);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("Breite: " + p.width, 10, 50);
+  };
+}
+
+function sketchSystemHeight(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textSize(16);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("Höhe: " + p.height, 10, 50);
+  };
+}
+
+function sketchSystemMouseXY(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(220);
+    p.fill(0);
+    p.ellipse(p.mouseX, p.mouseY, 30, 30);
+  };
+}
+
+function sketchSystemPmouse(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    p.background(255);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.stroke(0);
+    p.line(p.pmouseX, p.pmouseY, p.mouseX, p.mouseY);
+  };
+}
+
+function sketchSystemMousePressed(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(220);
+    if (p.mouseIsPressed) {
+      p.fill(0);
+    } else {
+      p.fill(200);
+    }
+    p.ellipse(150, 100, 50, 50);
+  };
+}
+
+function sketchSystemMouseButton(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    if (p.mouseIsPressed) {
+      if (p.mouseButton === p.LEFT) {
+        p.background(255, 0, 0);
+      } else if (p.mouseButton === p.RIGHT) {
+        p.background(0, 0, 255);
+      } else if (p.mouseButton === p.CENTER) {
+        p.background(0, 255, 0);
+      }
+    } else {
+      p.background(220);
+    }
+  };
+}
+
+function sketchSystemKey(p) {
+  let lastKey = "";
+
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.textSize(32);
+    p.textAlign(p.CENTER, p.CENTER);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("Taste: " + lastKey, p.width / 2, p.height / 2);
+  };
+
+  p.keyPressed = () => {
+    lastKey = p.key;
+  };
+}
+
+function sketchSystemKeyCode(p) {
+  let code = 0;
+
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.textSize(24);
+    p.textAlign(p.CENTER, p.CENTER);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("Code: " + code, p.width / 2, p.height / 2);
+  };
+
+  p.keyPressed = () => {
+    code = p.keyCode;
+  };
+}
+
+function sketchSystemKeyPressed(p) {
+  let isPressed = false;
+
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(isPressed ? 0 : 255);
+  };
+
+  p.keyPressed = () => {
+    isPressed = true;
+  };
+
+  p.keyReleased = () => {
+    isPressed = false;
+  };
+}
+
+function sketchSystemFrameRate(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textSize(16);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("frameRate: " + p.nf(p.frameRate(), 2, 2), 10, 50);
+  };
+}
+
+function sketchSystemFrameCount(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textSize(16);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("frameCount: " + p.frameCount, 10, 50);
+  };
+}
+
+function sketchSystemDisplay(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textSize(12);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.text("displayWidth: " + p.displayWidth, 10, 40);
+    p.text("displayHeight: " + p.displayHeight, 10, 70);
+  };
+}
+
 function sketchScope(p) {
   let x = 50; // global
 
