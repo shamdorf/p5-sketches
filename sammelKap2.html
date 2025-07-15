@@ -219,6 +219,63 @@ void keyPressed() {
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchKeyPress"
         ></iframe>
       </details>
+
+      <!-- SYSTEMVARIABLEN -->
+      <details class="box-info">
+        <summary>
+          🧭 Systemvariablen: <code>width</code>, <code>height</code>,
+          <code>key</code>, <code>keyCode</code>, <code>mouseX</code>,
+          <code>mouseY</code>
+        </summary>
+        <p>
+          Systemvariablen sind Variablen, die Processing bereitstellt. Darin
+          sind unter anderem die Größe des Zeichenfensters, die Mauskoordinaten
+          oder die zuletzt gedrückten Tasten auf der Tastatur gespeichert.
+        </p>
+        <ul>
+          <li><strong>width</strong>: Aktuelle Breite des Zeichenfensters.</li>
+          <li><strong>height</strong>: Aktuelle Höhe des Zeichenfensters.</li>
+          <li>
+            <strong>mouseX</strong>: Aktuelle X-Position der Maus relativ zum
+            Canvas.
+          </li>
+          <li>
+            <strong>mouseY</strong>: Aktuelle Y-Position der Maus relativ zum
+            Canvas.
+          </li>
+          <li>
+            <strong>key</strong>: Zeichen der gedrückten Taste (z. B.
+            <code>'a'</code>, <code>'Z'</code>).
+          </li>
+          <li>
+            <strong>keyCode</strong>: Code der gedrückten Taste – nötig für
+            Sondertasten wie <code>UP_ARROW</code>, <code>ENTER</code>,
+            <code>SHIFT</code>.
+          </li>
+        </ul>
+        <h4>Beispiel</h4> 
+        <p>Mit den Systemvariablen <code>width</code> und <code>height</code> wird ein Kreis in der
+            Mitte des Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
+            Zeichenfensters keine Rolle.
+          </h4>
+          <pre>
+void setup() {
+  size(300, 200);
+  ellipse(width/2, height/2, 50, 50);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(12);
+  text("Mittelpunkt: width/2, height/2", width/2, height/2 + 40);
+}
+  </pre
+          >
+          <div id="sketch-width-height" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
+          ></iframe>
+       
+          
+      </details>
     </details>
 
     <!-- Commands - AKTIVER MODUS (GRUNDGERÜSTE) -->
@@ -264,6 +321,14 @@ function keyReleased() {
   </code></pre>
       </div>
     </details>
+
+    <!-- Aufgabebutton 1.1-->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_1_5"
+      >Übungsaufgaben 2.1a bis 2.1k</a
+    >
 
     <!-- Wichtige Befehle in Processing -->
     <details class="top">
@@ -348,6 +413,14 @@ void setup() {
         ></iframe>
       </details>
     </details>
+
+     <!-- Aufgabebutton 1.1-->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_2_4"
+      >Übungsaufgaben 2.2a bis 2.2d</a
+    >
 
     <!-- Variablen -->
     <!-- VARIABLEN GRUNDLAGEN -->
@@ -511,62 +584,7 @@ void setup() {
         </div>
       </details>
 
-      <!-- SYSTEMVARIABLEN -->
-      <details class="box-info">
-        <summary>
-          🧭 Systemvariablen: <code>width</code>, <code>height</code>,
-          <code>key</code>, <code>keyCode</code>, <code>mouseX</code>,
-          <code>mouseY</code>
-        </summary>
-        <p>
-          Systemvariablen sind Variablen, die Processing bereitstellt. Darin
-          sind unter anderem die Größe des Zeichenfensters, die Mauskoordinaten
-          oder die zuletzt gedrückten Tasten auf der Tastatur gespeichert.
-        </p>
-        <ul>
-          <li><strong>width</strong>: Aktuelle Breite des Zeichenfensters.</li>
-          <li><strong>height</strong>: Aktuelle Höhe des Zeichenfensters.</li>
-          <li>
-            <strong>mouseX</strong>: Aktuelle X-Position der Maus relativ zum
-            Canvas.
-          </li>
-          <li>
-            <strong>mouseY</strong>: Aktuelle Y-Position der Maus relativ zum
-            Canvas.
-          </li>
-          <li>
-            <strong>key</strong>: Zeichen der gedrückten Taste (z. B.
-            <code>'a'</code>, <code>'Z'</code>).
-          </li>
-          <li>
-            <strong>keyCode</strong>: Code der gedrückten Taste – nötig für
-            Sondertasten wie <code>UP_ARROW</code>, <code>ENTER</code>,
-            <code>SHIFT</code>.
-          </li>
-        </ul>
-        <h4>Beispiel</h4> 
-        <p>Mit den Systemvariablen <code>width</code> und <code>height</code> wird ein Kreis in der
-            Mitte des Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
-            Zeichenfensters keine Rolle.
-          </h4>
-          <pre>
-void setup() {
-  size(300, 200);
-  ellipse(width/2, height/2, 50, 50);
-  fill(0);
-  textAlign(CENTER, CENTER);
-  textSize(12);
-  text("Mittelpunkt: width/2, height/2", width/2, height/2 + 40);
-}
-  </pre
-          >
-          <div id="sketch-width-height" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
-          ></iframe>
-       
-          
-      </details>
+      
     </details>
   </body>
 </html>
