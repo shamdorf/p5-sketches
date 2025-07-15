@@ -46,9 +46,9 @@
 
         <pre>
 size(300, 200);
-  background(240);
-  fill(255, 0, 0);
-  ellipse(150, 100, 100, 100);</pre
+background(240);
+fill(255, 0, 0);
+ellipse(150, 100, 100, 100);</pre
         >
 
         <div id="sketch-static" class="sketch"></div>
@@ -92,6 +92,10 @@ void draw() {
 }
   </pre
         >
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
+        ></iframe>
         <ul class="box-warning">
           <li>
             Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
@@ -104,9 +108,6 @@ void draw() {
           </li>
         </ul>
         <br />
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
-        ></iframe>
       </details>
 
       <!-- mausinteraktion -->
@@ -267,7 +268,7 @@ function keyReleased() {
         </summary>
         <ul>
           <li>
-            Erzeugt eine <strong>Fließkommazahl (float)</strong> zwischen
+            Erzeugt eine <strong>Kommazahl (float)</strong> zwischen
             <code>min</code> und <code>max</code>.
           </li>
           <li>
@@ -278,7 +279,10 @@ function keyReleased() {
             <code>random(50, 100)</code> → Zahl zwischen <code>50</code> und
             <code>100</code>.
           </li>
-          <li>Für ganzzahlige Zufallswerte: <code>int(random(...))</code></li>
+          <li>
+            Für ganzzahlige Zufallswerte:
+            <code>int(random(...)) oder (int) random(...)</code>
+          </li>
         </ul>
         <pre>
 void setup() {
@@ -339,13 +343,12 @@ void setup() {
     <!-- VARIABLEN GRUNDLAGEN -->
     <details class="top">
       <summary id="info">Variablen</summary>
-      <details>
-        <summary class="box-info">
-          🧠 Motivation - Warum braucht man Variablen?
-        </summary>
+      <details class="box-info">
+        <summary>🧠 Motivation - Warum braucht man Variablen?</summary>
         <p>
-          Variablen sind ein Konzept, was es in jeder Programmiersprache gibt.
-          Es sind "Behälter", die Werte speichern können. Wofür braucht man sie?
+          Variablen gibt es in jeder Programmiersprache. Es sind "Behälter", die
+          Werte speichern können. <br /><br />
+          <strong>Wofür braucht man sie?</strong>
         </p>
         <ul>
           <li>
@@ -364,11 +367,12 @@ void setup() {
             werden.
           </li>
         </ul>
-        <p>
-          Beispiel einer Animation eines Balls, der sich über den Bildschirm
-          bewegt. Mit einem Tastendruck startet er von vorne.
-        </p>
-        <pre>
+        <div class="example">
+          <p>
+            Beispiel einer Animation eines Balls, der sich über den Bildschirm
+            bewegt. Mit einem Tastendruck startet er von vorne.
+          </p>
+          <pre>
 int x = 0;
 
 void setup() {
@@ -377,6 +381,7 @@ void setup() {
 
 void draw() {
   background(255);
+  text("Drücke eine Taste!", 40, 40);
   ellipse(x, 100, 50, 50);
   x = x + 2;
 }
@@ -384,35 +389,69 @@ void draw() {
 void keyPressed() {
   x = 0; // Bei Tastendruck Startposition zurücksetzen
 }</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
-        ></iframe>
+          >
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
+          ></iframe>
+        </div>
       </details>
-      <details>
-        <summary class="box-info">🔧 Deklaration & Initialisierung</summary>
+
+      <details class="box-info">
+        <summary>🔧 Deklaration & Initialisierung</summary>
         <p>
           Damit man Variablen benutzen kann, muss man sie dem
-          Compiler/Interpreter "bekanntmachen" - deklarieren. Außerdem sollte
-          eine Variable einen Initialwert bekommen.
+          Compiler/Interpreter <strong>"bekanntmachen" - deklarieren</strong> .
+          Außerdem sollte eine Variable einen
+          <strong>Initialwert bekommen</strong>.
         </p>
+        <p>🛠️ <strong>Deklaration</strong></p>
         <ul>
+          <li>Dabei wird eine Variable „angekündigt“: <code>int x;</code></li>
           <li>
-            <strong>Deklaration:</strong> Der Datentyp und der Name werden
-            festgelegt. <br /><code>int x;</code>
-          </li>
-          <li>
-            <strong>Initialisierung:</strong> Zusätzlich wird ein Startwert
-            zugewiesen. <br /><code>int x = 100;</code>
-          </li>
-          <li>
-            <strong>Verwendung:</strong> Danach kann der Wert genutzt oder
-            verändert werden.
+            Man teilt dem Programm den Namen und den Datentyp der Variable mit.
           </li>
         </ul>
+
+        <p>🎯 <strong>Initialisierung</strong></p>
+        <ul>
+          <li>
+            Der Variable wird ein Startwert zugewiesen: <code>x = 100;</code>
+          </li>
+          <li>Beides zusammen: <code>int x = 100;</code> → sehr häufig!</li>
+        </ul>
+
+        <p>🔁 <strong>Verwendung</strong></p>
+        <ul>
+          <li>
+            Einmal gespeichert, kann der Wert im Programm verwendet werden:
+          </li>
+          <li><code>ellipse(x, 50, 30, 30);</code></li>
+        </ul>
+        <div class="example">
+          <p>
+            📚 Beispiel für das Erstellen einer Zahl-Variablen und deren
+            Verwendung beim Zeichnen einer Ellipse.
+          </p>
+          <pre>
+int x = 100;
+
+void setup() {
+  size(300, 150);
+  ellipse(x, 75, 50, 50);
+}
+  </pre
+          >
+
+          <div id="sketch-variable-example" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariableExample"
+          ></iframe>
+        </div>
       </details>
-      <details>
-        <summary class="box-info">📚 Wichtige Datentypen</summary>
+
+      <!-- wichtige Datentypen -->
+      <details class="box-info">
+        <summary>📚 Wichtige Datentypen</summary>
 
         <ul>
           <li><code>int</code> – ganze Zahl, z. B. <code>int z = 10;</code></li>
@@ -431,8 +470,15 @@ void keyPressed() {
             <code>String</code> – Text, z. B. <code>String name = "Luna";</code>
           </li>
         </ul>
-
-        <pre>
+        <div class="example">
+          <p>
+            Hier werden verschiedene Datentypen erstellt. Mit einer
+            <strong>Verzweigung</strong>
+            wird die boolesche Variable "sichtbar" geprüft. Wenn sie true ist,
+            wir ein Text auf dem Bildschirm geschrieben. Der Text und dessen
+            Koordinaten sind ebenfalls in Variablen gespeichert.
+          </p>
+          <pre>
 int x = 100;       // Ganzzahl speichern
 float y = 150.5;   // Kommazahl
 String text = "Hallo!";
@@ -446,17 +492,18 @@ void setup() {
   }
 }
   </pre
-        >
+          >
 
-        <div id="sketch-variablen" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
-        ></iframe>
+          <div id="sketch-variablen" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
+          ></iframe>
+        </div>
       </details>
 
       <!-- SYSTEMVARIABLEN -->
-      <details>
-        <summary class="box-info">
+      <details class="box-info">
+        <summary>
           🧭 Systemvariablen: <code>width</code>, <code>height</code>,
           <code>key</code>, <code>keyCode</code>, <code>mouseX</code>,
           <code>mouseY</code>
@@ -487,13 +534,14 @@ void setup() {
             <code>SHIFT</code>.
           </li>
         </ul>
-        <p>
-          Im folgenden Beispiel wird mit den Systemvariablen
-          <code>width</code> und <code>height</code> ein Kreis in der Mitte des
-          Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
-          Zeichenfensters keine Rolle.
-        </p>
-        <pre>
+        <div class="example">
+          <p>
+            Beispiel mit den Systemvariablen
+            <code>width</code> und <code>height</code>Es wird ein Kreis in der
+            Mitte des Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
+            Zeichenfensters keine Rolle.
+          </p>
+          <pre>
 void setup() {
   size(300, 200);
   ellipse(width/2, height/2, 50, 50);
@@ -503,11 +551,12 @@ void setup() {
   text("Mittelpunkt: width/2, height/2", width/2, height/2 + 40);
 }
   </pre
-        >
-        <div id="sketch-width-height" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
-        ></iframe>
+          >
+          <div id="sketch-width-height" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
+          ></iframe>
+        </div>
       </details>
     </details>
   </body>

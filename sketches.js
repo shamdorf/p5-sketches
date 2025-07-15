@@ -17,6 +17,16 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchVariableExample(p) {
+  let x = 100;
+
+  p.setup = () => {
+    p.createCanvas(300, 150);
+    p.ellipse(x, 75, 50, 50);
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchBallMoveReset(p) {
   let x = 0;
 
@@ -26,6 +36,7 @@ function sketchBallMoveReset(p) {
 
   p.draw = () => {
     p.background(255);
+    p.text("Drücke eine Taste!", 40, 40);
     p.ellipse(x, 100, 50, 50);
     x = x + 2;
   };

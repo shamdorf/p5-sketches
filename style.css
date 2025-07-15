@@ -257,7 +257,7 @@ div.info {
 }
 
 canvas {
-    border: 2px black ridge;
+    border: 1px black solid;
 }
 
 #right {
@@ -304,4 +304,9 @@ a.task {
     box-shadow: 0 4px 12px rgba(80, 120, 200, 0.18);
     transform: translateY(-2px) scale(1.03);
     outline: none;
+}
+
+.example {
+    border: 3px ridge black;
+    padding: 1rem;
 }
