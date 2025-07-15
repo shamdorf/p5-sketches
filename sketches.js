@@ -17,6 +17,123 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchModuloColorSwitch(p) {
+  let index = 0;
+
+  p.setup = () => {
+    p.createCanvas(250, 100);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(14);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    let mod = index % 3;
+    if (mod === 0) p.background(255, 0, 0); // rot
+    else if (mod === 1) p.background(0, 255, 0); // grün
+    else p.background(0, 0, 255); // blau
+
+    p.fill(255);
+    p.text("Index: " + index + " → % 3 = " + mod, p.width / 2, p.height / 2);
+  };
+
+  p.mousePressed = () => {
+    index++;
+  };
+}
+
+function sketchModuloEvenOdd(p) {
+  let zahl = 0;
+
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textSize(16);
+    p.textAlign(p.CENTER, p.CENTER);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    let istGerade = zahl % 2 == 0;
+    let text = "Zahl " + zahl + " ist " + (istGerade ? "gerade" : "ungerade");
+    p.text(text, p.width / 2, p.height / 2);
+  };
+
+  p.mousePressed = () => {
+    zahl++;
+  };
+}
+
+function sketchDecrementOperator(p) {
+  let x = 10;
+
+  p.setup = () => {
+    p.createCanvas(250, 100);
+    p.textSize(20);
+    p.textAlign(p.CENTER, p.CENTER);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(240);
+    p.fill(0);
+    p.text("x = " + x, p.width / 2, p.height / 2);
+  };
+
+  p.mousePressed = () => {
+    x--;
+  };
+}
+
+function sketchIncrementOperator(p) {
+  let x = 0;
+
+  p.setup = () => {
+    p.createCanvas(250, 100);
+    p.textSize(20);
+    p.textAlign(p.CENTER, p.CENTER);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(240);
+    p.fill(0);
+    p.text("x = " + x, p.width / 2, p.height / 2);
+  };
+
+  p.mousePressed = () => {
+    x++;
+  };
+}
+
+function sketchGrundrechenarten(p) {
+  p.setup = () => {
+    p.createCanvas(360, 130);
+    p.textSize(14);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    let a = 10;
+    let b = 4;
+
+    let summe = a + b;
+    let differenz = a - b;
+    let produkt = a * b;
+    let division = a / b; // Ganzzahlig
+    let floatDivision = a / 4.0; // Gleitkomma
+
+    p.fill(0);
+    p.text("a = " + a + ", b = " + b, 10, 20);
+    p.text("a + b = " + summe, 10, 40);
+    p.text("a - b = " + differenz, 10, 60);
+    p.text("a * b = " + produkt, 10, 80);
+    p.text("a / b = " + division + " (Ganzzahlig)", 10, 100);
+    p.text("a / 4.0 = " + floatDivision + " (Float)", 10, 120);
+  };
+}
+
 function sketchSystemDisplaySize(p) {
   p.setup = () => {
     p.createCanvas(300, 100);

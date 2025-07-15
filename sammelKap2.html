@@ -672,63 +672,6 @@ void draw() {
     >
 
     <!-- SYSTEMVARIABLEN -->
-    <details class="box-info">
-      <summary>
-        🧭 Systemvariablen: <code>width</code>, <code>height</code>,
-        <code>key</code>, <code>keyCode</code>, <code>mouseX</code>,
-        <code>mouseY</code>
-      </summary>
-      <p>
-        Systemvariablen sind Variablen, die Processing bereitstellt. Darin sind
-        unter anderem die Größe des Zeichenfensters, die Mauskoordinaten oder
-        die zuletzt gedrückten Tasten auf der Tastatur gespeichert.
-      </p>
-      <ul>
-        <li><strong>width</strong>: Aktuelle Breite des Zeichenfensters.</li>
-        <li><strong>height</strong>: Aktuelle Höhe des Zeichenfensters.</li>
-        <li>
-          <strong>mouseX</strong>: Aktuelle X-Position der Maus relativ zum
-          Canvas.
-        </li>
-        <li>
-          <strong>mouseY</strong>: Aktuelle Y-Position der Maus relativ zum
-          Canvas.
-        </li>
-        <li>
-          <strong>key</strong>: Zeichen der gedrückten Taste (z. B.
-          <code>'a'</code>, <code>'Z'</code>).
-        </li>
-        <li>
-          <strong>keyCode</strong>: Code der gedrückten Taste – nötig für
-          Sondertasten wie <code>UP_ARROW</code>, <code>ENTER</code>,
-          <code>SHIFT</code>.
-        </li>
-      </ul>
-      <h4>Beispiel</h4>
-      <p>
-        Mit den Systemvariablen <code>width</code> und <code>height</code> wird
-        ein Kreis in der Mitte des Zeichenfensters gezeichnet. Dabei spielt die
-        Auflösung des Zeichenfensters keine Rolle.
-      </p>
-
-      <pre>
-void setup() {
-  size(300, 200);
-  ellipse(width/2, height/2, 50, 50);
-  fill(0);
-  textAlign(CENTER, CENTER);
-  textSize(12);
-  text("Mittelpunkt: width/2, height/2", width/2, height/2 + 40);
-}
-  </pre
-      >
-      <div id="sketch-width-height" class="sketch"></div>
-      <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
-      ></iframe>
-    </details>
-
-    <!-- SYSTEMVARIABLEN -->
     <details class="top">
       <summary id="command">🧠 Systemvariablen</summary>
 
@@ -976,5 +919,83 @@ void setup() {
       href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_7_5"
       >Übungsaufgaben 2.7a bis 2.7c</a
     >
+
+    <details class="top">
+      <summary id="info">Operatoren bei Variablen</summary>
+
+      <details class="box-info">
+        <summary>Grundrechenarten mit Variablen</summary>
+        <pre><code>int a = 10;
+int b = 4;
+
+int summe = a + b;      // Addition → 14
+int differenz = a - b;  // Subtraktion → 6
+int produkt = a * b;    // Multiplikation → 40
+float division = a / (float)b;  // Division → 2.5</code></pre>
+
+        <p>
+          Beim Dividieren in <strong>Processing</strong> musst du darauf achten,
+          dass du eine <code>float</code>-Division bekommst, sonst wird bei
+          <code>int / int</code> abgerundet!
+        </p>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrundrechenarten"
+        ></iframe>
+      </details>
+
+      <details class="box-info">
+        <summary>Increment-Operator (++): Erhöhe den Wert um 1</summary>
+        <pre><code>int x = 3;
+x++;  // x ist jetzt 4</code></pre>
+
+        <p>
+          Der Operator <code>++</code> erhöht den Wert einer Variablen um genau
+          1. Beim Klick auf die Fläche erhöht sich die Zahl.
+        </p>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIncrementOperator"
+        ></iframe>
+      </details>
+
+      <
+      <details class="box-info">
+        <summary>Decrement-Operator (--): Verringere den Wert um 1</summary>
+        <pre><code>int x = 3;
+x--;  // x ist jetzt 2</code></pre>
+
+        <p>
+          Mit <code>--</code> wird der Wert einer Zahl um 1 reduziert. Klickst
+          du auf die Fläche, wird der Wert kleiner.
+        </p>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchDecrementOperator"
+        ></iframe>
+      </details>
+
+      <details class="box-info">
+        <summary>Modulo-Operator (%): Restwert einer Division</summary>
+        <pre><code>int zahl = 7;
+int rest = zahl % 2;  // Ergebnis: 1</code></pre>
+
+        <p>
+          Mit <code>%</code> erhältst du den <strong>Rest</strong> einer
+          Division. Das kannst du zum Beispiel nutzen, um herauszufinden, ob
+          eine Zahl <strong>gerade oder ungerade</strong> ist.
+        </p>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloEvenOdd"
+        ></iframe>
+
+        <p>Oder um zwischen Farben zu wechseln (immer wieder bei 0 starten):</p>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloColorSwitch"
+        ></iframe>
+      </details>
+    </details>
   </body>
 </html>
