@@ -17,6 +17,24 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchScope(p) {
+  let x = 50; // global
+
+  p.setup = () => {
+    p.createCanvas(300, 100);
+  };
+
+  p.draw = () => {
+    p.background(240);
+    p.ellipse(x, p.height / 2, 30, 30);
+
+    let y = 75; // lokal
+    p.ellipse(250, y, 20, 20);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchIncrement(p) {
   let x = 0;
 

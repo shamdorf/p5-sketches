@@ -618,7 +618,46 @@ void draw() {
     src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIncrement"
   ></iframe>
 </details>
+<details class="box-info">
+  <summary>🌍 Globale & lokale Variablen (Scope)</summary>
+  <ul>
+    <li>Der **Scope** (Skopus) beschreibt, **wo** eine Variable im Code sichtbar ist.</li>
+  </ul>
 
+  <h4>🌐 Globale Variable</h4>
+  <ul>
+    <li>Außerhalb aller Funktionen deklariert.</li>
+    <li>Überall im Code sichtbar (z. B. in <code>setup()</code> & <code>draw()</code>).</li>
+  </ul>
+
+  <h4>🔒 Lokale Variable</h4>
+  <ul>
+    <li>Innerhalb einer Funktion deklariert.</li>
+    <li>Nur innerhalb dieser Funktion sichtbar.</li>
+  </ul>
+
+  <h4>📚 Beispiel</h4>
+  <pre>
+int x = 50; // global
+
+void setup() {
+  size(300, 100);
+}
+
+void draw() {
+  background(240);
+  ellipse(x, height/2, 30, 30);
+
+  int y = 75; // lokal
+  ellipse(250, y, 20, 20);
+}
+  </pre>
+
+  <div id="sketch-scope" class="sketch"></div>
+  <iframe
+    src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchScope"
+  ></iframe>
+</details>
       
     </details>
   </body>
