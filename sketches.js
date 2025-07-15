@@ -129,7 +129,7 @@ function sketchGrundrechenarten(p) {
     p.text("a + b = " + summe, 10, 40);
     p.text("a - b = " + differenz, 10, 60);
     p.text("a * b = " + produkt, 10, 80);
-    p.text("a / b = " + division + " (Ganzzahlig)", 10, 100);
+    p.text("a / b = " + 2 + " (Ganzzahlig)", 10, 100);
     p.text("a / 4.0 = " + floatDivision + " (Float)", 10, 120);
   };
 }

@@ -931,13 +931,16 @@ int b = 4;
 int summe = a + b;      // Addition → 14
 int differenz = a - b;  // Subtraktion → 6
 int produkt = a * b;    // Multiplikation → 40
-float division = a / (float)b;  // Division → 2.5</code></pre>
+int division1 = a / b;      // Division → 2
+float division2 = a / (float)b;  // Division → 2.5</code></pre>
 
-        <p>
-          Beim Dividieren in <strong>Processing</strong> musst du darauf achten,
-          dass du eine <code>float</code>-Division bekommst, sonst wird bei
-          <code>int / int</code> abgerundet!
+        <p class="box-warning">
+          Wenn du mit <code>int</code>-Werten dividierst, werden die
+          Nachkommastellen einfach weggeschnitten. Achte darauf, dass du
+          mindestens einen der Werte als <code>float</code> angibst, um eine
+          korrekte Division zu erhalten.
         </p>
+        <br />
 
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrundrechenarten"
@@ -959,7 +962,6 @@ x++;  // x ist jetzt 4</code></pre>
         ></iframe>
       </details>
 
-      <
       <details class="box-info">
         <summary>Decrement-Operator (--): Verringere den Wert um 1</summary>
         <pre><code>int x = 3;
