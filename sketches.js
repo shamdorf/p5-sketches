@@ -17,6 +17,50 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchBallMoveReset(p) {
+  let x = 0;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.ellipse(x, 100, 50, 50);
+    x = x + 2;
+  };
+
+  p.keyPressed = () => {
+    x = 0;
+  };
+
+  autoResizeCanvas(p);
+}
+
+function sketchStatic(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    p.background(240);
+    p.fill(255, 0, 0);
+    p.ellipse(150, 100, 100, 100);
+
+    autoResizeCanvas(p);
+  };
+}
+
+function sketchActive(p) {
+  p.setup = () => {
+    p.createCanvas(300, 200);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.ellipse(p.mouseX, p.mouseY, 50, 50);
+  };
+
+  autoResizeCanvas(p);
+}
+
 function sketchVariablen(p) {
   p.setup = () => {
     p.createCanvas(300, 200);
@@ -71,25 +115,6 @@ function sketchWidthHeight(p) {
     p.textAlign(p.CENTER, p.CENTER);
     p.textSize(12);
     p.text("Mittelpunkt: width/2, height/2", p.width / 2, p.height / 2 + 40);
-
-    autoResizeCanvas(p);
-  };
-}
-
-function sketchActiveStatic(p) {
-  p.setup = () => {
-    p.createCanvas(200, 100);
-    p.background(255);
-  };
-
-  p.draw = () => {
-    p.background(255);
-    p.fill(100, 150, 200);
-    p.ellipse(p.mouseX, p.mouseY, 40, 40);
-
-    p.fill(0);
-    p.textSize(12);
-    p.text("Aktiver Modus – Ellipse folgt der Maus", 10, 20);
 
     autoResizeCanvas(p);
   };

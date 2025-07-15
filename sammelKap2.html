@@ -28,126 +28,84 @@
     <!-- Info - Aktiver Modus und Interaktion -->
     <details class="top">
       <summary id="info">Aktiver Modus und Interaktion</summary>
-      <!-- statischer vs aktiver Modus -->
+
+      <!-- STATISCHER MODUS -->
       <details class="box-info">
-        <summary>🌀 Statischer vs. Aktiver Modus</summary>
+        <summary>🖼️ Statischer Modus</summary>
         <p>
           Bisher haben wir nur im statischen Modus programmiert. Im
           <strong>statischen Modus</strong> werden alle Anweisungen einmal
           ausgeführt und das Programm anschließend beendet.
         </p>
+        <ul>
+          <li>Nur einmaliger Programmstart.</li>
+          <li>
+            Ideal für einfache Zeichnungen, kein Ablauf, keine Interaktion.
+          </li>
+        </ul>
+
         <pre>
-size(200, 200);
-background(255);
-ellipse(100, 100, 80, 80);</pre
+size(300, 200);
+  background(240);
+  fill(255, 0, 0);
+  ellipse(150, 100, 100, 100);</pre
         >
-        <div>
-          <br />
-          <p>
-            Wir wollen jetzt Programme schreiben, die Animationen darstellen
-            oder auf Nutzereingaben reagieren. Hierfür benötigen wir den
-            <strong>aktiven Modus</strong> von Processing.
-          </p>
-          <ul>
-            <li>
-              Der aktive Modus nutzt die beiden Funktionen
-              <strong><code>setup()</code></strong> und
-              <strong><code>draw()</code></strong>
-            </li>
-            <li>
-              Die Anweisungen in der <code>setup()-Funktion</code> werden
-              <strong>einmal beim Start ausgeführt</strong>
-            </li>
-            <li>
-              Die Anweisungen in der <code>draw()-Funktion</code> werden
-              <strong>in einer Schleife immer wiederholt ausgeführt</strong>.
-              Standardmäßig mit 60 FPS (Frames Per Second).
-            </li>
-          </ul>
-          <pre>
+
+        <div id="sketch-static" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStatic"
+        ></iframe>
+      </details>
+
+      <!-- statischer vs aktiver Modus -->
+      <details class="box-info">
+        <summary>🌀 Aktiver Modus</summary>
+        <p>
+          Wir wollen jetzt Programme schreiben, die Animationen darstellen oder
+          auf Nutzereingaben reagieren. Hierfür benötigen wir den
+          <strong>aktiven Modus</strong> von Processing.
+        </p>
+        <ul>
+          <li>
+            Der aktive Modus nutzt die beiden Funktionen
+            <strong><code>setup()</code></strong> und
+            <strong><code>draw()</code></strong>
+          </li>
+          <li>
+            Die Anweisungen in der <code>setup()-Funktion</code> werden
+            <strong>einmal beim Start ausgeführt</strong>
+          </li>
+          <li>
+            Die Anweisungen in der <code>draw()-Funktion</code> werden
+            <strong>in einer Schleife immer wiederholt ausgeführt</strong>.
+            Standardmäßig mit 60 FPS (Frames Per Second).
+          </li>
+        </ul>
+        <pre>
 void setup() {
-  size(200, 200);
+  size(300, 200);
 }
 
 void draw() {
   background(255);
-  fill(100, 150, 200);
-  ellipse(mouseX, mouseY, 80, 80);
-}</pre
-          >
-
-          <ul class="box-warning">
-            <li>
-              Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
-              aufgerufen werden dürfen. Daher müssen die Befehle in die
-              <code>setup()-Funktion</code>
-            </li>
-            <li>
-              Damit das Programm in einer Schleife immer weiter läuft, braucht
-              es eine <code>draw()-Funktion</code>. Diese darf auch leer sein.
-            </li>
-          </ul>
-          <br />
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActiveStatic"
-            style="border: none"
-          ></iframe>
-        </div>
-      </details>
-
-      <!-- SYSTEMVARIABLEN -->
-      <details class="box-info">
-        <summary>
-          🧭 Systemvariablen: <code>width</code>, <code>height</code>,
-          <code>key</code>, <code>keyCode</code>, <code>mouseX</code>,
-          <code>mouseY</code>
-        </summary>
-        <p>
-          Systemvariablen sind Variablen, die Processing bereitstellt. Darin
-          sind unter anderem die Größe des Zeichenfensters, die Mauskoordinaten
-          oder die zuletzt gedrückten Tasten auf der Tastatur gespeichert.
-        </p>
-        <ul>
-          <li><strong>width</strong>: Aktuelle Breite des Zeichenfensters.</li>
-          <li><strong>height</strong>: Aktuelle Höhe des Zeichenfensters.</li>
-          <li>
-            <strong>mouseX</strong>: Aktuelle X-Position der Maus relativ zum
-            Canvas.
-          </li>
-          <li>
-            <strong>mouseY</strong>: Aktuelle Y-Position der Maus relativ zum
-            Canvas.
-          </li>
-          <li>
-            <strong>key</strong>: Zeichen der gedrückten Taste (z. B.
-            <code>'a'</code>, <code>'Z'</code>).
-          </li>
-          <li>
-            <strong>keyCode</strong>: Code der gedrückten Taste – nötig für
-            Sondertasten wie <code>UP_ARROW</code>, <code>ENTER</code>,
-            <code>SHIFT</code>.
-          </li>
-        </ul>
-        <p>
-          Im folgenden Beispiel wird mit den Systemvariablen
-          <code>width</code> und <code>height</code> ein Kreis in der Mitte des
-          Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
-          Zeichenfensters keine Rolle.
-        </p>
-        <pre>
-void setup() {
-  size(300, 200);
-  ellipse(width/2, height/2, 50, 50);
-  fill(0);
-  textAlign(CENTER, CENTER);
-  textSize(12);
-  text("Mittelpunkt: width/2, height/2", width/2, height/2 + 40);
+  ellipse(mouseX, mouseY, 50, 50);
 }
   </pre
         >
-        <div id="sketch-width-height" class="sketch"></div>
+        <ul class="box-warning">
+          <li>
+            Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
+            aufgerufen werden dürfen. Daher müssen die Befehle in die
+            <code>setup()-Funktion</code>
+          </li>
+          <li>
+            Damit das Programm in einer Schleife immer weiter läuft, braucht es
+            eine <code>draw()-Funktion</code>. Diese darf auch leer sein.
+          </li>
+        </ul>
+        <br />
         <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
         ></iframe>
       </details>
 
@@ -378,53 +336,105 @@ void setup() {
     </details>
 
     <!-- Variablen -->
-    <!-- VARIABLEN -->
-    <details class="box-info">
-      <summary>📦 Variablen verstehen und verwenden</summary>
-      <ul>
-        <li>
-          <strong>Wofür?</strong> Variablen speichern Werte, die sich ändern
-          oder mehrfach verwendet werden.
-        </li>
-        <li>
-          <strong>Deklaration</strong>: Festlegen des Namens und Typs einer
-          Variable. <br /><code>int x;</code>
-        </li>
-        <li>
-          <strong>Initialisierung</strong>: Zuweisen eines Anfangswerts.
-          <br /><code>int x = 50;</code>
-        </li>
-        <li>
-          <strong>Verwendung</strong>: Danach kann der Wert gelesen oder
-          verändert werden.
-        </li>
-      </ul>
+    <!-- VARIABLEN GRUNDLAGEN -->
+    <details class="top">
+      <summary id="info">Variablen</summary>
+      <details>
+        <summary class="box-info">
+          🧠 Motivation - Warum braucht man Variablen?
+        </summary>
+        <p>
+          Variablen sind ein Konzept, was es in jeder Programmiersprache gibt.
+          Es sind "Behälter", die Werte speichern können. Wofür braucht man sie?
+        </p>
+        <ul>
+          <li>
+            Man kann <strong>Werte speichern</strong>, um sie später wieder zu
+            verwenden. (Highscores, Nicknames, Geburtsdatum...)
+          </li>
+          <li>
+            Sie ermöglichen
+            <strong>Animationen und Interaktionen</strong>. Positionen, Farben,
+            und Zustände können ihre Werte ändern und damit ihren Aufenthalsort
+            oder ihr Aussehen.
+          </li>
+          <li>
+            Ein einmal gespeicherter Wert kann
+            <strong>verändert oder überprüft</strong>
+            werden.
+          </li>
+        </ul>
+        <p>
+          Beispiel einer Animation eines Balls, der sich über den Bildschirm
+          bewegt. Mit einem Tastendruck startet er von vorne.
+        </p>
+        <pre>
+int x = 0;
 
-      <p><strong>Wichtige Datentypen:</strong></p>
-      <ul>
-        <li>
-          <code>int</code> – ganze Zahl (z. B. <code>int zahl = 10;</code>)
-        </li>
-        <li>
-          <code>float</code> – Kommazahl (z. B. <code>float x = 3.14;</code>)
-        </li>
-        <li>
-          <code>char</code> – einzelnes Zeichen (z. B.
-          <code>char c = 'A';</code>)
-        </li>
-        <li>
-          <code>boolean</code> – wahr/falsch (z. B.
-          <code>boolean aktiv = true;</code>)
-        </li>
-        <li>
-          <code>String</code> – Textkette (z. B.
-          <code>String name = "Anna";</code>)
-        </li>
-      </ul>
+void setup() {
+  size(400, 200);
+}
 
-      <pre>
-int x = 100;
-float y = 150.5;
+void draw() {
+  background(255);
+  ellipse(x, 100, 50, 50);
+  x = x + 2;
+}
+
+void keyPressed() {
+  x = 0; // Bei Tastendruck Startposition zurücksetzen
+}</pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
+        ></iframe>
+      </details>
+      <details>
+        <summary class="box-info">🔧 Deklaration & Initialisierung</summary>
+        <p>
+          Damit man Variablen benutzen kann, muss man sie dem
+          Compiler/Interpreter "bekanntmachen" - deklarieren. Außerdem sollte
+          eine Variable einen Initialwert bekommen.
+        </p>
+        <ul>
+          <li>
+            <strong>Deklaration:</strong> Der Datentyp und der Name werden
+            festgelegt. <br /><code>int x;</code>
+          </li>
+          <li>
+            <strong>Initialisierung:</strong> Zusätzlich wird ein Startwert
+            zugewiesen. <br /><code>int x = 100;</code>
+          </li>
+          <li>
+            <strong>Verwendung:</strong> Danach kann der Wert genutzt oder
+            verändert werden.
+          </li>
+        </ul>
+      </details>
+      <details>
+        <summary class="box-info">📚 Wichtige Datentypen</summary>
+
+        <ul>
+          <li><code>int</code> – ganze Zahl, z. B. <code>int z = 10;</code></li>
+          <li>
+            <code>float</code> – Kommazahl, z. B. <code>float y = 3.14;</code>
+          </li>
+          <li>
+            <code>boolean</code> – wahr/falsch, z. B.
+            <code>boolean sichtbar = true;</code>
+          </li>
+          <li>
+            <code>char</code> – einzelnes Zeichen, z. B.
+            <code>char taste = 'A';</code>
+          </li>
+          <li>
+            <code>String</code> – Text, z. B. <code>String name = "Luna";</code>
+          </li>
+        </ul>
+
+        <pre>
+int x = 100;       // Ganzzahl speichern
+float y = 150.5;   // Kommazahl
 String text = "Hallo!";
 boolean sichtbar = true;
 
@@ -436,12 +446,69 @@ void setup() {
   }
 }
   </pre
-      >
+        >
 
-      <div id="sketch-variablen" class="sketch"></div>
-      <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
-      ></iframe>
+        <div id="sketch-variablen" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
+        ></iframe>
+      </details>
+
+      <!-- SYSTEMVARIABLEN -->
+      <details>
+        <summary class="box-info">
+          🧭 Systemvariablen: <code>width</code>, <code>height</code>,
+          <code>key</code>, <code>keyCode</code>, <code>mouseX</code>,
+          <code>mouseY</code>
+        </summary>
+        <p>
+          Systemvariablen sind Variablen, die Processing bereitstellt. Darin
+          sind unter anderem die Größe des Zeichenfensters, die Mauskoordinaten
+          oder die zuletzt gedrückten Tasten auf der Tastatur gespeichert.
+        </p>
+        <ul>
+          <li><strong>width</strong>: Aktuelle Breite des Zeichenfensters.</li>
+          <li><strong>height</strong>: Aktuelle Höhe des Zeichenfensters.</li>
+          <li>
+            <strong>mouseX</strong>: Aktuelle X-Position der Maus relativ zum
+            Canvas.
+          </li>
+          <li>
+            <strong>mouseY</strong>: Aktuelle Y-Position der Maus relativ zum
+            Canvas.
+          </li>
+          <li>
+            <strong>key</strong>: Zeichen der gedrückten Taste (z. B.
+            <code>'a'</code>, <code>'Z'</code>).
+          </li>
+          <li>
+            <strong>keyCode</strong>: Code der gedrückten Taste – nötig für
+            Sondertasten wie <code>UP_ARROW</code>, <code>ENTER</code>,
+            <code>SHIFT</code>.
+          </li>
+        </ul>
+        <p>
+          Im folgenden Beispiel wird mit den Systemvariablen
+          <code>width</code> und <code>height</code> ein Kreis in der Mitte des
+          Zeichenfensters gezeichnet. Dabei spielt die Auflösung des
+          Zeichenfensters keine Rolle.
+        </p>
+        <pre>
+void setup() {
+  size(300, 200);
+  ellipse(width/2, height/2, 50, 50);
+  fill(0);
+  textAlign(CENTER, CENTER);
+  textSize(12);
+  text("Mittelpunkt: width/2, height/2", width/2, height/2 + 40);
+}
+  </pre
+        >
+        <div id="sketch-width-height" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWidthHeight"
+        ></iframe>
+      </details>
     </details>
   </body>
 </html>
