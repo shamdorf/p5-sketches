@@ -38,32 +38,28 @@ function sketchIfElse(p) {
   };
 }
 
-function sketchVektorenIllustration(p) {
-  let v1, v2, result;
+let v1;
+let v2;
 
-  p.setup = () => {
-    p.createCanvas(400, 400);
-    v1 = new PVector(100, 100); // Ort des Objekts
-    v2 = new PVector(200, 200); // Geschwindigkeit
-    result = PVector.add(v1, v2); // Neuen Ort berechnen
-    autoResizeCanvas(p); // Anpassung für das iframe
-  };
+function setup() {
+  createCanvas(400, 400);
+  v1 = createVector(100, 100); // Erstelle einen Vektor
+  v2 = createVector(200, 200); // Erstelle einen weiteren Vektor
+}
 
-  p.draw = () => {
-    p.background(255);
-    p.fill(0);
-    p.ellipse(v1.x, v1.y, 10, 10); // Ort des Objekts
-    p.ellipse(v2.x, v2.y, 10, 10); // Geschwindigkeit
-    p.ellipse(result.x, result.y, 10, 10); // Neuer Ort
+function draw() {
+  background(255);
+  fill(0);
+  ellipse(v1.x, v1.y, 10, 10); // Zeichne v1
+  ellipse(v2.x, v2.y, 10, 10); // Zeichne v2
+  line(v1.x, v1.y, v2.x, v2.y); // Zeichne eine Linie zwischen v1 und v2
 
-    p.line(v1.x, v1.y, v2.x, v2.y); // Linie zwischen Ort und Geschwindigkeit
-    p.line(v1.x, v1.y, result.x, result.y); // Linie zum neuen Ort
-
-    p.fill(0);
-    p.text("Ort", v1.x + 5, v1.y);
-    p.text("Geschwindigkeit", v2.x + 5, v2.y);
-    p.text("Neuer Ort", result.x + 5, result.y);
-  };
+  // Beispiel für Vektoraddition
+  let result = p5.Vector.add(v1, v2);
+  fill(255, 0, 0);
+  ellipse(result.x, result.y, 10, 10); // Zeichne das Ergebnis der Addition
+  line(v1.x, v1.y, result.x, result.y); // Linie von v1 zu result
+  line(v2.x, v2.y, result.x, result.y); // Linie von v2 zu result
 }
 
 function sketchVektoren(p) {
