@@ -24,75 +24,135 @@
       });
     </script>
   </head>
-  <details class="top">
-  <summary>🔀 Was sind Verzweigungen?</summary>
-  <div class="box-info">
-    <p>Mit einer <strong>Verzweigung</strong> kann das Programm unterschiedliche Wege gehen – je nachdem, ob eine Bedingung <code>true</code> oder <code>false</code> ist.</p>
-    <ul>
-      <li>Das Schlüsselwort dafür ist <code>if</code>.</li>
-      <li>Zusätzlich kann man auch <code>else</code> und <code>else if</code> benutzen.</li>
-    </ul>
-    <pre><code>
-if (bedingung) {
-  // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
+  <body>
+    <details class="top">
+      <summary id="info">🔀 If-Anwesiungen</summary>
+      <details class="box-info">
+        <summary>Was ist eine If-Anweisung (Verzweigung)</summary>
+        <p>
+          Mit einer <strong>Verzweigung</strong> kann das Programm
+          unterschiedliche Wege gehen – je nachdem, ob eine Bedingung
+          <code>true</code> oder <code>false</code> ist.
+        </p>
+        <ul>
+          <li>Das Schlüsselwort dafür ist <code>if</code>.</li>
+          <li>
+            Zusätzlich kann man auch <code>else</code> und
+            <code>else if</code> benutzen.
+          </li>
+        </ul>
+        <div class="box-command">
+          <h4>Syntax</h4>
+          <pre><code>if (Bedingung) {
+   // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
 } else {
   // dieser Block wird ausgeführt, wenn die Bedingung falsch ist
-}
-    </code></pre>
-  </div>
-</details>
+}</code></pre>
+        </div>
+        <div class="box-warning">
+          <p>
+            Aufpassen bei der Syntax! Nach der Bedingung darf
+            <strong>KEIN</strong> ";" (Semicolon) stehen.
+          </p>
+          <pre><code>if (Bedingung); { //SYNTAXFEHLER!
+  ...
+}</code></pre>
+        </div>
+      </details>
 
-<details class="top">
-  <summary>🔎 Bedingungen in Processing</summary>
-  <div class="box-info">
-    <p>Eine <strong>Bedingung</strong> ist ein Ausdruck, der entweder <code>true</code> oder <code>false</code> ergibt.</p>
-    <ul>
-      <li>Die Bedingung steht in Klammern <code>( ... )</code></li>
-      <li>Sie enthält oft einen Vergleichsoperator:</li>
-    </ul>
-    <h4>🔢 Vergleichsoperatoren</h4>
-    <ul>
-      <li><code>==</code> → gleich</li>
-      <li><code>!=</code> → ungleich</li>
-      <li><code>&gt;</code> → größer als</li>
-      <li><code>&lt;</code> → kleiner als</li>
-      <li><code>&gt;=</code> → größer oder gleich</li>
-      <li><code>&lt;=</code> → kleiner oder gleich</li>
-    </ul>
-    <h4>📚 Beispiel</h4>
-    <pre><code>
-if (x &gt; 100) {
+      <details class="box-info">
+        <summary>🔎 Bedingungen in Processing</summary>
+
+        <p>
+          Eine <strong>Bedingung</strong> ist ein Ausdruck, der entweder
+          <code>true</code> oder <code>false</code> ergibt.
+        </p>
+        <ul>
+          <li>Die Bedingung steht in Klammern <code>( ... )</code></li>
+          <li>Sie enthält oft einen Vergleichsoperator:</li>
+        </ul>
+        <h4>🔢 Vergleichsoperatoren</h4>
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Erklärung</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>==</code></td>
+              <td>gleich</td>
+            </tr>
+            <tr>
+              <td><code>!=</code></td>
+              <td>ungleich</td>
+            </tr>
+            <tr>
+              <td><code>&gt;</code></td>
+              <td>größer als</td>
+            </tr>
+            <tr>
+              <td><code>&lt;</code></td>
+              <td>kleiner als</td>
+            </tr>
+            <tr>
+              <td><code>&gt;=</code></td>
+              <td>größer oder gleich</td>
+            </tr>
+            <tr>
+              <td><code>&lt;=</code></td>
+              <td>kleiner oder gleich</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <h4>📚 Beispiel</h4>
+        <pre><code>if (x &gt; 100) {  //Wenn x größer als 100 ist, setze Farbe auf rot
   fill(255, 0, 0);
-} else {
+} else {  //Ansonsten setze Farbe auf grün
   fill(0, 255, 0);
-}
-    </code></pre>
-  </div>
-</details>
+}</code></pre>
+      </details>
 
-<details class="top">
-  <summary>🧪 Bedingungen kombinieren</summary>
-  <div class="box-info">
-    <p>Man kann Bedingungen auch miteinander kombinieren.</p>
-    <ul>
-      <li><code>&&</code> → UND: Beide Bedingungen müssen <code>true</code> sein</li>
-      <li><code>||</code> → ODER: Eine der Bedingungen muss <code>true</code> sein</li>
-      <li><code>!</code> → NICHT: Kehrt den Wahrheitswert um</li>
-    </ul>
-    <h4>📚 Beispiel</h4>
-    <pre><code>
+      <details class="box-info">
+        <summary>Flussdiagramm</summary>
+        <img
+          src="https://p5-sketches-demo.netlify.app/flussdiagrammIf.png"
+          alt=""
+        />
+      </details>
+    </details>
+
+    <details class="box-info">
+      <summary>🧪 Bedingungen kombinieren</summary>
+      <div class="box-info">
+        <p>Man kann Bedingungen auch miteinander kombinieren.</p>
+        <ul>
+          <li>
+            <code>&&</code> → UND: Beide Bedingungen müssen
+            <code>true</code> sein
+          </li>
+          <li>
+            <code>||</code> → ODER: Eine der Bedingungen muss
+            <code>true</code> sein
+          </li>
+          <li><code>!</code> → NICHT: Kehrt den Wahrheitswert um</li>
+        </ul>
+        <h4>📚 Beispiel</h4>
+        <pre><code>
 if (x &gt; 100 && y &lt; 50) {
   ellipse(x, y, 30, 30);
 }
     </code></pre>
-  </div>
-</details>
+      </div>
+    </details>
 
-<details class="top">
-  <summary>🎨 Beispiel: Farbwechsel mit if</summary>
-  <details class="box-info">
-    <summary>🌈 Farbe abhängig von Position</summary>
-    <pre><code>
+    <details class="top">
+      <summary>🎨 Beispiel: Farbwechsel mit if</summary>
+      <details class="box-info">
+        <summary>🌈 Farbe abhängig von Position</summary>
+        <pre><code>
 void draw() {
   if (mouseX &lt; width / 2) {
     background(255, 0, 0); // rot
@@ -101,15 +161,17 @@ void draw() {
   }
 }
     </code></pre>
-    <iframe src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfColorChange"></iframe>
-  </details>
-</details>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfColorChange"
+        ></iframe>
+      </details>
+    </details>
 
-<details class="top">
-  <summary>📊 Mehrere Bedingungen prüfen</summary>
-  <details class="box-info">
-    <summary>🚦 Farbwechsel mit if ... else if ... else</summary>
-    <pre><code>
+    <details class="top">
+      <summary>📊 Mehrere Bedingungen prüfen</summary>
+      <details class="box-info">
+        <summary>🚦 Farbwechsel mit if ... else if ... else</summary>
+        <pre><code>
 void draw() {
   if (mouseX &lt; 100) {
     background(255, 0, 0);  // rot
@@ -120,48 +182,63 @@ void draw() {
   }
 }
     </code></pre>
-    <iframe src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfElseIf"></iframe>
-  </details>
-</details>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfElseIf"
+        ></iframe>
+      </details>
+    </details>
 
-<details class="top">
-  <summary>📌 Häufige Fehler bei if</summary>
-  <div class="box-warning">
-    <ul>
-      <li><code>=</code> ist eine Zuweisung, <code>==</code> ist ein Vergleich!</li>
-      <li>Immer geschweifte Klammern <code>{ ... }</code> benutzen.</li>
-      <li>Ein Block kann leer sein, sollte aber logisch Sinn ergeben.</li>
-    </ul>
-  </div>
-</details>
+    <details class="top">
+      <summary>📌 Häufige Fehler bei if</summary>
+      <div class="box-warning">
+        <ul>
+          <li>
+            <code>=</code> ist eine Zuweisung, <code>==</code> ist ein
+            Vergleich!
+          </li>
+          <li>Immer geschweifte Klammern <code>{ ... }</code> benutzen.</li>
+          <li>Ein Block kann leer sein, sollte aber logisch Sinn ergeben.</li>
+        </ul>
+      </div>
+    </details>
 
-<details class="top">
-  <summary>🧠 Fragen zu Kapitel 3</summary>
-  <details class="box-question">
-    <summary>Was macht eine if-Verzweigung?</summary>
-    <div class="box-info">
-      <p>Sie prüft eine Bedingung und führt Anweisungen aus, wenn diese erfüllt ist.</p>
-    </div>
-  </details>
-  <details class="box-question">
-    <summary>Was ist der Unterschied zwischen <code>=</code> und <code>==</code>?</summary>
-    <div class="box-info">
-      <p><code>=</code> weist einen Wert zu, <code>==</code> vergleicht zwei Werte.</p>
-    </div>
-  </details>
-  <details class="box-question">
-    <summary>Was passiert bei mehreren Bedingungen?</summary>
-    <div class="box-info">
-      <p>Du kannst <code>else if</code> und <code>else</code> nutzen, um weitere Bedingungen zu prüfen.</p>
-    </div>
-  </details>
-  <details class="box-question">
-    <summary>Wie prüft man, ob zwei Dinge gleichzeitig gelten?</summary>
-    <div class="box-info">
-      <p>Mit dem logischen UND <code>&&</code>.</p>
-    </div>
-  </details>
-</details>
-
-</body>
+    <details class="top">
+      <summary>🧠 Fragen zu Kapitel 3</summary>
+      <details class="box-question">
+        <summary>Was macht eine if-Verzweigung?</summary>
+        <div class="box-info">
+          <p>
+            Sie prüft eine Bedingung und führt Anweisungen aus, wenn diese
+            erfüllt ist.
+          </p>
+        </div>
+      </details>
+      <details class="box-question">
+        <summary>
+          Was ist der Unterschied zwischen <code>=</code> und <code>==</code>?
+        </summary>
+        <div class="box-info">
+          <p>
+            <code>=</code> weist einen Wert zu, <code>==</code> vergleicht zwei
+            Werte.
+          </p>
+        </div>
+      </details>
+      <details class="box-question">
+        <summary>Was passiert bei mehreren Bedingungen?</summary>
+        <div class="box-info">
+          <p>
+            Du kannst <code>else if</code> und <code>else</code> nutzen, um
+            weitere Bedingungen zu prüfen.
+          </p>
+        </div>
+      </details>
+      <details class="box-question">
+        <summary>Wie prüft man, ob zwei Dinge gleichzeitig gelten?</summary>
+        <div class="box-info">
+          <p>Mit dem logischen UND <code>&&</code>.</p>
+        </div>
+      </details>
+    </details>
+  </body>
 </html>
