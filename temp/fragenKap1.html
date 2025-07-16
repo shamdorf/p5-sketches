@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- <link
+      rel="stylesheet"
+      href="https://lms2.schulcampus-rlp.de/SN-63755/mod/folder/view.php?id=45173/style.css"
+    /> -->
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <script src="https://lms2.schulcampus-rlp.de/SN-63755/mod/resource/view.php?id=45169"></script> -->
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            // Prüfen, ob Nachricht von diesem iframe kam
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Fragen zu Kapitel 1 -->
+    <details class="top">
+      <summary><strong id="question">Fragen zu Kapitel 1</strong></summary>
+
+      <!-- compiler und interpreter -->
+      <details class="box-question">
+        <summary>
+          Was ist der Unterschied zwischen einem
+          <strong>Interpreter</strong> und einem <strong>Compiler?</strong
+          ><br />
+        </summary>
+        <div class="box-info">
+          <p>
+            Sowohl Interpreter als auch Compiler <strong>übersetzen</strong> die
+            <strong>Hochsprache</strong> wie Processing/Java/C++in
+            <strong>Maschinencode</strong>, der dann von der
+            <strong>CPU</strong>bearbeitet werden kann.
+          </p>
+          <ul>
+            <li>
+              Interpreter - verarbeitet den Programmcode dabei
+              <strong>Zeilenweise</strong>
+            </li>
+            <li>
+              Compiler - übersetzt den <strong>gesamten Code auf einmal</strong>
+            </li>
+          </ul>
+          <p>Siehe auch: Compiler und Interpreter weiter oben im Kurs</p>
+        </div>
+      </details>
+
+      <!-- Kommentare -->
+      <details class="box-question">
+        <summary>
+          Wofür brauche ich <strong>Kommentare</strong> und welche zwei Arten
+          gibt es in Processing? <br />
+        </summary>
+        <div class="box-info">
+          <p>
+            Kommentare kann man zur Beschreibung oder zum Debuggen in sein
+            Programm einfügen. Beim Starten des Programms werden die
+            kommentierten Zeilen ignoriert und nicht ausgeführt.
+          </p>
+          <ul>
+            <li>
+              Kommentare sind nützlich, weil das Programm zum einen dadurch sehr
+              viel verständlicher wird. das gilt für einen selbst aber auch für
+              andere, die sich das Programm anschauen.
+            </li>
+            <li>
+              Zum anderen kann man Teile seines Codes auskommentieren, um zum
+              Beispiel Fehler zu suchen oder mit neuen Features zu
+              experimentieren.
+            </li>
+            <li>
+              In Processing gibt es einzeilige ("//") und mehrzeilige Kommentare
+              ( /* ... */ ).
+            </li>
+          </ul>
+          <p>Teste es aus !</p>
+          <pre><code> //Das wird ein Beispiel für einen einzeiligen Kommentar
+
+/* Hier wird ein Mehrzeiliger Kommentar geschrieben.
+Alles was jetzt kommt, wird ignoriert
+und nicht als Befehl ausgeführt.
+Es sei denn es kommt ein */
+</code></pre>
+        </div>
+      </details>
+
+      <!-- Konsolenausgabe -->
+      <details class="box-question">
+        <summary>
+          Mit welchem Befehl kann ich etwas auf der
+          <strong>Konsole</strong> ausgeben?
+        </summary>
+        <div class="box-command">
+          <p>
+            <strong
+              ><code>print() <br />println()</code></strong
+            >.
+          </p>
+          <ul>
+            <li>
+              print() schreibt Text in einer Zeile der Konsole bis zum Ende und
+              springt dann in die nächste Zeile.
+            </li>
+            <li>
+              println() schreibt Text in die Konsole und springt danach direkt
+              in die nächste Zeile.
+            </li>
+          </ul>
+          <p>Teste es aus !</p>
+          <pre><code>print("Text ");
+print("in ");
+print("einer ");
+print("Zeile!");
+println(); //eine Leere Zeile + Sprung in die nächste Zeile.
+println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
+        </div>
+      </details>
+
+      <!-- ellipse -->
+      <details class="box-question">
+        <summary>
+          Mit welchem Befehl zeichne ich eine <strong>Ellipse</strong> und
+          welche Parameter werden benöltigt?
+        </summary>
+        <div class="box-command">
+          <p>⚪ ellipse(x, y, b, h) - <strong>Ellipse</strong></p>
+          <ul>
+            <li>x1, y2 - Koordinaten Mittelpunkts</li>
+            <li>b - Durchmesser der Breite</li>
+            <li>h - Durchmesser der Höhe</li>
+          </ul>
+          <pre>ellipse(50, 50, 60, 30);</pre>
+
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipse"
+          ></iframe>
+        </div>
+      </details>
+
+      <!-- Ellipse Zeichenmodus -->
+      <details class="box-question">
+        <summary>
+          Mit welchem Befehl kann man den
+          <strong>Zeichenmodus für die Ellipse</strong> ändern und welche Modi
+          gibt es?
+        </summary>
+        <div class="box-command">
+          <p>
+            <strong><code>ellipseMode(MODUS)</code></strong
+            >. <br /><br />"MODUS"steht hier für die drei Modi CENTER
+            (standard), CORNER und CORNERS.
+          </p>
+          <ul>
+            <li>
+              CENTER -
+              <code
+                >ellipse(x1, y1, b, h) - x1 und y1 der Mittelpunkt der Ellipse
+                gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CORNER -
+              <code
+                >ellipse(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
+                umgebenden Rechtecks gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CORNERS -
+              <code
+                >ellipse(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke
+                gefolgt von x2, y2 als linke untere Ecke des umgebenden
+                Rechtecks.</code
+              >
+            </li>
+          </ul>
+          <pre>
+size(600, 400);
+//Standard ist Modus CENTER daher muss man ihn nicht angeben
+//Mittelpunkt + Breite und Höhe
+ellipse(50, 50, 20, 60);
+
+//Linke obere Ecke + Breite und Höhe
+ellipseMode(CORNER);
+ellipse(150, 80, 60, 20);
+
+//linke obere Ecke + rechte untere Ecke
+ellipseMode(CORNERS);
+ellipse(100, 200, 200, 300);</pre
+          >
+          <div id="sketch-ellipseMode" class="sketch"></div>
+
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipseMode"
+          ></iframe>
+        </div>
+      </details>
+
+      <!-- Rechteck -->
+      <details class="box-question">
+        <summary>
+          Mit welchem Befehl zeichne ich ein <strong>Rechteck</strong> und
+          welche Parameter werden benöltigt?
+        </summary>
+        <div class="box-command">
+          <p>
+            <strong><code>rect(x1, y1, b, h)</code></strong
+            >.
+          </p>
+          <ul>
+            <li>x1, y2 - Koordinaten der linken oberen Ecke</li>
+            <li>b - Breite des Rechtecks</li>
+            <li>h - Höhe des Rechtecks</li>
+          </ul>
+          <pre>rect(20, 30, 60, 40);</pre>
+
+          <div id="sketch-rect" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRect"
+          ></iframe>
+        </div>
+      </details>
+
+      <!-- Rechteck Zeichenmodus -->
+      <details class="box-question">
+        <summary>
+          Mit welchem Befehl kann man den
+          <strong>Zeichenmodus für das Rechteck</strong> ändern und welche Modi
+          gibt es?
+        </summary>
+        <div class="box-command">
+          <p>
+            <strong><code>rectMode(MODUS)</code></strong
+            >. <br /><br />"MODUS"steht hier für die drei Modi CORNER
+            (standard), CENTER und CORNERS.
+          </p>
+          <ul>
+            <li>
+              CORNER -
+              <code
+                >rect(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
+                Rechtecks gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CENTER -
+              <code
+                >rect(x1, y1, b, h) - x1 und y1 der Mittelpunkt des Rechtecks
+                gefolgt von Breite und Höhe.</code
+              >
+            </li>
+            <li>
+              CORNERS -
+              <code
+                >rect(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke gefolgt
+                von x2, y2 als rechte untere Ecke des Rechtecks.</code
+              >
+            </li>
+          </ul>
+          <pre>
+size(600, 400);
+//Standard ist Modus CORNER. Daher muss man ihn nicht angeben
+//Linke obere Ecke + Breite und Höhe
+rectMode(CORNER); 
+rect(150, 80, 60, 20);
+
+//Mitelpunkt + Breite und Höhe
+rectMode(CENTER);
+rect(50, 50, 20, 60);
+
+//linke obere Ecke + rechte untere Ecke
+rectMode(CORNERS);
+rect(100, 200, 200, 300);</pre
+          >
+          <div id="sketch-rectMode" class="sketch"></div>
+
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRectMode"
+          ></iframe>
+        </div>
+      </details>
+
+      <!-- Kreisbogens -->
+      <details class="box-question">
+        <summary>
+          Wie kann man einen <strong>Kreisbogen</strong>zeichnen?
+        </summary>
+        <div class="box-command">
+          <p>
+            <strong
+              ><code
+                >arc(x1, y1, b, h, radians(startwinkel), radians(endwinkel));
+              </code></strong
+            >
+          </p>
+          <ul>
+            <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
+            <li><code>radians(start)</code> gibt den Startwinkel in Grad an</li>
+            <li><code>radians(stop)</code> gibt den Endwinkel in Grad an</li>
+          </ul>
+          <img src="https://p5-sketches-demo.netlify.app/arc.png" alt="" />
+          <br />
+
+          <pre>
+      arc(100, 100, 80, 80, radians(0), radians(90));
+</pre
+          >
+
+          <div id="sketch-arc" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchArc"
+          ></iframe>
+          <ul class="box-warning">
+            <li>
+              Winkel starten bei 0° rechts (3-Uhr-Position) und wachsen
+              <u>im Uhrzeigersinn</u>
+            </li>
+            <li>Der Startwinkel muss kleiner sein als der Endwinkel.</li>
+            <li>Die Winkel können aber größer als 360 Grad sein.</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Polygon -->
+      <details class="box-question">
+        <summary>
+          Wie kann man ein <strong>Polygon (Vieleck)</strong>zeichnen?
+        </summary>
+        <div class="box-command">
+          <p>
+            <code
+              >beginShape();<br />vertex(x1, y1)<br />vertex(x2, y2)<br />...<br />endShape();</code
+            >
+          </p>
+          <ul>
+            <li><code>beginShape()</code>startet das Zeichnen des Polygons</li>
+            <li>
+              <code>vertex(x1, y1)</code>gibt den nächsten Punkt an, der zum
+              Polygon gehört (Malen nach Zahlen)
+            </li>
+            <li><code>endShape()</code>beendet das Zeichnen des Polygons.</li>
+            <li>
+              <code>endShape(CLOSE)</code>beendet das Zeichnen und verbindet
+              außerdem den letzten mit dem ersten Punkt.
+            </li>
+          </ul>
+          <pre>
+size(400, 400);
+//Ein Polygon (Vieleck)
+beginShape();
+  vertex(50, 10);
+  vertex(80, 80);
+  vertex(5, 35);
+  vertex(10, 0);  // neue Ecke
+  vertex(30, 30); // neue Ecke
+endShape(CLOSE);
+
+//Das Haus vom Nikolaus
+noFill();
+beginShape();
+  vertex(100, 300);
+  vertex(100, 100);
+  vertex(200, 300);
+  vertex(100, 300);
+  vertex(200, 100);
+  vertex(100, 100);
+  vertex(150, 50);
+  vertex(200, 100);
+  vertex(200, 300);
+endShape();</pre
+          >
+          <div id="sketch-beginShape" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBeginShape"
+          ></iframe>
+        </div>
+      </details>
+    </details>
+  </body>
+</html>

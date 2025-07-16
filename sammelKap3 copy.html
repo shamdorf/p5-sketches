@@ -44,17 +44,19 @@
           </li>
         </ul>
 
-        <pre>
+        <div class="example">
+          <pre>
 size(300, 200);
 background(240);
 fill(255, 0, 0);
 ellipse(150, 100, 100, 100);</pre
-        >
+          >
 
-        <div id="sketch-static" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStatic"
-        ></iframe>
+          <div id="sketch-static" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStatic"
+          ></iframe>
+        </div>
       </details>
 
       <!-- statischer vs aktiver Modus -->
@@ -82,7 +84,7 @@ ellipse(150, 100, 100, 100);</pre
           </li>
         </ul>
 
-        
+        <div class="example">
           <p>
             Beispiel für eine Interaktion mit der Maus. Die Ellipse wird immer
             wieder neu an den Mauskordinaten gerendert.
@@ -102,7 +104,7 @@ void draw() {
           <iframe
             src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
           ></iframe>
-        
+        </div>
         <ul class="box-warning">
           <li>
             Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
@@ -1104,363 +1106,5 @@ void setup() {
       href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_7_5"
       >Übungsaufgaben 2.7a bis 2.7c</a
     >
-
-    <!-- Fragen zu Kapitel 1 -->
-    <details class="top">
-      <summary><strong id="question">Fragen zu Kapitel 2</strong></summary>
-
-      <!-- Aktiver Modus plus Grundgerüst -->
-      <details class="box-question">
-        <summary>
-          Was ist der aktive Modus und wie sieht in Processing das Grundgerüst
-          dazu aus?
-        </summary>
-        <div class="box-info">
-          <p>Mit dem aktiven Modus kann man Animationen und interaktive Programme erstellen.</p>
-          <ul>
-          <li>
-            Der aktive Modus nutzt die beiden Funktionen
-            <strong><code>setup()</code></strong> und
-            <strong><code>draw()</code></strong>
-          </li>
-          <li>
-            Die Anweisungen in der <code>setup()-Funktion</code> werden
-            <strong>einmal beim Start ausgeführt</strong>
-          </li>
-          <li>
-            Die Anweisungen in der <code>draw()-Funktion</code> werden
-            <strong>in einer Schleife immer wiederholt ausgeführt</strong>.
-            Standardmäßig mit 60 FPS (Frames Per Second).
-          </li>
-        </ul>
-
-        <div class="box-command">⚙️ Grundgerüst: setup() & draw()
-        <pre><code>
-void setup() {
-  createCanvas(400, 400);
-}
-
-void draw() {
-  background(220);
-  // dein Code hier
-}
-  </code></pre>
-  </div>
-      </details>
-
-      <!-- Interaktionen mit dem Nutzer? -->
-      <details class="box-question">
-        <summary>
-          Welche Funktionen gibt es für die Interaktion mit dem Nutzer?
-        </summary>
-        <div class="box-command">
-          <pre><code>
-void mousePressed() {
-  // Wird aufgerufen, wenn die Maustaste gedrückt wird
-}
-
-void mouseReleased() {
-  // Wird aufgerufen, wenn die Maustaste losgelassen wird
-}
-  </code></pre>
-<br>
-<pre><code>
-void keyPressed() {
-  // Wird aufgerufen, wenn eine Taste gedrückt wird
-}
-
-void keyReleased() {
-  // Wird aufgerufen, wenn die Taste losgelassen wird
-}
-  </code></pre>
-        </div>
-      </details>
-
-      <!-- Bildschirmtextausgabe -->
-      <details class="box-question">
-        <summary>
-          Mit welchem Befehl kann ich Text auf dem Bildschirm ausgeben?
-        </summary>
-        <div class="box-command">
-          <p>
-            <code>text(txt, x, y)</code>
-          </p>
-          <ul>
-          <li>
-            <code>text(txt, x, y)</code>: Zeigt den Text <code>txt</code> an
-            Position <code>x</code>, <code>y</code>.
-          </li>
-          <li><code>textSize(größe)</code>: Legt die Schriftgröße fest.</li>
-          <li>
-            <code>textAlign(horiz, vert)</code>: Textausrichtung – z. B.
-            <code>LEFT</code>, <code>CENTER</code>, <code>RIGHT</code> und
-            <code>TOP</code>, <code>BOTTOM</code>, <code>CENTER</code>.
-          </li>
-        </ul>
-        </div>
-      </details>
-
-      <!-- random() -->
-      <details class="box-question">
-        <summary>
-          Mit welchem Befehl kann ich Zufallzahlen zwischen -20 und +40 generieren?
-        </summary>
-        <div class="box-command">
-          <p>🎲 <code>random(min, max)</code> - <strong>Zufallszahlen</strong></p>
-          <ul>
-          <li>
-            Erzeugt eine <strong>Kommazahl (float)</strong> zwischen
-            <code>min</code> und <code>max</code>.
-          </li>
-          <li>
-            <code>random(100)</code> → Zahl zwischen <code>0</code> und
-            <code>100</code>.
-          </li>
-          <li>
-            <code>random(50, 100)</code> → Zahl zwischen <code>50</code> und
-            <code>100</code>.
-          </li>
-          <li>
-            Für ganzzahlige Zufallswerte:
-            <code>int(random(...)) oder (int) random(...)</code>
-          </li>
-        </ul>
-        </div>
-      </details>
-
-      <!-- Variablendeklaration -->
-      <details class="box-question">
-        <summary>
-          Wie deklariere und initialisiere ich eine Variable in Processing?
-        </summary>
-        <div class="box-command">
-          <p>
-            <strong><code>ellipseMode(MODUS)</code></strong
-            >. <br /><br />"MODUS"steht hier für die drei Modi CENTER
-            (standard), CORNER und CORNERS.
-          </p>
-          <ul>
-            <li>
-              CENTER -
-              <code
-                >ellipse(x1, y1, b, h) - x1 und y1 der Mittelpunkt der Ellipse
-                gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CORNER -
-              <code
-                >ellipse(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
-                umgebenden Rechtecks gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CORNERS -
-              <code
-                >ellipse(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke
-                gefolgt von x2, y2 als linke untere Ecke des umgebenden
-                Rechtecks.</code
-              >
-            </li>
-          </ul>
-          <pre>
-size(600, 400);
-//Standard ist Modus CENTER daher muss man ihn nicht angeben
-//Mittelpunkt + Breite und Höhe
-ellipse(50, 50, 20, 60);
-
-//Linke obere Ecke + Breite und Höhe
-ellipseMode(CORNER);
-ellipse(150, 80, 60, 20);
-
-//linke obere Ecke + rechte untere Ecke
-ellipseMode(CORNERS);
-ellipse(100, 200, 200, 300);</pre
-          >
-          <div id="sketch-ellipseMode" class="sketch"></div>
-
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipseMode"
-          ></iframe>
-        </div>
-      </details>
-
-      <!-- Datentypen -->
-      <details class="box-question">
-        <summary>
-          Nenne fünf Datentypen und ihre Werte in Processing. 
-        </summary>
-        <div class="box-command">
-          <p>
-            <strong><code>rect(x1, y1, b, h)</code></strong
-            >.
-          </p>
-          <ul>
-            <li>x1, y2 - Koordinaten der linken oberen Ecke</li>
-            <li>b - Breite des Rechtecks</li>
-            <li>h - Höhe des Rechtecks</li>
-          </ul>
-          <pre>rect(20, 30, 60, 40);</pre>
-
-          <div id="sketch-rect" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRect"
-          ></iframe>
-        </div>
-      </details>
-
-      <!-- Wertzuweisungen und Erhöhung von Variablen -->
-      <details class="box-question">
-        <summary>
-          Welche Möglichkeiten gibt es, den Wert einer Variablen zu erhöhen? 
-        </summary>
-        <div class="box-command">
-          <p>
-            <strong><code>rectMode(MODUS)</code></strong
-            >. <br /><br />"MODUS"steht hier für die drei Modi CORNER
-            (standard), CENTER und CORNERS.
-          </p>
-          <ul>
-            <li>
-              CORNER -
-              <code
-                >rect(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
-                Rechtecks gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CENTER -
-              <code
-                >rect(x1, y1, b, h) - x1 und y1 der Mittelpunkt des Rechtecks
-                gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CORNERS -
-              <code
-                >rect(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke gefolgt
-                von x2, y2 als rechte untere Ecke des Rechtecks.</code
-              >
-            </li>
-          </ul>
-          <pre>
-size(600, 400);
-//Standard ist Modus CORNER. Daher muss man ihn nicht angeben
-//Linke obere Ecke + Breite und Höhe
-rectMode(CORNER); 
-rect(150, 80, 60, 20);
-
-//Mitelpunkt + Breite und Höhe
-rectMode(CENTER);
-rect(50, 50, 20, 60);
-
-//linke obere Ecke + rechte untere Ecke
-rectMode(CORNERS);
-rect(100, 200, 200, 300);</pre
-          >
-          <div id="sketch-rectMode" class="sketch"></div>
-
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRectMode"
-          ></iframe>
-        </div>
-      </details>
-
-      <!-- Globale und lokale Variablen -->
-      <details class="box-question">
-        <summary>
-          Was sind globale und lokale Variablen? Wie unterscheiden sie sich?
-        </summary>
-        <div class="box-command">
-          <p>
-            <strong
-              ><code
-                >arc(x1, y1, b, h, radians(startwinkel), radians(endwinkel));
-              </code></strong
-            >
-          </p>
-          <ul>
-            <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
-            <li><code>radians(start)</code> gibt den Startwinkel in Grad an</li>
-            <li><code>radians(stop)</code> gibt den Endwinkel in Grad an</li>
-          </ul>
-          <img src="https://p5-sketches-demo.netlify.app/arc.png" alt="" />
-          <br />
-
-          <pre>
-      arc(100, 100, 80, 80, radians(0), radians(90));
-</pre
-          >
-
-          <div id="sketch-arc" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchArc"
-          ></iframe>
-          <ul class="box-warning">
-            <li>
-              Winkel starten bei 0° rechts (3-Uhr-Position) und wachsen
-              <u>im Uhrzeigersinn</u>
-            </li>
-            <li>Der Startwinkel muss kleiner sein als der Endwinkel.</li>
-            <li>Die Winkel können aber größer als 360 Grad sein.</li>
-          </ul>
-        </div>
-      </details>
-
-      <!-- Modulo Operator -->
-      <details class="box-question">
-        <summary>
-           Was ist der Modulo-Operator (%) und wofür wird er verwendet?
-        </summary>
-        <div class="box-command">
-          <p>
-            <code
-              >beginShape();<br />vertex(x1, y1)<br />vertex(x2, y2)<br />...<br />endShape();</code
-            >
-          </p>
-          <ul>
-            <li><code>beginShape()</code>startet das Zeichnen des Polygons</li>
-            <li>
-              <code>vertex(x1, y1)</code>gibt den nächsten Punkt an, der zum
-              Polygon gehört (Malen nach Zahlen)
-            </li>
-            <li><code>endShape()</code>beendet das Zeichnen des Polygons.</li>
-            <li>
-              <code>endShape(CLOSE)</code>beendet das Zeichnen und verbindet
-              außerdem den letzten mit dem ersten Punkt.
-            </li>
-          </ul>
-          <pre>
-size(400, 400);
-//Ein Polygon (Vieleck)
-beginShape();
-  vertex(50, 10);
-  vertex(80, 80);
-  vertex(5, 35);
-  vertex(10, 0);  // neue Ecke
-  vertex(30, 30); // neue Ecke
-endShape(CLOSE);
-
-//Das Haus vom Nikolaus
-noFill();
-beginShape();
-  vertex(100, 300);
-  vertex(100, 100);
-  vertex(200, 300);
-  vertex(100, 300);
-  vertex(200, 100);
-  vertex(100, 100);
-  vertex(150, 50);
-  vertex(200, 100);
-  vertex(200, 300);
-endShape();</pre
-          >
-          <div id="sketch-beginShape" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBeginShape"
-          ></iframe>
-        </div>
-      </details>
-    </details>
   </body>
 </html>
