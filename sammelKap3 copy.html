@@ -55,7 +55,7 @@
             Aufpassen bei der Syntax! Nach der Bedingung darf
             <strong>KEIN</strong> ";" (Semicolon) stehen.
           </p>
-          <pre><code>if (Bedingung); { //SYNTAXFEHLER!
+          <pre><code>if (Bedingung); { ⛔ //SYNTAXFEHLER!
   ...
 }</code></pre>
         </div>
@@ -138,7 +138,23 @@ println("tschüss");</code></pre>
             </tr>
           </tbody>
         </table>
-
+        <div class="box-warning">
+          <ul>
+            <li>
+              <code class="xlFont">==</code> ist ein Vergleichsoperator.
+              <code class="xlFont">=</code> ist der Zuweisungsoperator um
+              Variablenwerte zu ändern!
+              <br />
+              <code class="xlFont"
+                >if (zahl = 12) { ⛔ //Ist nicht korrekt!</code
+              >
+            </li>
+            <li>
+              Es heißt <code class="xlFont">">="</code> (größer gleich) und
+              nicht <code class="xlFont">"=>"</code> <s>(gleich größer)</s>
+            </li>
+          </ul>
+        </div>
         <h4>📚 Beispiel</h4>
         <pre><code>if (x &gt; 100) {  //Wenn x größer als 100 ist, setze Farbe auf rot
   fill(255, 0, 0);
