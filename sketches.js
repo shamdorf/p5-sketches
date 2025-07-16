@@ -39,24 +39,29 @@ function sketchIfElse(p) {
 }
 
 function sketchVektoren(p) {
-  let v1, v2, result;
+  let v1;
+  let v2;
 
   p.setup = () => {
     p.createCanvas(400, 400);
-    v1 = new PVector(100, 100);
-    v2 = new PVector(200, 200);
-    result = PVector.add(v1, v2);
+    v1 = p.createVector(100, 100); // Erstelle einen Vektor
+    v2 = p.createVector(200, 200); // Erstelle einen weiteren Vektor
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
   p.draw = () => {
     p.background(255);
     p.fill(0);
-    p.ellipse(v1.x, v1.y, 10, 10);
-    p.ellipse(v2.x, v2.y, 10, 10);
-    p.ellipse(result.x, result.y, 10, 10);
-    p.line(v1.x, v1.y, v2.x, v2.y);
-    p.line(v1.x, v1.y, result.x, result.y);
+    p.ellipse(v1.x, v1.y, 10, 10); // Zeichne v1
+    p.ellipse(v2.x, v2.y, 10, 10); // Zeichne v2
+    p.line(v1.x, v1.y, v2.x, v2.y); // Zeichne eine Linie zwischen v1 und v2
+
+    // Beispiel für Vektoraddition
+    let result = p5.Vector.add(v1, v2);
+    p.fill(255, 0, 0);
+    p.ellipse(result.x, result.y, 10, 10); // Zeichne das Ergebnis der Addition
+    p.line(v1.x, v1.y, result.x, result.y); // Linie von v1 zu result
+    p.line(v2.x, v2.y, result.x, result.y); // Linie von v2 zu result
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 }
