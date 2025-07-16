@@ -90,7 +90,7 @@ function sketchBilder(p) {
   let img;
 
   p.preload = () => {
-    img = p.loadImage("bild.png");
+    img = p.loadImage("rgb.png");
   };
 
   p.setup = () => {
