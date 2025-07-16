@@ -29,7 +29,7 @@
       <summary id="info">🔀 If-Anwesiungen</summary>
       <details class="box-info">
         <summary>🔀 Was ist eine If-Anweisung (Verzweigung)</summary>
-        <p>
+        <!-- <p>
           Mit einer <strong>Verzweigung</strong> kann das Programm
           unterschiedliche Wege gehen – je nachdem, ob eine Bedingung
           <code>true</code> oder <code>false</code> ist.
@@ -40,7 +40,27 @@
             Zusätzlich kann man auch <code>else</code> und
             <code>else if</code> benutzen.
           </li>
-        </ul>
+        </ul> -->
+         <p>
+            Mit einer <code>if-else</code>-Anweisung kannst du Bedingungen überprüfen und verschiedene Aktionen basierend auf diesen Bedingungen ausführen. Hier ein einfaches Beispiel:
+        </p>
+        <pre><code>void draw() {
+  if (mouseX < width / 2) {
+    background(255, 0, 0); // rot
+  } else {
+    background(0, 0, 255); // blau
+  }
+}</code></pre>
+        <p>
+            In diesem Beispiel wird der Hintergrund rot, wenn sich die Maus auf der linken Seite des Fensters befindet, und blau, wenn sie auf der rechten Seite ist.
+        </p>
+    </div>
+</details>
+
+<!-- Beispielsketch für if-else -->
+<details class="top">
+    <summary><strong>Beispielsketch für if-else</strong></summary>
+    <iframe src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfElse"></iframe>
 
         <div class="box-command">
           <h4>Syntax</h4>
@@ -59,6 +79,8 @@
   ...
 }</code></pre>
         </div>
+
+
       </details>
       <details class="box-info">
         <summary>Flussdiagramm</summary>

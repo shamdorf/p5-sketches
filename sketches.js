@@ -17,6 +17,27 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchIfElse(p) {
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    if (p.mouseX < p.width / 2) {
+      p.background(255, 0, 0); // rot
+    } else {
+      p.background(0, 0, 255); // blau
+    }
+
+    p.fill(255);
+    p.textSize(32);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.text("Bewege die Maus!", p.width / 2, p.height / 2);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+}
+
 function sketchVektorenIllustration(p) {
   let v1, v2, result;
 
