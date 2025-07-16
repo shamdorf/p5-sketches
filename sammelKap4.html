@@ -17,119 +17,156 @@
         }
       });
     </script>
-    <title>Kapitel 4 - Objekte in Processing</title>
+    <title>Kapitel 4 - Vektoren, Strings und Sounds in Processing</title>
   </head>
   <body>
-    <h1>Kapitel 4: Objekte in Processing</h1>
+    <h1>Kapitel 4: Vektoren, Strings und Sounds in Processing</h1>
 
-    <!-- Einführung in Objekte -->
+    <!-- Vektoren (PVector) -->
     <details class="top">
-      <summary><strong>Einführung in Objekte</strong></summary>
-      <div class="info">
+      <summary id="info"><strong>Vektoren (PVector)</strong></summary>
+      <details class="info">
+        <summary>Vektoren</summary>
         <p>
-          Objekte sind eine zentrale Komponente der objektorientierten
-          Programmierung. Sie ermöglichen es, Daten und Funktionen zu kapseln,
-          die zusammengehören. In Processing können wir eigene Klassen
-          definieren, um Objekte zu erstellen.
+          Vektoren sind grundlegende Datenstrukturen in der Programmierung, die
+          Richtung und Größe darstellen. In Processing verwenden wir die Klasse
+          <code>PVector</code>, um Vektoren zu erstellen und zu manipulieren.
         </p>
-      </div>
+        <p>
+          <strong>Motivation:</strong> Vektoren sind besonders nützlich, wenn es
+          um physikalische Berechnungen geht, wie z.B. die Superposition von
+          Kräften. Sie ermöglichen es, mehrere Kräfte zu kombinieren und deren
+          Resultierende zu berechnen.
+        </p>
+        <img
+          src="https://example.com/superposition.png"
+          alt="Superposition von Kräften"
+          style="max-width: 100%; height: auto"
+        />
+      </details>
+
+      <h2>Erstellen und Verwenden von Vektoren</h2>
+      <pre><code>PVector v1 = new PVector(3, 4);
+PVector v2 = new PVector(1, 2);
+PVector result = PVector.add(v1, v2); // Vektorsumme
+</code></pre>
     </details>
 
-    <!-- Erstellen einer Klasse -->
+    <!-- Beispielsketch für Vektoren -->
     <details class="top">
-      <summary><strong>Erstellen einer Klasse</strong></summary>
-      <div class="info">
-        <p>
-          Um eine Klasse in Processing zu erstellen, verwenden wir das
-          Schlüsselwort <code>class</code>. Hier ist ein einfaches Beispiel für
-          eine Klasse, die einen Punkt repräsentiert:
-        </p>
-        <pre><code>class Punkt {
-    float x;
-    float y;
-
-    Punkt(float x, float y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    void anzeigen() {
-        ellipse(x, y, 10, 10);
-    }
-}</code></pre>
-      </div>
-    </details>
-
-    <!-- Verwendung von Objekten -->
-    <details class="top">
-      <summary><strong>Verwendung von Objekten</strong></summary>
-      <div class="info">
-        <p>
-          Nachdem wir eine Klasse erstellt haben, können wir Objekte dieser
-          Klasse instanziieren. Hier ist ein Beispiel, wie man ein Objekt der
-          Klasse <code>Punkt</code> verwendet:
-        </p>
-        <pre><code>Punkt p = new Punkt(50, 50);
-p.anzeigen();</code></pre>
-      </div>
-    </details>
-
-    <!-- Beispielsketch -->
-    <details class="top">
-      <summary><strong>Beispielsketch für Objekte</strong></summary>
+      <summary><strong>Beispielsketch für Vektoren</strong></summary>
       <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPunkt"
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVektoren"
       ></iframe>
     </details>
 
-    <!-- Methoden in Klassen -->
+    <!-- Strings -->
     <details class="top">
-      <summary><strong>Methoden in Klassen</strong></summary>
+      <summary><strong>Strings in Processing</strong></summary>
       <div class="info">
         <p>
-          Klassen können auch Methoden enthalten, die spezifische Funktionen für
-          das Objekt bereitstellen. Hier ist ein Beispiel, das die Methode
-          <code>verschieben()</code> hinzufügt:
+          Die Klasse <code>String</code> in Processing ermöglicht die Arbeit mit
+          Textdaten. Strings sind unveränderlich, was bedeutet, dass jede
+          Modifikation einen neuen String erzeugt.
         </p>
-        <pre><code>class Punkt {
-    float x;
-    float y;
-
-    Punkt(float x, float y) {
-        this.x = x;
-        this.y = y;
-    }
-
-    void anzeigen() {
-        ellipse(x, y, 10, 10);
-    }
-
-    void verschieben(float dx, float dy) {
-        x += dx;
-        y += dy;
-    }
-}</code></pre>
+        <h2>Übersicht über String-Methoden</h2>
+        <ul>
+          <li><code>length()</code> - Gibt die Länge des Strings zurück.</li>
+          <li>
+            <code>charAt(index)</code> - Gibt das Zeichen an der angegebenen
+            Position zurück.
+          </li>
+          <li>
+            <code>substring(start, end)</code> - Gibt einen Teil des Strings
+            zurück.
+          </li>
+          <li><code>concat()</code> - Verbindet zwei Strings.</li>
+        </ul>
+        <h2>String-Konkatenation</h2>
+        <pre><code>String text1 = "Hallo";
+String text2 = "Welt";
+String result = text1 + " " + text2; // "Hallo Welt"
+</code></pre>
       </div>
     </details>
 
-    <!-- Beispielsketch für Methoden -->
+    <!-- Beispielsketch für Strings -->
     <details class="top">
-      <summary><strong>Beispielsketch mit Methoden</strong></summary>
+      <summary><strong>Beispielsketch für Strings</strong></summary>
       <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPunktMethoden"
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStrings"
       ></iframe>
     </details>
 
-    <!-- Zusammenfassung -->
+    <!-- Bilder einfügen -->
     <details class="top">
-      <summary><strong>Zusammenfassung</strong></summary>
+      <summary><strong>Bilder in Processing einfügen</strong></summary>
       <div class="info">
         <p>
-          Objekte sind ein leistungsfähiges Konzept in Processing, das es
-          ermöglicht, komplexe Programme zu strukturieren und zu organisieren.
-          Durch die Verwendung von Klassen und Methoden können wir unsere
-          Programme modular und wiederverwendbar gestalten.
+          Um Bilder in Processing zu verwenden, müssen sie zuerst in das
+          Projektverzeichnis geladen werden. Hier ist ein einfaches Beispiel:
         </p>
+        <pre><code>PImage img;
+
+void setup() {
+    img = loadImage("bild.png"); // Bild laden
+    size(400, 400);
+}
+
+void draw() {
+    image(img, 0, 0); // Bild anzeigen
+}
+</code></pre>
+      </div>
+    </details>
+
+    <!-- Beispielsketch für Bilder -->
+    <details class="top">
+      <summary><strong>Beispielsketch für Bilder</strong></summary>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
+      ></iframe>
+    </details>
+
+    <!-- Hintergrundmusik und Sounds -->
+    <details class="top">
+      <summary>
+        <strong>Hintergrundmusik und Sounds in Processing</strong>
+      </summary>
+      <div class="info">
+        <h2>Hintergrundmusik einfügen</h2>
+        <pre><code>PApplet app;
+
+void setup() {
+    app = this;
+    app.sound = new SoundFile(app, "musik.mp3");
+    app.sound.loop(); // Musik im Hintergrund abspielen
+}
+</code></pre>
+        <h2>Kurze Sounds abspielen</h2>
+        <p>
+          Um kurze Sounds nacheinander abzuspielen, kannst du die Methode
+          <code>play()</code> verwenden. Hier ist ein Beispiel:
+        </p>
+        <pre><code>SoundFile sound1;
+SoundFile sound2;
+
+void setup() {
+    sound1 = new SoundFile(this, "schuss.mp3");
+    sound2 = new SoundFile(this, "hupe.mp3");
+}
+
+void draw() {
+    // Beispiel: Abspielen von Sounds bei Tastendruck
+    if (keyPressed) {
+        if (key == 's') {
+            sound1.play(); // Schuss abspielen
+        } else if (key == 'h') {
+            sound2.play(); // Hupe abspielen
+        }
+    }
+}
+</code></pre>
       </div>
     </details>
 
