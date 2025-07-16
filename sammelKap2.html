@@ -1375,65 +1375,6 @@ char zeichen = 'A';</code></pre>
             <li>Animationen erzeugen (<code>circle(x % 100, 50, 30))</code></li>
           </ul>
           <p class="box-warning">Nur mit Ganzzahlen sinnvoll einsetzbar</p>
-
-          <pre><code>int zahl = 0;
-
-void setup() {
-  size(300, 100);
-  textSize(16);
-  textAlign(CENTER, CENTER);
-}
-
-void draw() {
-  background(255);
-  
-  boolean istGerade = zahl % 2 == 0;
-  String ausgabe = "Zahl " + zahl + " ist " + (istGerade ? "gerade" : "ungerade");
-  
-  text(ausgabe, width / 2, height / 2);
-}
-
-void mousePressed() {
-  zahl++;
-}
-</code></pre>
-
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloEvenOdd"
-          ></iframe>
-
-          <p>
-            Oder um zwischen Farben zu wechseln (immer wieder bei 0 starten):
-          </p>
-          <pre><code>int index = 0;
-
-void setup() {
-  size(250, 100);
-  textAlign(CENTER, CENTER);
-  textSize(14);
-}
-
-void draw() {
-  int mod = index % 3;
-  
-  if (mod == 0) {
-    background(255, 0, 0); // Rot
-  } else if (mod == 1) {
-    background(0, 255, 0); // Grün
-  } else {
-    background(0, 0, 255); // Blau
-  }
-  
-  fill(255);
-  text("Index: " + index + " → % 3 = " + mod, width / 2, height / 2);
-}
-
-void mousePressed() {
-  index++;
-}</code></pre>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloColorSwitch"
-          ></iframe>
         </div>
       </details>
     </details>

@@ -17,6 +17,50 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchIfElseIf(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(14);
+  };
+
+  p.draw = () => {
+    if (p.mouseX < 100) {
+      p.background(255, 0, 0); // rot
+    } else if (p.mouseX < 200) {
+      p.background(255, 255, 0); // gelb
+    } else {
+      p.background(0, 255, 0); // grün
+    }
+
+    p.fill(0);
+    p.text("mouseX = " + p.mouseX, p.width / 2, p.height / 2);
+
+    autoResizeCanvas(p);
+  };
+}
+
+function sketchIfColorChange(p) {
+  p.setup = () => {
+    p.createCanvas(300, 100);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(14);
+  };
+
+  p.draw = () => {
+    if (p.mouseX < p.width / 2) {
+      p.background(255, 0, 0); // rot
+    } else {
+      p.background(0, 0, 255); // blau
+    }
+
+    p.fill(255);
+    p.text("mouseX = " + p.mouseX, p.width / 2, p.height / 2);
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchModuloColorSwitch(p) {
   let index = 0;
 

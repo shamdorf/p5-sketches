@@ -24,1087 +24,144 @@
       });
     </script>
   </head>
-  <body>
-    <!-- Info - Aktiver Modus und Interaktion -->
-    <details class="top">
-      <summary id="info">Aktiver Modus und Interaktion</summary>
-
-      <!-- STATISCHER MODUS -->
-      <details class="box-info">
-        <summary>🖼️ Statischer Modus</summary>
-        <p>
-          Bisher haben wir nur im statischen Modus programmiert. Im
-          <strong>statischen Modus</strong> werden alle Anweisungen einmal
-          ausgeführt und das Programm anschließend beendet.
-        </p>
-        <ul>
-          <li>Nur einmaliger Programmstart.</li>
-          <li>
-            Ideal für einfache Zeichnungen, kein Ablauf, keine Interaktion.
-          </li>
-        </ul>
-
-        <div class="example">
-          <pre>
-size(300, 200);
-background(240);
-fill(255, 0, 0);
-ellipse(150, 100, 100, 100);</pre
-          >
-
-          <div id="sketch-static" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchStatic"
-          ></iframe>
-        </div>
-      </details>
-
-      <!-- statischer vs aktiver Modus -->
-      <details class="box-info">
-        <summary>🌀 Aktiver Modus</summary>
-        <p>
-          Wir wollen jetzt Programme schreiben, die Animationen darstellen oder
-          auf Nutzereingaben reagieren. Hierfür benötigen wir den
-          <strong>aktiven Modus</strong> von Processing.
-        </p>
-        <ul>
-          <li>
-            Der aktive Modus nutzt die beiden Funktionen
-            <strong><code>setup()</code></strong> und
-            <strong><code>draw()</code></strong>
-          </li>
-          <li>
-            Die Anweisungen in der <code>setup()-Funktion</code> werden
-            <strong>einmal beim Start ausgeführt</strong>
-          </li>
-          <li>
-            Die Anweisungen in der <code>draw()-Funktion</code> werden
-            <strong>in einer Schleife immer wiederholt ausgeführt</strong>.
-            Standardmäßig mit 60 FPS (Frames Per Second).
-          </li>
-        </ul>
-
-        <div class="example">
-          <p>
-            Beispiel für eine Interaktion mit der Maus. Die Ellipse wird immer
-            wieder neu an den Mauskordinaten gerendert.
-          </p>
-          <pre>
-void setup() {
-  size(300, 200);
+  <details class="top">
+  <summary>🔀 Was sind Verzweigungen?</summary>
+  <div class="box-info">
+    <p>Mit einer <strong>Verzweigung</strong> kann das Programm unterschiedliche Wege gehen – je nachdem, ob eine Bedingung <code>true</code> oder <code>false</code> ist.</p>
+    <ul>
+      <li>Das Schlüsselwort dafür ist <code>if</code>.</li>
+      <li>Zusätzlich kann man auch <code>else</code> und <code>else if</code> benutzen.</li>
+    </ul>
+    <pre><code>
+if (bedingung) {
+  // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
+} else {
+  // dieser Block wird ausgeführt, wenn die Bedingung falsch ist
 }
+    </code></pre>
+  </div>
+</details>
 
-void draw() {
-  background(255);
-  ellipse(mouseX, mouseY, 50, 50);
-}
-  </pre
-          >
-
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
-          ></iframe>
-        </div>
-        <ul class="box-warning">
-          <li>
-            Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
-            aufgerufen werden dürfen. Daher müssen die Befehle in die
-            <code>setup()-Funktion</code>
-          </li>
-          <li>
-            Damit das Programm in einer Schleife immer weiter läuft, braucht es
-            eine <code>draw()-Funktion</code>. Diese darf auch leer sein.
-          </li>
-        </ul>
-        <br />
-      </details>
-
-      <!-- mausinteraktion -->
-      <details class="box-info">
-        <summary>
-          🖱️ Mausinteraktion: mousePressed() und mouseReleased()
-        </summary>
-        <ul>
-          <li>
-            <code>mousePressed()</code>: wird aufgerufen, wenn eine Maustaste
-            gedrückt wird
-          </li>
-          <li>
-            <code>mouseReleased()</code>: wird aufgerufen, wenn die Maustaste
-            losgelassen wird
-          </li>
-          <li>
-            <code>mouseX</code>: Aktuelle X-Position der Maus relativ zum
-            Zeichenfenster (Canvas).
-          </li>
-          <li>
-            <code>mouseY</code>: Aktuelle Y-Position der Maus relativ zum
-            Zeichenfenster (Canvas).
-          </li>
-        </ul>
-        <pre>
-void setup() {
-  size(200, 200);
-  background(220);
-}
-
-void draw() {
-  // leer
-}
-
-void mousePressed() {
-  fill(0);
-  ellipse(mouseX, mouseY, 20, 20);
-}
-
-void mouseReleased() {
+<details class="top">
+  <summary>🔎 Bedingungen in Processing</summary>
+  <div class="box-info">
+    <p>Eine <strong>Bedingung</strong> ist ein Ausdruck, der entweder <code>true</code> oder <code>false</code> ergibt.</p>
+    <ul>
+      <li>Die Bedingung steht in Klammern <code>( ... )</code></li>
+      <li>Sie enthält oft einen Vergleichsoperator:</li>
+    </ul>
+    <h4>🔢 Vergleichsoperatoren</h4>
+    <ul>
+      <li><code>==</code> → gleich</li>
+      <li><code>!=</code> → ungleich</li>
+      <li><code>&gt;</code> → größer als</li>
+      <li><code>&lt;</code> → kleiner als</li>
+      <li><code>&gt;=</code> → größer oder gleich</li>
+      <li><code>&lt;=</code> → kleiner oder gleich</li>
+    </ul>
+    <h4>📚 Beispiel</h4>
+    <pre><code>
+if (x &gt; 100) {
   fill(255, 0, 0);
-  rect(mouseX - 10, mouseY - 10, 20, 20);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMousePressed"
-          style="border: none"
-        ></iframe>
-      </details>
-
-      <!-- Tastaturinteraktion -->
-      <details class="box-info">
-        <summary>
-          ⌨️ Tastaturinteraktion: keyPressed() und keyReleased()
-        </summary>
-        <ul>
-          <li>
-            <code>keyPressed()</code>: wird ausgeführt, wenn eine Taste gedrückt
-            wird
-          </li>
-          <li>
-            <code>keyReleased()</code>: wird ausgeführt, wenn die Taste
-            losgelassen wird
-          </li>
-          <li>
-            <code>key</code>: Speichert die zuletzt gedrückte Taste (z. B.
-            <code>'a'</code>, <code>'Z'</code>).
-          </li>
-          <li>
-            <code>keyCode</code>: Code der gedrückten Taste – nötig für
-            Sondertasten wie <code>UP</code>, <code>LEFT</code>,
-            <code>ENTER</code>, <code>SHIFT</code>.
-          </li>
-        </ul>
-        <p class="">Beispiel 1: 🎹 <strong>Taste anzeigen</strong></p>
-        <pre>
-void setup() {
-  size(200, 200);
-  background(240);
+} else {
+  fill(0, 255, 0);
 }
+    </code></pre>
+  </div>
+</details>
 
+<details class="top">
+  <summary>🧪 Bedingungen kombinieren</summary>
+  <div class="box-info">
+    <p>Man kann Bedingungen auch miteinander kombinieren.</p>
+    <ul>
+      <li><code>&&</code> → UND: Beide Bedingungen müssen <code>true</code> sein</li>
+      <li><code>||</code> → ODER: Eine der Bedingungen muss <code>true</code> sein</li>
+      <li><code>!</code> → NICHT: Kehrt den Wahrheitswert um</li>
+    </ul>
+    <h4>📚 Beispiel</h4>
+    <pre><code>
+if (x &gt; 100 && y &lt; 50) {
+  ellipse(x, y, 30, 30);
+}
+    </code></pre>
+  </div>
+</details>
+
+<details class="top">
+  <summary>🎨 Beispiel: Farbwechsel mit if</summary>
+  <details class="box-info">
+    <summary>🌈 Farbe abhängig von Position</summary>
+    <pre><code>
 void draw() {
-  // leer
-}
-
-void keyPressed() {
-  fill(0);
-  textSize(20);
-  text("Taste: " + key, 50, 100);
-}
-
-void keyReleased() {
-  println("Losgelassen: " + key);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchKeyPressed"
-          style="border: none"
-        ></iframe>
-        <p>Beispiel 2: 🎹 <strong>Tastendruck verändert Farbe</strong></p>
-        <pre>
-void setup() {
-  size(200, 200);
-  background(240);
-}
-
-void draw() {
-  // leer
-}
-
-void keyPressed() { 
-  background(random(255, random(255), random(255)); 
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchKeyPress"
-        ></iframe>
-      </details>
-    </details>
-
-    <!-- Commands - AKTIVER MODUS (GRUNDGERÜSTE) -->
-    <details class="top">
-      <summary id="command">⚙️Grundgerüste für den aktiven Modus</summary>
-      <div class="box-command">
-        <p>⚙️ Aktiver Modus: setup() & draw()</p>
-        <pre><code>
-void setup() {
-  createCanvas(400, 400);
-}
-
-void draw() {
-  background(220);
-  // dein Code hier
-}
-  </code></pre>
-
-        <!-- MAUSINTERAKTION -->
-
-        <p>🖱️ Mausinteraktion: mousePressed() & mouseReleased()</p>
-        <pre><code>
-void mousePressed() {
-  // Wird aufgerufen, wenn die Maustaste gedrückt wird
-}
-
-void mouseReleased() {
-  // Wird aufgerufen, wenn die Maustaste losgelassen wird
-}
-  </code></pre>
-
-        <!-- TASTATURINTERAKTION -->
-
-        <p>⌨️ Tastaturinteraktion: keyPressed() & keyReleased()</p>
-        <pre><code>
-void keyPressed() {
-  // Wird aufgerufen, wenn eine Taste gedrückt wird
-}
-
-void keyReleased() {
-  // Wird aufgerufen, wenn die Taste losgelassen wird
-}
-  </code></pre>
-      </div>
-    </details>
-
-    <!-- Aufgabebutton 1.1-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_1_5"
-      >Übungsaufgaben 2.1a bis 2.1k</a
-    >
-
-    <!-- Wichtige Befehle in Processing -->
-    <details class="top">
-      <summary id="command">
-        🛠️ Wichtige Befehle/Funktionen in Processing
-      </summary>
-      <!-- RANDOM -->
-      <details class="box-command">
-        <summary>
-          🎲 <code>random(min, max)</code> - <strong>Zufallszahlen</strong>
-        </summary>
-        <ul>
-          <li>
-            Erzeugt eine <strong>Kommazahl (float)</strong> zwischen
-            <code>min</code> und <code>max</code>.
-          </li>
-          <li>
-            <code>random(100)</code> → Zahl zwischen <code>0</code> und
-            <code>100</code>.
-          </li>
-          <li>
-            <code>random(50, 100)</code> → Zahl zwischen <code>50</code> und
-            <code>100</code>.
-          </li>
-          <li>
-            Für ganzzahlige Zufallswerte:
-            <code>int(random(...)) oder (int) random(...)</code>
-          </li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-  float x = random(width);
-  float y = random(height);
-  ellipse(x, y, 50, 50);
-  text("Drücke eine Taste!", 20, 20);
-}
-
-void keyPressed() {
-  float x = random(width);
-  float y = random(height);
-  ellipse(x, y, 50, 50);
-}
-  </pre
-        >
-        <div id="sketch-random" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRandom"
-        ></iframe>
-      </details>
-
-      <!-- TEXT -->
-      <details class="box-command">
-        <summary>
-          📝 <code>text(txt, x, y)</code> -
-          <strong>Textausgabe auf dem Bildschirm</strong>
-        </summary>
-        <ul>
-          <li>
-            <code>text(txt, x, y)</code>: Zeigt den Text <code>txt</code> an
-            Position <code>x</code>, <code>y</code>.
-          </li>
-          <li><code>textSize(größe)</code>: Legt die Schriftgröße fest.</li>
-          <li>
-            <code>textAlign(horiz, vert)</code>: Textausrichtung – z. B.
-            <code>LEFT</code>, <code>CENTER</code>, <code>RIGHT</code> und
-            <code>TOP</code>, <code>BOTTOM</code>, <code>CENTER</code>.
-          </li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-  textSize(24);
-  textAlign(CENTER, CENTER);
-  text("Hallo Welt", width / 2, height / 2);
-}</pre
-        >
-        <div id="sketch-text" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchText"
-        ></iframe>
-      </details>
-    </details>
-
-    <!-- Aufgabebutton 1.1-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_2_4"
-      >Übungsaufgaben 2.2a bis 2.2d</a
-    >
-
-    <!-- Variablen -->
-    <!-- VARIABLEN GRUNDLAGEN -->
-    <details class="top">
-      <summary id="info">Variablen</summary>
-      <details class="box-info">
-        <summary>🧠 Motivation - Warum braucht man Variablen?</summary>
-        <p>
-          Variablen gibt es in jeder Programmiersprache. Es sind "Behälter", die
-          Werte speichern können. <br /><br />
-          <strong>Wofür braucht man sie?</strong>
-        </p>
-        <ul>
-          <li>
-            Man kann <strong>Werte speichern</strong>, um sie später wieder zu
-            verwenden. (Highscores, Nicknames, Geburtsdatum...)
-          </li>
-          <li>
-            Sie ermöglichen
-            <strong>Animationen und Interaktionen</strong>. Positionen, Farben,
-            und Zustände können ihre Werte ändern und damit ihren Aufenthalsort
-            oder ihr Aussehen.
-          </li>
-          <li>
-            Ein einmal gespeicherter Wert kann
-            <strong>verändert oder überprüft</strong>
-            werden.
-          </li>
-        </ul>
-        <div class="example">
-          <p>
-            Beispiel einer Animation eines Balls, der sich über den Bildschirm
-            bewegt. Mit einem Tastendruck startet er von vorne.
-          </p>
-          <pre>
-int x = 0;  //Deklaration mit Initialisierung
-
-void setup() {
-  size(400, 200);
-}
-
-void draw() {
-  background(255);
-  text("Drücke eine Taste!", 40, 40);
-  ellipse(x, 100, 50, 50);
-  x = x + 2;  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
-}
-
-void keyPressed() {
-  x = 0; // Bei Tastendruck Startposition zurücksetzen
-}</pre
-          >
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
-          ></iframe>
-        </div>
-      </details>
-
-      <details class="box-info">
-        <summary>🔧 Deklaration & Initialisierung</summary>
-        <p>
-          Damit man Variablen benutzen kann, muss man sie dem
-          Compiler/Interpreter <strong>"bekanntmachen" - deklarieren</strong> .
-          Außerdem sollte eine Variable einen
-          <strong>Initialwert bekommen</strong>.
-        </p>
-        <p>🛠️ <strong>Deklaration</strong></p>
-        <ul>
-          <li>Dabei wird eine Variable „angekündigt“: <code>int x;</code></li>
-          <li>
-            Man teilt dem Programm den Namen und den Datentyp der Variable mit.
-          </li>
-        </ul>
-
-        <p>🎯 <strong>Initialisierung</strong></p>
-        <ul>
-          <li>
-            Der Variable wird ein Startwert zugewiesen: <code>x = 100;</code>
-          </li>
-          <li>Beides zusammen: <code>int x = 100;</code> → sehr häufig!</li>
-        </ul>
-
-        <p>🔁 <strong>Verwendung</strong></p>
-        <ul>
-          <li>
-            Einmal gespeichert, kann der Wert im Programm verwendet werden:
-          </li>
-          <li><code>ellipse(x, 50, 30, 30);</code></li>
-        </ul>
-        <div class="example">
-          <p>
-            📚 Beispiel für das Erstellen einer Zahl-Variablen und deren
-            Verwendung beim Zeichnen einer Ellipse.
-          </p>
-          <pre>
-int x = 100;
-
-void setup() {
-  size(300, 150);
-  ellipse(x, 75, 50, 50);
-}</pre
-          >
-
-          <div id="sketch-variable-example" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariableExample"
-          ></iframe>
-        </div>
-      </details>
-
-      <!-- wichtige Datentypen -->
-      <details class="box-info">
-        <summary>📚 Wichtige Datentypen</summary>
-
-        <ul>
-          <li><code>int</code> – ganze Zahl, z. B. <code>int z = 10;</code></li>
-          <li>
-            <code>float</code> – Kommazahl, z. B. <code>float y = 3.14;</code>
-          </li>
-          <li>
-            <code>boolean</code> – wahr/falsch, z. B.
-            <code>boolean sichtbar = true;</code>
-          </li>
-          <li>
-            <code>char</code> – einzelnes Zeichen, z. B.
-            <code>char taste = 'A';</code>
-          </li>
-          <li>
-            <code>String</code> – Text, z. B. <code>String name = "Luna";</code>
-          </li>
-        </ul>
-        <div class="example">
-          <p>
-            Hier werden verschiedene Datentypen erstellt. Mit einer
-            <strong>Verzweigung</strong>
-            wird die boolesche Variable "sichtbar" geprüft. Wenn sie true ist,
-            wir ein Text auf dem Bildschirm geschrieben. Der Text und dessen
-            Koordinaten sind ebenfalls in Variablen gespeichert.
-          </p>
-          <pre>
-int x = 100;       // Ganzzahl speichern
-float y = 150.5;   // Kommazahl
-String text = "Hallo!";
-boolean sichtbar = true;
-
-void setup() {
-  size(300, 200);
-  if (sichtbar) {
-    textSize(20);
-    text(text, x, y);
-  }
-}</pre
-          >
-
-          <div id="sketch-variablen" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
-          ></iframe>
-        </div>
-      </details>
-
-      <details class="box-info">
-        <summary>📈 Wertzuweisung & Erhöhung von Variablen</summary>
-        <h4>Wertzuweisung</h4>
-        <ul>
-          <li><code>x = 5; // Variable x bekommt den Wert 5</code></li>
-          <li>
-            <code>=</code> ist der Zuweisungsoperator. Er weist den Wert auf der
-            rechten Seite der Variablen auf der linken Seite zu.
-          </li>
-        </ul>
-
-        <h4>Variable erhöhen</h4>
-        <ul>
-          <li><code>x = x + 1;</code> – Addiert 1 zu x (Standardform)</li>
-          <li><code>x++;</code> – Kurzform für <code>x = x + 1</code></li>
-          <li>
-            <code>x += 1;</code> – Addiert ebenfalls 1, funktioniert aber auch
-            mit anderen Werten (<code>x += 5;</code>)
-          </li>
-        </ul>
-
-        <h4>📚 Beispiel</h4>
-        <pre>
-int x = 0;  //Deklaration mit Initialisierung
-
-void setup() {
-  size(400, 200);
-}
-
-void draw() {
-  background(255);
-  text("Drücke eine Taste!", 40, 40);
-  ellipse(x, 100, 50, 50);
-  x = x + 2;  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
-}
-
-void keyPressed() {
-  x = 0; // Bei Tastendruck Startposition zurücksetzen
-}</pre
-        >
-
-        <div id="sketch-increment" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
-        ></iframe>
-      </details>
-      <details class="box-info">
-        <summary>🌍 Globale & lokale Variablen (Scope)</summary>
-        <h4>🔍 Scope - Sichtbarkeitsbereich</h4>
-        <ul>
-          <li>
-            Der <strong>Scope</strong> (Skopus) beschreibt, wo eine Variable im
-            Code sichtbar ist bzw. verwendet werden kann.
-          </li>
-        </ul>
-
-        <h4>🌐 Globale Variable</h4>
-        <ul>
-          <li>Oberhalb der <code>setup()-Funktion</code> deklariert.</li>
-          <li>
-            Überall im Code sichtbar (z. B. in <code>setup()</code> &
-            <code>draw()</code>).
-          </li>
-        </ul>
-
-        <h4>🔒 Lokale Variable</h4>
-        <ul>
-          <li>Innerhalb einer Funktion deklariert.</li>
-          <li>Nur innerhalb dieser Funktion sichtbar.</li>
-        </ul>
-
-        <h4>📚 Beispiel</h4>
-        <pre>
-int x = 50; // global
-
-void setup() {
-  size(300, 100);
-}
-
-void draw() {
-  background(240);
-  ellipse(x, height/2, 30, 30);
-
-  int y = 75; // lokal
-  ellipse(250, y, 20, 20);
-}</pre
-        >
-
-        <div id="sketch-scope" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchScope"
-        ></iframe>
-      </details>
-    </details>
-
-    <!-- Aufgabebutton 2.3-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_3_5"
-      >Übungsaufgaben 2.3a bis 2.3j</a
-    >
-    <br />
-
-    <!-- Aufgabebutton 2.4-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_4_5"
-      >Übungsaufgaben 2.4a bis 2.4b</a
-    >
-
-    <br />
-    <!-- Aufgabebutton 2.5-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_5_5"
-      >Übungsaufgaben 2.5a bis 2.5d</a
-    >
-
-    <!-- Operatoren bei Variablen -->
-    <details class="top">
-      <summary id="info">Operatoren bei Variablen</summary>
-
-      <!-- Grundrechenarten -->
-      <details class="box-info">
-        <summary>Grundrechenarten mit Variablen</summary>
-        <ul>
-          <li><strong>+</strong> → Addition (z. B. <code>5 + 3</code>)</li>
-          <li><strong>-</strong> → Subtraktion (z. B. <code>9 - 4</code>)</li>
-          <li>
-            <strong>*</strong> → Multiplikation (z. B. <code>2 * 6</code>)
-          </li>
-          <li><strong>/</strong> → Division (z. B. <code>8 / 2</code>)</li>
-        </ul>
-        <pre><code>int a = 10;
-int b = 4;
-
-int summe = a + b;      // Addition → 14
-int differenz = a - b;  // Subtraktion → 6
-int produkt = a * b;    // Multiplikation → 40
-int division1 = a / b;      // Division → 2
-float division2 = a / (float)b;  // Division → 2.5</code></pre>
-
-        <br />
-
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrundrechenarten"
-        ></iframe>
-        <div class="box-warning">
-          <strong>Hinweis:</strong> Bei der Division darauf achten:
-          <ul>
-            <li>Ganzzahlige Division (int / int) rundet ab</li>
-            <li>Division durch 0 ist nicht erlaubt</li>
-            <li>Für genaue Ergebnisse <code>float</code> verwenden</li>
-          </ul>
-        </div>
-      </details>
-
-      <!-- Increment -->
-      <details class="box-info">
-        <summary>Increment-Operator (++): Erhöhe den Wert um 1</summary>
-        <ul>
-          <li><strong>++</strong> → Erhöht eine Variable um 1</li>
-          <li>Wird oft zum Zählen verwendet</li>
-          <li>Sehr nützlich bei Animationen und Zustandswechseln</li>
-        </ul>
-        <pre><code>int x = 0;
-
-void setup() {
-  size(250, 100);
-  textSize(20);
-  textAlign(CENTER, CENTER);
-}
-
-void draw() {
-  background(240);
-  fill(0);
-  text("x = " + x, width / 2, height / 2);
-}
-
-void mousePressed() {
-  x++;
-}</code></pre>
-
-        <p>
-          Der Operator <code>++</code> erhöht den Wert einer Variablen um genau
-          1. Beim Klick auf die Fläche erhöht sich die Zahl.
-        </p>
-
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIncrementOperator"
-        ></iframe>
-      </details>
-
-      <!-- decrement -->
-      <details class="box-info">
-        <summary>Decrement-Operator (--): Verringere den Wert um 1</summary>
-        <ul>
-          <li><strong>--</strong> → Verringert eine Variable um 1</li>
-          <li>Hilfreich zum Rückwärtszählen oder für Countdown-Logik</li>
-        </ul>
-
-        <pre><code>int x = 10;
-
-void setup() {
-  size(250, 100);
-  textSize(20);
-  textAlign(CENTER, CENTER);
-}
-
-void draw() {
-  background(240);
-  fill(0);
-  text("x = " + x, width / 2, height / 2);
-}
-
-void mousePressed() {
-  x--;
-}</code></pre>
-        <p>
-          Der Operator -- veringert den Wert einer Zahl um 1. Klickst du auf die
-          Fläche, wird der Wert kleiner.
-        </p>
-
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchDecrementOperator"
-        ></iframe>
-      </details>
-
-      <!-- Modulo -->
-      <details class="box-info">
-        <summary>Modulo-Operator (%): Restwert einer Division</summary>
-
-        <p>
-          Mit <code>%</code> erhältst du den <strong>Rest</strong> einer
-          Division. <code>7 % 3</code> ergibt <code>1</code>, weil 7 = 2×3 +
-          <strong>1</strong>. Mit dem Modulo-Operator kannst du:
-        </p>
-        <ul>
-          <li>
-            Teilbarkeit einer Zahl herausfinden. (<code>if (zahl % 3 == 0)</code
-            >) Kapitel 3
-          </li>
-          <li>Gerade oder ungerade Zahlen erkennen (<code>x % 2</code>)</li>
-          <li>Wiederholende Muster erzeugen (z. B. Farbwechsel)</li>
-          <li>Animationen erzeugen (<code>circle(x % 100, 50, 30))</code></li>
-        </ul>
-        <p class="box-warning">Nur mit Ganzzahlen sinnvoll einsetzbar</p>
-
-        <pre><code>int zahl = 0;
-
-void setup() {
-  size(300, 100);
-  textSize(16);
-  textAlign(CENTER, CENTER);
-}
-
-void draw() {
-  background(255);
-  
-  boolean istGerade = zahl % 2 == 0;
-  String ausgabe = "Zahl " + zahl + " ist " + (istGerade ? "gerade" : "ungerade");
-  
-  text(ausgabe, width / 2, height / 2);
-}
-
-void mousePressed() {
-  zahl++;
-}
-</code></pre>
-
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloEvenOdd"
-        ></iframe>
-
-        <p>Oder um zwischen Farben zu wechseln (immer wieder bei 0 starten):</p>
-        <pre><code>int index = 0;
-
-void setup() {
-  size(250, 100);
-  textAlign(CENTER, CENTER);
-  textSize(14);
-}
-
-void draw() {
-  int mod = index % 3;
-  
-  if (mod == 0) {
-    background(255, 0, 0); // Rot
-  } else if (mod == 1) {
-    background(0, 255, 0); // Grün
+  if (mouseX &lt; width / 2) {
+    background(255, 0, 0); // rot
   } else {
-    background(0, 0, 255); // Blau
+    background(0, 0, 255); // blau
   }
-  
-  fill(255);
-  text("Index: " + index + " → % 3 = " + mod, width / 2, height / 2);
 }
+    </code></pre>
+    <iframe src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfColorChange"></iframe>
+  </details>
+</details>
 
-void mousePressed() {
-  index++;
-}</code></pre>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloColorSwitch"
-        ></iframe>
-      </details>
-    </details>
-
-    <!-- Aufgabebutton 2.6-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_6_5"
-      >Übungsaufgaben 2.6a bis 2.6g</a
-    >
-
-    <!-- SYSTEMVARIABLEN -->
-    <details class="top">
-      <summary id="command">🧠 Systemvariablen</summary>
-
-      <!-- width -->
-      <details class="box-command">
-        <summary>📏 width</summary>
-        <ul>
-          <li>Gibt die Breite des Zeichenfensters zurück.</li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-  text("Fensterbreite: " + width, 10, 20);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemWidth"
-        ></iframe>
-      </details>
-
-      <!-- height -->
-      <details class="box-command">
-        <summary>📏 height</summary>
-        <ul>
-          <li>Gibt die Höhe des Zeichenfensters zurück.</li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-  text("Fensterhöhe: " + height, 10, 20);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemHeight"
-        ></iframe>
-      </details>
-
-      <!-- mouseX / mouseY -->
-      <details class="box-command">
-        <summary>🖱️ mouseX, mouseY</summary>
-        <ul>
-          <li>Position der Maus im Fenster (x/y-Koordinaten).</li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-}
+<details class="top">
+  <summary>📊 Mehrere Bedingungen prüfen</summary>
+  <details class="box-info">
+    <summary>🚦 Farbwechsel mit if ... else if ... else</summary>
+    <pre><code>
 void draw() {
-  background(255);
-  ellipse(mouseX, mouseY, 30, 30);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemMouseXY"
-        ></iframe>
-      </details>
-
-      <!-- pmouseX / pmouseY -->
-      <details class="box-command">
-        <summary>🖱️ pmouseX, pmouseY</summary>
-        <ul>
-          <li>Vorherige Mausposition (x/y) vom letzten Frame.</li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-  background(255);
-}
-void draw() {
-  line(pmouseX, pmouseY, mouseX, mouseY);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemPmouse"
-        ></iframe>
-      </details>
-
-      <!-- mousePressed -->
-      <details class="box-command">
-        <summary>👆 mousePressed</summary>
-        <ul>
-          <li>Boolean: <code>true</code>, wenn Maustaste gedrückt ist.</li>
-        </ul>
-        <pre>
-void draw() {
-  if (mousePressed) {
-    fill(0);
+  if (mouseX &lt; 100) {
+    background(255, 0, 0);  // rot
+  } else if (mouseX &lt; 200) {
+    background(255, 255, 0); // gelb
   } else {
-    fill(200);
+    background(0, 255, 0); // grün
   }
-  ellipse(150, 100, 50, 50);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemMousePressed"
-        ></iframe>
-      </details>
-
-      <!-- mouseButton -->
-      <details class="box-command">
-        <summary>🖱️ mouseButton</summary>
-        <ul>
-          <li>
-            Welche Maustaste: <code>LEFT</code>, <code>RIGHT</code>,
-            <code>CENTER</code>.
-          </li>
-        </ul>
-        <pre>
-void draw() {
-  if (mousePressed) {
-    if (mouseButton == LEFT) {
-      background(255, 0, 0);
-    } else if (mouseButton == RIGHT) {
-      background(0, 255, 0);
-    }
-  }
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemMouseButton"
-        ></iframe>
-      </details>
-
-      <!-- key -->
-      <details class="box-command">
-        <summary>⌨️ key</summary>
-        <ul>
-          <li>Welcher Buchstabe oder welches Zeichen wurde gedrückt?</li>
-        </ul>
-        <pre>
-void draw() {
-  if (keyPressed) {
-    text("Taste: " + key, 10, 20);
-  }
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemKey"
-        ></iframe>
-      </details>
-
-      <!-- keyCode -->
-      <details class="box-command">
-        <summary>⬆️ keyCode</summary>
-        <ul>
-          <li>
-            Für Sondertasten: <code>UP</code>, <code>DOWN</code>,
-            <code>LEFT</code>, <code>RIGHT</code>, <code>SHIFT</code>, usw.
-          </li>
-        </ul>
-        <pre>
-void draw() {
-  if (keyPressed) {
-    if (keyCode == UP) {
-      ellipse(150, 50, 50, 50);
-    }
-  }
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemKeyCode"
-        ></iframe>
-      </details>
-
-      <!-- keyPressed -->
-      <details class="box-command">
-        <summary>⌨️ keyPressed</summary>
-        <ul>
-          <li>Boolean: <code>true</code>, wenn Taste gedrückt ist.</li>
-        </ul>
-        <pre>
-void draw() {
-  if (keyPressed) {
-    background(0);
-  } else {
-    background(255);
-  }
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemKeyPressed"
-        ></iframe>
-      </details>
-
-      <!-- frameRate -->
-      <details class="box-command">
-        <summary>⏱️ frameRate</summary>
-        <ul>
-          <li>Anzahl der Frames pro Sekunde.</li>
-        </ul>
-        <pre>
-void setup() {
-  frameRate(10);
 }
-void draw() {
-  ellipse(random(width), random(height), 10, 10);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemFrameRate"
-        ></iframe>
-      </details>
+    </code></pre>
+    <iframe src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfElseIf"></iframe>
+  </details>
+</details>
 
-      <!-- frameCount -->
-      <details class="box-command">
-        <summary>📈 frameCount</summary>
-        <ul>
-          <li>Wie viele Frames sind seit <code>setup()</code> vergangen?</li>
-        </ul>
-        <pre>
-void draw() {
-  background(255);
-  text("Frames: " + frameCount, 10, 20);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemFrameCount"
-        ></iframe>
-      </details>
+<details class="top">
+  <summary>📌 Häufige Fehler bei if</summary>
+  <div class="box-warning">
+    <ul>
+      <li><code>=</code> ist eine Zuweisung, <code>==</code> ist ein Vergleich!</li>
+      <li>Immer geschweifte Klammern <code>{ ... }</code> benutzen.</li>
+      <li>Ein Block kann leer sein, sollte aber logisch Sinn ergeben.</li>
+    </ul>
+  </div>
+</details>
 
-      <!-- displayWidth / displayHeight -->
-      <details class="box-command">
-        <summary>🖥️ displayWidth, displayHeight</summary>
-        <ul>
-          <li>Gesamtauflösung des Bildschirms.</li>
-        </ul>
-        <pre>
-void setup() {
-  size(300, 200);
-  println("Bildschirmbreite: " + displayWidth);
-  println("Bildschirmhöhe: " + displayHeight);
-}</pre
-        >
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSystemDisplaySize"
-        ></iframe>
-      </details>
-    </details>
+<details class="top">
+  <summary>🧠 Fragen zu Kapitel 3</summary>
+  <details class="box-question">
+    <summary>Was macht eine if-Verzweigung?</summary>
+    <div class="box-info">
+      <p>Sie prüft eine Bedingung und führt Anweisungen aus, wenn diese erfüllt ist.</p>
+    </div>
+  </details>
+  <details class="box-question">
+    <summary>Was ist der Unterschied zwischen <code>=</code> und <code>==</code>?</summary>
+    <div class="box-info">
+      <p><code>=</code> weist einen Wert zu, <code>==</code> vergleicht zwei Werte.</p>
+    </div>
+  </details>
+  <details class="box-question">
+    <summary>Was passiert bei mehreren Bedingungen?</summary>
+    <div class="box-info">
+      <p>Du kannst <code>else if</code> und <code>else</code> nutzen, um weitere Bedingungen zu prüfen.</p>
+    </div>
+  </details>
+  <details class="box-question">
+    <summary>Wie prüft man, ob zwei Dinge gleichzeitig gelten?</summary>
+    <div class="box-info">
+      <p>Mit dem logischen UND <code>&&</code>.</p>
+    </div>
+  </details>
+</details>
 
-    <!-- Aufgabebutton 2.7-->
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/interaktion-variablen.html#sec_2_7_5"
-      >Übungsaufgaben 2.7a bis 2.7c</a
-    >
-  </body>
+</body>
 </html>
