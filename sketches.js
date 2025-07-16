@@ -38,30 +38,6 @@ function sketchIfElse(p) {
   };
 }
 
-let v1;
-let v2;
-
-function setup() {
-  createCanvas(400, 400);
-  v1 = createVector(100, 100); // Erstelle einen Vektor
-  v2 = createVector(200, 200); // Erstelle einen weiteren Vektor
-}
-
-function draw() {
-  background(255);
-  fill(0);
-  ellipse(v1.x, v1.y, 10, 10); // Zeichne v1
-  ellipse(v2.x, v2.y, 10, 10); // Zeichne v2
-  line(v1.x, v1.y, v2.x, v2.y); // Zeichne eine Linie zwischen v1 und v2
-
-  // Beispiel für Vektoraddition
-  let result = p5.Vector.add(v1, v2);
-  fill(255, 0, 0);
-  ellipse(result.x, result.y, 10, 10); // Zeichne das Ergebnis der Addition
-  line(v1.x, v1.y, result.x, result.y); // Linie von v1 zu result
-  line(v2.x, v2.y, result.x, result.y); // Linie von v2 zu result
-}
-
 function sketchVektoren(p) {
   let v1, v2, result;
 
