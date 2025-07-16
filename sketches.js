@@ -17,6 +17,34 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchVektorenIllustration(p) {
+  let v1, v2, result;
+
+  p.setup = () => {
+    p.createCanvas(400, 400);
+    v1 = new PVector(100, 100); // Ort des Objekts
+    v2 = new PVector(200, 200); // Geschwindigkeit
+    result = PVector.add(v1, v2); // Neuen Ort berechnen
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+    p.ellipse(v1.x, v1.y, 10, 10); // Ort des Objekts
+    p.ellipse(v2.x, v2.y, 10, 10); // Geschwindigkeit
+    p.ellipse(result.x, result.y, 10, 10); // Neuer Ort
+
+    p.line(v1.x, v1.y, v2.x, v2.y); // Linie zwischen Ort und Geschwindigkeit
+    p.line(v1.x, v1.y, result.x, result.y); // Linie zum neuen Ort
+
+    p.fill(0);
+    p.text("Ort", v1.x + 5, v1.y);
+    p.text("Geschwindigkeit", v2.x + 5, v2.y);
+    p.text("Neuer Ort", result.x + 5, result.y);
+  };
+}
+
 function sketchVektoren(p) {
   let v1, v2, result;
 
