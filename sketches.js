@@ -44,17 +44,25 @@ function sketchVektoren(p) {
 
   p.setup = () => {
     p.createCanvas(400, 400);
-    v1 = p.createVector(100, 100); // Erstelle einen Vektor
-    v2 = p.createVector(200, 200); // Erstelle einen weiteren Vektor
+    v1 = p.createVector(100, 150); // Erster Vektor
+    v2 = p.createVector(200, 100); // Zweiter Vektor
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
   p.draw = () => {
     p.background(255);
+
+    // Koordinatensystem zeichnen
+    p.stroke(0);
+    p.line(0, p.height / 2, p.width, p.height / 2); // X-Achse
+    p.line(p.width / 2, 0, p.width / 2, p.height); // Y-Achse
+
+    // Vektoren zeichnen
     p.fill(0);
     p.ellipse(v1.x, v1.y, 10, 10); // Zeichne v1
     p.ellipse(v2.x, v2.y, 10, 10); // Zeichne v2
-    p.line(v1.x, v1.y, v2.x, v2.y); // Zeichne eine Linie zwischen v1 und v2
+    p.line(p.width / 2, p.height / 2, v1.x, v1.y); // Linie von Ursprung zu v1
+    p.line(p.width / 2, p.height / 2, v2.x, v2.y); // Linie von Ursprung zu v2
 
     // Beispiel für Vektoraddition
     let result = p5.Vector.add(v1, v2);
@@ -62,6 +70,12 @@ function sketchVektoren(p) {
     p.ellipse(result.x, result.y, 10, 10); // Zeichne das Ergebnis der Addition
     p.line(v1.x, v1.y, result.x, result.y); // Linie von v1 zu result
     p.line(v2.x, v2.y, result.x, result.y); // Linie von v2 zu result
+
+    // Beschriftungen
+    p.fill(0);
+    p.text("v1", v1.x + 10, v1.y); // Beschriftung für v1
+    p.text("v2", v2.x + 10, v2.y); // Beschriftung für v2
+    p.text("Result", result.x + 10, result.y); // Beschriftung für das Ergebnis
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 }
