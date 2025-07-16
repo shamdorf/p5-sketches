@@ -17,6 +17,26 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchGrid(p) {
+  p.setup = () => {
+    p.createCanvas(800, 600);
+    p.textSize(20);
+    const abstand = 50;
+
+    for (let i = 0; i < p.width; i += abstand) {
+      p.line(i, 0, i, p.height);
+      p.text(i, i + 2, 20);
+    }
+
+    for (let i = 0; i < p.height; i += abstand) {
+      p.line(0, i, p.width, i);
+      p.text(i, 10, i - 4);
+    }
+
+    autoResizeCanvas(p);
+  };
+}
+
 function sketchIfCombined(p) {
   let sichtbar = true;
 
