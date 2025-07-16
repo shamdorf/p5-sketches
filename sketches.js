@@ -17,6 +17,68 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchVektoren(p) {
+  let v1, v2, result;
+
+  p.setup = () => {
+    p.createCanvas(400, 400);
+    v1 = new PVector(100, 100);
+    v2 = new PVector(200, 200);
+    result = PVector.add(v1, v2);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+    p.ellipse(v1.x, v1.y, 10, 10);
+    p.ellipse(v2.x, v2.y, 10, 10);
+    p.ellipse(result.x, result.y, 10, 10);
+    p.line(v1.x, v1.y, v2.x, v2.y);
+    p.line(v1.x, v1.y, result.x, result.y);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+}
+
+function sketchStrings(p) {
+  let greeting;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    let text1 = "Hallo";
+    let text2 = "Welt";
+    greeting = text1 + " " + text2;
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.textSize(32);
+    p.fill(0);
+    p.text(greeting, 50, 100);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+}
+
+function sketchBilder(p) {
+  let img;
+
+  p.preload = () => {
+    img = p.loadImage("bild.png");
+  };
+
+  p.setup = () => {
+    p.createCanvas(400, 400);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.image(img, 0, 0);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+}
+
 function sketchGrid(p) {
   p.setup = () => {
     p.createCanvas(800, 600);

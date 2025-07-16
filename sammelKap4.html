@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+    <title>Kapitel 4 - Objekte in Processing</title>
+  </head>
+  <body>
+    <h1>Kapitel 4: Objekte in Processing</h1>
+
+    <!-- Einführung in Objekte -->
+    <details class="top">
+      <summary><strong>Einführung in Objekte</strong></summary>
+      <div class="info">
+        <p>
+          Objekte sind eine zentrale Komponente der objektorientierten
+          Programmierung. Sie ermöglichen es, Daten und Funktionen zu kapseln,
+          die zusammengehören. In Processing können wir eigene Klassen
+          definieren, um Objekte zu erstellen.
+        </p>
+      </div>
+    </details>
+
+    <!-- Erstellen einer Klasse -->
+    <details class="top">
+      <summary><strong>Erstellen einer Klasse</strong></summary>
+      <div class="info">
+        <p>
+          Um eine Klasse in Processing zu erstellen, verwenden wir das
+          Schlüsselwort <code>class</code>. Hier ist ein einfaches Beispiel für
+          eine Klasse, die einen Punkt repräsentiert:
+        </p>
+        <pre><code>class Punkt {
+    float x;
+    float y;
+
+    Punkt(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    void anzeigen() {
+        ellipse(x, y, 10, 10);
+    }
+}</code></pre>
+      </div>
+    </details>
+
+    <!-- Verwendung von Objekten -->
+    <details class="top">
+      <summary><strong>Verwendung von Objekten</strong></summary>
+      <div class="info">
+        <p>
+          Nachdem wir eine Klasse erstellt haben, können wir Objekte dieser
+          Klasse instanziieren. Hier ist ein Beispiel, wie man ein Objekt der
+          Klasse <code>Punkt</code> verwendet:
+        </p>
+        <pre><code>Punkt p = new Punkt(50, 50);
+p.anzeigen();</code></pre>
+      </div>
+    </details>
+
+    <!-- Beispielsketch -->
+    <details class="top">
+      <summary><strong>Beispielsketch für Objekte</strong></summary>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPunkt"
+      ></iframe>
+    </details>
+
+    <!-- Methoden in Klassen -->
+    <details class="top">
+      <summary><strong>Methoden in Klassen</strong></summary>
+      <div class="info">
+        <p>
+          Klassen können auch Methoden enthalten, die spezifische Funktionen für
+          das Objekt bereitstellen. Hier ist ein Beispiel, das die Methode
+          <code>verschieben()</code> hinzufügt:
+        </p>
+        <pre><code>class Punkt {
+    float x;
+    float y;
+
+    Punkt(float x, float y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    void anzeigen() {
+        ellipse(x, y, 10, 10);
+    }
+
+    void verschieben(float dx, float dy) {
+        x += dx;
+        y += dy;
+    }
+}</code></pre>
+      </div>
+    </details>
+
+    <!-- Beispielsketch für Methoden -->
+    <details class="top">
+      <summary><strong>Beispielsketch mit Methoden</strong></summary>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPunktMethoden"
+      ></iframe>
+    </details>
+
+    <!-- Zusammenfassung -->
+    <details class="top">
+      <summary><strong>Zusammenfassung</strong></summary>
+      <div class="info">
+        <p>
+          Objekte sind ein leistungsfähiges Konzept in Processing, das es
+          ermöglicht, komplexe Programme zu strukturieren und zu organisieren.
+          Durch die Verwendung von Klassen und Methoden können wir unsere
+          Programme modular und wiederverwendbar gestalten.
+        </p>
+      </div>
+    </details>
+
+    <script src="sketches.js"></script>
+  </body>
+</html>
