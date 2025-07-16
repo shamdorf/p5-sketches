@@ -17,6 +17,31 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchIfCombined(p) {
+  let sichtbar = true;
+
+  p.setup = () => {
+    p.createCanvas(300, 200);
+    p.textAlign(p.CENTER, p.CENTER);
+    p.textSize(16);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    if ((p.mouseX > 100 && p.mouseY < 150) || !sichtbar) {
+      p.background(100, 255, 100);
+      p.text("Bedingung erfüllt", p.width / 2, p.height / 2);
+    } else {
+      p.background(255, 100, 100);
+      p.text("Bedingung nicht erfüllt", p.width / 2, p.height / 2);
+    }
+  };
+
+  p.keyPressed = () => {
+    sichtbar = !sichtbar;
+  };
+}
+
 function sketchIfElseIf(p) {
   p.setup = () => {
     p.createCanvas(300, 100);

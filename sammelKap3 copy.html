@@ -289,6 +289,79 @@ println("tschüss");</code></pre>
       >Übungsaufgaben 3.2a bis 3.2b</a
     >
 
+    <!-- Kombinieren von Bedingungen -->
+    <details class="top">
+      <summary id="info">🧩 Bedingungen kombinieren</summary>
+      <div class="box-info">
+        <p>
+          Du kannst mehrere Bedingungen mit logischen Operatoren kombinieren:
+        </p>
+        <ul>
+          <li>
+            <code>&&</code> – <strong>UND</strong>: beide Bedingungen müssen
+            zutreffen
+          </li>
+          <li>
+            <code>||</code> – <strong>ODER</strong>: eine der Bedingungen muss
+            zutreffen
+          </li>
+          <li>
+            <code>!</code> – <strong>NICHT</strong>: kehrt die Bedingung um
+          </li>
+        </ul>
+
+        <h4>⚖️ Präzedenz (Reihenfolge der Auswertung)</h4>
+        <ul>
+          <li><code class="xlFont">!</code> wird zuerst ausgewertet</li>
+          <li><code class="xlFont">&&</code> kommt danach</li>
+          <li><code class="xlFont">||</code> zuletzt</li>
+        </ul>
+        <p>
+          Um Missverständnisse zu vermeiden, solltest du Klammern setzen:
+          <br />
+          <code>if ((x &gt; 100 && y &lt; 50) || !sichtbar)</code>
+        </p>
+
+        <h4>📚 Beispiel: Farbe abhängig von Mausposition und Sichtbarkeit</h4>
+        <p>
+          Wenn sich die Maus rechts oben befindet <strong>oder</strong> die
+          Variable <code>sichtbar</code> auf <code>false</code> gesetzt ist,
+          wird der Hintergrund grün. Andernfalls ist er rot.
+          <br />
+          Mit der <strong>Taste</strong> kannst du
+          <code>sichtbar</code> umschalten.
+        </p>
+
+        <pre><code>
+boolean sichtbar = true;
+
+void setup() {
+  size(300, 200);
+  textAlign(CENTER, CENTER);
+  textSize(16);
+}
+
+void draw() {
+  if ((mouseX &gt; 100 &amp;&amp; mouseY &lt; 150) || !sichtbar) {
+    background(100, 255, 100);
+    text("Bedingung erfüllt", width / 2, height / 2);
+  } else {
+    background(255, 100, 100);
+    text("Bedingung nicht erfüllt", width / 2, height / 2);
+  }
+}
+
+void keyPressed() {
+  sichtbar = !sichtbar;
+}
+  </code></pre>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfCombined"
+        ></iframe>
+      </div>
+    </details>
+
     <details class="top">
       <summary>🧪 Bedingungen kombinieren</summary>
       <div class="box-info">
