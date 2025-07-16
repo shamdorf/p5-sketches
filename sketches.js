@@ -65,6 +65,26 @@ function sketchIfElseIf(p) {
   };
 }
 
+function sketchBallBounce(p) {
+  let x = 50;
+  let xSpeed = 3;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p);
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.ellipse(x, p.height / 2, 30, 30);
+    x += xSpeed;
+
+    if (x > p.width - 15 || x < 15) {
+      xSpeed *= -1;
+    }
+  };
+}
+
 function sketchIfColorChange(p) {
   p.setup = () => {
     p.createCanvas(300, 100);

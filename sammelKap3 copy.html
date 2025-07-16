@@ -292,7 +292,8 @@ println("tschüss");</code></pre>
     <!-- Kombinieren von Bedingungen -->
     <details class="top">
       <summary id="info">🧩 Bedingungen kombinieren</summary>
-      <div class="box-info">
+      <details class="box-info">
+        <summary>Boolesche Ausdrücke</summary>
         <p>
           Du kannst mehrere Bedingungen mit logischen Operatoren kombinieren:
         </p>
@@ -309,19 +310,6 @@ println("tschüss");</code></pre>
             <code>!</code> – <strong>NICHT</strong>: kehrt die Bedingung um
           </li>
         </ul>
-
-        <h4>⚖️ Präzedenz (Reihenfolge der Auswertung)</h4>
-        <ul>
-          <li><code class="xlFont">!</code> wird zuerst ausgewertet</li>
-          <li><code class="xlFont">&&</code> kommt danach</li>
-          <li><code class="xlFont">||</code> zuletzt</li>
-        </ul>
-        <p>
-          Um Missverständnisse zu vermeiden, solltest du Klammern setzen:
-          <br />
-          <code>if ((x &gt; 100 && y &lt; 50) || !sichtbar)</code>
-        </p>
-
         <h4>📚 Beispiel: Farbe abhängig von Mausposition und Sichtbarkeit</h4>
         <p>
           Wenn sich die Maus rechts oben befindet <strong>oder</strong> die
@@ -359,6 +347,129 @@ void keyPressed() {
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIfCombined"
         ></iframe>
+      </details>
+
+      <details class="box-info">
+        <summary>⚖️ Präzedenz (Reihenfolge der Auswertung)</summary>
+        <ul>
+          <li><code class="xlFont">!</code> wird zuerst ausgewertet</li>
+          <li><code class="xlFont">&&</code> kommt danach</li>
+          <li><code class="xlFont">||</code> zuletzt</li>
+        </ul>
+        <p>
+          Um Missverständnisse zu vermeiden, solltest du Klammern setzen:
+          <br />
+          <code>if ((x &gt; 100 && y &lt; 50) || !sichtbar)</code>
+        </p>
+      </details>
+    </details>
+
+    <!-- Fingerübung 3.3-->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/if.html#sec_3_3_7"
+      >Fingerübungen 3.3 - Boolesche Ausdrücke</a
+    >
+
+    <!-- Übung 3.3-->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/if.html#sec_3_3_8"
+      >Übungsaufgaben 3.3a bis 3.3f</a
+    >
+
+    <!-- abprallender Ball -->
+    <details class="top">
+      <summary id="example">
+        🏀 Animation: Fliegender Ball, der an den Wänden abprallt
+      </summary>
+
+      <div class="box-example">
+        <p>
+          🎯 Wir wollen einen Ball programmieren, der sich nur in
+          <strong>x-Richtung</strong> bewegt. Sobald er den linken oder rechten
+          Bildschirmrand erreicht, soll er <strong>abprallen</strong> und
+          zurückfliegen.
+        </p>
+
+        <h4>Benötigte Variablen</h4>
+        <ul>
+          <li><code>x</code> – Position des Balls auf der X-Achse</li>
+          <li><code>xSpeed</code> – Geschwindigkeit und Richtung des Balls</li>
+        </ul>
+
+        <h4>📦 Grundgerüst</h4>
+        <pre><code>float x = 50;
+float xSpeed = 3;
+
+void setup() {
+  size(400, 200);
+}
+
+void draw() {
+  background(255);
+  ellipse(x, height / 2, 30, 30);
+  x = x + xSpeed;
+}</code></pre>
+
+        <h4>❓ Warum brauchen wir <code>xSpeed</code>?</h4>
+        <p>
+          Wenn der Ball sich immer um denselben Wert bewegt (z. B.
+          <code>x += 3</code>), könnte er nicht zurückfliegen. Mit
+          <code>xSpeed</code> können wir die Richtung steuern:
+          <code>+3</code> heißt nach rechts, <code>-3</code> heißt nach links.
+        </p>
+        <h4>🔁 Abprall-Bedingung</h4>
+        <p>
+          Der Ball soll bei den Bildschirmrändern abprallen. Weil der Ball einen
+          Durchmesser hat (z. B. 30), müssen wir mit dem Radius (15) rechnen:
+        </p>
+
+        <pre><code>
+if (x &gt; width - 15 || x &lt; 15) {
+  xSpeed = -xSpeed;
+}
+    </code></pre>
+
+        <h4>✅ Kompletter Sketch</h4>
+        <pre><code>
+float x = 50;
+float xSpeed = 3;
+
+void setup() {
+  size(400, 200);
+}
+
+void draw() {
+  background(255);
+  ellipse(x, height / 2, 30, 30);
+  x = x + xSpeed;
+
+  if (x &gt; width - 15 || x &lt; 15) {
+    xSpeed = -xSpeed;
+  }
+}
+    </code></pre>
+
+        <h4>🎬 Demo</h4>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallBounce"
+        ></iframe>
+
+        <h4>📌 Zusammenfassung</h4>
+        <ul>
+          <li><code>x</code>: Position des Balls</li>
+          <li><code>xSpeed</code>: Geschwindigkeit und Richtung</li>
+          <li><code>x = x + xSpeed;</code>: Bewegung</li>
+          <li>
+            <code>xSpeed = -xSpeed;</code>: Richtung umdrehen beim Abprall
+          </li>
+          <li>
+            <code>if (x &gt; width - 15 || x &lt; 15)</code>: Abprall-Bedingung
+          </li>
+        </ul>
       </div>
     </details>
 

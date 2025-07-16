@@ -256,6 +256,27 @@ div.info {
     border-radius: var(--box-radius);
 }
 
+#example {
+    font-weight: 900;
+    background-color: #f0f0f0;
+    background: linear-gradient(to right, #d9d9d9, #ffffff);
+    position: relative;
+    display: block;
+    border-left: 4px solid #cccccc;
+    padding: var(--box-padding);
+    margin-top: 2rem;
+    border-radius: var(--box-radius);
+}
+
+.box-example {
+    position: relative;
+    background-color: #f0f0f0;
+    border-left: 4px solid #cccccc;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
+}
+
 canvas {
     border: 1px black solid;
 }
