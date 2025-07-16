@@ -82,12 +82,11 @@ ellipse(150, 100, 100, 100);</pre
           </li>
         </ul>
 
-        
-          <p>
-            Beispiel für eine Interaktion mit der Maus. Die Ellipse wird immer
-            wieder neu an den Mauskordinaten gerendert.
-          </p>
-          <pre>
+        <p>
+          Beispiel für eine Interaktion mit der Maus. Die Ellipse wird immer
+          wieder neu an den Mauskordinaten gerendert.
+        </p>
+        <pre>
 void setup() {
   size(300, 200);
 }
@@ -97,12 +96,12 @@ void draw() {
   ellipse(mouseX, mouseY, 50, 50);
 }
   </pre
-          >
+        >
 
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
-          ></iframe>
-        
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchActive"
+        ></iframe>
+
         <ul class="box-warning">
           <li>
             Es gibt Befehle wie <code>size(x, y)</code>, die nur einmal
@@ -544,6 +543,7 @@ void setup() {
         <h4>Wertzuweisung</h4>
         <ul>
           <li><code>x = 5; // Variable x bekommt den Wert 5</code></li>
+          <li>name = "Janosch"; //Veränderung einer String-Variablen</li>
           <li>
             <code>=</code> ist der Zuweisungsoperator. Er weist den Wert auf der
             rechten Seite der Variablen auf der linken Seite zu.
@@ -1116,26 +1116,30 @@ void setup() {
           dazu aus?
         </summary>
         <div class="box-info">
-          <p>Mit dem aktiven Modus kann man Animationen und interaktive Programme erstellen.</p>
+          <p>
+            Mit dem aktiven Modus kann man Animationen und interaktive Programme
+            erstellen.
+          </p>
           <ul>
-          <li>
-            Der aktive Modus nutzt die beiden Funktionen
-            <strong><code>setup()</code></strong> und
-            <strong><code>draw()</code></strong>
-          </li>
-          <li>
-            Die Anweisungen in der <code>setup()-Funktion</code> werden
-            <strong>einmal beim Start ausgeführt</strong>
-          </li>
-          <li>
-            Die Anweisungen in der <code>draw()-Funktion</code> werden
-            <strong>in einer Schleife immer wiederholt ausgeführt</strong>.
-            Standardmäßig mit 60 FPS (Frames Per Second).
-          </li>
-        </ul>
+            <li>
+              Der aktive Modus nutzt die beiden Funktionen
+              <strong><code>setup()</code></strong> und
+              <strong><code>draw()</code></strong>
+            </li>
+            <li>
+              Die Anweisungen in der <code>setup()-Funktion</code> werden
+              <strong>einmal beim Start ausgeführt</strong>
+            </li>
+            <li>
+              Die Anweisungen in der <code>draw()-Funktion</code> werden
+              <strong>in einer Schleife immer wiederholt ausgeführt</strong>.
+              Standardmäßig mit 60 FPS (Frames Per Second).
+            </li>
+          </ul>
 
-        <div class="box-command">⚙️ Grundgerüst: setup() & draw()
-        <pre><code>
+          <div class="box-command">
+            ⚙️ Grundgerüst: setup() & draw()
+            <pre><code>
 void setup() {
   createCanvas(400, 400);
 }
@@ -1145,7 +1149,8 @@ void draw() {
   // dein Code hier
 }
   </code></pre>
-  </div>
+          </div>
+        </div>
       </details>
 
       <!-- Interaktionen mit dem Nutzer? -->
@@ -1163,8 +1168,8 @@ void mouseReleased() {
   // Wird aufgerufen, wenn die Maustaste losgelassen wird
 }
   </code></pre>
-<br>
-<pre><code>
+          <br />
+          <pre><code>
 void keyPressed() {
   // Wird aufgerufen, wenn eine Taste gedrückt wird
 }
@@ -1186,45 +1191,45 @@ void keyReleased() {
             <code>text(txt, x, y)</code>
           </p>
           <ul>
-          <li>
-            <code>text(txt, x, y)</code>: Zeigt den Text <code>txt</code> an
-            Position <code>x</code>, <code>y</code>.
-          </li>
-          <li><code>textSize(größe)</code>: Legt die Schriftgröße fest.</li>
-          <li>
-            <code>textAlign(horiz, vert)</code>: Textausrichtung – z. B.
-            <code>LEFT</code>, <code>CENTER</code>, <code>RIGHT</code> und
-            <code>TOP</code>, <code>BOTTOM</code>, <code>CENTER</code>.
-          </li>
-        </ul>
+            <li>
+              <code>text(txt, x, y)</code>: Zeigt den Text <code>txt</code> an
+              Position <code>x</code>, <code>y</code>.
+            </li>
+            <li><code>textSize(größe)</code>: Legt die Schriftgröße fest.</li>
+            <li>
+              <code>textAlign(horiz, vert)</code>: Textausrichtung – z. B.
+              <code>LEFT</code>, <code>CENTER</code>, <code>RIGHT</code> und
+              <code>TOP</code>, <code>BOTTOM</code>, <code>CENTER</code>.
+            </li>
+          </ul>
         </div>
       </details>
 
       <!-- random() -->
       <details class="box-question">
-        <summary>
-          Mit welchem Befehl kann ich Zufallzahlen zwischen -20 und +40 generieren?
-        </summary>
+        <summary>Mit welchem Befehl kann Zufallzahlen generieren?</summary>
         <div class="box-command">
-          <p>🎲 <code>random(min, max)</code> - <strong>Zufallszahlen</strong></p>
+          <p>
+            🎲 <code>random(min, max)</code> - <strong>Zufallszahlen</strong>
+          </p>
           <ul>
-          <li>
-            Erzeugt eine <strong>Kommazahl (float)</strong> zwischen
-            <code>min</code> und <code>max</code>.
-          </li>
-          <li>
-            <code>random(100)</code> → Zahl zwischen <code>0</code> und
-            <code>100</code>.
-          </li>
-          <li>
-            <code>random(50, 100)</code> → Zahl zwischen <code>50</code> und
-            <code>100</code>.
-          </li>
-          <li>
-            Für ganzzahlige Zufallswerte:
-            <code>int(random(...)) oder (int) random(...)</code>
-          </li>
-        </ul>
+            <li>
+              Erzeugt eine <strong>Kommazahl (float)</strong> zwischen
+              <code>min</code> und <code>max</code>.
+            </li>
+            <li>
+              <code>random(100)</code> → Zahl zwischen <code>0</code> und
+              <code>100</code>.
+            </li>
+            <li>
+              <code>random(50, 100)</code> → Zahl zwischen <code>50</code> und
+              <code>100</code>.
+            </li>
+            <li>
+              Für ganzzahlige Zufallswerte:
+              <code>int(random(...)) oder (int) random(...)</code>
+            </li>
+          </ul>
         </div>
       </details>
 
@@ -1234,135 +1239,94 @@ void keyReleased() {
           Wie deklariere und initialisiere ich eine Variable in Processing?
         </summary>
         <div class="box-command">
+          <p>DATENTYP NAME = WERT;</p>
+          <pre><code>int zahl = 4;
+float temperatur = 20.5;
+boolean istSichtbar = true;
+String name = "Luna";
+char zeichen = 'A';</code></pre>
+
           <p>
-            <strong><code>ellipseMode(MODUS)</code></strong
-            >. <br /><br />"MODUS"steht hier für die drei Modi CENTER
-            (standard), CORNER und CORNERS.
+            Variablen können später im Code verwendet werden, z. B.:
+            <code>text(name, 10, 20);</code>
           </p>
-          <ul>
-            <li>
-              CENTER -
-              <code
-                >ellipse(x1, y1, b, h) - x1 und y1 der Mittelpunkt der Ellipse
-                gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CORNER -
-              <code
-                >ellipse(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
-                umgebenden Rechtecks gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CORNERS -
-              <code
-                >ellipse(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke
-                gefolgt von x2, y2 als linke untere Ecke des umgebenden
-                Rechtecks.</code
-              >
-            </li>
-          </ul>
-          <pre>
-size(600, 400);
-//Standard ist Modus CENTER daher muss man ihn nicht angeben
-//Mittelpunkt + Breite und Höhe
-ellipse(50, 50, 20, 60);
 
-//Linke obere Ecke + Breite und Höhe
-ellipseMode(CORNER);
-ellipse(150, 80, 60, 20);
+          <!-- <p>
+          Damit man Variablen benutzen kann, muss man sie dem
+          Compiler/Interpreter <strong>"bekanntmachen" - deklarieren</strong> .
+          Außerdem sollte eine Variable einen
+          <strong>Initialwert bekommen</strong>.
+        </p>
+        <p>🛠️ <strong>Deklaration</strong></p>
+        <ul>
+          <li>Dabei wird eine Variable „angekündigt“: <code>int x;</code></li>
+          <li>
+            Man teilt dem Programm den Namen und den Datentyp der Variable mit.
+          </li>
+        </ul>
 
-//linke obere Ecke + rechte untere Ecke
-ellipseMode(CORNERS);
-ellipse(100, 200, 200, 300);</pre
-          >
-          <div id="sketch-ellipseMode" class="sketch"></div>
-
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchEllipseMode"
-          ></iframe>
+        <p>🎯 <strong>Initialisierung</strong></p>
+        <ul>
+          <li>
+            Der Variable wird ein Startwert zugewiesen: <code>x = 100;</code>
+          </li>
+          <li>Beides zusammen: <code>int x = 100;</code> → sehr häufig!</li>
+        </ul> -->
         </div>
       </details>
 
       <!-- Datentypen -->
       <details class="box-question">
-        <summary>
-          Nenne fünf Datentypen und ihre Werte in Processing. 
-        </summary>
-        <div class="box-command">
-          <p>
-            <strong><code>rect(x1, y1, b, h)</code></strong
-            >.
-          </p>
+        <summary>Nenne fünf Datentypen und ihre Werte in Processing.</summary>
+        <div class="box-info">
           <ul>
-            <li>x1, y2 - Koordinaten der linken oberen Ecke</li>
-            <li>b - Breite des Rechtecks</li>
-            <li>h - Höhe des Rechtecks</li>
+            <li>
+              <code>int</code> – ganze Zahl, z. B. <code>int z = 10;</code>
+            </li>
+            <li>
+              <code>float</code> – Kommazahl, z. B. <code>float y = 3.14;</code>
+            </li>
+            <li>
+              <code>boolean</code> – wahr/falsch, z. B.
+              <code>boolean sichtbar = true;</code>
+            </li>
+            <li>
+              <code>char</code> – einzelnes Zeichen, z. B.
+              <code>char taste = 'A';</code>
+            </li>
+            <li>
+              <code>String</code> – Text, z. B.
+              <code>String name = "Luna";</code>
+            </li>
           </ul>
-          <pre>rect(20, 30, 60, 40);</pre>
-
-          <div id="sketch-rect" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRect"
-          ></iframe>
         </div>
       </details>
 
       <!-- Wertzuweisungen und Erhöhung von Variablen -->
       <details class="box-question">
         <summary>
-          Welche Möglichkeiten gibt es, den Wert einer Variablen zu erhöhen? 
+          Welche Möglichkeiten gibt es, den Wert einer Variablen zu erhöhen?
         </summary>
-        <div class="box-command">
-          <p>
-            <strong><code>rectMode(MODUS)</code></strong
-            >. <br /><br />"MODUS"steht hier für die drei Modi CORNER
-            (standard), CENTER und CORNERS.
-          </p>
+        <div class="box-info">
+          <h4>Wertzuweisung</h4>
           <ul>
+            <li><code>x = 5; // Variable x bekommt den Wert 5</code></li>
+            <li>name = "Janosch"; //Veränderung einer String-Variablen</li>
             <li>
-              CORNER -
-              <code
-                >rect(x1, y1, b, h) - x1 und y1 die linke obere Ecke des
-                Rechtecks gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CENTER -
-              <code
-                >rect(x1, y1, b, h) - x1 und y1 der Mittelpunkt des Rechtecks
-                gefolgt von Breite und Höhe.</code
-              >
-            </li>
-            <li>
-              CORNERS -
-              <code
-                >rect(x1, y1, x2, y2) - x1 und y1 die linke obere Ecke gefolgt
-                von x2, y2 als rechte untere Ecke des Rechtecks.</code
-              >
+              <code>=</code> ist der Zuweisungsoperator. Er weist den Wert auf
+              der rechten Seite der Variablen auf der linken Seite zu.
             </li>
           </ul>
-          <pre>
-size(600, 400);
-//Standard ist Modus CORNER. Daher muss man ihn nicht angeben
-//Linke obere Ecke + Breite und Höhe
-rectMode(CORNER); 
-rect(150, 80, 60, 20);
 
-//Mitelpunkt + Breite und Höhe
-rectMode(CENTER);
-rect(50, 50, 20, 60);
-
-//linke obere Ecke + rechte untere Ecke
-rectMode(CORNERS);
-rect(100, 200, 200, 300);</pre
-          >
-          <div id="sketch-rectMode" class="sketch"></div>
-
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchRectMode"
-          ></iframe>
+          <h4>Variable erhöhen</h4>
+          <ul>
+            <li><code>x = x + 1;</code> – Addiert 1 zu x (Standardform)</li>
+            <li><code>x++;</code> – Kurzform für <code>x = x + 1</code></li>
+            <li>
+              <code>x += 1;</code> – Addiert ebenfalls 1, funktioniert aber auch
+              mit anderen Werten (<code>x += 5;</code>)
+            </li>
+          </ul>
         </div>
       </details>
 
@@ -1371,38 +1335,20 @@ rect(100, 200, 200, 300);</pre
         <summary>
           Was sind globale und lokale Variablen? Wie unterscheiden sie sich?
         </summary>
-        <div class="box-command">
-          <p>
-            <strong
-              ><code
-                >arc(x1, y1, b, h, radians(startwinkel), radians(endwinkel));
-              </code></strong
-            >
-          </p>
+        <div class="box-info">
+          <h4>🌐 Globale Variable</h4>
           <ul>
-            <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
-            <li><code>radians(start)</code> gibt den Startwinkel in Grad an</li>
-            <li><code>radians(stop)</code> gibt den Endwinkel in Grad an</li>
-          </ul>
-          <img src="https://p5-sketches-demo.netlify.app/arc.png" alt="" />
-          <br />
-
-          <pre>
-      arc(100, 100, 80, 80, radians(0), radians(90));
-</pre
-          >
-
-          <div id="sketch-arc" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchArc"
-          ></iframe>
-          <ul class="box-warning">
+            <li>Oberhalb der <code>setup()-Funktion</code> deklariert.</li>
             <li>
-              Winkel starten bei 0° rechts (3-Uhr-Position) und wachsen
-              <u>im Uhrzeigersinn</u>
+              Überall im Code sichtbar (z. B. in <code>setup()</code> &
+              <code>draw()</code>).
             </li>
-            <li>Der Startwinkel muss kleiner sein als der Endwinkel.</li>
-            <li>Die Winkel können aber größer als 360 Grad sein.</li>
+          </ul>
+
+          <h4>🔒 Lokale Variable</h4>
+          <ul>
+            <li>Innerhalb einer Funktion deklariert.</li>
+            <li>Nur innerhalb dieser Funktion sichtbar.</li>
           </ul>
         </div>
       </details>
@@ -1410,54 +1356,83 @@ rect(100, 200, 200, 300);</pre
       <!-- Modulo Operator -->
       <details class="box-question">
         <summary>
-           Was ist der Modulo-Operator (%) und wofür wird er verwendet?
+          Was ist der Modulo-Operator (%) und wofür wird er verwendet?
         </summary>
-        <div class="box-command">
+        <div class="box-info">
           <p>
-            <code
-              >beginShape();<br />vertex(x1, y1)<br />vertex(x2, y2)<br />...<br />endShape();</code
-            >
+            Mit <code>%</code> erhältst du den <strong>Rest</strong> einer
+            Division. <code>7 % 3</code> ergibt <code>1</code>, weil 7 = 2×3 +
+            <strong>1</strong>. Mit dem Modulo-Operator kannst du:
           </p>
           <ul>
-            <li><code>beginShape()</code>startet das Zeichnen des Polygons</li>
             <li>
-              <code>vertex(x1, y1)</code>gibt den nächsten Punkt an, der zum
-              Polygon gehört (Malen nach Zahlen)
+              Teilbarkeit einer Zahl herausfinden. (<code
+                >if (zahl % 3 == 0)</code
+              >) Kapitel 3
             </li>
-            <li><code>endShape()</code>beendet das Zeichnen des Polygons.</li>
-            <li>
-              <code>endShape(CLOSE)</code>beendet das Zeichnen und verbindet
-              außerdem den letzten mit dem ersten Punkt.
-            </li>
+            <li>Gerade oder ungerade Zahlen erkennen (<code>x % 2</code>)</li>
+            <li>Wiederholende Muster erzeugen (z. B. Farbwechsel)</li>
+            <li>Animationen erzeugen (<code>circle(x % 100, 50, 30))</code></li>
           </ul>
-          <pre>
-size(400, 400);
-//Ein Polygon (Vieleck)
-beginShape();
-  vertex(50, 10);
-  vertex(80, 80);
-  vertex(5, 35);
-  vertex(10, 0);  // neue Ecke
-  vertex(30, 30); // neue Ecke
-endShape(CLOSE);
+          <p class="box-warning">Nur mit Ganzzahlen sinnvoll einsetzbar</p>
 
-//Das Haus vom Nikolaus
-noFill();
-beginShape();
-  vertex(100, 300);
-  vertex(100, 100);
-  vertex(200, 300);
-  vertex(100, 300);
-  vertex(200, 100);
-  vertex(100, 100);
-  vertex(150, 50);
-  vertex(200, 100);
-  vertex(200, 300);
-endShape();</pre
-          >
-          <div id="sketch-beginShape" class="sketch"></div>
+          <pre><code>int zahl = 0;
+
+void setup() {
+  size(300, 100);
+  textSize(16);
+  textAlign(CENTER, CENTER);
+}
+
+void draw() {
+  background(255);
+  
+  boolean istGerade = zahl % 2 == 0;
+  String ausgabe = "Zahl " + zahl + " ist " + (istGerade ? "gerade" : "ungerade");
+  
+  text(ausgabe, width / 2, height / 2);
+}
+
+void mousePressed() {
+  zahl++;
+}
+</code></pre>
+
           <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBeginShape"
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloEvenOdd"
+          ></iframe>
+
+          <p>
+            Oder um zwischen Farben zu wechseln (immer wieder bei 0 starten):
+          </p>
+          <pre><code>int index = 0;
+
+void setup() {
+  size(250, 100);
+  textAlign(CENTER, CENTER);
+  textSize(14);
+}
+
+void draw() {
+  int mod = index % 3;
+  
+  if (mod == 0) {
+    background(255, 0, 0); // Rot
+  } else if (mod == 1) {
+    background(0, 255, 0); // Grün
+  } else {
+    background(0, 0, 255); // Blau
+  }
+  
+  fill(255);
+  text("Index: " + index + " → % 3 = " + mod, width / 2, height / 2);
+}
+
+void mousePressed() {
+  index++;
+}</code></pre>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchModuloColorSwitch"
           ></iframe>
         </div>
       </details>
