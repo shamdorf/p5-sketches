@@ -406,12 +406,12 @@ void setup() {
             werden.
           </li>
         </ul>
-        <div class="example">
-          <p>
-            Beispiel einer Animation eines Balls, der sich über den Bildschirm
-            bewegt. Mit einem Tastendruck startet er von vorne.
-          </p>
-          <pre>
+
+        <p>
+          Beispiel einer Animation eines Balls, der sich über den Bildschirm
+          bewegt. Mit einem Tastendruck startet er von vorne.
+        </p>
+        <pre>
 int x = 0;  //Deklaration mit Initialisierung
 
 void setup() {
@@ -428,11 +428,10 @@ void draw() {
 void keyPressed() {
   x = 0; // Bei Tastendruck Startposition zurücksetzen
 }</pre
-          >
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
-          ></iframe>
-        </div>
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
+        ></iframe>
       </details>
 
       <details class="box-info">
@@ -445,18 +444,26 @@ void keyPressed() {
         </p>
         <p>🛠️ <strong>Deklaration</strong></p>
         <ul>
-          <li>Dabei wird eine Variable „angekündigt“: <code>int x;</code></li>
           <li>
-            Man teilt dem Programm den Namen und den Datentyp der Variable mit.
+            Dabei wird eine Variable „angekündigt“:
+            <code class="xlFont">int x;</code>
+          </li>
+          <li>
+            Man teilt dem Programm den Datentyp (int) und den Namen (x) Variable
+            mit.
           </li>
         </ul>
 
         <p>🎯 <strong>Initialisierung</strong></p>
         <ul>
           <li>
-            Der Variable wird ein Startwert zugewiesen: <code>x = 100;</code>
+            Der Variable wird ein Startwert zugewiesen:
+            <code class="xlFont">x = 100;</code>
           </li>
-          <li>Beides zusammen: <code>int x = 100;</code> → sehr häufig!</li>
+          <li>
+            Beides zusammen: <code class="xlFont">int x = 100;</code> → sehr
+            häufig!
+          </li>
         </ul>
 
         <p>🔁 <strong>Verwendung</strong></p>
@@ -466,25 +473,24 @@ void keyPressed() {
           </li>
           <li><code>ellipse(x, 50, 30, 30);</code></li>
         </ul>
-        <div class="example">
-          <p>
-            📚 Beispiel für das Erstellen einer Zahl-Variablen und deren
-            Verwendung beim Zeichnen einer Ellipse.
-          </p>
-          <pre>
+
+        <p>
+          📚 Beispiel für das Erstellen einer Zahl-Variablen und deren
+          Verwendung beim Zeichnen einer Ellipse.
+        </p>
+        <pre>
 int x = 100;
 
 void setup() {
   size(300, 150);
   ellipse(x, 75, 50, 50);
 }</pre
-          >
+        >
 
-          <div id="sketch-variable-example" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariableExample"
-          ></iframe>
-        </div>
+        <div id="sketch-variable-example" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariableExample"
+        ></iframe>
       </details>
 
       <!-- wichtige Datentypen -->
@@ -508,15 +514,15 @@ void setup() {
             <code>String</code> – Text, z. B. <code>String name = "Luna";</code>
           </li>
         </ul>
-        <div class="example">
-          <p>
-            Hier werden verschiedene Datentypen erstellt. Mit einer
-            <strong>Verzweigung</strong>
-            wird die boolesche Variable "sichtbar" geprüft. Wenn sie true ist,
-            wir ein Text auf dem Bildschirm geschrieben. Der Text und dessen
-            Koordinaten sind ebenfalls in Variablen gespeichert.
-          </p>
-          <pre>
+
+        <p>
+          Hier werden verschiedene Datentypen erstellt. Mit einer
+          <strong>Verzweigung</strong>
+          wird die boolesche Variable "sichtbar" geprüft. Wenn sie true ist, wir
+          ein Text auf dem Bildschirm geschrieben. Der Text und dessen
+          Koordinaten sind ebenfalls in Variablen gespeichert.
+        </p>
+        <pre>
 int x = 100;       // Ganzzahl speichern
 float y = 150.5;   // Kommazahl
 String text = "Hallo!";
@@ -529,13 +535,12 @@ void setup() {
     text(text, x, y);
   }
 }</pre
-          >
+        >
 
-          <div id="sketch-variablen" class="sketch"></div>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
-          ></iframe>
-        </div>
+        <div id="sketch-variablen" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
+        ></iframe>
       </details>
 
       <details class="box-info">
