@@ -519,6 +519,147 @@ void draw() {
       <li>... die x- und y-Geschwindigkeiten zuällige Zahlen sind.</li>
     </ul>
 
+
+<!-- Boolesche Variablen -->
+ <details class="top">
+    <summary id="info"><strong>3.4 Boolesche Variablen</strong></summary>
+    <div class="info">
+        <p>
+            Sie kennen jetzt Bedingungen in If-Anweisungen und sogar boolesche Ausdrücke mit AND und OR. Boolesche Variablen sind ganz primitive Zeitgenossen, da sie lediglich einen von zwei möglichen Werten speichern können: <code>true</code> oder <code>false</code>.
+        </p>
+        <p>
+            Wozu braucht man sowas? In Processing wollen Sie sich zum Beispiel einen Zustand merken. Wenn Sie zum Beispiel eine Animation haben, möchten Sie sich merken, ob die Animation laufen soll (play) oder anhalten (pause).
+        </p>
+    </div>
+</details>
+
+<details class="box-command">
+    <summary>🔄 Einfache Animation</summary>
+    <div>
+        <p>Hier ist eine einfache Animation:</p>
+        <pre><code>int x = 0;
+
+void draw() {
+    background(255);
+    ellipse(x, 50, 20, 20);
+    x++;
+
+    // immer wieder von links reinkommen
+    if (x >= 100) {
+        x = 0;
+    }
+}</code></pre>
+    </div>
+</details>
+
+<details class="box-command">
+    <summary>🔄 Animation mit play/pause</summary>
+    <div>
+        <p>Um einen einfachen play/pause Mechanismus zu implementieren, führen wir eine boolesche Variable <code>play</code> ein:</p>
+        <pre><code>int x = 0;
+boolean play = true;
+
+void draw() {
+    background(255);
+    ellipse(x, 50, 20, 20);
+
+    // NEU: bewege dich nur, wenn play true ist
+    if (play) {
+        x++;
+    }
+
+    // immer wieder von links reinkommen
+    if (x >= 100) {
+        x = 0;
+    }
+}</code></pre>
+    </div>
+</details>
+
+<details class="box-command">
+    <summary>🔄 play Variable umschalten</summary>
+    <div>
+        <p>Um die Variable <code>play</code> während der Laufzeit umzusetzen, fügen wir die folgende Funktion hinzu:</p>
+        <pre><code>void keyPressed() {
+    play = !play; // setze play auf seine eigene Negation
+}</code></pre>
+        <p>Das Negationszeichen funktioniert ähnlich wie das Minuszeichen in der Arithmetik.</p>
+    </div>
+</details>
+
+<details class="top">
+    <summary id="info"><strong>Boolesche Variablen und boolesche Ausdrücke</strong></summary>
+    <div class="info">
+        <p>
+            In eine boolesche Variable kann ein beliebiger boolescher Ausdruck per Zuweisung hineingetan werden. Im folgenden Beispiel wird der Ball in der x-Zone 30-70 rot gefärbt:
+        </p>
+    </div>
+</details>
+
+<details class="box-command">
+    <summary>🔄 Ball in der Zone färben</summary>
+    <div>
+        <pre><code>int x = 0;
+boolean inTheZone = false;
+
+void draw() {
+    background(255);
+
+    // boolescher Ausdruck
+    inTheZone = x > 30 && x < 70;
+
+    if (inTheZone) {
+        fill(255, 0, 0); // rot
+    } else {
+        fill(255); // weiß
+    }
+
+    ellipse(x, 50, 20, 20);
+    x++;
+}</code></pre>
+    </div>
+</details>
+
+<details class="box-command">
+    <summary>🔄 Ball zurücksetzen</summary>
+    <div>
+        <p>Um den Ball wieder auf x=0 zu setzen, wenn er in der Zone ist:</p>
+        <pre><code>void keyPressed() {
+    if (inTheZone) {
+        x = 0;
+    }
+}</code></pre>
+    </div>
+</details>
+
+<details class="top">
+    <summary id="info"><strong>Boolesche Variablen als Teil boolescher Ausdrücke</strong></summary>
+    <div class="info">
+        <p>
+            Boolesche Variablen können auch Bestandteil von booleschen Ausdrücken sein. Hier zwei Beispiele:
+        </p>
+    </div>
+</details>
+
+<details class="box-command">
+    <summary>🔄 Boolesche Ausdrücke</summary>
+    <div>
+        <pre><code>boolean foo = true;
+boolean goo = false;
+int x = 10;
+
+boolean ausdruck1 = foo && goo;
+boolean ausdruck2 = foo || x > 5;
+
+println(ausdruck1);
+println(ausdruck2);</code></pre>
+    </div>
+</details>
+
+
+
+
+
     <details class="top">
       <summary>🧪 Bedingungen kombinieren</summary>
       <div class="box-info">
