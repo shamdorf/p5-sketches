@@ -316,6 +316,7 @@ a.task {
     border: none;
     cursor: pointer;
     width: 100%;
+    overflow: hidden;
 }
 
 
