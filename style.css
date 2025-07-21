@@ -301,7 +301,7 @@ a.button {
 }
 
 a.task {
-    display: inline-block;
+    /* display: inline-block; */
     padding: 0.7em 2em;
     margin: 0.5em 0.3em;
     background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
