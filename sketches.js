@@ -481,17 +481,14 @@ function sketchGrid(p) {
     // Zeichne vertikale Linien und Beschriftungen
     for (let i = 0; i < p.width; i += abstand) {
       p.line(i, 0, i, p.height);
-      p.text(i, i + 2, 20);
+      p.text(i.toFixed(0), i, 20); // Beschriftung der X-Achse
     }
 
     // Zeichne horizontale Linien und Beschriftungen
     for (let i = 0; i < p.height; i += abstand) {
       p.line(0, i, p.width, i);
-      p.text(i, 10, i - 4);
+      p.text(i.toFixed(0), 10, i); // Beschriftung der Y-Achse
     }
-
-    // Auto-Resize für das iframe
-    autoResizeCanvas(p);
   };
 
   p.draw = () => {
