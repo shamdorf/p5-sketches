@@ -490,6 +490,10 @@ function sketchGrid(p) {
 
     autoResizeCanvas(p);
   };
+
+  p.draw = () => {
+    // Leere draw-Funktion, da wir nur einmal im Setup zeichnen
+  };
 }
 
 function sketchIfCombined(p) {

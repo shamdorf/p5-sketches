@@ -25,31 +25,7 @@
     </script>
   </head>
   <body>
-    <!-- Koordinatensystem -->
-    <details class="box-command">
-      <summary>🗺️ Koordinatensystem zeichnen</summary>
-      <p>
-        Mit folgendem Code kannst du ein einfaches Koordinatensystem mit Achsen
-        und Beschriftung zeichnen:
-      </p>
-      <pre>
-size(800, 600);
-int abstand = 50;
-textSize(20)
-for (float i = 0; i < width; i += abstand) {
-  line(i, 0, i, height);
-  text((int)i, i, 20);
-}
-for (float i = 0; i < height; i += abstand) {
-  line(0, i, width, i);
-  text((int)i, 10, i);
-}
-      </pre>
-      <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketchGrid"
-      ></iframe>
-    </details>
-
+    <!-- Link zu weiteren Informatioinen
     <p>
       Weitere Informationen findest du
       <a
@@ -58,7 +34,7 @@ for (float i = 0; i < height; i += abstand) {
         target="_blank"
         >Kipp Processing</a
       >
-    </p>
+    </p> -->
 
     <!-- Erste Schritte mit Processing -->
     <details class="top">
@@ -490,6 +466,34 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSize"
         ></iframe>
       </details>
+    </details>
+
+    <!-- Koordinatensystem -->
+    <details class="top">
+      <summary id="command">🗺️ Koordinatensystem zeichnen</summary>
+      <div class="box-command">
+        <p>
+          Mit folgendem Code kannst du ein einfaches Koordinatensystem mit
+          Achsen und Beschriftung zeichnen:
+        </p>
+        <pre>
+size(800, 600);
+int abstand = 50;
+textSize(20)
+for (float i = 0; i < width; i += abstand) {
+  line(i, 0, i, height);
+  text((int)i, i, 20);
+}
+for (float i = 0; i < height; i += abstand) {
+  line(0, i, width, i);
+  text((int)i, 10, i);
+}
+      </pre
+        >
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketchGrid"
+        ></iframe>
+      </div>
     </details>
 
     <!-- Aufgabebutton 1.1-->
