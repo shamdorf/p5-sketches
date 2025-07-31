@@ -17,6 +17,69 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchErweiterteTastatur(p) {
+  let x = 200;
+  let y = 100;
+  let up = false;
+  let down = false;
+  let left = false;
+  let right = false;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.ellipse(x, y, 20, 20); // Zeichne den Ball
+
+    // Bewege den Ball basierend auf den booleschen Variablen
+    if (up) {
+      y -= 2; // Bewege nach oben
+    }
+    if (down) {
+      y += 2; // Bewege nach unten
+    }
+    if (left) {
+      x -= 2; // Bewege nach links
+    }
+    if (right) {
+      x += 2; // Bewege nach rechts
+    }
+  };
+
+  p.keyPressed = () => {
+    if (p.keyCode === p.UP_ARROW) {
+      up = true; // Setze up auf true
+    }
+    if (p.keyCode === p.DOWN_ARROW) {
+      down = true; // Setze down auf true
+    }
+    if (p.keyCode === p.LEFT_ARROW) {
+      left = true; // Setze left auf true
+    }
+    if (p.keyCode === p.RIGHT_ARROW) {
+      right = true; // Setze right auf true
+    }
+  };
+
+  p.keyReleased = () => {
+    if (p.keyCode === p.UP_ARROW) {
+      up = false; // Setze up auf false
+    }
+    if (p.keyCode === p.DOWN_ARROW) {
+      down = false; // Setze down auf false
+    }
+    if (p.keyCode === p.LEFT_ARROW) {
+      left = false; // Setze left auf false
+    }
+    if (p.keyCode === p.RIGHT_ARROW) {
+      right = false; // Setze right auf false
+    }
+  };
+}
+
 function sketchTastatur(p) {
   let x = 200;
   let y = 100;

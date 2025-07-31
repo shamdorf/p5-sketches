@@ -800,6 +800,94 @@ void keyPressed() {
         </div>
       </details>
 
+      <!-- Tastaturabfrage optimiert  -->
+      <details class="box-info">
+        <summary>
+          <strong>Tastaturabfragen - optimiert für mehrere Tasten</strong>
+        </summary>
+        <div>
+          <p>
+            Der Nachteil der bisherigen Methode ist, dass man immer nur eine
+            Taste drücken kann, was bedeutet, dass der PC nicht auf mehrere
+            Tasten gleichzeitig reagieren kann. Durch die Einführung von
+            booleschen Variablen und die Verwendung der Funktionen
+            <code>keyPressed()</code> und <code>keyReleased()</code> kann eine
+            bessere Tastaturabfrage erstellt werden.
+          </p>
+          <p>
+            Mit dieser Methode können Sie mehrere Tasten gleichzeitig abfragen
+            und so eine flüssigere Steuerung ermöglichen. Zum Beispiel kann ein
+            Kreis über den Bildschirm bewegt werden, während mehrere Tasten
+            gleichzeitig gedrückt sind.
+          </p>
+          <h4>🔄 Beispielsketch für erweiterte Tastaturabfragen</h4>
+          <p>Hier ist der Code für den Sketch:</p>
+          <pre><code>int x = 200;
+int y = 100;
+boolean up = false;
+boolean down = false;
+boolean left = false;
+boolean right = false;
+
+void setup() {
+    size(400, 200);
+}
+
+void draw() {
+    background(255);
+    ellipse(x, y, 20, 20); // Zeichne den Ball
+
+    // Bewege den Ball basierend auf den booleschen Variablen
+    if (up) {
+        y -= 2; // Bewege nach oben
+    }
+    if (down) {
+        y += 2; // Bewege nach unten
+    }
+    if (left) {
+        x -= 2; // Bewege nach links
+    }
+    if (right) {
+        x += 2; // Bewege nach rechts
+    }
+}
+
+void keyPressed() {
+    if (keyCode == UP) {
+        up = true; // Setze up auf true
+    }
+    if (keyCode == DOWN) {
+        down = true; // Setze down auf true
+    }
+    if (keyCode == LEFT) {
+        left = true; // Setze left auf true
+    }
+    if (keyCode == RIGHT) {
+        right = true; // Setze right auf true
+    }
+}
+
+void keyReleased() {
+    if (keyCode == UP) {
+        up = false; // Setze up auf false
+    }
+    if (keyCode == DOWN) {
+        down = false; // Setze down auf false
+    }
+    if (keyCode == LEFT) {
+        left = false; // Setze left auf false
+    }
+    if (keyCode == RIGHT) {
+        right = false; // Setze right auf false
+    }
+}</code></pre>
+          <p>Hier ist der interaktive Sketch:</p>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchErweiterteTastatur"
+          ></iframe>
+        </div>
+      </details>
+
       <!-- Mausabfrage -->
       <details class="box-info">
         <summary><strong>Mausabfragen in Processing</strong></summary>
