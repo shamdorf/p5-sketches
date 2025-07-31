@@ -17,6 +17,105 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchDistExample(p) {
+  let pointX1 = 100;
+  let pointY1 = 100;
+  let pointX2 = 300;
+  let pointY2 = 200;
+
+  p.setup = () => {
+    p.createCanvas(400, 300);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+    p.ellipse(pointX1, pointY1, 20, 20); // Zeichne den ersten Punkt
+    p.ellipse(pointX2, pointY2, 20, 20); // Zeichne den zweiten Punkt
+
+    // Berechne den Abstand zwischen den beiden Punkten
+    let distance = p.dist(pointX1, pointY1, pointX2, pointY2);
+
+    // Zeige den Abstand an
+    p.fill(0);
+    p.textSize(16);
+    p.text("Abstand: " + distance, 10, 20);
+  };
+}
+
+function sketchPointRectangle(p) {
+  let rectX = 150;
+  let rectY = 100;
+  let rectW = 100;
+  let rectH = 50;
+  let circleX, circleY;
+
+  p.setup = () => {
+    p.createCanvas(400, 300);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+    p.rect(rectX, rectY, rectW, rectH); // Zeichne das Rechteck
+
+    // Überprüfe die Kollision
+    if (pointInRectangle(circleX, circleY, rectX, rectY, rectW, rectH)) {
+      p.fill(255, 0, 0); // Rot, wenn der Punkt im Rechteck ist
+    } else {
+      p.fill(0, 255, 0); // Grün, wenn der Punkt außerhalb ist
+    }
+    p.ellipse(circleX, circleY, 20, 20); // Zeichne den Punkt
+  };
+
+  p.mousePressed = () => {
+    circleX = p.mouseX;
+    circleY = p.mouseY; // Setze den Punkt auf die Mausposition
+  };
+
+  function pointInRectangle(px, py, rx, ry, rw, rh) {
+    return px >= rx && px <= rx + rw && py >= ry && py <= ry + rh;
+  }
+}
+
+function sketchPointCircle(p) {
+  let circleX = 200;
+  let circleY = 150;
+  let circleR = 50;
+  let pointX, pointY;
+
+  p.setup = () => {
+    p.createCanvas(400, 300);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+    p.ellipse(circleX, circleY, circleR * 2, circleR * 2); // Zeichne den Kreis
+
+    // Überprüfe die Kollision
+    if (pointInCircle(pointX, pointY, circleX, circleY, circleR)) {
+      p.fill(255, 0, 0); // Rot, wenn der Punkt im Kreis ist
+    } else {
+      p.fill(0, 255, 0); // Grün, wenn der Punkt außerhalb ist
+    }
+    p.ellipse(pointX, pointY, 20, 20); // Zeichne den Punkt
+  };
+
+  p.mousePressed = () => {
+    pointX = p.mouseX;
+    pointY = p.mouseY; // Setze den Punkt auf die Mausposition
+  };
+
+  function pointInCircle(px, py, cx, cy, cr) {
+    let distance = p.dist(px, py, cx, cy);
+    return distance <= cr;
+  }
+}
+
 function sketchErweiterteTastatur(p) {
   let x = 200;
   let y = 100;

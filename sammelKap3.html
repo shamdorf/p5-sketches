@@ -1111,6 +1111,64 @@ void mousePressed() {
       </details>
     </details>
 
+    <!-- Befehl dist -->
+    <details class="top">
+      <summary id="command">
+        🛠️ Wichtige Befehle/Funktionen in Processing
+      </summary>
+      <details class="box-command">
+        <summary>
+          <code>📏 dist(x1, y1, x2, y2) - Entfernung zweier Punkte</code>
+        </summary>
+
+        <div>
+          <p>
+            Der Befehl <code>dist()</code> wird verwendet, um den Abstand
+            zwischen zwei Punkten im 2D-Raum zu berechnen. Er nimmt die x- und
+            y-Koordinaten beider Punkte als Parameter und gibt den Abstand
+            zwischen ihnen zurück.
+          </p>
+          <p>Die Syntax ist wie folgt:</p>
+          <pre><code>float distance = dist(x1, y1, x2, y2);</code></pre>
+          <p>
+            Hierbei sind <code>x1</code> und <code>y1</code> die Koordinaten des
+            ersten Punktes, und <code>x2</code> und <code>y2</code> die
+            Koordinaten des zweiten Punktes.
+          </p>
+
+          <h4>🔄 Beispielsketch für den Befehl dist()</h4>
+          <p>Hier ist der Code für den Sketch:</p>
+          <pre><code>int pointX1 = 100;
+int pointY1 = 100;
+int pointX2 = 300;
+int pointY2 = 200;
+
+void setup() {
+    size(400, 300);
+}
+
+void draw() {
+    background(255);
+    fill(0);
+    ellipse(pointX1, pointY1, 20, 20); // Zeichne den ersten Punkt
+    ellipse(pointX2, pointY2, 20, 20); // Zeichne den zweiten Punkt
+
+    // Berechne den Abstand zwischen den beiden Punkten
+    float distance = dist(pointX1, pointY1, pointX2, pointY2);
+    
+    // Zeige den Abstand an
+    fill(0);
+    textSize(16);
+    text("Abstand: " + distance, 10, 20);
+}</code></pre>
+          <p>Hier ist der interaktive Sketch:</p>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchDistExample"
+          ></iframe>
+        </div>
+      </details>
+    </details>
+
     <!-- Fragen Kapitel 3 -->
     <details class="top">
       <summary id="question">🧠 Fragen zu Kapitel 3</summary>
