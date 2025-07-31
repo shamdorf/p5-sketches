@@ -22,7 +22,7 @@ function sketchVektoren(p) {
   let velocity; // Geschwindigkeitsvektor
 
   p.setup = () => {
-    p.createCanvas(400, 300);
+    p.createCanvas(300, 200);
     position = p.createVector(p.width / 2, p.height / 2); // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
     velocity = p.createVector(2, 3); // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
     autoResizeCanvas(p); // Anpassung für das iframe
