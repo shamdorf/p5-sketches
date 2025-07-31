@@ -476,6 +476,11 @@ function sketchGrid(p) {
   p.setup = () => {
     p.createCanvas(800, 600);
     p.textSize(20);
+    p.noLoop(); // Verhindert, dass draw() wiederholt aufgerufen wird
+  };
+
+  p.draw = () => {
+    p.background(255);
     const abstand = 50;
 
     // Zeichne vertikale Linien und Beschriftungen
@@ -489,10 +494,6 @@ function sketchGrid(p) {
       p.line(0, i, p.width, i);
       p.text(i.toFixed(0), 10, i); // Beschriftung der Y-Achse
     }
-  };
-
-  p.draw = () => {
-    // Leere draw-Funktion, da wir nur einmal im Setup zeichnen
   };
 }
 
