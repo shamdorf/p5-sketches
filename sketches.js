@@ -478,16 +478,19 @@ function sketchGrid(p) {
     p.textSize(20);
     const abstand = 50;
 
+    // Zeichne vertikale Linien und Beschriftungen
     for (let i = 0; i < p.width; i += abstand) {
       p.line(i, 0, i, p.height);
       p.text(i, i + 2, 20);
     }
 
+    // Zeichne horizontale Linien und Beschriftungen
     for (let i = 0; i < p.height; i += abstand) {
       p.line(0, i, p.width, i);
       p.text(i, 10, i - 4);
     }
 
+    // Auto-Resize für das iframe
     autoResizeCanvas(p);
   };
 
