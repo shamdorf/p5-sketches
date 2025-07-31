@@ -670,6 +670,15 @@ void keyPressed() {
       </details>
     </details>
 
+    <!-- Fragen - Tastenunterscheidung -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/if.html#sec_3_4_3"
+      >Übungsaufgaben 3.4a - 3.4d</a
+    >
+
+    <!-- Tasten unterscheiden -->
     <details class="top">
       <summary id="info">
         <strong>Tasten unterscheiden</strong>
@@ -947,6 +956,154 @@ void draw() {
         <p>Hier ist der interaktive Sketch:</p>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMaus"
+        ></iframe>
+      </details>
+    </details>
+
+    <!-- Fragen - Tastenunterscheidung -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/if.html#sec_3_5_3"
+      >Übungsaufgaben 3.5</a
+    >
+
+    <!-- Kollisionserkennung -->
+    <details class="top">
+      <summary id="info">
+        <strong>Kollisionserkennung in Processing</strong>
+      </summary>
+      <details class="box-info">
+        <summary>Motivation</summary>
+        <div>
+          <p>
+            Kollisionserkennung ist ein wichtiger Aspekt in vielen interaktiven
+            Anwendungen und Spielen. Sie ermöglicht die Interaktion zwischen
+            Objekten.
+          </p>
+          <ul>
+            <li>Hat ein Spieler/Objekt eine Wand berührt?</li>
+            <li>Wurde ein Objekt von einem anderen getroffen?</li>
+            <li>Hat ein Spieler ein Item eingesammelt</li>
+            <li>Welcher Button im Menü wurde gedrückt?</li>
+            <li>...</li>
+          </ul>
+        </div>
+
+        <div class="box-warning">
+          <ul>
+            <li>
+              Es ist wichtig, die Effizienz der Kollisionserkennung zu
+              berücksichtigen, insbesondere in Szenarien mit vielen Objekten.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Punkt-Rechteck-Kollision -->
+      <details class="box-info">
+        <summary>
+          Punkt-Rechteck-Kollision als Beispiel für Menü-Buttons
+        </summary>
+        <p>
+          Um zu überprüfen, ob ein Punkt innerhalb eines Rechtecks liegt, können
+          wir die Koordinaten des Punktes mit den Grenzen des Rechtecks
+          vergleichen.
+        </p>
+        <img src="hhttps://p5-sketches-demo.netlify.app/col-rect3.png" alt="" />
+        <p>
+          Insgesamt müssen für eine Kollision folgende vier Bedingungen gelten:
+        </p>
+        <ul>
+          <li><code>rx <= x //Maus ist rechts von linker Kante</code></li>
+          <li>
+            <code>x <= rx + rwidth //Maus ist links von rechter Kante</code>
+          </li>
+          <li><code>ry <= y //Maus ist unterhalb der oberen Kante</code></li>
+          <li>
+            <code>y <= ry + rheight //Maus ist oberhalb der unteren Kante</code>
+          </li>
+        </ul>
+
+        <h4>🔄 Beispielsketch für Punkt-Rechteck-Kollision</h4>
+        <p>Hier ist der Code für den Sketch:</p>
+        <pre><code>int rectX = 150;
+int rectY = 100;
+int rectW = 100;
+int rectH = 50;
+int circleX, circleY;
+
+void setup() {
+    size(400, 300);
+}
+
+void draw() {
+    background(255);
+    fill(0);
+    rect(rectX, rectY, rectW, rectH); // Zeichne das Rechteck
+
+    // Überprüfe die Kollision
+    if (circleX >= rectX && circleX <= rectX + rectW && circleY >= rectY && circleY <= rectY + rectH) {
+        fill(255, 0, 0); // Rot, wenn der Punkt im Rechteck ist
+    } else {
+        fill(0, 255, 0); // Grün, wenn der Punkt außerhalb ist
+    }
+    ellipse(circleX, circleY, 20, 20); // Zeichne den Punkt
+}
+
+void mousePressed() {
+    circleX = mouseX;
+    circleY = mouseY; // Setze den Punkt auf die Mausposition
+}</code></pre>
+        <p>Hier ist der interaktive Sketch:</p>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointRectangle"
+        ></iframe>
+      </details>
+
+      <!-- Punkt-Kreis-Kollision -->
+      <details class="box-info">
+        <summary>Punkt-Kreis-Kollision</summary>
+        <p>
+          Um zu überprüfen, ob ein Punkt innerhalb eines Kreises liegt,
+          verwenden wir die Formel für den Abstand zwischen dem Punkt und dem
+          Mittelpunkt des Kreises.
+        </p>
+        <img src="https://p5-sketches-demo.netlify.app/koll-circ.png" alt="" />
+
+        <h4>🔄 Beispielsketch für Punkt-Kreis-Kollision</h4>
+        <p>Hier ist der Code für den Sketch:</p>
+        <pre><code>int circleX = 200;
+int circleY = 150;
+int circleR = 50;
+int pointX, pointY;
+
+void setup() {
+    size(400, 300);
+}
+
+void draw() {
+    background(255);
+    fill(0);
+    ellipse(circleX, circleY, circleR * 2, circleR * 2); // Zeichne den Kreis
+
+    // Überprüfe die Kollision
+    float distance = dist(pointX, pointY, circleX, circleY);
+    if (distance <= circleR) {
+        fill(255, 0, 0); // Rot, wenn der Punkt im Kreis ist
+    } else {
+        fill(0, 255, 0); // Grün, wenn der Punkt außerhalb ist
+    }
+    ellipse(pointX, pointY, 20, 20); // Zeichne den Punkt
+}
+
+void mousePressed() {
+    pointX = mouseX;
+    pointY = mouseY; // Setze den Punkt auf die Mausposition
+}</code></pre>
+        <p>Hier ist der interaktive Sketch:</p>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointCircle"
         ></iframe>
       </details>
     </details>
