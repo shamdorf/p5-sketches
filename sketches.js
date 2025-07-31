@@ -17,6 +17,103 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchTastatur(p) {
+  let x = 200;
+  let y = 100;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.ellipse(x, y, 20, 20); // Zeichne den Ball
+
+    // Direkte Abfrage der Systemvariablen keyPressed
+    if (p.keyIsPressed) {
+      if (p.key === "a") {
+        x -= 5; // Bewege nach links
+      } else if (p.key === "d") {
+        x += 5; // Bewege nach rechts
+      }
+    }
+  };
+
+  p.keyPressed = () => {
+    // Reaktion auf Tastenanschläge
+    if (p.key === "w") {
+      y -= 5; // Bewege nach oben
+    } else if (p.key === "s") {
+      y += 5; // Bewege nach unten
+    }
+  };
+}
+
+function sketchMaus(p) {
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+
+    // Direkte Abfrage der Systemvariablen mousePressed
+    if (p.mouseIsPressed) {
+      if (p.mouseButton === p.LEFT) {
+        p.ellipse(p.mouseX, p.mouseY, 20, 20); // Zeichne bei Linksklick
+      } else if (p.mouseButton === p.RIGHT) {
+        p.fill(255, 0, 0); // Ändere die Farbe bei Rechtsklick
+        p.ellipse(p.mouseX, p.mouseY, 20, 20); // Zeichne bei Rechtsklick
+        p.fill(0); // Zurück zur ursprünglichen Farbe
+      }
+    }
+  };
+}
+
+function sketchBoolescheAusdruecke(p) {
+  let x = 0;
+  let inTheZone = false; // Boolesche Variable für die Zone
+  let switchOn = true; // Boolesche Variable für den Schalter
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+
+    // Überprüfe, ob der Ball in der Zone ist
+    inTheZone = x > 30 && x < 70;
+
+    // Färbe den Ball je nach Zustand
+    if (inTheZone && switchOn) {
+      p.fill(255, 0, 0); // rot
+    } else {
+      p.fill(255); // weiß
+    }
+
+    p.ellipse(x, 100, 20, 20); // Zeichne den Ball
+    x++;
+
+    // Immer wieder von links reinkommen
+    if (x >= 100) {
+      x = 0;
+    }
+
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.keyPressed = () => {
+    if (p.key === "s") {
+      switchOn = !switchOn; // Schalter umlegen
+    }
+  };
+}
+
 function sketchAnimation(p) {
   let x = 0;
   let play = true;
