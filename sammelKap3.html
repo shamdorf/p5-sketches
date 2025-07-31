@@ -1034,7 +1034,6 @@ void draw() {
 int rectY = 100;
 int rectW = 100;
 int rectH = 50;
-int circleX, circleY;
 
 void setup() {
     size(400, 300);
@@ -1042,25 +1041,22 @@ void setup() {
 
 void draw() {
     background(255);
-    fill(0);
-    rect(rectX, rectY, rectW, rectH); // Zeichne das Rechteck
-
+    
     // Überprüfe die Kollision
-    if (circleX >= rectX && circleX <= rectX + rectW && circleY >= rectY && circleY <= rectY + rectH) {
-        fill(255, 0, 0); // Rot, wenn der Punkt im Rechteck ist
+    if (mouseX >= rectX && mouseX <= rectX + rectW && mouseY >= rectY && mouseY <= rectY + rectH) {
+        fill(255, 0, 0); // Rot, wenn der Mauszeiger im Rechteck ist
     } else {
-        fill(0, 255, 0); // Grün, wenn der Punkt außerhalb ist
+        fill(0); // Schwarz, wenn der Mauszeiger außerhalb ist
     }
-    ellipse(circleX, circleY, 20, 20); // Zeichne den Punkt
+    rect(rectX, rectY, rectW, rectH); // Zeichne das Rechteck
 }
 
 void mousePressed() {
-    circleX = mouseX;
-    circleY = mouseY; // Setze den Punkt auf die Mausposition
+    // Hier kann eine Aktion hinzugefügt werden, wenn der Benutzer klickt
 }</code></pre>
         <p>Hier ist der interaktive Sketch:</p>
         <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointRectangle"
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointRectangleHover"
         ></iframe>
       </details>
 
@@ -1079,7 +1075,6 @@ void mousePressed() {
         <pre><code>int circleX = 200;
 int circleY = 150;
 int circleR = 50;
-int pointX, pointY;
 
 void setup() {
     size(400, 300);
@@ -1087,26 +1082,25 @@ void setup() {
 
 void draw() {
     background(255);
-    fill(0);
-    ellipse(circleX, circleY, circleR * 2, circleR * 2); // Zeichne den Kreis
-
+    
+    // Berechne den Abstand zwischen dem Mauszeiger und dem Mittelpunkt des Kreises
+    float distance = dist(mouseX, mouseY, circleX, circleY);
+    
     // Überprüfe die Kollision
-    float distance = dist(pointX, pointY, circleX, circleY);
     if (distance <= circleR) {
-        fill(255, 0, 0); // Rot, wenn der Punkt im Kreis ist
+        fill(255, 0, 0); // Rot, wenn der Mauszeiger im Kreis ist
     } else {
-        fill(0, 255, 0); // Grün, wenn der Punkt außerhalb ist
+        fill(0); // Schwarz, wenn der Mauszeiger außerhalb ist
     }
-    ellipse(pointX, pointY, 20, 20); // Zeichne den Punkt
+    ellipse(circleX, circleY, circleR * 2, circleR * 2); // Zeichne den Kreis
 }
 
 void mousePressed() {
-    pointX = mouseX;
-    pointY = mouseY; // Setze den Punkt auf die Mausposition
+    // Hier kann eine Aktion hinzugefügt werden, wenn der Benutzer klickt
 }</code></pre>
         <p>Hier ist der interaktive Sketch:</p>
         <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointCircle"
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointCircleHover"
         ></iframe>
       </details>
     </details>

@@ -44,6 +44,69 @@ function sketchDistExample(p) {
   };
 }
 
+function sketchPointRectangleHover(p) {
+  let rectX = 150;
+  let rectY = 100;
+  let rectW = 100;
+  let rectH = 50;
+
+  p.setup = () => {
+    p.createCanvas(400, 300);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+
+    // Überprüfe die Kollision
+    if (
+      p.mouseX >= rectX &&
+      p.mouseX <= rectX + rectW &&
+      p.mouseY >= rectY &&
+      p.mouseY <= rectY + rectH
+    ) {
+      p.fill(255, 0, 0); // Rot, wenn der Mauszeiger im Rechteck ist
+    } else {
+      p.fill(0); // Schwarz, wenn der Mauszeiger außerhalb ist
+    }
+    p.rect(rectX, rectY, rectW, rectH); // Zeichne das Rechteck
+  };
+
+  p.mousePressed = () => {
+    // Hier kann eine Aktion hinzugefügt werden, wenn der Benutzer klickt
+  };
+}
+
+function sketchPointCircleHover(p) {
+  let circleX = 200;
+  let circleY = 150;
+  let circleR = 50;
+
+  p.setup = () => {
+    p.createCanvas(400, 300);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+
+    // Berechne den Abstand zwischen dem Mauszeiger und dem Mittelpunkt des Kreises
+    let distance = p.dist(p.mouseX, p.mouseY, circleX, circleY);
+
+    // Überprüfe die Kollision
+    if (distance <= circleR) {
+      p.fill(255, 0, 0); // Rot, wenn der Mauszeiger im Kreis ist
+    } else {
+      p.fill(0); // Schwarz, wenn der Mauszeiger außerhalb ist
+    }
+    p.ellipse(circleX, circleY, circleR * 2, circleR * 2); // Zeichne den Kreis
+  };
+
+  p.mousePressed = () => {
+    // Hier kann eine Aktion hinzugefügt werden, wenn der Benutzer klickt
+  };
+}
+
 function sketchPointRectangle(p) {
   let rectX = 150;
   let rectY = 100;
