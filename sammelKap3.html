@@ -27,7 +27,7 @@
   <body>
     <!-- if-anweisung -->
     <details class="top">
-      <summary id="info">🔀 If-Anwesiungen</summary>
+      <summary id="info">🔀 If-Anweisungen</summary>
 
       <!-- if-else -->
       <details class="box-info">
@@ -93,9 +93,9 @@
         <p>
           Ein Flussdiagramm ist eine
           <strong>alternative Darstellung von Programmcode</strong>, der auch
-          von Nicht-Programmiern verstanden werden kann. Man kann sie auf Papier
-          zeichnen oder mit speziellen Programmen am PC. Am PC gibt es zum
-          Beispiel <strong>Violet UML-Editor</strong> oder die seite
+          von Nicht-Programmierern verstanden werden kann. Man kann sie auf
+          Papier zeichnen oder mit speziellen Programmen am PC. Am PC gibt es
+          zum Beispiel <strong>Violet UML-Editor</strong> oder die seite
           <a class="button" href="https://app.diagrams.net/">draw.io</a>
         </p>
         <img
@@ -114,7 +114,7 @@ println("tschüss");</code></pre>
         <h4>Wie erstelle ich ein Flussdiagramm aus Programmcode?</h4>
         <ul>
           <li>Funktionsaufrufe/Wertzuweisungen stehen in Rechtecken</li>
-          <li>Bedinungen stehen in Rauten</li>
+          <li>Bedingungen stehen in Rauten</li>
           <li>Von Bedingungen gehen ein true- und ein false-Pfeil weiter</li>
           <li>
             Am Ende einer Verzweigung werden die Pfeile wieder synchronisiert
@@ -196,13 +196,6 @@ println("tschüss");</code></pre>
       </details>
     </details>
 
-    <!-- Fingerübung 3.1
-    <a
-      class="task"
-      target="_blank"
-      href="https://michaelkipp.de/processing/if.html#sec_3_1_8"
-      >Fingerübungen If-Else</a
-    > -->
     <br />
     <!-- Übungen 3.1-->
     <a
@@ -211,6 +204,13 @@ println("tschüss");</code></pre>
       href="https://michaelkipp.de/processing/if.html#sec_3_1_8"
       >Übungsaufgaben 3.1a bis 3.1l - mindestens 6 Aufgaben</a
     >
+    <!-- Fingerübung 3.1
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/if.html#sec_3_1_8"
+      >Fingerübungen If-Else</a
+    > -->
 
     <!-- if-else-if -->
     <details class="top">
@@ -247,7 +247,7 @@ println("tschüss");</code></pre>
             Aufpassen bei der Syntax! Nach den Bedingungen darf
             <strong>KEIN</strong> ";" (Semicolon) stehen.
           </p>
-          <pre><code>if (Bedingung); { //SYNTAXFEHLER!
+          <pre><code>if (Bedingung); { //FEHLER!
   ...
 }</code></pre>
         </div>
@@ -306,7 +306,7 @@ println("tschüss");</code></pre>
             Aufpassen bei der Syntax! Nach der Bedingung darf
             <strong>KEIN</strong> ";" (Semicolon) stehen.
           </p>
-          <pre><code>if (Bedingung); { //SYNTAXFEHLER!
+          <pre><code>if (Bedingung); { //FEHLER!
   ...
 }</code></pre>
         </div>
@@ -788,7 +788,7 @@ void keyPressed() {
                 <td>Direkte Abfrage in <code>draw()</code></td>
                 <td>
                   <ul>
-                    <li>Erlaubt kontinuierliche Eingaben (z. B. Bewegung).</li>
+                    <li>Erlaubt kontinuierliche Eingaben (z.B. Bewegung).</li>
                     <li>Einfach zu kombinieren mit anderen Bedingungen.</li>
                   </ul>
                 </td>
@@ -1011,9 +1011,26 @@ void draw() {
           vergleichen.
         </p>
         <img
-          src="https://p5-sketches-demo.netlify.app/koll-rect3.png"
+          src="https://p5-sketches-demo.netlify.app/koll-rect1.png"
           alt="kein Bild gefunden"
         />
+        <p>
+          Wir betrachten zunächst die x-Achse. Der x-Wert des Punktes muss
+          größer (rechts von) dem x-Wert rx des Rechtecks sein. Außerdem muss
+          der x-Wert des Punktes kleiner (links von) dem x-Wert
+          <code>rx</code> + der Breite des Rechtecks <code>rwidth</code> sein.
+        </p>
+
+        <img
+          src="https://p5-sketches-demo.netlify.app/koll-rect2.png"
+          alt="kein Bild gefunden"
+        />
+        <p>
+          Für die y-Achse gilt das Gleiche: Der y-Wert des Punktes muss größer
+          (unterhalb) dem y-Wert <code>ry</code> des Rechtecks sein. Außerdem
+          muss der y-Wert des Punktes kleiner (oberhalb) dem y-Wert
+          <code>ry</code> + der Höhe des Rechtecks <code>rheight</code> sein.
+        </p>
         <p>
           Insgesamt müssen für eine Kollision folgende vier Bedingungen gelten:
         </p>
@@ -1103,6 +1120,15 @@ void mousePressed() {
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchPointCircleHover"
         ></iframe>
       </details>
+      <p class="box-info">
+        Alle weitere Kollisionen findet ihr hier ->
+        <a
+          href="https://www.jeffreythompson.org/collision-detection/table_of_contents.php"
+          class="button"
+          target="_blank"
+          >jeffreythompson</a
+        >
+      </p>
     </details>
 
     <!-- Befehl dist -->
@@ -1163,12 +1189,12 @@ void draw() {
       </details>
     </details>
 
-    <!-- Fragen - Tastenunterscheidung -->
+    <!-- Aufgaben Kollisionserkennung -->
     <a
       class="task"
       target="_blank"
       href="https://michaelkipp.de/processing/if.html#sec_3_6_4"
-      >Übungsaufgaben 3.6</a
+      >Übungsaufgaben 3.6 - mindestens 5 Aufgaben</a
     >
 
     <!-- Fragen Kapitel 3 -->
