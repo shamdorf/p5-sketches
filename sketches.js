@@ -17,6 +17,37 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchAnimation(p) {
+  let x = 0;
+  let play = true;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.ellipse(x, 50, 20, 20); // Zeichne den Ball
+
+    // NEU: bewege dich nur, wenn play true ist
+    if (play) {
+      x++;
+    }
+
+    // immer wieder von links reinkommen
+    if (x >= 100) {
+      x = 0;
+    }
+
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.keyPressed = () => {
+    play = !play; // setze play auf seine eigene Negation
+  };
+}
+
 function sketchIfElse(p) {
   p.setup = () => {
     p.createCanvas(400, 200);

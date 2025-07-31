@@ -27,6 +27,8 @@
   <body>
     <details class="top">
       <summary id="info">🔀 If-Anwesiungen</summary>
+
+      <!-- if-else -->
       <details class="box-info">
         <summary>🔀 Was ist eine If-Anweisung (Verzweigung)</summary>
         <!-- <p>
@@ -83,6 +85,8 @@
 }</code></pre>
         </div>
       </details>
+
+      <!-- flussdiagramm if - else if -->
       <details class="box-info">
         <summary>Flussdiagramm - if-else</summary>
         <p>
@@ -93,6 +97,10 @@
           Beispiel <strong>Violet UML-Editor</strong> oder die seite
           <a class="button" href="https://app.diagrams.net/">draw.io</a>
         </p>
+        <img
+          src="https://p5-sketches-demo.netlify.app/flussdiagrammIf.png"
+          alt=""
+        />
         <h4>❓ Was verstehst du besser, Code oder Flussdiagramm?</h4>
         <pre><code>int punkte = 75;
 if (punkte > 50) {
@@ -102,10 +110,6 @@ if (punkte > 50) {
 }
 println("tschüss");</code></pre>
 
-        <img
-          src="https://p5-sketches-demo.netlify.app/flussdiagrammIf.png"
-          alt=""
-        />
         <h4>Wie erstelle ich ein Flussdiagramm aus Programmcode?</h4>
         <ul>
           <li>Funktionsaufrufe/Wertzuweisungen stehen in Rechtecken</li>
@@ -117,6 +121,7 @@ println("tschüss");</code></pre>
         </ul>
       </details>
 
+      <!-- Bedingungen in Processing -->
       <details class="box-info">
         <summary>🔎 Bedingungen in Processing</summary>
 
@@ -188,38 +193,6 @@ println("tschüss");</code></pre>
   fill(0, 255, 0);
 }</code></pre>
       </details>
-    </details>
-
-    <!-- Syntax if-else if-else-if -->
-    <details class="top">
-      <summary id="command">Syntax für if-else, if-else-if</summary>
-      <div class="box-command">
-        <h4>if-else</h4>
-        <pre><code>if (Bedingung) {
-   // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
-} else {
-  // dieser Block wird ausgeführt, wenn die Bedingung falsch ist
-}</code></pre>
-        <h4>Syntax</h4>
-        <pre><code>if (Bedingung) {
-   // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
-} else if (Bedingung2) {
-   // dieser Block wird ausgeführt, wenn die zweite Bedingung wahr ist
-} else if (Bedingung3) {
-   // dieser Block wird ausgeführt, wenn die dritte Bedingung wahr ist
-} else {
-  // dieser Block wird ausgeführt, wenn alle Bedingungen falsch sind
-}</code></pre>
-        <div class="box-warning">
-          <p>
-            Aufpassen bei der Syntax! Nach der Bedingung darf
-            <strong>KEIN</strong> ";" (Semicolon) stehen.
-          </p>
-          <pre><code>if (Bedingung); { //SYNTAXFEHLER!
-  ...
-}</code></pre>
-        </div>
-      </div>
     </details>
 
     <!-- Fingerübung 3.1-->
@@ -305,6 +278,38 @@ println("tschüss");</code></pre>
           alt=""
         />
       </details>
+    </details>
+
+    <!-- Syntax if-else if-else-if -->
+    <details class="top">
+      <summary id="command">Syntax für if-else, if-else-if</summary>
+      <div class="box-command">
+        <h4>if-else</h4>
+        <pre><code>if (Bedingung) {
+   // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
+} else {
+  // dieser Block wird ausgeführt, wenn die Bedingung falsch ist
+}</code></pre>
+        <h4>Syntax</h4>
+        <pre><code>if (Bedingung) {
+   // dieser Block wird ausgeführt, wenn die Bedingung wahr ist
+} else if (Bedingung2) {
+   // dieser Block wird ausgeführt, wenn die zweite Bedingung wahr ist
+} else if (Bedingung3) {
+   // dieser Block wird ausgeführt, wenn die dritte Bedingung wahr ist
+} else {
+  // dieser Block wird ausgeführt, wenn alle Bedingungen falsch sind
+}</code></pre>
+        <div class="box-warning">
+          <p>
+            Aufpassen bei der Syntax! Nach der Bedingung darf
+            <strong>KEIN</strong> ";" (Semicolon) stehen.
+          </p>
+          <pre><code>if (Bedingung); { //SYNTAXFEHLER!
+  ...
+}</code></pre>
+        </div>
+      </div>
     </details>
 
     <!-- Übungen 3.2-->
@@ -519,43 +524,83 @@ void draw() {
       <li>... die x- und y-Geschwindigkeiten zuällige Zahlen sind.</li>
     </ul>
 
-
-<!-- Boolesche Variablen -->
- <details class="top">
-    <summary id="info"><strong>3.4 Boolesche Variablen</strong></summary>
-    <div class="info">
+    <!-- Boolesche Variablen -->
+    <details class="top">
+      <summary id="info"><strong>3.4 Boolesche Variablen</strong></summary>
+      <div class="info">
         <p>
-            Sie kennen jetzt Bedingungen in If-Anweisungen und sogar boolesche Ausdrücke mit AND und OR. Boolesche Variablen sind ganz primitive Zeitgenossen, da sie lediglich einen von zwei möglichen Werten speichern können: <code>true</code> oder <code>false</code>.
+          Ihr kennt jetzt Bedingungen in If-Anweisungen und sogar boolesche
+          Ausdrücke mit AND, OR und NOT. Boolesche Variablen sind ganz primitive
+          Zeitgenossen, da sie lediglich einen von zwei möglichen Werten
+          speichern können: <code>true</code> oder <code>false</code>.
         </p>
         <p>
-            Wozu braucht man sowas? In Processing wollen Sie sich zum Beispiel einen Zustand merken. Wenn Sie zum Beispiel eine Animation haben, möchten Sie sich merken, ob die Animation laufen soll (play) oder anhalten (pause).
+          Wozu braucht man sowas? In Processing wollen Sie sich zum Beispiel
+          einen Zustand merken. Wenn Sie zum Beispiel eine Animation haben,
+          möchten Sie sich merken, ob die Animation laufen soll (play) oder
+          anhalten (pause).
         </p>
-    </div>
-</details>
+      </div>
+    </details>
 
-<details class="box-command">
-    <summary>🔄 Einfache Animation</summary>
-    <div>
-        <p>Hier ist eine einfache Animation:</p>
+    <details class="top">
+      <summary id="example">
+        🏀 Animation: Button zum Pausieren einer Animation
+      </summary>
+
+      <div class="box-example">
+        <p>Wir wollen einen einfachen play/pause Mechanismus implementieren.</p>
+        <ul>
+          <li>
+            Deklarieren einer booleschen Variable
+            <code>boolean play = true;</code>
+          </li>
+          <li>
+            Abfragen des Zustands dieser Variable <code>if (play) { ...</code>
+          </li>
+          <li>
+            Switchen des Zustands mit Tastendruck in <code>keyPressed { </code>
+          </li>
+        </ul>
         <pre><code>int x = 0;
+boolean play = true;
 
 void draw() {
     background(255);
     ellipse(x, 50, 20, 20);
-    x++;
+
+    // NEU: bewege dich nur, wenn play true ist
+    if (play) {
+        x++;
+    }
 
     // immer wieder von links reinkommen
     if (x >= 100) {
         x = 0;
     }
-}</code></pre>
-    </div>
-</details>
+}
 
-<details class="box-command">
-    <summary>🔄 Animation mit play/pause</summary>
-    <div>
-        <p>Um einen einfachen play/pause Mechanismus zu implementieren, führen wir eine boolesche Variable <code>play</code> ein:</p>
+void keyPressed() {
+    play = !play; // setze play auf seine eigene Negation
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchAnimation"
+        ></iframe>
+
+        <p class="box-info">
+          Das Negationszeichen funktioniert ähnlich wie das Minuszeichen in der
+          Arithmetik.
+        </p>
+      </div>
+    </details>
+
+    <details class="box-command">
+      <summary>🔄 Animation mit play/pause</summary>
+      <div>
+        <p>
+          Um einen einfachen play/pause Mechanismus zu implementieren, führen
+          wir eine boolesche Variable <code>play</code> ein:
+        </p>
         <pre><code>int x = 0;
 boolean play = true;
 
@@ -573,32 +618,42 @@ void draw() {
         x = 0;
     }
 }</code></pre>
-    </div>
-</details>
+      </div>
+    </details>
 
-<details class="box-command">
-    <summary>🔄 play Variable umschalten</summary>
-    <div>
-        <p>Um die Variable <code>play</code> während der Laufzeit umzusetzen, fügen wir die folgende Funktion hinzu:</p>
+    <details class="box-command">
+      <summary>🔄 play Variable umschalten</summary>
+      <div>
+        <p>
+          Um die Variable <code>play</code> während der Laufzeit umzusetzen,
+          fügen wir die folgende Funktion hinzu:
+        </p>
         <pre><code>void keyPressed() {
     play = !play; // setze play auf seine eigene Negation
 }</code></pre>
-        <p>Das Negationszeichen funktioniert ähnlich wie das Minuszeichen in der Arithmetik.</p>
-    </div>
-</details>
-
-<details class="top">
-    <summary id="info"><strong>Boolesche Variablen und boolesche Ausdrücke</strong></summary>
-    <div class="info">
         <p>
-            In eine boolesche Variable kann ein beliebiger boolescher Ausdruck per Zuweisung hineingetan werden. Im folgenden Beispiel wird der Ball in der x-Zone 30-70 rot gefärbt:
+          Das Negationszeichen funktioniert ähnlich wie das Minuszeichen in der
+          Arithmetik.
         </p>
-    </div>
-</details>
+      </div>
+    </details>
 
-<details class="box-command">
-    <summary>🔄 Ball in der Zone färben</summary>
-    <div>
+    <details class="top">
+      <summary id="info">
+        <strong>Boolesche Variablen und boolesche Ausdrücke</strong>
+      </summary>
+      <div class="info">
+        <p>
+          In eine boolesche Variable kann ein beliebiger boolescher Ausdruck per
+          Zuweisung hineingetan werden. Im folgenden Beispiel wird der Ball in
+          der x-Zone 30-70 rot gefärbt:
+        </p>
+      </div>
+    </details>
+
+    <details class="box-command">
+      <summary>🔄 Ball in der Zone färben</summary>
+      <div>
         <pre><code>int x = 0;
 boolean inTheZone = false;
 
@@ -617,33 +672,36 @@ void draw() {
     ellipse(x, 50, 20, 20);
     x++;
 }</code></pre>
-    </div>
-</details>
+      </div>
+    </details>
 
-<details class="box-command">
-    <summary>🔄 Ball zurücksetzen</summary>
-    <div>
+    <details class="box-command">
+      <summary>🔄 Ball zurücksetzen</summary>
+      <div>
         <p>Um den Ball wieder auf x=0 zu setzen, wenn er in der Zone ist:</p>
         <pre><code>void keyPressed() {
     if (inTheZone) {
         x = 0;
     }
 }</code></pre>
-    </div>
-</details>
+      </div>
+    </details>
 
-<details class="top">
-    <summary id="info"><strong>Boolesche Variablen als Teil boolescher Ausdrücke</strong></summary>
-    <div class="info">
+    <details class="top">
+      <summary id="info">
+        <strong>Boolesche Variablen als Teil boolescher Ausdrücke</strong>
+      </summary>
+      <div class="info">
         <p>
-            Boolesche Variablen können auch Bestandteil von booleschen Ausdrücken sein. Hier zwei Beispiele:
+          Boolesche Variablen können auch Bestandteil von booleschen Ausdrücken
+          sein. Hier zwei Beispiele:
         </p>
-    </div>
-</details>
+      </div>
+    </details>
 
-<details class="box-command">
-    <summary>🔄 Boolesche Ausdrücke</summary>
-    <div>
+    <details class="box-command">
+      <summary>🔄 Boolesche Ausdrücke</summary>
+      <div>
         <pre><code>boolean foo = true;
 boolean goo = false;
 int x = 10;
@@ -653,12 +711,8 @@ boolean ausdruck2 = foo || x > 5;
 
 println(ausdruck1);
 println(ausdruck2);</code></pre>
-    </div>
-</details>
-
-
-
-
+      </div>
+    </details>
 
     <details class="top">
       <summary>🧪 Bedingungen kombinieren</summary>
