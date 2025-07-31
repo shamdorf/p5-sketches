@@ -22,7 +22,7 @@ function sketchAnimation(p) {
   let play = true;
 
   p.setup = () => {
-    p.createCanvas(400, 200);
+    p.createCanvas(100, 100);
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
