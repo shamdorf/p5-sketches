@@ -17,6 +17,36 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchVektoren(p) {
+  let position; // Ortsvektor
+  let velocity; // Geschwindigkeitsvektor
+
+  p.setup = () => {
+    p.createCanvas(800, 600);
+    position = p.createVector(p.width / 2, p.height / 2); // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
+    velocity = p.createVector(2, 3); // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
+  };
+
+  p.draw = () => {
+    p.background(255);
+
+    // Aktualisiere die Position durch Addition des Geschwindigkeitsvektors
+    position.add(velocity);
+
+    // Überprüfe, ob der Ball den Rand des Canvas erreicht hat, und kehre die Richtung um
+    if (position.x > p.width || position.x < 0) {
+      velocity.x *= -1; // Umkehren der x-Richtung
+    }
+    if (position.y > p.height || position.y < 0) {
+      velocity.y *= -1; // Umkehren der y-Richtung
+    }
+
+    // Zeichne den Ball
+    p.fill(0);
+    p.ellipse(position.x, position.y, 30, 30); // Zeichne den Ball mit dem aktuellen Ortsvektor
+  };
+}
+
 function sketchDistExample(p) {
   let pointX1 = 100;
   let pointY1 = 100;

@@ -74,7 +74,42 @@
         />
 
         <!-- Beispielsketch für Vektoren -->
-        <h4><strong>Beispielsketch für Vektoren</strong></h4>
+        <h4>🔢 Vektoren Beispiel: Ortsvektor und Geschwindigkeitsvektor</h4>
+        <p>
+          In diesem Beispiel wird ein Ball dargestellt, der sich basierend auf
+          seiner Geschwindigkeit bewegt. Der Ortsvektor wird mit dem
+          Geschwindigkeitsvektor addiert, um die Position des Balls zu
+          aktualisieren.
+        </p>
+        <pre><code>
+let position; // Ortsvektor
+let velocity; // Geschwindigkeitsvektor
+
+function setup() {
+    createCanvas(800, 600);
+    position = createVector(width / 2, height / 2); // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
+    velocity = createVector(2, 3); // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
+}
+
+function draw() {
+    background(255);
+
+    // Aktualisiere die Position durch Addition des Geschwindigkeitsvektors
+    position.add(velocity);
+
+    // Überprüfe, ob der Ball den Rand des Canvas erreicht hat, und kehre die Richtung um
+    if (position.x > width || position.x < 0) {
+        velocity.x *= -1; // Umkehren der x-Richtung
+    }
+    if (position.y > height || position.y < 0) {
+        velocity.y *= -1; // Umkehren der y-Richtung
+    }
+
+    // Zeichne den Ball
+    fill(0);
+    ellipse(position.x, position.y, 30, 30); // Zeichne den Ball mit dem aktuellen Ortsvektor
+}</code></pre>
+        <p>Hier ist der interaktive Sketch:</p>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVektoren"
         ></iframe>
