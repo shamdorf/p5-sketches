@@ -8,6 +8,7 @@
       window.addEventListener("message", (event) => {
         if (event.data?.type === "resize-iframe") {
           const iframes = document.querySelectorAll("iframe");
+
           for (const iframe of iframes) {
             if (iframe.contentWindow === event.source) {
               iframe.style.width = event.data.width + "px";
@@ -20,19 +21,21 @@
   </head>
   <body>
     <!-- Informationsbox über Schleifen in Processing -->
-    <!-- Oberthema: While-Schleife -->
+    <!-- Oberthema:
+    While-Schleife -->
     <details class="top">
       <summary id="info">🔄 While-Schleife</summary>
-
       <div class="box-info">
         <h4>Syntax, Motivation und Begriffe</h4>
         <h5>Syntax</h5>
-        <pre><code>int counter = 0;  //Initialisierung der Schleifenvariablen
-while (Bedingung) {
-    // Anweisungen, die wiederholt ausgeführt werden
-    counter++;  //Schleifenschritt
-}</code></pre>
+        <pre><code>int counter=0; //Initialisierung der Schleifenvariablen
 
+while (Bedingung) {
+  // Anweisungen, die wiederholt ausgeführt werden
+  counter++; //Schleifenschritt
+}
+
+</code></pre>
         <h5>Motivation</h5>
         <p>
           Die <code>while</code>-Schleife wird verwendet, um einen Block von
@@ -40,7 +43,6 @@ while (Bedingung) {
           wahr ist. Sie ist nützlich, wenn die Anzahl der Wiederholungen nicht
           im Voraus bekannt ist und von einer Bedingung abhängt.
         </p>
-
         <h5>Begriffe</h5>
         <ul>
           <li>
@@ -59,17 +61,18 @@ while (Bedingung) {
           </li>
         </ul>
       </div>
-
       <details class="box-info">
         <summary>Ablauftabelle und Flussdiagramm</summary>
         <h5>Beispiel</h5>
-        <pre><code>int count = 0;
-while (count < 5) {
-    // Anweisungen, die wiederholt ausgeführt werden
-    println("Zähler: " + count);
-    count++; // Schleifenschritt
-}</code></pre>
+        <pre><code>int i = 0; // Initialisierung der Schleifenvariablen
 
+while (i < 3) {  // Schleifenbedingung
+  // Anweisungen, die wiederholt ausgeführt werden
+  println(i);
+  i = i + 1; // Schleifenschritt
+}
+
+</code></pre>
         <h5>Ablauftabelle</h5>
         <table class="operator-table">
           <tr>
@@ -115,69 +118,73 @@ while (count < 5) {
             <td>Nein</td>
           </tr>
         </table>
-
         <h5>Flussdiagramm</h5>
         <p>
           Das Flussdiagramm für eine <code>while</code>-Schleife zeigt den
           Ablauf:
         </p>
         <img
-          src="https://www.lucidchart.com/publicSegments/view/0c7c1e9b-ec2e-4c8c-8b1a-2e4e9b9d5b84/image.png"
+          src="https://p5-sketches-demo.netlify.app/img/for.png"
           alt="Flussdiagramm While-Schleife"
           width="300"
         />
       </details>
-
       <details class="box-info">
         <summary>🎨 Beispielsketch: While-Schleife</summary>
-        <pre><code>int count = 0;
+        <pre><code>int count=0;
 
 void setup() {
-    size(400, 200);
-    while (count < 5) {
-        text("Zähler: " + count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen
-        count++; // Schleifenschritt
-    }
-}</code></pre>
+  size(400, 200);
+
+  while (count < 5) {
+    text("Zähler: "+ count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen
+    count++; // Schleifenschritt
+  }
+}
+
+</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWhileLoop"
         ></iframe>
         <div class="box-question">
           Betrachtet und erkläre folgende Zeile aus dem Beispielsketch:
-          <pre><code>text("Zähler: " + count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen</code></pre>
+          <pre><code>text("Zähler: "+ count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen</code></pre>
+
           <details>
             <summary class="solution-button">
               Drücke hier für die Lösung:
             </summary>
-            <p>
-              Diese Zeile zeigt den aktuellen Wert des Zählers auf dem
-              Bildschirm an. Der Text wird in der linken oberen Ecke des
-              Fensters gezeichnet, wobei die vertikale Position für jede
-              Iteration um 30 Pixel erhöht wird, sodass jeder Zählerwert unter
-              dem vorherigen angezeigt wird.
-            </p>
+            <ul>
+              <li>
+                Zeigt den aktuellen Wert des Zählers auf dem Bildschirm an
+              </li>
+              <li>Der Text wird links oben angezeigt</li>
+              <li>
+                Mit jeder Iteration wird die vertikale Position um 30 Pixel
+                erhöht, damit die Zeilen untereinander angezeigt werden
+              </li>
+              <li>Die Schleife läuft, bis der Zähler 5 erreicht</li>
+            </ul>
           </details>
         </div>
       </details>
     </details>
-
     <!-- Oberthema: For-Schleife -->
     <details class="top">
       <summary id="info">🔄 For-Schleife</summary>
-
       <div class="box-info">
         <h4>Syntax</h4>
         <pre><code>for (Initialisierung; Bedingung; Schleifenschritt) {
-    // Anweisungen, die wiederholt ausgeführt werden
-}</code></pre>
+  // Anweisungen, die wiederholt ausgeführt werden
+}
 
+</code></pre>
         <h4>Motivation</h4>
         <p>
           Die <code>for</code>-Schleife wird verwendet, um einen Block von
           Anweisungen eine bestimmte Anzahl von Malen auszuführen. Sie ist
           besonders nützlich, wenn die Anzahl der Wiederholungen bekannt ist.
         </p>
-
         <h4>Begriffe</h4>
         <ul>
           <li>
@@ -195,18 +202,18 @@ void setup() {
             ändern.
           </li>
         </ul>
-
         <h4>Beispielsketch für eine for-Schleife, die 5 Kreise zeichnet</h4>
-        <pre><code>for (int i = 0; i < 5; i++) {
-    // Anweisungen, die wiederholt ausgeführt werden
-    ellipse(50 + i * 60, height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
-}</code></pre>
+        <pre><code>for (int i=0; i < 5; i++) {
+  // Anweisungen, die wiederholt ausgeführt werden
+  ellipse(50 + i * 60, height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
+}
+
+</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchForLoop"
         ></iframe>
       </div>
     </details>
-
     <script src="sketches.js"></script>
   </body>
 </html>
