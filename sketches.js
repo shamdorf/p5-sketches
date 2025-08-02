@@ -17,6 +17,40 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+// Sketch für die While-Schleife
+function sketchWhileLoop(p) {
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+    let count = 0; // Verwendung von let
+
+    while (count < 5) {
+      p.text("Zähler: " + count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen
+      count++; // Schleifenschritt
+    }
+  };
+
+  p.draw = () => {
+    // Leere draw-Funktion, da wir nur einmal im Setup zeichnen
+  };
+}
+
+// Sketch für die For-Schleife
+function sketchForLoop(p) {
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrund löschen
+    for (let i = 0; i < 5; i++) {
+      // Verwendung von let
+      p.ellipse(50 + i * 60, p.height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
+    }
+  };
+}
+
 function sketchVektoren(p) {
   let position; // Ortsvektor
   let velocity; // Geschwindigkeitsvektor

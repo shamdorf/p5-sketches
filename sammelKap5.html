@@ -19,6 +19,184 @@
     </script>
   </head>
   <body>
+    <!-- Informationsbox über Schleifen in Processing -->
+    <!-- Oberthema: While-Schleife -->
+    <details class="top">
+      <summary id="info">🔄 While-Schleife</summary>
+
+      <details class="box-info">
+        <summary>1. Syntax, Motivation und Begriffe</summary>
+        <h5>Syntax</h5>
+        <pre><code>while (Bedingung) {
+    // Anweisungen, die wiederholt ausgeführt werden
+}</code></pre>
+
+        <h5>Motivation</h5>
+        <p>
+          Die <code>while</code>-Schleife wird verwendet, um einen Block von
+          Anweisungen wiederholt auszuführen, solange eine bestimmte Bedingung
+          wahr ist. Sie ist nützlich, wenn die Anzahl der Wiederholungen nicht
+          im Voraus bekannt ist und von einer Bedingung abhängt.
+        </p>
+
+        <h5>Begriffe</h5>
+        <ul>
+          <li>
+            <strong>Schleifenvariable</strong>: Eine Variable, die in der
+            Schleife verwendet wird, um den Zustand der Schleife zu steuern
+            (z.B. einen Zähler).
+          </li>
+          <li>
+            <strong>Schleifenbedingung</strong>: Eine Bedingung, die überprüft
+            wird, um zu entscheiden, ob die Schleife fortgesetzt werden soll.
+          </li>
+          <li>
+            <strong>Schleifenschritt</strong>: Der Schritt, der am Ende jeder
+            Iteration der Schleife ausgeführt wird, um die Schleifenvariable zu
+            ändern.
+          </li>
+        </ul>
+      </details>
+
+      <details class="box-info">
+        <summary>2. Beispiel, Ablauftabelle und Flussdiagramm</summary>
+        <h5>Beispiel</h5>
+        <pre><code>int count = 0;
+while (count < 5) {
+    // Anweisungen, die wiederholt ausgeführt werden
+    println("Zähler: " + count);
+    count++; // Schleifenschritt
+}</code></pre>
+
+        <h5>Ablauftabelle</h5>
+        <table class="operator-table">
+          <tr>
+            <th>Iteration</th>
+            <th>Schleifenvariable (count)</th>
+            <th>Aktion</th>
+            <th>Bedingung erfüllt?</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>0</td>
+            <td>println("Zähler: 0")</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>1</td>
+            <td>println("Zähler: 1")</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>2</td>
+            <td>println("Zähler: 2")</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>3</td>
+            <td>println("Zähler: 3")</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>4</td>
+            <td>println("Zähler: 4")</td>
+            <td>Ja</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>5</td>
+            <td>-</td>
+            <td>Nein</td>
+          </tr>
+        </table>
+
+        <h5>Flussdiagramm</h5>
+        <p>
+          Das Flussdiagramm für eine <code>while</code>-Schleife zeigt den
+          Ablauf:
+        </p>
+        <img
+          src="https://www.lucidchart.com/publicSegments/view/0c7c1e9b-ec2e-4c8c-8b1a-2e4e9b9d5b84/image.png"
+          alt="Flussdiagramm While-Schleife"
+          width="300"
+        />
+      </details>
+    </details>
+
+    <!-- Beispielsketch für die While-Schleife -->
+    <details class="box-info">
+      <summary>🎨 Beispielsketch: While-Schleife</summary>
+      <pre><code>int count = 0;
+
+void setup() {
+    size(400, 200);
+    while (count < 5) {
+        text("Zähler: " + count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen
+        count++; // Schleifenschritt
+    }
+}</code></pre>
+    </details>
+
+    ---
+
+    <!-- Oberthema: For-Schleife -->
+    <details class="top">
+      <summary id="info">🔄 For-Schleife</summary>
+
+      <details class="box-info">
+        <summary>1. Syntax, Motivation und Begriffe</summary>
+        <h5>Syntax</h5>
+        <pre><code>for (Initialisierung; Bedingung; Schleifenschritt) {
+    // Anweisungen, die wiederholt ausgeführt werden
+}</code></pre>
+
+        <h5>Motivation</h5>
+        <p>
+          Die <code>for</code>-Schleife wird verwendet, um einen Block von
+          Anweisungen eine bestimmte Anzahl von Malen auszuführen. Sie ist
+          besonders nützlich, wenn die Anzahl der Wiederholungen bekannt ist.
+        </p>
+
+        <h5>Begriffe</h5>
+        <ul>
+          <li>
+            <strong>Initialisierung</strong>: Der erste Schritt, um die
+            Schleifenvariable zu setzen, bevor die Schleife beginnt.
+          </li>
+          <li>
+            <strong>Bedingung</strong>: Eine Bedingung, die überprüft wird, um
+            zu entscheiden, ob die Schleife fortgesetzt werden soll.
+          </li>
+          <li>
+            <strong>Schleifenschritt</strong>: Der Schritt, der am Ende jeder
+            Iteration der Schleife ausgeführt wird, um die Schleifenvariable zu
+            ändern.
+          </li>
+        </ul>
+      </details>
+
+      <details class="box-info">
+        <summary>2. Beispiel</summary>
+        <pre><code>for (int i = 0; i < 5; i++) {
+    // Anweisungen, die wiederholt ausgeführt werden
+    println("Zähler: " + i);
+}</code></pre>
+      </details>
+    </details>
+
+    <!-- Beispielsketch für die For-Schleife -->
+    <details class="box-info">
+      <summary>2. Beispiel</summary>
+      <pre><code>for (int i = 0; i < 5; i++) {
+    // Anweisungen, die wiederholt ausgeführt werden
+    ellipse(50 + i * 60, height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
+}</code></pre>
+    </details>
+
     <script src="sketches.js"></script>
   </body>
 </html>
