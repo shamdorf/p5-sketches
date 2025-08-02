@@ -323,14 +323,14 @@ for (int i=0; i < 5; i++) {
           alt=""
         />
         <!-- Oberthema: Drei Rechtecke mit Schleife -->
-        <details class="box-info">
-          <summary>🎨 Drei Rechtecke mit Schleife</summary>
-          <p>
-            In diesem Sketch werden drei Rechtecke gezeichnet, die sich
-            horizontal bewegen. Die y-Position jedes Rechtecks wird durch die
-            Schleife bestimmt.
-          </p>
-          <pre><code>int x = 0;
+
+        <h4>🎨 Drei Rechtecke mit Schleife</h4>
+        <p>
+          In diesem Sketch werden drei Rechtecke gezeichnet, die sich horizontal
+          bewegen. Die y-Position jedes Rechtecks wird durch die Schleife
+          bestimmt.
+        </p>
+        <pre><code>int x = 0;
 
 void setup() {
     size(400, 200);
@@ -347,20 +347,21 @@ void draw() {
     // Passe x-Wert an für Animation
     x++;
 }</code></pre>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchThreeRectangles"
-            target="blank"
-          ></iframe>
-        </details>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchThreeRectangles"
+          target="blank"
+        ></iframe>
 
         <!-- Oberthema: Fliegendes Rechteck im Eigenbau (Linien) -->
-        <details class="box-info">
-          <summary>🎨 Fliegendes Rechteck im Eigenbau (Linien)</summary>
-          <p>
-            In diesem Sketch wird ein "Rechteck" aus Linien gezeichnet, das sich
-            horizontal bewegt. Die Linien simulieren die Form eines Rechtecks.
-          </p>
-          <pre><code>int x = 0;
+
+        <h4>🎨 Fliegendes Rechteck im Eigenbau (Linien)</h4>
+        <p>
+          In diesem Sketch wird ein "Rechteck" aus Linien gezeichnet, das sich
+          horizontal bewegt. Die Linien simulieren die Form eines Rechtecks.
+          Durch den Stroke-Befehl schaffen wir einen farblichen Übergang
+          (linearer Gradient).
+        </p>
+        <pre><code>int x = 0;
 
 void setup() {
     size(400, 200);
@@ -378,20 +379,19 @@ void draw() {
     // Bewege Rechteck
     x++;
 }</code></pre>
-          <iframe
-            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlyingRectangle"
-            target="blank"
-          ></iframe>
-        </details>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlyingRectangle"
+          target="blank"
+        ></iframe>
 
-        <p>
+        <!-- <p>
           Der aktive Modus ist eine Schleife, die sich 60 Mal pro Sekunde
           wiederholt. Man kann keine Animationen in einer while- oder
           for-Schleife im aktiven Modus erstellen, da das Zeichnen der Objekte
           immer erst am Ende der draw-Methode stattfindet. Man kann jedoch
           Schleifen verwernden, um mehrere Objekte zu zeichnen die
           zusammengehören wie Punkte oder Gitterlinien
-        </p>
+        </p> -->
       </div>
     </details>
 
@@ -407,14 +407,65 @@ void draw() {
     <details class="top">
       <summary id="info">🔄 Verschachtelte Schleifen</summary>
       <div class="box-info">
+        <h4>Syntax</h4>
+        <pre><code>for (let i = 0; i < rows; i++) {
+  for (let j = 0; j < cols; j++) {
+    // Zugriff auf das Element an der Position (i, j)
+  }
+}</code></pre>
+        <h4>Was sind verschachtelte Schleifen?</h4>
+        <div>
+          <p>
+            Verschachtelte Schleifen sind Schleifen, die innerhalb anderer
+            Schleifen platziert sind. Sie ermöglichen es, komplexe Iterationen
+            durchzuführen, z.B. durch die Kombination mehrerer Dimensionen. Man
+            kann sich eine Matrix als eine Tabelle mit Zeilen und Spalten
+            vorstellen. Um auf jedes Element in einer Matrix zuzugreifen,
+            benötigt man zwei Schleifen: eine für die Zeilen und eine für die
+            Spalten.
+          </p>
+        </div>
+
+        <h4>Motivation</h4>
+        <div>
+          <p>
+            Die Verwendung von verschachtelten Schleifen ist besonders nützlich,
+            wenn man mit mehrdimensionalen Datenstrukturen arbeitet, wie z.B.
+            Matrizen oder <strong>Arrays (Kapitel 6)</strong>. Sie ermöglichen
+            das Durchlaufen jeder Dimension und das Ausführen von Operationen
+            auf jedem Element.
+          </p>
+        </div>
+
+        <h4>Beispiel für eine Matrix aus Rechtecken</h4>
+
         <p>
-          Der aktive Modus ist eine Schleife, die sich 60 Mal pro Sekunde
-          wiederholt. Man kann keine Animationen in einer while- oder
-          for-Schleife im aktiven Modus erstellen, da das Zeichnen der Objekte
-          immer erst am Ende der draw-Methode stattfindet. Man kann jedoch
-          Schleifen verwernden, um mehrere Objekte zu zeichnen die
-          zusammengehören wie Punkte oder Gitterlinien
+          Über Varialben lassen sich die Anzahl der Spalten/Zeilen sowie die
+          Größe der Rechtecke festlegen.
         </p>
+        <pre><code>int cols = 5; // Anzahl der Spalten
+int rows = 5; // Anzahl der Zeilen
+int w = 60;   // Breite der Rechtecke
+int h = 60;   // Höhe der Rechtecke
+
+void setup() {
+    size(400, 400); // Erstelle ein 400x400 Pixel großes Fenster
+}
+
+void draw() {
+    background(255); // Hintergrund auf weiß setzen
+
+    // Zeichne eine Matrix von Rechtecken
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            rect(j * w, i * h, w, h); // Rechteck zeichnen
+        }
+    }
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMatrix"
+          target="blank"
+        ></iframe>
       </div>
     </details>
 

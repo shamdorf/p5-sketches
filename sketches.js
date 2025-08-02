@@ -17,6 +17,28 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchMatrix(p) {
+  p.setup = () => {
+    p.createCanvas(400, 400);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    let cols = 5; // Anzahl der Spalten
+    let rows = 5; // Anzahl der Zeilen
+    let w = 60; // Breite der Rechtecke
+    let h = 60; // Höhe der Rechtecke
+
+    // Zeichne eine Matrix von Rechtecken
+    for (let i = 0; i < rows; i++) {
+      for (let j = 0; j < cols; j++) {
+        p.rect(j * w, i * h, w, h); // Rechteck zeichnen
+      }
+    }
+  };
+}
+
 function sketchThreeRectangles(p) {
   let x = 0;
 
