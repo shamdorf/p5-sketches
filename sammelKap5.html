@@ -21,13 +21,11 @@
   </head>
   <body>
     <!-- Informationsbox über Schleifen in Processing -->
-    <!-- Oberthema:
-    While-Schleife -->
+    <!-- Oberthema: while-Schleife -->
     <details class="top">
       <summary id="info">🔄 While-Schleife</summary>
       <div class="box-info">
-        <h4>Syntax, Motivation und Begriffe</h4>
-        <h5>Syntax</h5>
+        <h4>Syntax</h4>
         <pre><code>int counter=0; //Initialisierung der Schleifenvariablen
 
 while (Bedingung) {
@@ -36,14 +34,14 @@ while (Bedingung) {
 }
 
 </code></pre>
-        <h5>Motivation</h5>
+        <h4>Motivation</h4>
         <p>
           Die <code>while</code>-Schleife wird verwendet, um einen Block von
           Anweisungen wiederholt auszuführen, solange eine bestimmte Bedingung
           wahr ist. Sie ist nützlich, wenn die Anzahl der Wiederholungen nicht
           im Voraus bekannt ist und von einer Bedingung abhängt.
         </p>
-        <h5>Begriffe</h5>
+        <h4>Begriffe</h4>
         <ul>
           <li>
             <strong>Initialisierung der Schleifenvariablen</strong>: Eine
@@ -73,7 +71,7 @@ while (i < 3) {  // Schleifenbedingung
 }
 
 </code></pre>
-        <h5>Ablauftabelle</h5>
+        <h4>Ablauftabelle</h4>
         <table class="operator-table">
           <tr>
             <th>Iteration</th>
@@ -118,7 +116,7 @@ while (i < 3) {  // Schleifenbedingung
             <td>Nein</td>
           </tr>
         </table>
-        <h5>Flussdiagramm</h5>
+        <h4>Flussdiagramm</h4>
         <p>
           Das Flussdiagramm für eine <code>while</code>-Schleife zeigt den
           Ablauf:
@@ -126,7 +124,6 @@ while (i < 3) {  // Schleifenbedingung
         <img
           src="https://p5-sketches-demo.netlify.app/img/for.png"
           alt="Flussdiagramm While-Schleife"
-          width="300"
         />
       </details>
       <details class="box-info">
@@ -169,6 +166,15 @@ void setup() {
         </div>
       </details>
     </details>
+
+    <!-- Aufgaben While-Schleife -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/schleifen.html#sec_5_1_6"
+      >Übungsaufgaben 5.1</a
+    >
+
     <!-- Oberthema: For-Schleife -->
     <details class="top">
       <summary id="info">🔄 For-Schleife</summary>
@@ -203,7 +209,8 @@ void setup() {
           </li>
         </ul>
         <h4>Beispielsketch für eine for-Schleife, die 5 Kreise zeichnet</h4>
-        <pre><code>for (int i=0; i < 5; i++) {
+        <pre><code>size(400, 200);
+for (int i=0; i < 5; i++) {
   // Anweisungen, die wiederholt ausgeführt werden
   ellipse(50 + i * 60, height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
 }
@@ -213,7 +220,211 @@ void setup() {
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchForLoop"
         ></iframe>
       </div>
+      <details class="box-info">
+        <summary>Vergleich while- und for-Schleife</summary>
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Aspekt</th>
+              <th>While-Schleife</th>
+              <th>For-Schleife</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Syntax</td>
+              <td>
+                <pre><code
+                  >int i = 0;<br />while (i < 3) {<br />&nbsp;&nbsp;//
+                  Anweisungen<br />i = i + 1;<br />}</code
+                ></pre>
+              </td>
+              <td>
+                <pre><code
+                  >for (int i = 0; i < 3; i = i + 1) {<br />&nbsp;&nbsp;//
+                  Anweisungen<br />}</code
+                ></pre>
+              </td>
+            </tr>
+            <tr>
+              <td>Vorteile</td>
+              <td>
+                <ul>
+                  <li>
+                    Flexibel, da die Anzahl der Iterationen nicht im Voraus
+                    bekannt sein muss.
+                  </li>
+                  <li>
+                    Einfach zu verwenden, wenn die Schleifenbedingung komplex
+                    ist.
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    Einfach zu lesen und zu verstehen, wenn die Anzahl der
+                    Iterationen bekannt ist.
+                  </li>
+                  <li>
+                    Initialisierung, Bedingung und Schritt sind klar
+                    strukturiert.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+            <tr>
+              <td>Nachteile</td>
+              <td>
+                <ul>
+                  <li>
+                    Kann leicht zu Endlosschleifen führen, wenn die Bedingung
+                    nie falsch wird.
+                  </li>
+                  <li>
+                    Die Schleifenvariable muss manuell aktualisiert werden.
+                  </li>
+                </ul>
+              </td>
+              <td>
+                <ul>
+                  <li>
+                    Weniger flexibel, da die Schleifenanzahl im Voraus
+                    festgelegt ist.
+                  </li>
+                  <li>
+                    Kann unübersichtlich werden, wenn die Schleifenbedingungen
+                    komplex sind.
+                  </li>
+                </ul>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <h4>Flussdiagramm von beiden Schleifen</h4>
+        <img src="https://p5-sketches-demo.netlify.app/img/for.png" alt="" />
+      </details>
     </details>
+
+    <!-- Aufgaben for-Schleife -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/schleifen.html#sec_5_2_7"
+      >Übungsaufgaben 5.2a - 5.2h - mindestens 5 Aufgaben</a
+    >
+
+    <!-- Oberthema: Schleifen im aktiven Modus -->
+    <details class="top">
+      <summary id="info">🔄 Schleifen im aktiven Modus</summary>
+      <div class="box-info">
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/Zusammenfassung"
+          alt=""
+        />
+        <!-- Oberthema: Drei Rechtecke mit Schleife -->
+        <details class="box-info">
+          <summary>🎨 Drei Rechtecke mit Schleife</summary>
+          <p>
+            In diesem Sketch werden drei Rechtecke gezeichnet, die sich
+            horizontal bewegen. Die y-Position jedes Rechtecks wird durch die
+            Schleife bestimmt.
+          </p>
+          <pre><code>int x = 0;
+
+void setup() {
+    size(400, 200);
+}
+
+void draw() {
+    background(255);
+
+    // Zeichne drei Rechtecke, i läuft von 1..3
+    for (int i = 1; i <= 3; i++) {
+        rect(x, i * 20, 10, 10); // jedes hat eine andere y-Position
+    }
+
+    // Passe x-Wert an für Animation
+    x++;
+}</code></pre>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchThreeRectangles"
+            target="blank"
+          ></iframe>
+        </details>
+
+        <!-- Oberthema: Fliegendes Rechteck im Eigenbau (Linien) -->
+        <details class="box-info">
+          <summary>🎨 Fliegendes Rechteck im Eigenbau (Linien)</summary>
+          <p>
+            In diesem Sketch wird ein "Rechteck" aus Linien gezeichnet, das sich
+            horizontal bewegt. Die Linien simulieren die Form eines Rechtecks.
+          </p>
+          <pre><code>int x = 0;
+
+void setup() {
+    size(400, 200);
+}
+
+void draw() {
+    background(255);
+
+    // Zeichne "Rechteck" mit Linien
+    for (int i = 0; i < 20; i++) {
+        line(x + i, 40, x + i, 60); // Zeichne Linien, um ein Rechteck zu simulieren
+    }
+
+    // Bewege Rechteck
+    x++;
+}</code></pre>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlyingRectangle"
+            target="blank"
+          ></iframe>
+        </details>
+
+        <p>
+          Der aktive Modus ist eine Schleife, die sich 60 Mal pro Sekunde
+          wiederholt. Man kann keine Animationen in einer while- oder
+          for-Schleife im aktiven Modus erstellen, da das Zeichnen der Objekte
+          immer erst am Ende der draw-Methode stattfindet. Man kann jedoch
+          Schleifen verwernden, um mehrere Objekte zu zeichnen die
+          zusammengehören wie Punkte oder Gitterlinien
+        </p>
+      </div>
+    </details>
+
+    <!-- Aufgaben Schleifen im aktiven Modus -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/schleifen.html#sec_5_3_1"
+      >Übungsaufgaben 5.3 - mindestens 5 Aufgaben</a
+    >
+
+    <!-- Oberthema: Verschachtelte Schleifen -->
+    <details class="top">
+      <summary id="info">🔄 Verschachtelte Schleifen</summary>
+      <div class="box-info">
+        <p>
+          Der aktive Modus ist eine Schleife, die sich 60 Mal pro Sekunde
+          wiederholt. Man kann keine Animationen in einer while- oder
+          for-Schleife im aktiven Modus erstellen, da das Zeichnen der Objekte
+          immer erst am Ende der draw-Methode stattfindet. Man kann jedoch
+          Schleifen verwernden, um mehrere Objekte zu zeichnen die
+          zusammengehören wie Punkte oder Gitterlinien
+        </p>
+      </div>
+    </details>
+
+    <!-- Aufgaben verschachtelte-Schleifen -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/schleifen.html#sec_5_4_2"
+      >Übungsaufgaben 5.4 - mindestens 5 Aufgaben</a
+    >
+
     <script src="sketches.js"></script>
   </body>
 </html>

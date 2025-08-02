@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            // Prüfen, ob Nachricht von diesem iframe kam
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Link zu weiteren Informationen -->
+
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/erste-schritte.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 1</a
+    >
+
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/interaktion-variablen.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 2</a
+    >
+
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/if.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 3</a
+    >
+
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/if.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 4</a
+    >
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/schleifen.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 5</a
+    >
+
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/arrays.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 6</a
+    >
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/funktionen.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 7</a
+    >
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/klassen.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 8</a
+    >
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/dateien.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 9</a
+    >
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/algorithmen.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel E1</a
+    >
+  </body>
+</html>

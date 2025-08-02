@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            // Prüfen, ob Nachricht von diesem iframe kam
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!DOCTYPE html>
+    <html lang="de">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Webseitenerstellung</title>
+      </head>
+      <body>
+        <h1>Webseitenerstellung</h1>
+
+        <!-- Aufklappmenü für HTML-Dokument -->
+        <details class="top">
+          <summary id="info"><strong>HTML-Dokument</strong></summary>
+          <div class="box-info">
+            <p>
+              Ein HTML-Dokument ist der Grundbaustein jeder Webseite. Es besteht
+              aus zwei Hauptteilen:
+            </p>
+            <ul>
+              <li>
+                <strong>Head:</strong> Enthält Metainformationen über das
+                Dokument, wie z.B. den Titel und Links zu CSS-Dateien.
+              </li>
+              <li>
+                <strong>Body:</strong> Beinhaltet den sichtbaren Inhalt der
+                Webseite, einschließlich Text, Bilder und Links.
+              </li>
+            </ul>
+            <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;Titel der Seite&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;Willkommen&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für HTML-Element -->
+        <details class="top">
+          <summary id="info"><strong>HTML-Element</strong></summary>
+          <div class="box-info">
+            <p>
+              Ein HTML-Element besteht aus einem Start-Tag, optionalen
+              Attributen, Inhalt und einem End-Tag:
+            </p>
+            <pre><code>&lt;p class="text"&gt;Dies ist ein Absatz.&lt;/p&gt;</code></pre>
+            <ul>
+              <li><strong>Start-Tag:</strong> &lt;p&gt;</li>
+              <li><strong>Attribute:</strong> class="text"</li>
+              <li><strong>Inhalt:</strong> Dies ist ein Absatz.</li>
+              <li><strong>End-Tag:</strong> &lt;/p&gt;</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für CSS-Regel -->
+        <details class="top">
+          <summary id="info"><strong>CSS-Regel</strong></summary>
+          <div class="box-info">
+            <p>
+              Eine CSS-Regel besteht aus einem Selektor und einer Deklaration:
+            </p>
+            <pre><code>p {
+    color: blue;
+    font-size: 16px;
+}</code></pre>
+            <ul>
+              <li>
+                <strong>Selektor:</strong> p (wählt alle
+                <p>-Elemente aus)</p>
+              </li>
+              <li>
+                <strong>Deklaration:</strong> { color: blue; font-size: 16px; }
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für Überschriften -->
+        <details class="top">
+          <summary id="info"><strong>Überschriften</strong></summary>
+          <div class="box-info">
+            <p>HTML bietet sechs verschiedene Überschriftsebenen:</p>
+            <ul>
+              <li>&lt;h1&gt; - Hauptüberschrift</li>
+              <li>&lt;h2&gt; - Unterüberschrift</li>
+              <li>&lt;h3&gt; - Weitere Unterüberschrift</li>
+              <li>&lt;h4&gt; - Vierte Ebene</li>
+              <li>&lt;h5&gt; - Fünfte Ebene</li>
+              <li>&lt;h6&gt; - Kleinste Überschrift</li>
+            </ul>
+            <pre><code>&lt;h1&gt;Dies ist eine Hauptüberschrift&lt;/h1&gt;</code></pre>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für Paragraphen -->
+        <details class="top">
+          <summary id="info"><strong>Paragraphen</strong></summary>
+          <div class="box-info">
+            <p>
+              Text wird in HTML mit dem <code>&lt;p&gt;</code>-Tag eingefügt:
+            </p>
+            <pre><code>&lt;p&gt;Dies ist ein Absatz.&lt;/p&gt;</code></pre>
+            <p>
+              Um zusätzliche Leerzeichen oder Zeilenumbrüche zu erzeugen, können
+              folgende Tags verwendet werden:
+            </p>
+            <ul>
+              <li><code>&lt;br&gt;</code> für einen Zeilenumbruch</li>
+              <li><code>&lt;hr&gt;</code> für eine horizontale Linie</li>
+            </ul>
+            <pre><code>&lt;p&gt;Erster Absatz.&lt;br&gt;Zweiter Absatz.&lt;/p&gt;</code></pre>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für Anordnen von Elementen -->
+        <details class="top">
+          <summary id="info"><strong>Anordnen von Elementen</strong></summary>
+          <div class="box-info">
+            <p>
+              Es gibt verschiedene Methoden, um Elemente auf einer Webseite
+              anzuordnen:
+            </p>
+            <ul>
+              <li>
+                <strong>Display:</strong>
+                <ul>
+                  <li>
+                    <code>inline</code> - Elemente nebeneinander, ohne
+                    Zeilenumbruch.
+                  </li>
+                  <li>
+                    <code>block</code> - Elemente nehmen die gesamte Breite ein
+                    und beginnen auf einer neuen Zeile.
+                  </li>
+                  <li>
+                    <code>inline-block</code> - Elemente nebeneinander, aber mit
+                    Breite und Höhe.
+                  </li>
+                </ul>
+              </li>
+              <li>
+                <strong>Float:</strong> Elemente können nach links oder rechts
+                "geschwommen" werden.
+              </li>
+              <li>
+                <strong>Flexbox:</strong> Eine flexible Layout-Methode, die
+                Elemente in einer Zeile oder Spalte anordnet.
+              </li>
+              <li>
+                <strong>Grid Layout:</strong> Ein zweidimensionales
+                Layoutsystem, das Zeilen und Spalten verwendet.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für Navigationsleiste -->
+        <details class="top">
+          <summary id="info"><strong>Navigationsleiste</strong></summary>
+          <div class="box-info">
+            <p>Das Grundgerüst einer Navigationsleiste könnte so aussehen:</p>
+            <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#about"&gt;Über&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#services"&gt;Dienste&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#contact"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+            <p>
+              Es gibt verschiedene Möglichkeiten zur Gestaltung der Navigation:
+            </p>
+            <ul>
+              <li>Horizontale Navigation</li>
+              <li>Vertikale Navigation</li>
+              <li>Dropdown-Menüs</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- Aufklappmenü für Bilder und Hintergrundbilder -->
+        <details class="top">
+          <summary id="info">
+            <strong>Bilder und Hintergrundbilder</strong>
+          </summary>
+          <div class="box-info">
+            <p>
+              Um Bilder in HTML hinzuzufügen, wird das
+              <code>&lt;img&gt;</code>-Tag verwendet:
+            </p>
+            <pre><code>&lt;img src="bild.jpg" alt="Beschreibung des Bildes"&gt;</code></pre>
+            <p>
+              Das <strong>alt-Attribut</strong> ist wichtig für Screenreader und
+              beschreibt das Bild für Benutzer mit Sehbehinderungen.
+            </p>
+
+            <details class="box-info">
+              <summary><strong>Hintergrundbilder in CSS</strong></summary>
+              <div class="info">
+                <p>
+                  Um ein Hintergrundbild in CSS zu setzen, wird die
+                  <code>background-image</code>-Eigenschaft verwendet:
+                </p>
+                <pre><code>body {
+    background-image: url('hintergrund.jpg');
+    background-size: cover; /* Bild anpassen */
+    background-repeat: no-repeat; /* Keine Wiederholung */
+}</code></pre>
+              </div>
+            </details>
+          </div>
+        </details>
+      </body>
+    </html>
+  </body>
+</html>

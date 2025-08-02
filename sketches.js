@@ -17,6 +17,48 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchThreeRectangles(p) {
+  let x = 0;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+
+    // Zeichne drei Rechtecke, i läuft von 1..3
+    for (let i = 1; i <= 3; i++) {
+      p.rect(x, i * 20, 10, 10); // jedes hat eine andere y-Position
+    }
+
+    // Passe x-Wert an für Animation
+    x++;
+  };
+}
+
+function sketchFlyingRectangle(p) {
+  let x = 0;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+
+    // Zeichne "Rechteck" mit Linien
+    for (let i = 0; i < 20; i++) {
+      p.line(x + i, 40, x + i, 60); // Zeichne Linien, um ein Rechteck zu simulieren
+    }
+
+    // Bewege Rechteck
+    x++;
+  };
+}
+
 // Sketch für die While-Schleife
 function sketchWhileLoop(p) {
   p.setup = () => {
