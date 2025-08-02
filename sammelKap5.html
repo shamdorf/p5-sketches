@@ -371,6 +371,7 @@ void draw() {
 
     // Zeichne "Rechteck" mit Linien
     for (int i = 0; i < 20; i++) {
+        stroke(i*10); // lege Graustufe fest
         line(x + i, 40, x + i, 60); // Zeichne Linien, um ein Rechteck zu simulieren
     }
 

@@ -51,6 +51,7 @@ function sketchFlyingRectangle(p) {
 
     // Zeichne "Rechteck" mit Linien
     for (let i = 0; i < 20; i++) {
+      p.stroke(i * 10); // lege Graustufe fest
       p.line(x + i, 40, x + i, 60); // Zeichne Linien, um ein Rechteck zu simulieren
     }
 
