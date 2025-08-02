@@ -69,7 +69,7 @@
         </ul>
 
         <img
-          src="https://p5-sketches-demo.netlify.app/superposition.svg"
+          src="https://p5-sketches-demo.netlify.app/img/superposition.svg"
           alt=""
         />
 
@@ -82,16 +82,16 @@
           aktualisieren.
         </p>
         <pre><code>
-let position; // Ortsvektor
-let velocity; // Geschwindigkeitsvektor
+PVector position; // Ortsvektor
+PVector velocity; // Geschwindigkeitsvektor
 
-function setup() {
-    createCanvas(300, 200);
-    position = createVector(width / 2, height / 2); // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
-    velocity = createVector(2, 3); // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
+void setup() {
+    size(800, 600);
+    position = new PVector(width / 2, height / 2); // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
+    velocity = new PVector(2, 3); // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
 }
 
-function draw() {
+void draw() {
     background(255);
 
     // Aktualisiere die Position durch Addition des Geschwindigkeitsvektors
