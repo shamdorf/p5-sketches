@@ -369,3 +369,35 @@ table.operator-table {
 .operator-table tr:nth-child(even) {
     background-color: #fafafa;
 }
+
+.solution-button {
+    background-color: #4CAF50;
+    /* Grüner Hintergrund */
+    color: white;
+    /* Weiße Schriftfarbe */
+    border: none;
+    /* Keine Umrandung */
+    padding: 10px 20px;
+    /* Innenabstand */
+    text-align: center;
+    /* Text zentrieren */
+    text-decoration: none;
+    /* Keine Unterstreichung */
+    display: inline-block;
+    /* Inline-Block für Layout */
+    font-size: 16px;
+    /* Schriftgröße */
+    margin-top: 10px;
+    /* Abstand oben */
+    cursor: pointer;
+    /* Zeiger beim Hover */
+    border-radius: 5px;
+    /* Abgerundete Ecken */
+    transition: background-color 0.3s;
+    /* Übergangseffekt */
+}
+
+.solution-button:hover {
+    background-color: #45a049;
+    /* Dunklerer Grünton beim Hover */
+}

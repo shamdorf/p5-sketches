@@ -24,11 +24,13 @@
     <details class="top">
       <summary id="info">🔄 While-Schleife</summary>
 
-      <details class="box-info">
-        <summary>1. Syntax, Motivation und Begriffe</summary>
+      <div class="box-info">
+        <h4>Syntax, Motivation und Begriffe</h4>
         <h5>Syntax</h5>
-        <pre><code>while (Bedingung) {
+        <pre><code>int counter = 0;  //Initialisierung der Schleifenvariablen
+while (Bedingung) {
     // Anweisungen, die wiederholt ausgeführt werden
+    counter++;  //Schleifenschritt
 }</code></pre>
 
         <h5>Motivation</h5>
@@ -42,9 +44,9 @@
         <h5>Begriffe</h5>
         <ul>
           <li>
-            <strong>Schleifenvariable</strong>: Eine Variable, die in der
-            Schleife verwendet wird, um den Zustand der Schleife zu steuern
-            (z.B. einen Zähler).
+            <strong>Initialisierung der Schleifenvariablen</strong>: Eine
+            Variable, die in der Schleife verwendet wird, um den Zustand der
+            Schleife zu steuern (z.B. einen Zähler).
           </li>
           <li>
             <strong>Schleifenbedingung</strong>: Eine Bedingung, die überprüft
@@ -56,10 +58,10 @@
             ändern.
           </li>
         </ul>
-      </details>
+      </div>
 
       <details class="box-info">
-        <summary>2. Beispiel, Ablauftabelle und Flussdiagramm</summary>
+        <summary>Ablauftabelle und Flussdiagramm</summary>
         <h5>Beispiel</h5>
         <pre><code>int count = 0;
 while (count < 5) {
@@ -125,12 +127,10 @@ while (count < 5) {
           width="300"
         />
       </details>
-    </details>
 
-    <!-- Beispielsketch für die While-Schleife -->
-    <details class="box-info">
-      <summary>🎨 Beispielsketch: While-Schleife</summary>
-      <pre><code>int count = 0;
+      <details class="box-info">
+        <summary>🎨 Beispielsketch: While-Schleife</summary>
+        <pre><code>int count = 0;
 
 void setup() {
     size(400, 200);
@@ -139,37 +139,55 @@ void setup() {
         count++; // Schleifenschritt
     }
 }</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWhileLoop"
+        ></iframe>
+        <div class="box-question">
+          Betrachtet und erkläre folgende Zeile aus dem Beispielsketch:
+          <pre><code>text("Zähler: " + count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen</code></pre>
+          <details>
+            <summary class="solution-button">
+              Drücke hier für die Lösung:
+            </summary>
+            <p>
+              Diese Zeile zeigt den aktuellen Wert des Zählers auf dem
+              Bildschirm an. Der Text wird in der linken oberen Ecke des
+              Fensters gezeichnet, wobei die vertikale Position für jede
+              Iteration um 30 Pixel erhöht wird, sodass jeder Zählerwert unter
+              dem vorherigen angezeigt wird.
+            </p>
+          </details>
+        </div>
+      </details>
     </details>
-
-    ---
 
     <!-- Oberthema: For-Schleife -->
     <details class="top">
       <summary id="info">🔄 For-Schleife</summary>
 
-      <details class="box-info">
-        <summary>1. Syntax, Motivation und Begriffe</summary>
-        <h5>Syntax</h5>
+      <div class="box-info">
+        <h4>Syntax</h4>
         <pre><code>for (Initialisierung; Bedingung; Schleifenschritt) {
     // Anweisungen, die wiederholt ausgeführt werden
 }</code></pre>
 
-        <h5>Motivation</h5>
+        <h4>Motivation</h4>
         <p>
           Die <code>for</code>-Schleife wird verwendet, um einen Block von
           Anweisungen eine bestimmte Anzahl von Malen auszuführen. Sie ist
           besonders nützlich, wenn die Anzahl der Wiederholungen bekannt ist.
         </p>
 
-        <h5>Begriffe</h5>
+        <h4>Begriffe</h4>
         <ul>
           <li>
-            <strong>Initialisierung</strong>: Der erste Schritt, um die
-            Schleifenvariable zu setzen, bevor die Schleife beginnt.
+            <strong>Initialisierung der Schleifenvariablen</strong>: Der erste
+            Schritt, um die Schleifenvariable zu setzen, bevor die Schleife
+            beginnt.
           </li>
           <li>
-            <strong>Bedingung</strong>: Eine Bedingung, die überprüft wird, um
-            zu entscheiden, ob die Schleife fortgesetzt werden soll.
+            <strong>Schleifenbedingung</strong>: Eine Bedingung, die überprüft
+            wird, um zu entscheiden, ob die Schleife fortgesetzt werden soll.
           </li>
           <li>
             <strong>Schleifenschritt</strong>: Der Schritt, der am Ende jeder
@@ -177,24 +195,16 @@ void setup() {
             ändern.
           </li>
         </ul>
-      </details>
 
-      <details class="box-info">
-        <summary>2. Beispiel</summary>
+        <h4>Beispielsketch für eine for-Schleife, die 5 Kreise zeichnet</h4>
         <pre><code>for (int i = 0; i < 5; i++) {
-    // Anweisungen, die wiederholt ausgeführt werden
-    println("Zähler: " + i);
-}</code></pre>
-      </details>
-    </details>
-
-    <!-- Beispielsketch für die For-Schleife -->
-    <details class="box-info">
-      <summary>2. Beispiel</summary>
-      <pre><code>for (int i = 0; i < 5; i++) {
     // Anweisungen, die wiederholt ausgeführt werden
     ellipse(50 + i * 60, height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
 }</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchForLoop"
+        ></iframe>
+      </div>
     </details>
 
     <script src="sketches.js"></script>
