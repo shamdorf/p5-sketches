@@ -18,6 +18,8 @@ function autoResizeCanvas(p) {
 }
 
 //Challenges Kap 2 b
+let x = 0; // Variable für die x-Position des Kreises
+let circleColor = [255]; // Standardfarbe des Kreises
 function sketchMovingCircle(p) {
   p.setup = () => {
     p.createCanvas(100, 100);
