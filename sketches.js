@@ -33,9 +33,9 @@ function sketchRaincatcher(p) {
   p.setup = () => {
     p.createCanvas(200, 200);
     for (let i = 0; i < 3; i++) {
-      xBalls[i] = int(p.random(p.width)); // Zufällige x-Position
-      yBalls[i] = int(p.random(p.height)); // Zufällige y-Position
-      farbe[i] = int(p.random(255)); // Zufällige Farbe
+      xBalls[i] = p.floor(p.random(p.width)); // Zufällige x-Position
+      yBalls[i] = p.floor(p.random(p.height)); // Zufällige y-Position
+      farbe[i] = p.floor(p.random(255)); // Zufällige Farbe
     }
     xSpieler = p.width / 2 - 20; // Spielerposition in der Mitte
     autoResizeCanvas(p); // Anpassung für das iframe
