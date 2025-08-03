@@ -17,6 +17,48 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+//Challenges Kap 2 b
+function sketchMovingCircle(p) {
+  p.setup = () => {
+    p.createCanvas(100, 100);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(0); // Hintergrundfarbe
+
+    // Setze die Füllfarbe und zeichne den Kreis
+    p.fill(circleColor);
+    p.circle(x % p.width, p.mouseY, 30);
+    x++; // Erhöhe die x-Position
+  };
+
+  p.mousePressed = () => {
+    circleColor = [255, 0, 0]; // Ändere die Farbe zu Rot
+  };
+
+  p.keyPressed = () => {
+    circleColor = [255]; // Setze die Farbe zurück zu Weiß
+  };
+}
+
+//Challenges Kap 2
+function sketchMouseLines(p) {
+  p.setup = () => {
+    p.createCanvas(100, 100);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(200); // Hintergrundfarbe
+
+    // Vertikale Linie
+    p.line(p.mouseX, 0, p.mouseX, p.height);
+    // Horizontale Linie
+    p.line(0, p.mouseY, p.width, p.mouseY);
+  };
+}
+
 function sketchRainbow(p) {
   p.setup = () => {
     p.createCanvas(100, 100);
