@@ -41,30 +41,44 @@ function sketchMatrix(p) {
 
 function sketchFace(p) {
   p.setup = () => {
-    p.createCanvas(200, 200); // Größe auf 200x200
-    p.background(255); // Weißer Hintergrund
+    p.createCanvas(100, 100);
+    p.background(200); // Hintergrundfarbe
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
   p.draw = () => {
-    // Gesicht
-    p.fill(0); // Schwarzes Gesicht
-    p.ellipse(100, 100, 200, 200); // Gesicht
+    p.fill(0); // Schwarze Farbe für das Gesicht
+    p.circle(p.width / 2, p.height / 2, 70); // Gesicht
 
-    // Augen
-    p.fill(255); // Weiße Augen
-    p.ellipse(70, 80, 40, 40); // Linkes Auge
-    p.ellipse(130, 80, 40, 40); // Rechtes Auge
+    p.fill(255); // Weiße Farbe für die Augen
+    p.circle(p.width / 2 - 10, p.height / 2 - 10, 20); // Linkes Auge
+    p.circle(p.width / 2 + 10, p.height / 2 - 10, 20); // Rechtes Auge
 
     p.fill(0); // Schwarze Pupillen
-    p.ellipse(70, 80, 15, 15); // Linke Pupille
-    p.ellipse(130, 80, 15, 15); // Rechte Pupille
+    p.circle(p.width / 2 - 10, p.height / 2 - 10, 5); // Linke Pupille
+    p.circle(p.width / 2 + 10, p.height / 2 - 10, 5); // Rechte Pupille
 
-    // Mund
-    p.noFill();
-    p.stroke(255); // Weiße Farbe für den Mund
-    p.strokeWeight(4);
-    p.arc(100, 120, 100, 50, 0, p.PI); // Mund
+    p.fill(255); // Weiße Farbe für den Mund
+    p.rect(p.width / 2 - 20, p.height / 2 + 10, 40, 13, 50); // Mund
+    p.line(
+      p.width / 2 - 20,
+      p.height / 2 + 16,
+      p.width / 2 + 20,
+      p.height / 2 + 16
+    ); // Mundlinie
+    p.line(p.width / 2, p.height / 2 + 10, p.width / 2, p.height / 2 + 23); // Mittellinie
+    p.line(
+      p.width / 2 - 10,
+      p.height / 2 + 10,
+      p.width / 2 - 10,
+      p.height / 2 + 23
+    ); // Linke Linie
+    p.line(
+      p.width / 2 + 10,
+      p.height / 2 + 10,
+      p.width / 2 + 10,
+      p.height / 2 + 23
+    ); // Rechte Linie
   };
 }
 

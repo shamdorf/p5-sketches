@@ -498,6 +498,138 @@ void draw() {
       >Übungsaufgaben 5.4 - mindestens 5 Aufgaben</a
     >
 
+    <!-- Fragen zu Kapitel 5 -->
+    <details class="top">
+      <summary><strong id="question">Fragen zu Kapitel 5</strong></summary>
+
+      <!-- Syntax einer while Schleife -->
+      <details class="box-question">
+        <summary>
+          Wie ist die Syntax einer <strong>while</strong> Schleife?
+        </summary>
+        <div class="box-info">
+          <p>
+            Die Syntax einer <strong>while</strong> Schleife sieht
+            folgendermaßen aus:
+          </p>
+          <pre><code>while (Bedingung) {
+    // Code, der wiederholt wird
+}</code></pre>
+          <p>
+            Die Schleife wird so lange ausgeführt, wie die Bedingung
+            <strong>true</strong> ist.
+          </p>
+        </div>
+      </details>
+
+      <!-- Syntax einer for Schleife -->
+      <details class="box-question">
+        <summary>
+          Wie ist die Syntax einer <strong>for</strong> Schleife?
+        </summary>
+        <div class="box-info">
+          <p>
+            Die Syntax einer <strong>for</strong> Schleife sieht folgendermaßen
+            aus:
+          </p>
+          <pre><code>for (initialisierung; Bedingung; iteration) {
+    // Code, der wiederholt wird
+}</code></pre>
+          <p>
+            Die Schleife wird ausgeführt, solange die Bedingung
+            <strong>true</strong> ist, und die Iteration erfolgt nach jedem
+            Durchlauf.
+          </p>
+        </div>
+      </details>
+
+      <!-- Bestandteile aller Schleifen -->
+      <details class="box-question">
+        <summary>
+          Aus welchen Bestandteilen sind alle
+          <strong>Schleifen</strong> aufgebaut?
+        </summary>
+        <div class="box-info">
+          <p>Alle Schleifen bestehen aus drei Hauptbestandteilen:</p>
+          <ul>
+            <li>
+              <strong>Initialisierung:</strong> Setzt eine Variable zu Beginn
+              der Schleife.
+            </li>
+            <li>
+              <strong>Schleifenbedingung:</strong> Bestimmt, ob die Schleife
+              fortgesetzt wird.
+            </li>
+            <li>
+              <strong>Schleifenschritt/Iteration:</strong> Aktualisiert die
+              Schleifenvariable nach jedem Durchlauf.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Wann benutze ich welche Schleifen? -->
+      <details class="box-question">
+        <summary>Wann benutze ich welche <strong>Schleifen</strong>?</summary>
+        <div class="box-info">
+          <p>
+            Die Wahl zwischen <strong>while</strong> und
+            <strong>for</strong> Schleifen hängt von der Situation ab:
+          </p>
+          <ul>
+            <li>
+              <strong>while:</strong> Verwende diese Schleife, wenn die Anzahl
+              der Durchläufe nicht im Voraus bekannt ist.
+            </li>
+            <li>
+              <strong>for:</strong> Verwende diese Schleife, wenn die Anzahl der
+              Durchläufe bekannt ist oder durch eine Zählvariable gesteuert
+              wird.
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Wofür brauche ich verschachtelte Schleifen? -->
+      <details class="box-question">
+        <summary>
+          Wofür brauche ich <strong>verschachtelte Schleifen</strong>?
+        </summary>
+        <div class="box-info">
+          <p>
+            Verschachtelte Schleifen sind nützlich, um komplexe Datenstrukturen
+            zu durchlaufen, wie z.B. Matrizen oder mehrdimensionale Arrays. Sie
+            ermöglichen es, mehrere Ebenen von Iterationen durchzuführen.
+          </p>
+        </div>
+      </details>
+
+      <!-- Schachbrettmuster erzeugen -->
+      <details class="box-question">
+        <summary>
+          Wie kann ich ein <strong>Schachbrettmuster</strong> erzeugen?
+        </summary>
+        <div class="box-info">
+          <p>
+            Ein Schachbrettmuster kann durch zwei verschachtelte Schleifen
+            erzeugt werden, die abwechselnd schwarze und weiße Rechtecke
+            zeichnen:
+          </p>
+          <pre><code>size(400, 400);
+for (int i = 0; i < 8; i++) {
+    for (int j = 0; j < 8; j++) {
+        if ((i + j) % 2 == 0) {
+            fill(255); // Weiß
+        } else {
+            fill(0); // Schwarz
+        }
+        rect(i * 50, j * 50, 50, 50); // Rechteck zeichnen
+    }
+}</code></pre>
+        </div>
+      </details>
+    </details>
+
     <script src="sketches.js"></script>
   </body>
 </html>

@@ -450,4 +450,35 @@ table.operator-table {
 }
 
 
-/* TEST */
+
+
+.challenge {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    /* Farbverlauf */
+    border: 2px solid #009688;
+    /* Grüner Rand */
+    border-radius: 10px;
+    /* Abgerundete Ecken */
+    padding: 20px;
+    /* Innenabstand */
+    margin: 20px 0;
+    /* Außenabstand */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Schatteneffekt */
+}
+
+.challenge h4 {
+    color: #00796b;
+    /* Dunkler Grünton für die Überschrift */
+    margin-bottom: 10px;
+    /* Abstand unter der Überschrift */
+    font-size: 1.5rem;
+}
+
+.challenge p {
+    color: #004d40;
+    /* Dunklerer Grünton für den Text */
+    line-height: 1.5;
+    /* Zeilenhöhe für bessere Lesbarkeit */
+    font-size: 1.1rem;
+}
