@@ -401,3 +401,53 @@ table.operator-table {
     background-color: #45a049;
     /* Dunklerer Grünton beim Hover */
 }
+
+/* Zusätzliche CSS für Lernziele
+////////////////////////////////////////////////////////////////////////////////////
+ */
+/* Zusätzliche CSS für Lernziele */
+.box-learning-goals {
+    background: linear-gradient(to right, #ffcc00, #ffeb3b);
+    border-left: 4px solid #ff9900;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
+}
+
+.box-learning-goals summary {
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+    /* Größere Schriftgröße für die Zusammenfassung */
+}
+
+.learning-goals-list {
+    list-style-type: none;
+    /* Keine Aufzählungszeichen */
+    padding-left: 0;
+    /* Kein Abstand für die Aufzählungszeichen */
+    font-size: 1.1rem;
+    /* Größere Schriftgröße für die Listenpunkte */
+}
+
+.learning-goals-list li {
+    margin: 0.5rem 0;
+    /* Abstand zwischen den Listenpunkten */
+    line-height: 1.5;
+    /* Erhöhe den Zeilenabstand für bessere Lesbarkeit */
+}
+
+.radio-container {
+    display: inline-block;
+    /* Radio-Buttons nebeneinander */
+    margin-right: 10px;
+    /* Abstand zwischen Radio-Buttons und Lernziel */
+}
+
+.radio-container input {
+    margin-right: 5px;
+    /* Abstand zwischen Radio-Button und Label */
+}
+
+
+/* TEST */

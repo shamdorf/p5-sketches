@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+
+          for (const iframe of iframes) {
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Informationsbox über Arrays -->
+   
+    <details class="top">
+      <summary id="info"><strong>Arrays</strong></summary>
+      <div class="box-info">
+        <p>
+          Arrays sind Sammlungen von Elementen des gleichen Typs, die unter
+          einem gemeinsamen Namen gespeichert werden. Sie ermöglichen den
+          Zugriff auf mehrere Werte über einen Index.
+        </p>
+        <h3>Eigenschaften von Arrays</h3>
+        <ul>
+          <li><code>length</code>: Gibt die Anzahl der Elemente im Array zurück.</li>
+          <li><code>indexOf()</code>: Sucht nach einem Element und gibt dessen Index zurück.</li>
+          <li><code>push()</code>: Fügt ein Element am Ende des Arrays hinzu.</li>
+          <li><code>pop()</code>: Entfernt das letzte Element aus dem Array.</li>
+        </ul>
+      </div>  
+
+    <!-- Aufgaben verschachtelte-Schleifen -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/schleifen.html#sec_5_4_2"
+      >Übungsaufgaben 5.4 - mindestens 5 Aufgaben</a
+    >
+
+    <script src="sketches.js"></script>
+  </body>
+</html>

@@ -39,6 +39,35 @@ function sketchMatrix(p) {
   };
 }
 
+function sketchFace(p) {
+  p.setup = () => {
+    p.createCanvas(400, 400);
+    p.background(255); // Weißer Hintergrund
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    // Gesicht
+    p.fill(0); // Schwarzes Gesicht
+    p.ellipse(200, 200, 200, 200); // Gesicht
+
+    // Augen
+    p.fill(255); // Weiße Augen
+    p.ellipse(150, 170, 40, 40); // Linkes Auge
+    p.ellipse(250, 170, 40, 40); // Rechtes Auge
+
+    p.fill(0); // Schwarze Pupillen
+    p.ellipse(150, 170, 15, 15); // Linke Pupille
+    p.ellipse(250, 170, 15, 15); // Rechte Pupille
+
+    // Mund
+    p.noFill();
+    p.stroke(255); // Weiße Farbe für den Mund
+    p.strokeWeight(4);
+    p.arc(200, 230, 100, 50, 0, p.PI); // Mund
+  };
+}
+
 function sketchThreeRectangles(p) {
   let x = 0;
 

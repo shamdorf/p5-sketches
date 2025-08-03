@@ -34,13 +34,35 @@ while (Bedingung) {
 }
 
 </code></pre>
-        <h4>Motivation</h4>
+        <h4>Motivation - wofür sind Schleifen gut?</h4>
         <p>
-          Die <code>while</code>-Schleife wird verwendet, um einen Block von
+          Schleifen wiederholen einen Block von Anweisungen, solange eine
+          Bedingung wahr ist. Mit Schleifen kann man unter anderem ...
+        </p>
+        <ul>
+          <li>
+            ... einen Block von Anweisungen mehrmals auszuführen, ohne den Code
+            mehrfach schreiben zu müssen.
+          </li>
+          <li>... auf Datenstrukturen wie Arrays (Kapitel 6) zugreifen.</li>
+          <li>
+            ... Prozesse/Berechnungen automatisieren (<a
+              target="_blank"
+              href="https://michaelkipp.de/processing/schleifen.html#sec_5_4_2"
+              >Übungsaufgabe 5.4 a) Kleines Einmaleins</a
+            >)
+          </li>
+          <li>
+            ... Spiele entwickeln. Die draw()-Methode in Processing ist eine
+            Schleife.
+          </li>
+          <li>... die Lesbarkeit des Codes verbessern.</li>
+        </ul>
+        <!-- Die <code>while</code>-Schleife wird verwendet, um einen Block von
           Anweisungen wiederholt auszuführen, solange eine bestimmte Bedingung
           wahr ist. Sie ist nützlich, wenn die Anzahl der Wiederholungen nicht
-          im Voraus bekannt ist und von einer Bedingung abhängt.
-        </p>
+          im Voraus bekannt ist und von einer Bedingung abhängt. -->
+
         <h4>Begriffe</h4>
         <ul>
           <li>
@@ -75,43 +97,43 @@ while (i < 3) {  // Schleifenbedingung
         <table class="operator-table">
           <tr>
             <th>Iteration</th>
-            <th>Schleifenvariable (count)</th>
+            <th>Schleifenvariable (i)</th>
             <th>Aktion</th>
             <th>Bedingung erfüllt?</th>
           </tr>
           <tr>
             <td>1</td>
-            <td>0</td>
-            <td>println("Zähler: 0")</td>
+            <td>i = 0</td>
+            <td>println("0")</td>
             <td>Ja</td>
           </tr>
           <tr>
             <td>2</td>
-            <td>1</td>
-            <td>println("Zähler: 1")</td>
+            <td>i = 1</td>
+            <td>println("1")</td>
             <td>Ja</td>
           </tr>
           <tr>
             <td>3</td>
-            <td>2</td>
-            <td>println("Zähler: 2")</td>
+            <td>i = 2</td>
+            <td>println("2")</td>
             <td>Ja</td>
           </tr>
           <tr>
             <td>4</td>
-            <td>3</td>
-            <td>println("Zähler: 3")</td>
+            <td>i = 3</td>
+            <td>println("3")</td>
             <td>Ja</td>
           </tr>
           <tr>
             <td>5</td>
-            <td>4</td>
-            <td>println("Zähler: 4")</td>
+            <td>i = 4</td>
+            <td>println("4")</td>
             <td>Ja</td>
           </tr>
           <tr>
             <td>6</td>
-            <td>5</td>
+            <td>i = 5</td>
             <td>-</td>
             <td>Nein</td>
           </tr>
@@ -408,8 +430,8 @@ void draw() {
       <summary id="info">🔄 Verschachtelte Schleifen</summary>
       <div class="box-info">
         <h4>Syntax</h4>
-        <pre><code>for (let i = 0; i < rows; i++) {
-  for (let j = 0; j < cols; j++) {
+        <pre><code>for (let i = 0; i < 5; i++) {
+  for (let j = 0; j < 5; j++) {
     // Zugriff auf das Element an der Position (i, j)
   }
 }</code></pre>
@@ -419,9 +441,8 @@ void draw() {
             Verschachtelte Schleifen sind Schleifen, die innerhalb anderer
             Schleifen platziert sind. Sie ermöglichen es, komplexe Iterationen
             durchzuführen, z.B. durch die Kombination mehrerer Dimensionen. Man
-            kann sich eine Matrix als eine Tabelle mit Zeilen und Spalten
-            vorstellen. Um auf jedes Element in einer Matrix zuzugreifen,
-            benötigt man zwei Schleifen: eine für die Zeilen und eine für die
+            spricht von einer inneren Schleife und einer äßeren Schleife. Zwei
+            verschachtelte Schleifen bilden eine Matrix/Tabelle mit Zeilen und
             Spalten.
           </p>
         </div>
