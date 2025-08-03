@@ -17,10 +17,92 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+//Challenge Kap 3 Raincatcher
+function sketchRaincatcher(p) {
+  let left = false;
+  let right = false;
+
+  let xBalls = new Array(3); // Array für die x-Positionen der Bälle
+  let yBalls = new Array(3); // Array für die y-Positionen der Bälle
+  let farbe = new Array(3); // Array für die Farben der Bälle
+  let score = 0; // Punktestand
+  let life = 3; // Leben des Spielers
+  let speed = 1; // Geschwindigkeit des Spielers
+  let xSpieler; // x-Position des Spielers
+
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    for (let i = 0; i < 3; i++) {
+      xBalls[i] = int(p.random(p.width)); // Zufällige x-Position
+      yBalls[i] = int(p.random(p.height)); // Zufällige y-Position
+      farbe[i] = int(p.random(255)); // Zufällige Farbe
+    }
+    xSpieler = p.width / 2 - 20; // Spielerposition in der Mitte
+  };
+
+  p.draw = () => {
+    p.background(24, 180, 22); // Hintergrundfarbe
+    p.fill(255);
+    p.textSize(15);
+    p.textAlign(p.LEFT);
+    p.text("Punkte: " + score, 10, 20);
+    p.textAlign(p.RIGHT);
+    p.text("Leben: " + life, p.width - 10, 20);
+
+    for (let i = 0; i < 3; i++) {
+      yBalls[i]++; // Erhöhe die y-Position
+      p.fill(farbe[i]);
+      p.circle(xBalls[i], yBalls[i], 25); // Zeichne den Ball
+
+      // Wenn der Ball den unteren Rand erreicht
+      if (yBalls[i] > p.height) {
+        yBalls[i] = 0; // Setze den Ball zurück
+        xBalls[i] = int(p.random(p.width)); // Neue zufällige x-Position
+        farbe[i] = int(p.random(255)); // Neue zufällige Farbe
+        life--; // Leben verringern
+      }
+
+      // Überprüfe, ob der Spieler den Ball fängt
+      if (
+        xSpieler < xBalls[i] &&
+        xSpieler + 40 > xBalls[i] &&
+        yBalls[i] > p.height - 25
+      ) {
+        yBalls[i] = 0; // Setze den Ball zurück
+        xBalls[i] = int(p.random(p.width)); // Neue zufällige x-Position
+        farbe[i] = int(p.random(255)); // Neue zufällige Farbe
+        score++; // Punkte erhöhen
+      }
+    }
+
+    p.noStroke();
+    p.fill(220);
+    p.rect(xSpieler, p.height - 25, 40, 15); // Zeichne den Spieler
+
+    // Begrenzungen für den Spieler
+    if (xSpieler < 0) xSpieler = 0;
+    if (xSpieler > p.width - 40) xSpieler = p.width - 40;
+
+    // Bewegung des Spielers
+    if (left) xSpieler -= speed;
+    if (right) xSpieler += speed;
+  };
+
+  p.keyPressed = () => {
+    if (p.keyCode === p.LEFT) left = true; // Linke Taste gedrückt
+    if (p.keyCode === p.RIGHT) right = true; // Rechte Taste gedrückt
+  };
+
+  p.keyReleased = () => {
+    if (p.keyCode === p.LEFT) left = false; // Linke Taste losgelassen
+    if (p.keyCode === p.RIGHT) right = false; // Rechte Taste losgelassen
+  };
+}
+
 // Challenge Kap 3
-let x = 0; // Variable für die x-Position des Kreises
 
 function sketchMovingRedCircle(p) {
+  let x = 0; // Variable für die x-Position des Kreises
   p.setup = () => {
     p.createCanvas(100, 100);
     autoResizeCanvas(p); // Anpassung für das iframe
@@ -54,8 +136,9 @@ function sketchMovingRedCircle(p) {
 
 //Challenges Kap 2 b
 
-let circleColor = [255]; // Standardfarbe des Kreises
 function sketchMovingCircle(p) {
+  let circleColor = [255]; // Standardfarbe des Kreises
+  let x = 0;
   p.setup = () => {
     p.createCanvas(100, 100);
     autoResizeCanvas(p); // Anpassung für das iframe
