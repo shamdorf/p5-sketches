@@ -41,7 +41,7 @@ function sketchMatrix(p) {
 
 function sketchFace(p) {
   p.setup = () => {
-    p.createCanvas(400, 400);
+    p.createCanvas(100, 100);
     p.background(255); // Weißer Hintergrund
     autoResizeCanvas(p); // Anpassung für das iframe
   };
