@@ -89,13 +89,13 @@ function sketchRaincatcher(p) {
   };
 
   p.keyPressed = () => {
-    if (p.keyCode === p.LEFT) left = true; // Linke Taste gedrückt
-    if (p.keyCode === p.RIGHT) right = true; // Rechte Taste gedrückt
+    if (p.keyCode === p.LEFT_ARROW) left = true; // Linke Taste gedrückt
+    if (p.keyCode === p.RIGHT_ARROW) right = true; // Rechte Taste gedrückt
   };
 
   p.keyReleased = () => {
-    if (p.keyCode === p.LEFT) left = false; // Linke Taste losgelassen
-    if (p.keyCode === p.RIGHT) right = false; // Rechte Taste losgelassen
+    if (p.keyCode === p.LEFT_ARROW) left = false; // Linke Taste losgelassen
+    if (p.keyCode === p.RIGHT_ARROW) right = false; // Rechte Taste losgelassen
   };
 }
 
