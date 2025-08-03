@@ -58,8 +58,8 @@ function sketchRaincatcher(p) {
       // Wenn der Ball den unteren Rand erreicht
       if (yBalls[i] > p.height) {
         yBalls[i] = 0; // Setze den Ball zurück
-        xBalls[i] = int(p.random(p.width)); // Neue zufällige x-Position
-        farbe[i] = int(p.random(255)); // Neue zufällige Farbe
+        xBalls[i] = p.floor(p.random(p.width)); // Neue zufällige x-Position
+        farbe[i] = p.floor(p.random(255)); // Neue zufällige Farbe
         life--; // Leben verringern
       }
 
@@ -70,8 +70,8 @@ function sketchRaincatcher(p) {
         yBalls[i] > p.height - 25
       ) {
         yBalls[i] = 0; // Setze den Ball zurück
-        xBalls[i] = int(p.random(p.width)); // Neue zufällige x-Position
-        farbe[i] = int(p.random(255)); // Neue zufällige Farbe
+        xBalls[i] = p.floor(p.random(p.width)); // Neue zufällige x-Position
+        farbe[i] = p.floor(p.random(255)); // Neue zufällige Farbe
         score++; // Punkte erhöhen
       }
     }
