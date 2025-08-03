@@ -17,6 +17,34 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchRainbow(p) {
+  p.setup = () => {
+    p.createCanvas(100, 100);
+    p.background(0, 0, 255); // Blauer Hintergrund
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.noStroke(); // Keine Umrandung
+
+    // Rote Ellipse
+    p.fill(255, 0, 0);
+    p.circle(p.width / 2, p.height, p.width); // Vollständige Breite
+
+    // Orange Ellipse
+    p.fill(255, 122, 0);
+    p.circle(p.width / 2, p.height, p.width - 20); // Breite - 20
+
+    // Gelbe Ellipse
+    p.fill(255, 255, 0);
+    p.circle(p.width / 2, p.height, p.width - 40); // Breite - 40
+
+    // Blaue Ellipse
+    p.fill(0, 0, 255);
+    p.circle(p.width / 2, p.height, p.width - 60); // Breite - 60
+  };
+}
+
 function sketchMatrix(p) {
   p.setup = () => {
     p.createCanvas(400, 400);
