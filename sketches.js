@@ -17,6 +17,41 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+// Challenge Kap 3
+let x = 0; // Variable für die x-Position des Kreises
+
+function sketchMovingRedCircle(p) {
+  p.setup = () => {
+    p.createCanvas(100, 100);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(0); // Hintergrundfarbe
+    p.stroke(255); // Weiße Linien
+
+    // Zeichne vertikale Linien
+    p.line(20, 0, 20, p.height);
+    p.line(80, 0, 80, p.height);
+
+    // Bestimme die Füllfarbe des Kreises
+    if (x > 20 && x < 80) {
+      p.fill(255, 0, 0); // Rot, wenn zwischen den Linien
+    } else {
+      p.fill(255); // Weiß, wenn außerhalb
+    }
+
+    // Zeichne den Kreis
+    p.circle(x, p.height / 2, 20);
+
+    // Setze x zurück, wenn es den rechten Rand überschreitet
+    if (x > p.width) {
+      x = 0;
+    }
+    x++; // Erhöhe die x-Position
+  };
+}
+
 //Challenges Kap 2 b
 let x = 0; // Variable für die x-Position des Kreises
 let circleColor = [255]; // Standardfarbe des Kreises
