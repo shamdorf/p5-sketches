@@ -27,7 +27,7 @@ function sketchRaincatcher(p) {
   let farbe = new Array(3); // Array für die Farben der Bälle
   let score = 0; // Punktestand
   let life = 3; // Leben des Spielers
-  let speed = 1; // Geschwindigkeit des Spielers
+  let speed = 2; // Geschwindigkeit des Spielers
   let xSpieler; // x-Position des Spielers
 
   p.setup = () => {
@@ -38,6 +38,7 @@ function sketchRaincatcher(p) {
       farbe[i] = p.floor(p.random(255)); // Zufällige Farbe
     }
     xSpieler = p.width / 2 - 20; // Spielerposition in der Mitte
+    autoResizeCanvas(p); // Anpassung für das iframe
   };
 
   p.draw = () => {
