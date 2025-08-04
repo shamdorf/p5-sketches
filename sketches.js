@@ -576,6 +576,9 @@ function sketchThreeRectangles(p) {
 
     // Passe x-Wert an für Animation
     x++;
+    if (x > p.width) {
+      x = 0; // Setze x zurück, wenn es den rechten Rand überschreitet
+    }
   };
 }
 
@@ -598,6 +601,9 @@ function sketchFlyingRectangle(p) {
 
     // Bewege Rechteck
     x++;
+    if (x > p.width) {
+      x = 0; // Setze x zurück, wenn es den rechten Rand überschreitet
+    }
   };
 }
 

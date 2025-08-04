@@ -31,9 +31,7 @@
 while (Bedingung) {
   // Anweisungen, die wiederholt ausgeführt werden
   counter++; //Schleifenschritt
-}
-
-</code></pre>
+}</code></pre>
         <h4>Motivation - wofür sind Schleifen gut?</h4>
         <p>
           Schleifen wiederholen einen Block von Anweisungen, solange eine
@@ -90,9 +88,7 @@ while (i < 3) {  // Schleifenbedingung
   // Anweisungen, die wiederholt ausgeführt werden
   println(i);
   i = i + 1; // Schleifenschritt
-}
-
-</code></pre>
+}</code></pre>
         <h4>Ablauftabelle</h4>
         <table class="operator-table">
           <tr>
@@ -159,9 +155,7 @@ void setup() {
     text("Zähler: "+ count, 10, 30 * (count + 1)); // Ergebnisse sichtbar machen
     count++; // Schleifenschritt
   }
-}
-
-</code></pre>
+}</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchWhileLoop"
         ></iframe>
@@ -204,9 +198,7 @@ void setup() {
         <h4>Syntax</h4>
         <pre><code>for (Initialisierung; Bedingung; Schleifenschritt) {
   // Anweisungen, die wiederholt ausgeführt werden
-}
-
-</code></pre>
+}</code></pre>
         <h4>Motivation</h4>
         <p>
           Die <code>for</code>-Schleife wird verwendet, um einen Block von
@@ -235,9 +227,7 @@ void setup() {
 for (int i=0; i < 5; i++) {
   // Anweisungen, die wiederholt ausgeführt werden
   ellipse(50 + i * 60, height / 2, 50, 50); // Zeichne 5 Kreise in horizontaler Linie
-}
-
-</code></pre>
+}</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchForLoop"
         ></iframe>
@@ -349,17 +339,18 @@ for (int i=0; i < 5; i++) {
 
     <!-- Beispiele für for-Schleifen -->
     <details class="top">
-      <summary id="example">Beispiele für for-Schleifen</summary>
+      <summary id="example">📌 Beispiele für for-Schleifen</summary>
       <details class="box-example">
         <summary>🔄 Rückwärts zählen</summary>
         <p>
           Dieses Beispiel zeigt, wie man mit einer For-Schleife rückwärts zählt.
           Beim Schleifenschritt wird nicht der Icrement-Operator
-          <code>++</code>, sondern der Decrement-Operator
-          <code>--</code> verwendet.
+          <code><strong>++</strong></code
+          >, sondern der Decrement-Operator
+          <code><strong>--</strong></code> verwendet.
         </p>
         <pre>
-for (int i = 10; i > 0; i--) {
+for (int i = 10; i > 0; <strong>i--</strong>  {
   println(i);
 }</pre
         >
@@ -457,12 +448,13 @@ for (float x = 0; x < 200; x = x + 10) {
       </details>
     </details>
 
-    <!-- Map-Befehl  -->
+    <!-- Befehle, Map-Befehl, Slider  -->
     <details class="top">
       <summary id="command">
         🛠️ Wichtige Befehle/Funktionen in Processing
       </summary>
 
+      <!-- map-Befehl -->
       <details class="box-command">
         <summary>
           📏 <code>map(value, start1, stop1, start2, stop2)</code> -
@@ -505,8 +497,7 @@ void setup() {
 void draw() {
   float mappedValue = map(mouseX, 0, width, 0, 255); // Mappen der Mausposition
   background(mappedValue); // Setze den Hintergrund basierend auf der Mausposition
-}
-  </pre
+}</pre
         >
         <div id="sketch-map-background" class="sketch"></div>
         <iframe
@@ -538,8 +529,7 @@ void setup() {
 
 void draw() {
   // leer
-}
-  </pre
+}</pre
         >
         <div id="sketch-map-dreisatz" class="sketch"></div>
         <iframe
@@ -547,6 +537,123 @@ void draw() {
         ></iframe>
       </details>
 
+      <!-- Slider -->
+
+      <details class="box-command">
+        <summary>
+          🎚️ <code>ControlP5 Slider</code> -
+          <strong>realisiert einen Slider in Processing</strong> -
+          <p class="box-warning">Advanced! Für Neugierige...</p>
+        </summary>
+        <div>
+          <p>
+            Der <strong>ControlP5 Slider</strong> ist ein interaktives
+            UI-Element in Processing, das es Benutzern ermöglicht, einen Wert
+            innerhalb eines bestimmten Bereichs auszuwählen. Er ist besonders
+            nützlich für die Anpassung von Parametern in Echtzeit, z. B. für
+            Farben, Größen oder Geschwindigkeiten.
+          </p>
+          <h4>Erstellung eines Sliders</h4>
+          <p>
+            Um einen Schieberegler zu erstellen, importierst du die
+            ControlP5-Bibliothek und verwendest die Methode
+            <code>addSlider(name)</code>, wobei:
+          </p>
+          <ul>
+            <li><code>name</code>: Der Name des Sliders.</li>
+          </ul>
+
+          <h4>Wichtige Methoden für <code>ControlP5 Slider</code></h4>
+          <ul>
+            <li>
+              <code>slider.setValue(value)</code>: Setzt den Standardwert des
+              Sliders.
+            </li>
+            <li>
+              <code>slider.setPosition(x, y)</code>: Setzt die Position des
+              Sliders im Fenster.
+            </li>
+            <li>
+              <code>slider.getValue()</code>: Gibt den aktuellen Wert des
+              Sliders zurück.
+            </li>
+          </ul>
+          <h4>Beispiel: Helligkeit des Bildschirms</h4>
+          <p>
+            In diesem Beispiel verwenden wir einen Schieberegler, um die
+            Hintergrundhelligkeit des Fensters zu steuern, wobei der Wert von 0
+            (schwarz) bis 255 (weiß) reicht.
+          </p>
+
+          <pre>
+import controlP5.*;
+
+ControlP5 cp5;
+float brightnessSlider = 127; // Standardwert
+
+void setup() {
+  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+  cp5 = new ControlP5(this);
+  cp5.addSlider("brightnessSlider")
+     .setPosition(20, 50)
+     .setRange(0, 255)
+     .setValue(127); // Erstelle einen Schieberegler von 0 bis 255, Standardwert: 127
+}
+
+void draw() {
+  background(brightnessSlider); // Setze den Hintergrund basierend auf dem Schiebereglerwert
+  fill(0); // Textfarbe
+  textSize(16);
+  text("Helligkeit: " + floor(brightnessSlider), 20, 100); // Zeige den aktuellen Wert des Sliders an
+}</pre
+          >
+          <div id="sketch-brightness-slider" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBrightnessSlider"
+          ></iframe>
+          <h4>
+            Beispiel: <code>ControlP5 Slider</code> mit
+            <code>map()-Funktion</code>
+          </h4>
+          <p>
+            In diesem Beispiel verwenden wir einen Schieberegler, um einen Wert
+            von 0 bis 100 zu steuern, der dann mit der
+            <code>map()</code>-Funktion auf einen Bereich von 0 bis der Breite
+            des Fensters umgewandelt wird.
+          </p>
+          <pre>
+import controlP5.*;
+
+ControlP5 cp5;
+float sliderValue = 50; // Standardwert
+
+void setup() {
+  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+  cp5 = new ControlP5(this);
+  cp5.addSlider("sliderValue")
+     .setPosition(20, 50)
+     .setRange(0, 100)
+     .setValue(50); // Erstelle einen Schieberegler von 0 bis 100, Standardwert: 50
+}
+
+void draw() {
+  background(255); // Hintergrundfarbe
+  float mappedValue = map(sliderValue, 0, 100, 0, width); // Mappen des Schiebereglerwerts
+  fill(0); // Textfarbe
+  textSize(16);
+  text("Aktueller Wert: " + floor(sliderValue), 20, 100); // Zeige den aktuellen Wert des Sliders an
+  fill(255, 0, 0); // Füllfarbe für den Kreis
+  ellipse(mappedValue, height / 2, 20, 20); // Zeichne einen Kreis an der umgewandelten Position
+}</pre
+          >
+          <div id="sketch-slider-map" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSliderMap"
+          ></iframe>
+        </div>
+      </details>
+
+      <!--       
       <details class="box-command">
         <summary>
           🎚️ <code>PSlider-Objekt</code> -
@@ -610,8 +717,7 @@ void draw() {
   fill(0); // Textfarbe
   textSize(16);
   text("Helligkeit: " + <strong>brightnessSlider.value()</strong>, 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
-}
-  </pre>
+}</pre>
           <div id="sketch-brightness-slider" class="sketch"></div>
           <iframe
             src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBrightnessSlider"
@@ -642,14 +748,13 @@ void draw() {
   text("Aktueller Wert: " + <strong>slider.value()</strong>, 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
   fill(255, 0, 0); // Füllfarbe für den Kreis
   ellipse(mappedValue, height / 2, 20, 20); // Zeichne einen Kreis an der umgewandelten Position
-}
-  </pre>
+}</pre>
           <div id="sketch-slider-map" class="sketch"></div>
           <iframe
             src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSliderMap"
           ></iframe>
         </div>
-      </details>
+      </details> -->
     </details>
 
     <!-- Aufgaben for-Schleife -->
@@ -692,6 +797,9 @@ void draw() {
 
     // Passe x-Wert an für Animation
     x++;
+    if (x > width) {
+        x = 0; // Setze x zurück, wenn es das Ende des Fensters erreicht
+    } 
 }</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchThreeRectangles"
@@ -724,6 +832,9 @@ void draw() {
 
     // Bewege Rechteck
     x++;
+    if (x > width) {
+        x = 0; // Setze x zurück, wenn es das Ende des Fensters erreicht
+    } 
 }</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlyingRectangle"
@@ -765,9 +876,9 @@ void draw() {
             Verschachtelte Schleifen sind Schleifen, die innerhalb anderer
             Schleifen platziert sind. Sie ermöglichen es, komplexe Iterationen
             durchzuführen, z.B. durch die Kombination mehrerer Dimensionen. Man
-            spricht von einer inneren Schleife und einer äßeren Schleife. Zwei
-            verschachtelte Schleifen bilden eine Matrix/Tabelle mit Zeilen und
-            Spalten.
+            spricht von einer <strong>inneren Schleife</strong> und einer
+            <strong>äußeren Schleife</strong>. Zwei verschachtelte Schleifen
+            bilden eine <strong>Matrix/Tabelle</strong> mit Zeilen und Spalten.
           </p>
         </div>
 
@@ -775,10 +886,11 @@ void draw() {
         <div>
           <p>
             Die Verwendung von verschachtelten Schleifen ist besonders nützlich,
-            wenn man mit mehrdimensionalen Datenstrukturen arbeitet, wie z.B.
-            Matrizen oder <strong>Arrays (Kapitel 6)</strong>. Sie ermöglichen
-            das Durchlaufen jeder Dimension und das Ausführen von Operationen
-            auf jedem Element.
+            wenn man mit
+            <strong>mehrdimensionalen Datenstrukturen</strong> arbeitet, wie
+            z.B. Matrizen oder <strong>Arrays (Kapitel 6)</strong>. Sie
+            ermöglichen das Durchlaufen jeder Dimension und das Ausführen von
+            Operationen auf jedem Element.
           </p>
         </div>
 
@@ -788,8 +900,8 @@ void draw() {
           Über Varialben lassen sich die Anzahl der Spalten/Zeilen sowie die
           Größe der Rechtecke festlegen.
         </p>
-        <pre><code>int cols = 5; // Anzahl der Spalten
-int rows = 5; // Anzahl der Zeilen
+        <pre><code><strong>int cols = 5;</strong> // Anzahl der Spalten
+<strong>int rows = 5;</strong> // Anzahl der Zeilen
 int w = 60;   // Breite der Rechtecke
 int h = 60;   // Höhe der Rechtecke
 
@@ -801,11 +913,11 @@ void draw() {
     background(255); // Hintergrund auf weiß setzen
 
     // Zeichne eine Matrix von Rechtecken
-    for (int i = 0; i < rows; i++) {
+    <strong>for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             rect(j * w, i * h, w, h); // Rechteck zeichnen
         }
-    }
+    }</strong>
 }</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMatrix"
