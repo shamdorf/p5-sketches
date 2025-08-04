@@ -780,14 +780,18 @@ void draw() {
 int x = 0;
 
 void setup() {
+  size(200, 200);
   frameRate(1); // 1x pro Sek. draw() aufrufen
 }
 
 void draw() {
-  for (int i = 0; i < 100; i++) {
+  for (int i = 0; i < 200; i++) {
     background(255);
     ellipse(x, 50, 10, 10);
     x++;
+  }
+  if (x > width) {
+    x = 0; // Setze x zurück, wenn es das Ende des Fensters erreicht
   }
   // erst jetzt wird das Werk sichtbar!
 }

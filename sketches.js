@@ -21,7 +21,7 @@ function sketchMovingEllipse(p) {
   let x = 0; // Startposition der Ellipse
 
   p.setup = () => {
-    p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+    p.createCanvas(200, 200); // Erstelle ein 400x200 Pixel großes Canvas
     p.frameRate(1); // 1x pro Sekunde draw() aufrufen
   };
 
