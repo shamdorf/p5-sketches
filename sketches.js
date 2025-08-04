@@ -31,7 +31,7 @@ function sketchMapBackground(p) {
 
 function sketchMapDreisatz(p) {
   p.setup = () => {
-    p.createCanvas(100, 100); // Erstelle ein 400x200 Pixel großes Canvas
+    p.createCanvas(150, 100); // Erstelle ein 400x200 Pixel großes Canvas
     p.textAlign(p.CENTER, p.CENTER); // Text zentrieren
     autoResizeCanvas(p); // Anpassung für das iframe
 
