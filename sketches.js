@@ -17,6 +17,24 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchBrightnessSlider(p) {
+  let brightnessSlider; // Variable für den Helligkeits-Schieberegler
+
+  p.setup = () => {
+    p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+    brightnessSlider = p.createSlider(0, 255, 127); // Erstelle einen Schieberegler von 0 bis 255, Standardwert: 127
+    brightnessSlider.position(20, 50); // Setze die Position des Schiebereglers
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(brightnessSlider.value()); // Setze den Hintergrund basierend auf dem Schiebereglerwert
+    p.fill(0); // Textfarbe
+    p.textSize(16);
+    p.text("Helligkeit: " + brightnessSlider.value(), 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
+  };
+}
+
 function sketchSliderMap(p) {
   let slider; // Variable für den Schieberegler
 

@@ -454,6 +454,35 @@ void draw() {
           besonders nützlich für die Anpassung von Parametern in Echtzeit, z. B.
           für Farben, Größen oder Geschwindigkeiten.
         </p>
+        <h4>Beispiel: Helligkeit des Bildschirms</h4>
+        <p>
+          In diesem Beispiel verwenden wir einen Schieberegler, um die
+          Hintergrundhelligkeit des Fensters zu steuern, wobei der Wert von 0
+          (schwarz) bis 255 (weiß) reicht.
+        </p>
+
+        <pre>
+PSlider brightnessSlider;
+
+void setup() {
+  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+  brightnessSlider = createSlider(0, 255, 127); // Erstelle einen Schieberegler von 0 bis 255, Standardwert: 127
+  brightnessSlider.position(20, 50); // Setze die Position des Schiebereglers
+}
+
+void draw() {
+  background(brightnessSlider.value()); // Setze den Hintergrund basierend auf dem Schiebereglerwert
+  fill(0); // Textfarbe
+  textSize(16);
+  text("Helligkeit: " + brightnessSlider.value(), 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
+}
+  </pre
+        >
+        <div id="sketch-brightness-slider" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBrightnessSlider"
+        ></iframe>
+        <h4>Beispiel: <code>PSlider</code> mit <code>map()-Funktion</code></h4>
         <p>
           In diesem Beispiel verwenden wir einen Schieberegler, um einen Wert
           von 0 bis 100 zu steuern, der dann mit der <code>map()</code>-Funktion
