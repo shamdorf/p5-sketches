@@ -17,6 +17,77 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+//Challenge Kap 4
+function sketchVectorChallenge(p) {
+  let pos = new p5.Vector(100, 100); // Position des Kreises
+  let speed = new p5.Vector(
+    Math.floor(p.random(-3, 3)),
+    Math.floor(p.random(-3, 3))
+  ); // Geschwindigkeit
+  const factor = 10; // Faktor für die Darstellung der Geschwindigkeit
+
+  function reset() {
+    speed = new p5.Vector(
+      Math.floor(p.random(-3, 3)),
+      Math.floor(p.random(-3, 3))
+    );
+    pos = new p5.Vector(100, 100);
+  }
+
+  p.setup = () => {
+    p.createCanvas(200, 200);
+    p.textAlign(p.CENTER);
+    p.textSize(15);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(0); // Hintergrundfarbe
+    p.fill(255);
+    const x = Math.floor(speed.x);
+    const y = Math.floor(speed.y);
+    p.text("velocity: (" + x + ", " + y + ")", 100, 20);
+    p.text("cursur keys to adjust vector", 100, p.height - 40);
+    p.text("space to reset", 100, p.height - 20);
+
+    p.fill(255, 255, 0);
+    p.circle(pos.x, pos.y, 30); // Zeichne den Kreis
+    p.stroke(255, 0, 0);
+    p.line(pos.x, pos.y, pos.x + speed.x * factor, pos.y + speed.y * factor); // Zeichne die Geschwindigkeit
+
+    p.stroke(0);
+    pos.add(speed); // Aktualisiere die Position
+
+    // Begrenzungen für den Kreis
+    if (pos.x < 15 || pos.x > p.width - 15) {
+      speed.x = -speed.x; // Richtungswechsel bei Kollision mit der Wand
+    }
+    if (pos.y < 15 || pos.y > p.height - 15) {
+      speed.y = -speed.y; // Richtungswechsel bei Kollision mit der Wand
+    }
+
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.keyPressed = () => {
+    if (p.key === " ") {
+      reset(); // Zurücksetzen bei Leertaste
+    }
+    if (p.keyCode === p.RIGHT_ARROW) {
+      speed.x++; // Erhöhe die x-Geschwindigkeit
+    }
+    if (p.keyCode === p.LEFT_ARROW) {
+      speed.x--; // Verringere die x-Geschwindigkeit
+    }
+    if (p.keyCode === p.UP_ARROW) {
+      speed.y++; // Erhöhe die y-Geschwindigkeit
+    }
+    if (p.keyCode === p.DOWN_ARROW) {
+      speed.y--; // Verringere die y-Geschwindigkeit
+    }
+  };
+}
+
 //Challenge Kap 3 Raincatcher
 function sketchRaincatcher(p) {
   let left = false;

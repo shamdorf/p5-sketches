@@ -20,68 +20,133 @@
   </head>
   <body>
     <!-- Vektoren (PVector) -->
+
+    <!-- Info-Boxen für primitive Datentypen und Objekte -->
     <details class="top">
-      <summary id="info">
-        <strong>Objekte (Intensiver in Kapitel 8)</strong>
-      </summary>
-
-      <!-- Vektoren (PVector) -->
-      <details class="box-info">
-        <summary><strong>Vektoren (PVector)</strong></summary>
+      <summary id="info"><strong>Primitive Datentypen</strong></summary>
+      <div class="box-info">
         <p>
-          Vektoren werden in Processing verwendet, um den Ort und die
-          Geschwindigkeit von Objekten zu definieren und zu verändern. Sie sind
-          besonders nützlich in der Physik und Computergrafik, da sie sowohl
-          Richtung als auch Größe darstellen können.
+          Bisher haben wir Variablen verwendet, um sehr einfache Informationen
+          zu speichern: <strong>Ganze Zahlen (int)</strong>,
+          <strong>Dezimalzahlen (float)</strong>,
+          <strong>einzelne Zeichen (char)</strong> oder
+          <strong>Wahrheitswerte (boolean)</strong>Wahrheitswerte (boolean).
+          Diese Datentypen nennt man <strong><u>primitive Datentypen</u></strong
+          >. Variablen eines primitiven Datentyps beinhalten Werte, wie z.B.
+          eine ganze Zahl im Fall von int.
         </p>
-        <h3>Eigenschaften von Vektoren</h3>
-        <ul>
-          <li class="important">
-            <code>x</code>: Die x-Koordinate des Vektors.
-          </li>
-          <li class="important">
-            <code>y</code>: Die y-Koordinate des Vektors.
-          </li>
-          <li>
-            <code>z</code>: Die z-Koordinate des Vektors (optional, für
-            3D-Anwendungen).
-          </li>
-          <li><code>magnitude()</code>: Gibt die Länge des Vektors zurück.</li>
-          <li>
-            <code>normalize()</code>: Wandelt den Vektor in einen Einheitsvektor
-            um.
-          </li>
-          <li class="important">
-            <code>add(PVector v)</code>: Addiert einen anderen Vektor zu diesem
-            Vektor.
-          </li>
-          <li>
-            <code>sub(PVector v)</code>: Subtrahiert einen anderen Vektor von
-            diesem Vektor.
-          </li>
-          <li>
-            <code>mult(float n)</code>: Multipliziert den Vektor mit einem
-            Skalar.
-          </li>
-          <li>
-            <code>div(float n)</code>: Teilt den Vektor durch einen Skalar.
-          </li>
-        </ul>
+      </div>
+    </details>
 
-        <img
-          src="https://p5-sketches-demo.netlify.app/img/superposition.svg"
-          alt="KEIN BILD GEFUNDEN "
-        />
-
-        <!-- Beispielsketch für Vektoren -->
-        <h4>🔢 Vektoren Beispiel: Ortsvektor und Geschwindigkeitsvektor</h4>
+    <details class="top">
+      <summary><strong>Objekte</strong></summary>
+      <div class="box-info">
         <p>
-          In diesem Beispiel wird ein Ball dargestellt, der sich basierend auf
-          seiner Geschwindigkeit bewegt. Der Ortsvektor wird mit dem
-          Geschwindigkeitsvektor addiert, um die Position des Balls zu
-          aktualisieren.
+          Jetzt möchte man häufig mehrere zusammengehörige Informationen in
+          einem Container bündeln, z.B. den x- und y-Wert eines Vektors oder die
+          unterschiedlichen Informationen zu einem Kunden (Vorname, Nachname,
+          Mailadresse etc.).
         </p>
-        <pre><code>
+        <p>
+          In diesem Kapitel lernen Sie Objekte kennen, in denen man mehrere
+          Informationen speichern kann. Ein Objekt ist ein Konstrukt irgendwo im
+          Speicher, das mehrere Daten speichern kann.
+        </p>
+        <p>
+          Ein Objekt ist eine Speicherstruktur, die sowohl mehrere Eigenschaften
+          (ähnlich zu Variablen) als auch Aktionen (ähnlich zu Funktionen)
+          beinhaltet. Diese Aktionen werden auch Methoden genannt.
+        </p>
+      </div>
+    </details>
+
+    <details class="top">
+      <summary><strong>Was ist ein Vektor?</strong></summary>
+      <div class="box-info">
+        <p>
+          Ein Vektor im zweidimensionalen Raum ist einfach ein Pfeil in einem
+          zweidimensionalen Koordinatensystem. Dabei ist es "egal", wo genau
+          dieser Pfeil platziert ist. Wichtig ist nur, in welche Richtung er
+          zeigt und wie lang er ist. Üblicherweise beschreibt man einen
+          2D-Vektor mit genau zwei Zahlen: die erste Zahl beschreibt den
+          x-Anteil, die zweite Zahl den y-Anteil.
+        </p>
+      </div>
+    </details>
+
+    <details class="top">
+      <summary><strong>Objekt als Beispiel-Objekt</strong></summary>
+      <div class="box-info">
+        <p>
+          Ein Objekttyp wird in Java groß geschrieben. Beispiele sind PVector
+          (nur Processing) und String. Ein Objekttyp ist immer auch eine Klasse.
+          Eine Variable eines Objekttyps kann Objekte der entsprechenden Klasse
+          speichern.
+        </p>
+      </div>
+    </details>
+
+    <details class="top">
+      <summary><strong>Methoden</strong></summary>
+      <div class="box-info">
+        <p>
+          Objekte können nicht nur mehr Informationen speichern als Variablen,
+          sie bieten darüber hinaus auch Aktionen an, die etwas "tun", also
+          etwas berechnen oder bewegen.
+        </p>
+      </div>
+    </details>
+
+    <!-- Vektoren (PVector) -->
+    <details class="box-info">
+      <summary><strong>Vektoren (PVector)</strong></summary>
+      <p>
+        Vektoren werden in Processing verwendet, um den Ort und die
+        Geschwindigkeit von Objekten zu definieren und zu verändern. Sie sind
+        besonders nützlich in der Physik und Computergrafik, da sie sowohl
+        Richtung als auch Größe darstellen können.
+      </p>
+      <h3>Eigenschaften von Vektoren</h3>
+      <ul>
+        <li class="important"><code>x</code>: Die x-Koordinate des Vektors.</li>
+        <li class="important"><code>y</code>: Die y-Koordinate des Vektors.</li>
+        <li>
+          <code>z</code>: Die z-Koordinate des Vektors (optional, für
+          3D-Anwendungen).
+        </li>
+        <li><code>magnitude()</code>: Gibt die Länge des Vektors zurück.</li>
+        <li>
+          <code>normalize()</code>: Wandelt den Vektor in einen Einheitsvektor
+          um.
+        </li>
+        <li class="important">
+          <code>add(PVector v)</code>: Addiert einen anderen Vektor zu diesem
+          Vektor.
+        </li>
+        <li>
+          <code>sub(PVector v)</code>: Subtrahiert einen anderen Vektor von
+          diesem Vektor.
+        </li>
+        <li>
+          <code>mult(float n)</code>: Multipliziert den Vektor mit einem Skalar.
+        </li>
+        <li><code>div(float n)</code>: Teilt den Vektor durch einen Skalar.</li>
+      </ul>
+
+      <img
+        src="https://p5-sketches-demo.netlify.app/img/superposition.svg"
+        alt="KEIN BILD GEFUNDEN "
+      />
+
+      <!-- Beispielsketch für Vektoren -->
+      <h4>🔢 Vektoren Beispiel: Ortsvektor und Geschwindigkeitsvektor</h4>
+      <p>
+        In diesem Beispiel wird ein Ball dargestellt, der sich basierend auf
+        seiner Geschwindigkeit bewegt. Der Ortsvektor wird mit dem
+        Geschwindigkeitsvektor addiert, um die Position des Balls zu
+        aktualisieren.
+      </p>
+      <pre><code>
 PVector position; // Ortsvektor
 PVector velocity; // Geschwindigkeitsvektor
 
@@ -109,11 +174,10 @@ void draw() {
     fill(0);
     ellipse(position.x, position.y, 30, 30); // Zeichne den Ball mit dem aktuellen Ortsvektor
 }</code></pre>
-        <p>Hier ist der interaktive Sketch:</p>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVektoren"
-        ></iframe>
-      </details>
+      <p>Hier ist der interaktive Sketch:</p>
+      <iframe
+        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVektoren"
+      ></iframe>
     </details>
 
     <!-- Strings -->

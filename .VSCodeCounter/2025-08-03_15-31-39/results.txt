@@ -1,0 +1,47 @@
+Date : 2025-08-03 15:31:39
+Directory : c:\Users\nebuto\Desktop\kursMoodle\p5-sketches
+Total : 17 files,  8906 codes, 423 comments, 844 blanks, all 10173 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| HTML       |         12 |      7,170 |        324 |        475 |      7,969 |
+| JavaScript |          2 |      1,360 |         55 |        302 |      1,717 |
+| PostCSS    |          1 |        374 |         44 |         67 |        485 |
+| XML        |          2 |          2 |          0 |          0 |          2 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                           | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                              |         17 |      8,906 |        423 |        844 |     10,173 |
+| . (Files)                                                                      |         13 |      7,719 |        341 |        775 |      8,835 |
+| img                                                                            |          1 |          1 |          0 |          0 |          1 |
+| temp                                                                           |          3 |      1,186 |         82 |         69 |      1,337 |
++--------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                       | language   | code       | comment    | blank      | total      |
++--------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\htmlcss.html                    | HTML       |        231 |          8 |         11 |        250 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\img\superposition.svg           | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\links.html                      | HTML       |      1,331 |         11 |         17 |      1,359 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\p5.min.js                       | JavaScript |          1 |          1 |          0 |          2 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sammelKap1.html                 | HTML       |      1,294 |         61 |         71 |      1,426 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sammelKap2.html                 | HTML       |      1,205 |         70 |        131 |      1,406 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sammelKap3.html                 | HTML       |      1,090 |         51 |        103 |      1,244 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sammelKap4.html                 | HTML       |        204 |          8 |         20 |        232 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sammelKap5.html                 | HTML       |        560 |         30 |         46 |        636 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sammelKap6.html                 | HTML       |         46 |          2 |          5 |         53 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\sketches.js                     | JavaScript |      1,359 |         54 |        302 |      1,715 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\style.css                       | PostCSS    |        374 |         44 |         67 |        485 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\superposition.svg               | XML        |          1 |          0 |          0 |          1 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\temp\befehleFormenKapitel1.html | HTML       |        467 |         46 |         30 |        543 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\temp\fragenKap1.html            | HTML       |        360 |         16 |         22 |        398 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\temp\infosKapitel1.html         | HTML       |        359 |         20 |         17 |        396 |
+| c:\Users\nebuto\Desktop\kursMoodle\p5-sketches\template.html                   | HTML       |         23 |          1 |          2 |         26 |
+| Total                                                                          |            |      8,906 |        423 |        844 |     10,173 |
++--------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
