@@ -17,6 +17,43 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchBunteKreise(p) {
+  let anzahl = 10; // Anzahl der Kreise
+  let diameter = 10; // Durchmesser der Kreise
+  let pos = []; // Array für die Positionen der Kreise
+  let speed = []; // Array für die Geschwindigkeiten der Kreise
+  let farbe = []; // Array für die Farben der Kreise
+
+  p.setup = () => {
+    p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
+    for (let i = 0; i < anzahl; i++) {
+      pos[i] = p.createVector(
+        p.random(diameter / 2, p.width - diameter / 2),
+        p.random(diameter / 2, p.height - diameter / 2)
+      );
+      speed[i] = p.createVector(p.random(-2, 2), p.random(-2, 2));
+      farbe[i] = p.color(p.random(255), p.random(255), p.random(255)); // Zufällige Farbe
+    }
+  };
+
+  p.draw = () => {
+    p.background(0); // Hintergrundfarbe
+    for (let i = 0; i < anzahl; i++) {
+      p.fill(farbe[i]); // Setze die Füllfarbe
+      p.circle(pos[i].x, pos[i].y, diameter); // Zeichne den Kreis
+      pos[i].add(speed[i]); // Aktualisiere die Position
+
+      // Überprüfe Kollision mit den Rändern
+      if (pos[i].x < diameter / 2 || pos[i].x > p.width - diameter / 2) {
+        speed[i].x = -speed[i].x; // Ändere die Richtung
+      }
+      if (pos[i].y < diameter / 2 || pos[i].y > p.height - diameter / 2) {
+        speed[i].y = -speed[i].y; // Ändere die Richtung
+      }
+    }
+  };
+}
+
 function sketchBrightnessSlider(p) {
   let brightnessSlider; // Variable für den Helligkeits-Schieberegler
 

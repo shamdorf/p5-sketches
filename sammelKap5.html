@@ -439,22 +439,47 @@ void draw() {
 
       <details class="box-command">
         <summary>
-          🎚️ <code>createSlider(min, max, value)</code> -
-          <strong>Schieberegler erstellen</strong>
+          🎚️ <code>PSlider-Objekt</code> -
+          <strong>realisiert einen Slider in Processing</strong>
         </summary>
-        <ul>
-          <li><code>min</code> - Minimalwert</li>
-          <li><code>max</code> - Maximalwert</li>
-          <li><code>value</code> - Aktueller Wert des Sliders</li>
-        </ul>
-        <p>
-          Der <strong>createSlider()</strong>-Befehl wird verwendet, um einen
-          interaktiven Schieberegler zu erstellen, der es Benutzern ermöglicht,
-          einen Wert innerhalb eines bestimmten Bereichs auszuwählen. Dies ist
-          besonders nützlich für die Anpassung von Parametern in Echtzeit, z. B.
-          für Farben, Größen oder Geschwindigkeiten.
-        </p>
-        <h4>Beispiel: Helligkeit des Bildschirms</h4>
+        <div>
+          <p>
+            Der <strong>PSlider</strong> ist ein interaktives UI-Element in
+            Processing, das es Benutzern ermöglicht, einen Wert innerhalb eines
+            bestimmten Bereichs auszuwählen. Er ist besonders nützlich für die
+            Anpassung von Parametern in Echtzeit, z. B. für Farben, Größen oder
+            Geschwindigkeiten.
+          </p>
+          <h4>Erstellung eines Sliders</h4>
+          <p>
+            Um einen Schieberegler zu erstellen, verwendest du die Funktion
+            <code>createSlider(min, max, value)</code>, wobei:
+          </p>
+          <ul>
+            <li><code>min</code>: Der minimale Wert des Schiebereglers.</li>
+            <li><code>max</code>: Der maximale Wert des Schiebereglers.</li>
+            <li>
+              <code>value</code>: Der Standardwert, der beim Erstellen des
+              Sliders gesetzt wird.
+            </li>
+          </ul>
+
+          <h4>Wichtige Methoden für <code>PSlider</code></h4>
+          <ul>
+            <li>
+              <code>slider.value()</code>: Gibt den aktuellen Wert des Sliders
+              zurück.
+            </li>
+            <li>
+              <code>slider.position(x, y)</code>: Setzt die Position des Sliders
+              im Fenster.
+            </li>
+            <li>
+              <code>slider.style(property, value)</code>: Ändert den Stil des
+              Sliders (z. B. Farbe, Breite).
+            </li>
+          </ul>
+<h4>Beispiel: Helligkeit des Bildschirms</h4>
         <p>
           In diesem Beispiel verwenden wir einen Schieberegler, um die
           Hintergrundhelligkeit des Fensters zu steuern, wobei der Wert von 0
@@ -513,7 +538,11 @@ void draw() {
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSliderMap"
         ></iframe>
       </details>
-    </details>
+          
+        </div>
+      </details>
+
+      
 
     <!-- Aufgaben for-Schleife -->
     <a
