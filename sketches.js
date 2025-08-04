@@ -60,17 +60,16 @@ function sketchMovingLines(p) {
 }
 
 //Challenge Kap 5
-function sketchDrawLinear(p) {
+function sketchParabel(p) {
   p.setup = () => {
     p.createCanvas(100, 100); // Erstelle ein 100x100 Pixel großes Canvas
+    autoResizeCanvas(p); // Anpassung für das iframe
 
     for (let x = 0; x < 100; x += 10) {
-      let y = 100 - x; // Berechne die y-Position
-
-      p.circle(x, y, 5); // Zeichne den Kreis
+      let y = 100 - (x * x + 2); // Berechne die y-Position
+      y = p.map(y, 0, -10000, 0, 100); // Mappe den y-Wert
+      p.circle(x, 100 - y, 5); // Zeichne den Kreis
     }
-
-    autoResizeCanvas(p); // Anpassung für das iframe
   };
 }
 
