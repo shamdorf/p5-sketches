@@ -21,12 +21,13 @@ function sketchLinearFunction(p) {
   p.setup = () => {
     p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
     p.noLoop(); // Zeichne nur einmal
+    autoResizeCanvas(p);
   };
 
   p.draw = () => {
     p.background(255); // Hintergrundfarbe
     p.fill(0); // Füllfarbe für die Kreise
-    for (let x = 0; x < 100; x += 10) {
+    for (let x = 0; x < 200; x += 10) {
       let y = x;
       p.ellipse(x, y, 5, 5); // Zeichne den Punkt
     }
@@ -43,8 +44,8 @@ function sketchLinearFunctionInverted(p) {
   p.draw = () => {
     p.background(255); // Hintergrundfarbe
     p.fill(0); // Füllfarbe für die Kreise
-    for (let x = 0; x < 100; x += 10) {
-      let y = 100 - x;
+    for (let x = 0; x < 200; x += 10) {
+      let y = 200 - x;
       p.ellipse(x, y, 5, 5); // Zeichne den Punkt
     }
   };
@@ -60,8 +61,8 @@ function sketchLinearFunctionCustom(p) {
   p.draw = () => {
     p.background(255); // Hintergrundfarbe
     p.fill(0); // Füllfarbe für die Kreise
-    for (let x = 0; x < 100; x += 10) {
-      let y = 100 - (x / 2 + 50);
+    for (let x = 0; x < 200; x += 10) {
+      let y = 200 - (x / 2 + 50);
       p.ellipse(x, y, 5, 5); // Zeichne den Punkt
     }
   };
