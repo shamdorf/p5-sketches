@@ -23,6 +23,7 @@ function sketchMovingEllipse(p) {
   p.setup = () => {
     p.createCanvas(200, 200); // Erstelle ein 400x200 Pixel großes Canvas
     p.frameRate(1); // 1x pro Sekunde draw() aufrufen
+    autoResizeCanvas(p);
   };
 
   p.draw = () => {
