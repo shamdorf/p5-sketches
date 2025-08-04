@@ -479,70 +479,68 @@ void draw() {
               Sliders (z. B. Farbe, Breite).
             </li>
           </ul>
-<h4>Beispiel: Helligkeit des Bildschirms</h4>
-        <p>
-          In diesem Beispiel verwenden wir einen Schieberegler, um die
-          Hintergrundhelligkeit des Fensters zu steuern, wobei der Wert von 0
-          (schwarz) bis 255 (weiß) reicht.
-        </p>
+          <h4>Beispiel: Helligkeit des Bildschirms</h4>
+          <p>
+            In diesem Beispiel verwenden wir einen Schieberegler, um die
+            Hintergrundhelligkeit des Fensters zu steuern, wobei der Wert von 0
+            (schwarz) bis 255 (weiß) reicht.
+          </p>
 
-        <pre>
-PSlider brightnessSlider;
+          <pre>
+<strong>PSlider brightnessSlider;</strong>  //Deklariert ein PSlider-Objekt mit dem Namen brightnessSlider
 
 void setup() {
   size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
-  brightnessSlider = createSlider(0, 255, 127); // Erstelle einen Schieberegler von 0 bis 255, Standardwert: 127
-  brightnessSlider.position(20, 50); // Setze die Position des Schiebereglers
+  <strong>brightnessSlider = createSlider(0, 255, 127);</strong> // Erstelle einen Schieberegler von 0 bis 255, Standardwert: 127
+  <strong>brightnessSlider.position(20, 50);</strong> // Setze die Position des Schiebereglers
 }
 
 void draw() {
-  background(brightnessSlider.value()); // Setze den Hintergrund basierend auf dem Schiebereglerwert
+  background(<strong>brightnessSlider.value()</strong>); // Setze den Hintergrund basierend auf dem Schiebereglerwert
   fill(0); // Textfarbe
   textSize(16);
-  text("Helligkeit: " + brightnessSlider.value(), 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
+  text("Helligkeit: " + <strong>brightnessSlider.value()</strong>, 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
 }
-  </pre
-        >
-        <div id="sketch-brightness-slider" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBrightnessSlider"
-        ></iframe>
-        <h4>Beispiel: <code>PSlider</code> mit <code>map()-Funktion</code></h4>
-        <p>
-          In diesem Beispiel verwenden wir einen Schieberegler, um einen Wert
-          von 0 bis 100 zu steuern, der dann mit der <code>map()</code>-Funktion
-          auf einen Bereich von 0 bis der Breite des Fensters umgewandelt wird.
-        </p>
-        <pre>
-PSlider slider;
+  </pre>
+          <div id="sketch-brightness-slider" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBrightnessSlider"
+          ></iframe>
+          <h4>
+            Beispiel: <code>PSlider</code> mit <code>map()-Funktion</code>
+          </h4>
+          <p>
+            In diesem Beispiel verwenden wir einen Schieberegler, um einen Wert
+            von 0 bis 100 zu steuern, der dann mit der
+            <code>map()</code>-Funktion auf einen Bereich von 0 bis der Breite
+            des Fensters umgewandelt wird.
+          </p>
+          <pre>
+<strong>PSlider slider;</strong>  //Deklariert das Objekt slider vom Typ PSlider
 
 void setup() {
   size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
-  slider = createSlider(0, 100, 50); // Erstelle einen Schieberegler von 0 bis 100, Standardwert: 50
-  slider.position(20, 50); // Setze die Position des Schiebereglers
+  <strong>slider = createSlider(0, 100, 50);</strong> // Erstelle einen Schieberegler von 0 bis 100, Standardwert: 50
+  <strong>slider.position(20, 50);</strong> // Setze die Position des Schiebereglers
 }
 
 void draw() {
   background(255); // Hintergrundfarbe
-  float mappedValue = map(slider.value(), 0, 100, 0, width); // Mappen des Schiebereglerwerts
+  float mappedValue = map(<strong>slider.value()</strong>, 0, 100, 0, width); // Mappen des Schiebereglerwerts
   fill(0); // Textfarbe
   textSize(16);
-  text("Aktueller Wert: " + slider.value(), 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
+  text("Aktueller Wert: " + <strong>slider.value()</strong>, 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
   fill(255, 0, 0); // Füllfarbe für den Kreis
   ellipse(mappedValue, height / 2, 20, 20); // Zeichne einen Kreis an der umgewandelten Position
 }
-  </pre
-        >
-        <div id="sketch-slider-map" class="sketch"></div>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSliderMap"
-        ></iframe>
-      </details>
-          
+  </pre>
+          <div id="sketch-slider-map" class="sketch"></div>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSliderMap"
+          ></iframe>
         </div>
       </details>
-
-      
+    </details>
 
     <!-- Aufgaben for-Schleife -->
     <a

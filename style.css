@@ -483,3 +483,8 @@ table.operator-table {
     /* Zeilenhöhe für bessere Lesbarkeit */
     font-size: 1.1rem;
 }
+
+pre strong {
+    color: #482de0;
+
+}
