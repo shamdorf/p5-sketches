@@ -347,6 +347,119 @@ for (int i=0; i < 5; i++) {
       </details>
     </details>
 
+    <!-- Beispiele für for-Schleifen -->
+    <details class="top">
+      <summary id="example">Beispiele für for-Schleifen</summary>
+      <details class="box-example">
+        <summary>🔄 Rückwärts zählen</summary>
+        <p>
+          Dieses Beispiel zeigt, wie man mit einer For-Schleife rückwärts zählt.
+          Beim Schleifenschritt wird nicht der Icrement-Operator
+          <code>++</code>, sondern der Decrement-Operator
+          <code>--</code> verwendet.
+        </p>
+        <pre>
+for (int i = 10; i > 0; i--) {
+  println(i);
+}
+  </pre
+        >
+      </details>
+
+      <details class="box-example">
+        <summary>➕ Jede zweite Zahl</summary>
+        <p>
+          In diesem Beispiel wird in 2er-Schritten durch die Zahlen von 0 bis 10
+          gezählt.
+        </p>
+        <pre>
+for (int i = 0; i <= 10; i = i + 2) {
+  println(i);
+}
+  </pre
+        >
+      </details>
+
+      <details class="box-example">
+        <summary>➕ Summe</summary>
+        <p>
+          Dieses Beispiel berechnet die Summe der Zahlen von 1 bis N. Eine
+          zusätzliche Variable wird verwendet, um die Zwischensummen zu
+          speichern.
+        </p>
+        <pre>
+int n = 5; // bis wohin aufsummieren?
+int summe = 0; // Zusatzvariable zum Aufsummieren
+
+for (int i = 1; i <= n; i++) {
+  summe = summe + i;
+}
+
+println("Die Summe der ersten " + n + " Zahlen ist: " + summe); // Ausgeben
+  </pre
+        >
+      </details>
+
+      <details class="box-example">
+        <summary>📈 Lineare Funktion f(x) = x</summary>
+        <p>
+          Mit einer Schleife kann die einfache lineare Funktion f(x) = x
+          gezeichnet werden.
+        </p>
+        <pre>
+for (int x = 0; x < 100; x = x + 10) {
+  int y = x;
+  ellipse(x, y, 5, 5);
+}
+  </pre
+        >
+        <div id="sketch-linear-function" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchLinearFunction"
+        ></iframe>
+        <p>
+          Da die y-Achse im Gegensatz zur Mathematik nach unten wächst, müssen
+          wir die Werte noch invertieren.
+        </p>
+        <p>
+          Hier wird die Funktion so angepasst, dass sie richtig herum
+          dargestellt wird.
+        </p>
+        <h4>📈 Lineare Funktion (invertiert) f(x) = 100 - x</h4>
+
+        <pre>
+for (int x = 0; x < 100; x = x + 10) {
+  int y = 100 - x;
+  ellipse(x, y, 5, 5);
+}
+  </pre
+        >
+        <div id="sketch-linear-function-inverted" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchLinearFunctionInverted"
+        ></iframe>
+      </details>
+
+      <details class="box-example">
+        <summary>📈 Lineare Funktion f(x) = x / 2 + 50</summary>
+        <p>
+          In diesem Beispiel wird eine Funktion mit einer Steigung von 1/2 und
+          einem y-Achsenabschnitt von 50 gezeichnet.
+        </p>
+        <pre>
+for (float x = 0; x < 100; x = x + 10) {
+  float y = 100 - (x / 2 + 50);
+  ellipse(x, y, 5, 5);
+}
+  </pre
+        >
+        <div id="sketch-linear-function-custom" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchLinearFunctionCustom"
+        ></iframe>
+      </details>
+    </details>
+
     <!-- Map-Befehl  -->
     <details class="top">
       <summary id="command">

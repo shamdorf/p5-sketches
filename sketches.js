@@ -17,6 +17,55 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchLinearFunction(p) {
+  p.setup = () => {
+    p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
+    p.noLoop(); // Zeichne nur einmal
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrundfarbe
+    p.fill(0); // Füllfarbe für die Kreise
+    for (let x = 0; x < 100; x += 10) {
+      let y = x;
+      p.ellipse(x, y, 5, 5); // Zeichne den Punkt
+    }
+  };
+}
+
+function sketchLinearFunctionInverted(p) {
+  p.setup = () => {
+    p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
+    p.noLoop(); // Zeichne nur einmal
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrundfarbe
+    p.fill(0); // Füllfarbe für die Kreise
+    for (let x = 0; x < 100; x += 10) {
+      let y = 100 - x;
+      p.ellipse(x, y, 5, 5); // Zeichne den Punkt
+    }
+  };
+}
+
+function sketchLinearFunctionCustom(p) {
+  p.setup = () => {
+    p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
+    p.noLoop(); // Zeichne nur einmal
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrundfarbe
+    p.fill(0); // Füllfarbe für die Kreise
+    for (let x = 0; x < 100; x += 10) {
+      let y = 100 - (x / 2 + 50);
+      p.ellipse(x, y, 5, 5); // Zeichne den Punkt
+    }
+  };
+}
+
+// challenge Kap 6
 function sketchBunteKreise(p) {
   let anzahl = 10; // Anzahl der Kreise
   let diameter = 10; // Durchmesser der Kreise
