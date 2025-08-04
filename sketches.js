@@ -16,6 +16,63 @@ function autoResizeCanvas(p) {
     }
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
+// challenge Kap 5
+function sketchChess(p) {
+  p.setup = () => {
+    p.createCanvas(101, 101); // Erstelle ein 101x101 Pixel großes Canvas
+    autoResizeCanvas(p); // Anpassung für das iframe
+
+    for (let i = 0; i < 100; i += 25) {
+      for (let j = 0; j < 100; j += 25) {
+        // Bestimme die Füllfarbe basierend auf der Position
+        if ((i % 2 === 0 && j % 2 === 1) || (i % 2 === 1 && j % 2 === 0)) {
+          p.fill(255); // Weiß
+        } else {
+          p.fill(0); // Schwarz
+        }
+        p.rect(i, j, 25, 25); // Zeichne das Quadrat
+      }
+    }
+  };
+}
+
+//Challenge Kap 5
+function sketchMovingLines(p) {
+  let counter = 0; // Zähler für die Linienposition
+
+  p.setup = () => {
+    p.createCanvas(100, 100); // Erstelle ein 100x100 Pixel großes Canvas
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrundfarbe
+    for (let i = 0; i < 100; i += 10) {
+      p.line(0, i + counter, 100, i + counter); // Zeichne die Linien
+    }
+    counter++; // Erhöhe den Zähler
+    if (counter > 10) {
+      counter = 0; // Setze den Zähler zurück
+    }
+
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+}
+
+//Challenge Kap 5
+function sketchDrawLinear(p) {
+  p.setup = () => {
+    p.createCanvas(100, 100); // Erstelle ein 100x100 Pixel großes Canvas
+
+    for (let x = 0; x < 100; x += 10) {
+      let y = 100 - x; // Berechne die y-Position
+
+      p.circle(x, y, 5); // Zeichne den Kreis
+    }
+
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+}
 
 //Challenge Kap 4
 function sketchVectorChallenge(p) {
