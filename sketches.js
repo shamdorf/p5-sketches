@@ -37,6 +37,7 @@ function sketchLinearFunctionInverted(p) {
   p.setup = () => {
     p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
     p.noLoop(); // Zeichne nur einmal
+    autoResizeCanvas(p);
   };
 
   p.draw = () => {
@@ -53,6 +54,7 @@ function sketchLinearFunctionCustom(p) {
   p.setup = () => {
     p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
     p.noLoop(); // Zeichne nur einmal
+    autoResizeCanvas(p);
   };
 
   p.draw = () => {
@@ -83,6 +85,7 @@ function sketchBunteKreise(p) {
       speed[i] = p.createVector(p.random(-2, 2), p.random(-2, 2));
       farbe[i] = p.color(p.random(255), p.random(255), p.random(255)); // Zufällige Farbe
     }
+    autoResizeCanvas(p);
   };
 
   p.draw = () => {
