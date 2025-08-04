@@ -36,7 +36,7 @@ function sketchMapDreisatz(p) {
 
     let value = 30; // Wert, der umgewandelt werden soll
     let mappedValue = p.map(value, 0, 100, 0, 200); // Dreisatz: 30 von 0-100 auf 0-200
-    console.log("Mapped Value: " + mappedValue); // Ausgabe: Mapped Value: 60.0
+    p.text("Mapped Value: " + mappedValue, p.width / 2, p.height / 2); // Ausgabe: Mapped Value: 60.0
   };
 
   p.draw = () => {

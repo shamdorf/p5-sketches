@@ -415,7 +415,7 @@ void setup() {
   size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
   float value = 30; // Wert, der umgewandelt werden soll
   float mappedValue = map(value, 0, 100, 0, 200); // Dreisatz: 30 von 0-100 auf 0-200
-  println("Mapped Value: " + mappedValue); // Ausgabe: Mapped Value: 60.0
+  text("Mapped Value: " + mappedValue, width/2, height/2); // Ausgabe: Mapped Value: 60.0
 }
 
 void draw() {
