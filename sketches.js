@@ -16,6 +16,34 @@ function autoResizeCanvas(p) {
     }
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
+
+function sketchMapBackground(p) {
+  p.setup = () => {
+    p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    let mappedValue = p.map(p.mouseX, 0, p.width, 0, 255); // Mappen der Mausposition
+    p.background(mappedValue); // Setze den Hintergrund basierend auf der Mausposition
+  };
+}
+
+function sketchMapDreisatz(p) {
+  p.setup = () => {
+    p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+    autoResizeCanvas(p); // Anpassung für das iframe
+
+    let value = 30; // Wert, der umgewandelt werden soll
+    let mappedValue = p.map(value, 0, 100, 0, 200); // Dreisatz: 30 von 0-100 auf 0-200
+    console.log("Mapped Value: " + mappedValue); // Ausgabe: Mapped Value: 60.0
+  };
+
+  p.draw = () => {
+    // leer
+  };
+}
+
 // challenge Kap 5
 function sketchChess(p) {
   p.setup = () => {

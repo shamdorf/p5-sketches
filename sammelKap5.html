@@ -347,6 +347,89 @@ for (int i=0; i < 5; i++) {
       </details>
     </details>
 
+    <!-- Map-Befehl  -->
+    <details class="top">
+      <summary id="command">
+        🛠️ Wichtige Befehle/Funktionen in Processing
+      </summary>
+
+      <details class="box-command">
+        <summary>
+          📏 <code>map(value, start1, stop1, start2, stop2)</code> -
+          <strong>Wert umwandeln</strong>
+        </summary>
+        <ul>
+          <li>
+            <code>value</code> - Variable, die geändert(gemappt) werden soll
+          </li>
+          <li><code>start1</code> - Untere Grenze des Startbereichs</li>
+          <li><code>stop1</code> - Obere Grenze des Startbereichs</li>
+          <li><code>start2</code> - Untere Grenze des Zielbereichs</li>
+          <li><code>stop2</code> - Obere Grenze des Zielbereichs</li>
+        </ul>
+        <p>
+          Der <code>map()</code>-Befehl ist äußerst nützlich, um
+          <u>Werte von einem Bereich in einen anderen zu transformieren</u>.
+          Dies ist besonders hilfreich, wenn du Werte, die in einem bestimmten
+          Bereich liegen (z. B.
+          <strong>Sensorwerte, Benutzerinput oder Zufallszahlen</strong>), in
+          einen anderen Bereich umwandeln möchtest, der für die
+          <strong>Darstellung auf dem Bildschirm geeignet ist</strong>.
+        </p>
+        <h4>Beispiel: Farbverlauf von schwarz zu weiß.</h4>
+        <p>
+          Bewegt die Maus über das Canvas, um den Hintergrund zu ändern. Dies
+          kann mit dem <code>map()</code>-Befehl realisiert werden. Die
+          <strong>Variable</strong> ist hier <u><code>mouseX</code></u
+          >, der <strong>Startbereich</strong> geht von
+          <u>0 bis <code>width</code></u
+          >, der <strong>Zielbereich</strong> geht von <u>0 bis 255</u>. Dadurch
+          wird die Mausposition auf einen Grauwert von 0 (schwarz) bis 255
+          (weiß) gemappt.
+        </p>
+        <pre>
+void setup() {
+  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+}
+
+void draw() {
+  float mappedValue = map(mouseX, 0, width, 0, 255); // Mappen der Mausposition
+  background(mappedValue); // Setze den Hintergrund basierend auf der Mausposition
+}
+  </pre
+        >
+        <div id="sketch-map-background" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMapBackground"
+        ></iframe>
+        <h4>Beispiel: Dreisatz</h4>
+        <p>
+          Darüber hinaus kann der <code>map()</code>-Befehl auch verwendet
+          werden, um mit Dreisatz zu rechnen. Wenn du beispielsweise wissen
+          möchtest, wie viel ein Wert in einem neuen Bereich ist, kannst du den
+          <code>map()</code>-Befehl verwenden, um den entsprechenden Wert zu
+          berechnen.
+        </p>
+        <pre>
+void setup() {
+  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+  float value = 30; // Wert, der umgewandelt werden soll
+  float mappedValue = map(value, 0, 100, 0, 200); // Dreisatz: 30 von 0-100 auf 0-200
+  println("Mapped Value: " + mappedValue); // Ausgabe: Mapped Value: 60.0
+}
+
+void draw() {
+  // leer
+}
+  </pre
+        >
+        <div id="sketch-map-dreisatz" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMapDreisatz"
+        ></iframe>
+      </details>
+    </details>
+
     <!-- Aufgaben for-Schleife -->
     <a
       class="task"
