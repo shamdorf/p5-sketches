@@ -402,7 +402,7 @@ void draw() {
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMapBackground"
         ></iframe>
-        <h4>Beispiel: Dreisatz</h4>
+
         <p>
           Darüber hinaus kann der <code>map()</code>-Befehl auch verwendet
           werden, um mit Dreisatz zu rechnen. Wenn du beispielsweise wissen
@@ -410,9 +410,17 @@ void draw() {
           <code>map()</code>-Befehl verwenden, um den entsprechenden Wert zu
           berechnen.
         </p>
+        <h4>Beispiel: Dreisatz</h4>
+        <p>
+          Die <strong>Variable</strong> <code>value</code> hat den Wert
+          <code>30</code> und liegt in einem <strong>Bereich</strong> von
+          <u>0 - 100</u>. Welchen Wert hat <code>value</code>, wenn man den
+          <strong>Bereich</strong> auf <u>0 - 200</u> setzt?
+        </p>
         <pre>
 void setup() {
-  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+  size(100, 100); // Erstelle ein 400x200 Pixel großes Canvas
+  textAlign(CENTER, CENTER); // Text zentrieren
   float value = 30; // Wert, der umgewandelt werden soll
   float mappedValue = map(value, 0, 100, 0, 200); // Dreisatz: 30 von 0-100 auf 0-200
   text("Mapped Value: " + mappedValue, width/2, height/2); // Ausgabe: Mapped Value: 60.0
