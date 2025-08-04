@@ -405,17 +405,17 @@ void draw() {
 
         <p>
           Darüber hinaus kann der <code>map()</code>-Befehl auch verwendet
-          werden, um mit Dreisatz zu rechnen. Wenn du beispielsweise wissen
-          möchtest, wie viel ein Wert in einem neuen Bereich ist, kannst du den
-          <code>map()</code>-Befehl verwenden, um den entsprechenden Wert zu
-          berechnen.
+          werden, um mit <strong>Dreisatz</strong> zu rechnen. Wenn du
+          beispielsweise wissen möchtest, wie viel ein Wert in einem neuen
+          Bereich ist, kannst du den <code>map()</code>-Befehl verwenden, um den
+          entsprechenden Wert zu berechnen.
         </p>
         <h4>Beispiel: Dreisatz</h4>
         <p>
           Die <strong>Variable</strong> <code>value</code> hat den Wert
-          <code>30</code> und liegt in einem <strong>Bereich</strong> von
+          <code>30</code> und liegt in einem <strong>Startbereich</strong> von
           <u>0 - 100</u>. Welchen Wert hat <code>value</code>, wenn man den
-          <strong>Bereich</strong> auf <u>0 - 200</u> setzt?
+          <strong>Zielbereich</strong> auf <u>0 - 200</u> setzt?
         </p>
         <pre>
 void setup() {
@@ -434,6 +434,54 @@ void draw() {
         <div id="sketch-map-dreisatz" class="sketch"></div>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMapDreisatz"
+        ></iframe>
+      </details>
+
+      <details class="box-command">
+        <summary>
+          🎚️ <code>createSlider(min, max, value)</code> -
+          <strong>Schieberegler erstellen</strong>
+        </summary>
+        <ul>
+          <li><code>min</code> - Minimalwert</li>
+          <li><code>max</code> - Maximalwert</li>
+          <li><code>value</code> - Aktueller Wert des Sliders</li>
+        </ul>
+        <p>
+          Der <strong>createSlider()</strong>-Befehl wird verwendet, um einen
+          interaktiven Schieberegler zu erstellen, der es Benutzern ermöglicht,
+          einen Wert innerhalb eines bestimmten Bereichs auszuwählen. Dies ist
+          besonders nützlich für die Anpassung von Parametern in Echtzeit, z. B.
+          für Farben, Größen oder Geschwindigkeiten.
+        </p>
+        <p>
+          In diesem Beispiel verwenden wir einen Schieberegler, um einen Wert
+          von 0 bis 100 zu steuern, der dann mit der <code>map()</code>-Funktion
+          auf einen Bereich von 0 bis der Breite des Fensters umgewandelt wird.
+        </p>
+        <pre>
+PSlider slider;
+
+void setup() {
+  size(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+  slider = createSlider(0, 100, 50); // Erstelle einen Schieberegler von 0 bis 100, Standardwert: 50
+  slider.position(20, 50); // Setze die Position des Schiebereglers
+}
+
+void draw() {
+  background(255); // Hintergrundfarbe
+  float mappedValue = map(slider.value(), 0, 100, 0, width); // Mappen des Schiebereglerwerts
+  fill(0); // Textfarbe
+  textSize(16);
+  text("Aktueller Wert: " + slider.value(), 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
+  fill(255, 0, 0); // Füllfarbe für den Kreis
+  ellipse(mappedValue, height / 2, 20, 20); // Zeichne einen Kreis an der umgewandelten Position
+}
+  </pre
+        >
+        <div id="sketch-slider-map" class="sketch"></div>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSliderMap"
         ></iframe>
       </details>
     </details>

@@ -17,6 +17,27 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchSliderMap(p) {
+  let slider; // Variable für den Schieberegler
+
+  p.setup = () => {
+    p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+    slider = p.createSlider(0, 100, 50); // Erstelle einen Schieberegler von 0 bis 100, Standardwert: 50
+    slider.position(20, 50); // Setze die Position des Schiebereglers
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrundfarbe
+    let mappedValue = p.map(slider.value(), 0, 100, 0, p.width); // Mappen des Schiebereglerwerts
+    p.fill(0); // Textfarbe
+    p.textSize(16);
+    p.text("Aktueller Wert: " + slider.value(), 20, 100); // Zeige den aktuellen Wert des Schiebereglers an
+    p.fill(255, 0, 0); // Füllfarbe für den Kreis
+    p.ellipse(mappedValue, p.height / 2, 20, 20); // Zeichne einen Kreis an der umgewandelten Position
+  };
+}
+
 function sketchMapBackground(p) {
   p.setup = () => {
     p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
