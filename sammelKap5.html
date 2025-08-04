@@ -413,7 +413,7 @@ for (int x = 0; x < 200; x = x + 10) {
           Hier wird die Funktion so angepasst, dass sie richtig herum
           dargestellt wird.
         </p>
-        <h4>📈 Lineare Funktion (invertiert) f(x) = 100 - x</h4>
+        <h4>📈 Lineare Funktion (invertiert) f(x) = 200 - x</h4>
 
         <pre>
 size(200, 200);
@@ -769,10 +769,32 @@ void draw() {
     <details class="top">
       <summary id="info">🔄 Schleifen im aktiven Modus</summary>
       <div class="box-info">
+        <h4>Zusammenfassung aus dem Kapitel von Michael Kipp</h4>
         <img
           src="https://p5-sketches-demo.netlify.app/img/zsfKap5.3.png"
           alt=""
         />
+        <h4>Beispiel warum Animationen in for-Schleifen nicht klappen</h4>
+        <pre><code>// (vergeblicher) Versuch einer Animation
+
+int x = 0;
+
+void setup() {
+  frameRate(1); // 1x pro Sek. draw() aufrufen
+}
+
+void draw() {
+  for (int i = 0; i < 100; i++) {
+    background(255);
+    ellipse(x, 50, 10, 10);
+    x++;
+  }
+  // erst jetzt wird das Werk sichtbar!
+}
+</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMovingEllipse"
+        ></iframe>
         <!-- Oberthema: Drei Rechtecke mit Schleife -->
 
         <h4>🎨 Drei Rechtecke mit Schleife</h4>

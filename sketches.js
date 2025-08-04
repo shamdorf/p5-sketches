@@ -17,6 +17,30 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchMovingEllipse(p) {
+  let x = 0; // Startposition der Ellipse
+
+  p.setup = () => {
+    p.createCanvas(400, 200); // Erstelle ein 400x200 Pixel großes Canvas
+    p.frameRate(1); // 1x pro Sekunde draw() aufrufen
+  };
+
+  p.draw = () => {
+    p.background(255); // Setze den Hintergrund auf weiß
+
+    // Zeichne die Ellipse in einer Schleife
+    for (let i = 0; i < 100; i++) {
+      p.ellipse(x, 50, 10, 10); // Ellipse bei y = 50
+      x++; // Erhöhe x für die nächste Ellipse
+    }
+
+    // Wenn x den rechten Rand überschreitet, setze x zurück
+    if (x > p.width) {
+      x = 0;
+    }
+  };
+}
+
 function sketchLinearFunction(p) {
   p.setup = () => {
     p.createCanvas(200, 200); // Erstelle ein 200x200 Pixel großes Canvas
