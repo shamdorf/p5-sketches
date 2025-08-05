@@ -168,8 +168,9 @@
       <summary id="info">
         <strong>Primitive Datentypen vs Objekte</strong>
       </summary>
-      <div class="box-info">
-        <h4>Primitive Datentypen</h4>
+
+      <details class="box-info">
+        <summary>Primitive Datentypen</summary>
         <p class="definition">
           Primitive Datentypen sind die Datentypen die einfache Werte speichern
           wie ganze Zahlen, Kommazahlen, einzelne Zeichen oder Wahrheitswerte.
@@ -204,7 +205,10 @@
             </tr>
           </tbody>
         </table>
-        <hr />
+      </details>
+
+      <details class="box-info">
+        <summary>Objekte</summary>
         <p>
           Jetzt wollen wir
           <strong>mehrere zusammengehörige Informationen</strong> in einem
@@ -213,28 +217,33 @@
           Mailadresse etc.). Hierfür gibt es in vielen Programmiersprachen
           sogenannte Objekte.
         </p>
-        <h4>Objekte</h4>
-
         <p class="definition">
           Ein Objekt ist eine Speicherstruktur, die sowohl
-          Eigenschaften/Variablen als auch Aktionen/Methoden beinhaltet.
-        </p>
-        <p>
-          Wir haben schon den Objekt-Datentyp
-          <code><u>String</u></code> kennengelernt. Wie lernen in diesem Kapitel
-          noch den Objekt-Datentyp <code><u>PVector</u></code> kennen, um
-          Vektoren für den Ort und die Geschwindigkeit von Objekten zuerst
-          speichern und später auch zu verändern.
-        </p>
-        <p>
-          Ein Objekt ist ein Konstrukt irgendwo im Speicher, das unter anderem
-          mehrere Wert speichern kann.
+          Eigenschaften/Variablen als auch Aktionen/Methoden beinhaltet. Sie
+          wird irgendwo im Speicher abgelegt und kann mehrere Daten speichern.
         </p>
         <img
           src="https://p5-sketches-demo.netlify.app/img/obj0.png"
           alt="KEIN BILD GEFUNDEN"
         />
-      </div>
+        <p>
+          Wir haben schon den Objekt-Datentyp bzw. die KLasse
+          <code><u>String</u></code> für Zeichenketten kennengelernt. Wie lernen
+          in diesem Kapitel noch weitere Klassen wie <code><u>PVector</u></code
+          >, <code><u>PImage</u></code> und <code><u>Soundfile</u></code
+          >kennen.
+        </p>
+        <p>
+          In <strong>Kapitel 8</strong> werden wir unsere eigenen Klassen für
+          weitere Objekte erstellen.
+        </p>
+        <p>
+          Um ein Objekt einer Klasse zu erstellen muss man es wie eine Variable
+          deklarieren und anschließend erzeugen.
+        </p>
+        <pre><code>PVector vec;  //Deklariert einen Vektor
+vec = new PVector(10, 20); // Erzeugt ein PVector-Objekt mit x=10 und y=20</code></pre>
+      </details>
     </details>
 
     <details class="top">
@@ -467,25 +476,38 @@ void setup() {
           Um kurze Sounds nacheinander abzuspielen, kannst du die Methode
           <code>play()</code> verwenden. Hier ist ein Beispiel:
         </p>
-        <pre><code>SoundFile sound1;
-SoundFile sound2;
+        <pre><code>import processing.sound.*;  //importieren der Sound-Library
+
+//Deklarieren der SoundFile-Objekte shoot und horn
+SoundFile shoot;  
+SoundFile horn;
 
 void setup() {
-    sound1 = new SoundFile(this, "schuss.mp3");
-    sound2 = new SoundFile(this, "hupe.mp3");
+    //Erzeugen der Objekte mit dem new-Operator
+    shoot = new SoundFile(this, "shoot.mp3");
+    horn = new SoundFile(this, "horn.mp3");
 }
 
 void draw() {
     // Beispiel: Abspielen von Sounds bei Tastendruck
     if (keyPressed) {
         if (key == 's') {
-            sound1.play(); // Schuss abspielen
+            shoot.play(); // Schuss abspielen
         } else if (key == 'h') {
-            sound2.play(); // Hupe abspielen
+            horn.play(); // Hupe abspielen
         }
     }
-}
-</code></pre>
+}</code></pre>
+        <h4>Beispiel: Schuss- und Hup-Sounds mit Tasten abspielen</h4>
+        <p>Drückt s oder h zum Abspielen der Sound-Dateien</p>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
+        ></iframe>
+        <h4>Beispiel: Gruselambiente mit Hintergrundmusik</h4>
+        <p>Drückt s oder h zum Abspielen der Sound-Dateien</p>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchHorrorBackground"
+        ></iframe>
       </div>
     </details>
 

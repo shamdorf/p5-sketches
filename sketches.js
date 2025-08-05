@@ -17,6 +17,37 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchHorrorBackground(p) {
+  let backgroundSound; // Deklarieren des SoundFile-Objekts
+
+  p.preload = () => {
+    // Laden des Hintergrundsounds
+    backgroundSound = p.loadSound("sounds/horror.mp3");
+  };
+
+  p.setup = () => {
+    p.createCanvas(500, 500); // Erstelle ein 500x500 Pixel großes Canvas
+    backgroundSound.loop(); // Hintergrundsound in einer Schleife abspielen
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(50); // Setze den Hintergrund auf dunkelgrau
+    p.noStroke();
+    p.fill(0, 100); // Füllfarbe mit Transparenz
+
+    // Erzeugen des wechselnden Hintergrunds
+    for (let i = 0; i < 50; i++) {
+      p.ellipse(
+        p.random(p.width),
+        p.random(p.height),
+        p.random(100, 300),
+        p.random(100, 300)
+      );
+    }
+  };
+}
+
 function sketchMovingEllipse(p) {
   let x = 0; // Startposition der Ellipse
 
