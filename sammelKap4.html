@@ -19,22 +19,221 @@
     </script>
   </head>
   <body>
-    <!-- Vektoren (PVector) -->
+    <!-- Lernziele für Kapitel 4 -->
+    <div class="box-learning-goals">
+      <details>
+        <summary>Lernziele für Kapitel 4</summary>
+        <ul class="learning-goals-list">
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal72" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal72" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können die Unterschiede zwischen einem
+              <strong>primitiven Datentyp</strong> und einem
+              <strong>Objekttyp</strong> (Klasse) anhand der Begriffe
+              <strong>Referenz</strong> bzw.
+              <strong>Zeiger</strong> erklären.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal73" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal73" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können <strong>(Vektor-)Objekte</strong> erzeugen und in
+              entsprechenden <strong>Variablen</strong> speichern.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal74" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal74" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können mit <strong>Punktnotation</strong> auf Eigenschaften
+              und Methoden von Objekten zugreifen.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal75" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal75" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie kennen den Unterschied zwischen
+              <strong>Identität</strong> (das selbe Objekt) und
+              <strong>Gleichheit</strong> (z.B. gleiche Inhalte) und können dies
+              mit Beispielen erläutern.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal76" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal76" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie wissen, wie man <strong>Gleichheit</strong> von zwei Objekten
+              (z.B. Vektoren, Strings) prüft.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal77" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal77" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können <strong>Referenzen</strong> auf Objekte im Code so
+              verfolgen, dass klar ist, welches Objekt welche Werte hat.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal78" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal78" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können mit <strong>Vektorobjekten</strong> programmieren,
+              z.B. rechnen oder animieren.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal79" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal79" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie verstehen, dass <strong>Strings</strong> Objekte sind, und
+              erkennen Eigenschaften und Methoden von Strings als Mechanismen
+              von Objekten.</span
+            >
+          </li>
+        </ul>
+        <div class="challenge">
+          <h4>Challenge!</h4>
+          <p>Kannst du am Ende des Kapitels sowas programmieren?</p>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVectorChallenge"
+            target="blank"
+          ></iframe>
+          <p>Siehe Aufgabe 4.2f</p>
+        </div>
+      </details>
+    </div>
 
     <!-- Info-Boxen für primitive Datentypen und Objekte -->
     <details class="top">
-      <summary id="info"><strong>Primitive Datentypen</strong></summary>
+      <summary id="info">
+        <strong>Primitive Datentypen vs Objekte</strong>
+      </summary>
       <div class="box-info">
-        <p>
-          Bisher haben wir Variablen verwendet, um sehr einfache Informationen
-          zu speichern: <strong>Ganze Zahlen (int)</strong>,
-          <strong>Dezimalzahlen (float)</strong>,
-          <strong>einzelne Zeichen (char)</strong> oder
-          <strong>Wahrheitswerte (boolean)</strong>Wahrheitswerte (boolean).
-          Diese Datentypen nennt man <strong><u>primitive Datentypen</u></strong
-          >. Variablen eines primitiven Datentyps beinhalten Werte, wie z.B.
-          eine ganze Zahl im Fall von int.
+        <h4>Primitive Datentypen</h4>
+        <p class="definition">
+          Primitive Datentypen sind die Datentypen die einfache Werte speichern
+          wie ganze Zahlen, Kommazahlen, einzelne Zeichen oder Wahrheitswerte.
         </p>
+        <p>
+          In Processing und vielen anderen Programmiersprachen gibt es folgende
+          Datentypen:
+        </p>
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Primitiver Datentyp</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>int</code></td>
+              <td><code>int z = 10;</code> – ganze Zahl</td>
+            </tr>
+            <tr>
+              <td><code>float</code></td>
+              <td><code>float y = 3.14;</code> – Kommazahl</td>
+            </tr>
+            <tr>
+              <td><code>boolean</code></td>
+              <td><code>boolean sichtbar = true;</code> – wahr/falsch</td>
+            </tr>
+            <tr>
+              <td><code>char</code></td>
+              <td><code>char taste = 'A';</code> – einzelnes Zeichen</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <p>
+          Jetzt wollen wir
+          <strong>mehrere zusammengehörige Informationen</strong> in einem
+          Container bündeln, z.B. den x- und y-Wert eines Objekts oder die
+          unterschiedlichen Informationen zu einem Kunden (Vorname, Nachname,
+          Mailadresse etc.). Hierfür gibt es in vielen Programmiersprachen
+          sogenannte Objekte.
+        </p>
+        <h4>Objekte</h4>
+
+        <p class="definition">
+          Ein Objekt ist eine Speicherstruktur, die sowohl
+          Eigenschaften/Variablen als auch Aktionen/Methoden beinhaltet.
+        </p>
+        <p>
+          Wir haben schon den Objekt-Datentyp
+          <code><u>String</u></code> kennengelernt. Wie lernen in diesem Kapitel
+          noch den Objekt-Datentyp <code><u>PVector</u></code> kennen, um
+          Vektoren für den Ort und die Geschwindigkeit von Objekten zuerst
+          speichern und später auch zu verändern.
+        </p>
+        <p>
+          Ein Objekt ist ein Konstrukt irgendwo im Speicher, das unter anderem
+          mehrere Wert speichern kann.
+        </p>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/obj0.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
       </div>
     </details>
 

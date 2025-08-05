@@ -72,7 +72,11 @@ details.top {
     background: linear-gradient(to right, #528efc, #bed1f5);
     border-radius: 0.2rem;
     text-decoration: underline;
+    /* font-size: 1.1rem; */
+    ;
 }
+
+
 
 details summary {
     list-style: none;
@@ -488,4 +492,48 @@ pre strong {
     color: #482de0;
     font-size: 0.9rem;
 
+}
+
+.definition {
+    border: 2px solid #3498db;
+    /* Rahmenfarbe */
+    border-radius: 8px;
+    /* Abgerundete Ecken */
+    background-color: #ecf6fd;
+    /* Hintergrundfarbe */
+    padding: 15px;
+    /* Innenabstand */
+    margin: 20px 0;
+    /* Abstand nach oben und unten */
+    font-family: Arial, sans-serif;
+    /* Schriftart */
+    font-size: 16px;
+    /* Schriftgröße */
+    color: #2c3e50;
+    /* Textfarbe */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Schatten für Tiefe */
+    transition: transform 0.2s;
+    /* Übergangseffekt */
+}
+
+.definition:hover {
+    /* transform: scale(1.02); */
+    /* Vergrößerungseffekt beim Hover */
+    /* border-color: #2980b9; */
+    /* Dunklere Rahmenfarbe beim Hover */
+}
+
+.definition h4 {
+    margin: 0 0 10px;
+    /* Abstand unter dem Titel */
+    font-size: 18px;
+    /* Titelgröße */
+    color: #2980b9;
+    /* Titel-Farbe */
+}
+
+strong {
+    color: #000000
+        /* Rote Farbe für wichtige Begriffe */
 }
