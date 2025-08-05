@@ -22,7 +22,7 @@ function sketchHorrorBackground(p) {
 
   p.preload = () => {
     // Laden des Hintergrundsounds
-    backgroundSound = p.loadSound("sounds/horror.mp3");
+    backgroundSound = p.loadSound("horror.mp3");
   };
 
   p.setup = () => {
