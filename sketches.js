@@ -1153,7 +1153,7 @@ function sketchBilder(p) {
   };
 
   p.setup = () => {
-    p.createCanvas(600, 600);
+    p.createCanvas(800, 600);
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
