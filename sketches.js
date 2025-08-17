@@ -1148,7 +1148,7 @@ function sketchBilder(p) {
 
   p.preload = () => {
     img = p.loadImage(
-      "https://p5-sketches-demo.netlify.app/img/sonnensystem.svg"
+      "https://p5-sketches-demo.netlify.app/img/sonnensystem.jpg"
     );
   };
 
