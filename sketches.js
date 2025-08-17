@@ -21,7 +21,7 @@ function sketchMoveImage(p) {
   let img; // Variable für das Bild
 
   p.preload = () => {
-    img = p.loadImage("https://p5-sketches-demo.netlify.app/delfin.png"); // Bild laden
+    img = p.loadImage("https://p5-sketches-demo.netlify.app/img/delfin.png"); // Bild laden
   };
 
   p.setup = () => {
@@ -1145,7 +1145,7 @@ function sketchBilder(p) {
   let img;
 
   p.preload = () => {
-    img = p.loadImage("sonnensystem.svg");
+    img = p.loadImage("img/sonnensystem.svg");
   };
 
   p.setup = () => {
