@@ -25,7 +25,8 @@ function sketchMoveImage(p) {
   };
 
   p.setup = () => {
-    p.createCanvas(800, 600); // Fenstergröße
+    p.createCanvas(600, 600); // Fenstergröße
+    img.resize(50, 50);
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
@@ -1145,11 +1146,13 @@ function sketchBilder(p) {
   let img;
 
   p.preload = () => {
-    img = p.loadImage("img/sonnensystem.svg");
+    img = p.loadImage(
+      "https://p5-sketches-demo.netlify.app/img/sonnensystem.svg"
+    );
   };
 
   p.setup = () => {
-    p.createCanvas(400, 400);
+    p.createCanvas(600, 600);
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 
