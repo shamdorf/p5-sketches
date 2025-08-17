@@ -1062,16 +1062,24 @@ ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
       <!-- compiler und interpreter -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Was ist der Unterschied zwischen einem
-          <strong>Interpreter</strong> und einem <strong>Compiler?</strong
-          ><br />
+          <strong>Interpreter</strong> und einem <strong>Compiler?</strong>
         </summary>
         <div class="box-info">
           <p>
             Sowohl Interpreter als auch Compiler
             <strong>übersetzen</strong> die <strong>Hochsprache</strong> wie
-            Processing/Java/C++in <strong>Maschinencode</strong>, der dann von
-            der <strong>CPU</strong>bearbeitet werden kann.
+            Processing/Java/C++ in <strong>Maschinencode</strong>, der dann von
+            der <strong>CPU</strong> bearbeitet werden kann.
           </p>
           <ul>
             <li>
@@ -1090,8 +1098,17 @@ ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
       <!-- Kommentare -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Wofür brauche ich <strong>Kommentare</strong> und welche zwei Arten
-          gibt es in Processing? <br />
+          gibt es in Processing?
         </summary>
         <div class="box-info">
           <p>
@@ -1102,7 +1119,7 @@ ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
           <ul>
             <li>
               Kommentare sind nützlich, weil das Programm zum einen dadurch sehr
-              viel verständlicher wird. das gilt für einen selbst aber auch für
+              viel verständlicher wird. Das gilt für einen selbst, aber auch für
               andere, die sich das Programm anschauen.
             </li>
             <li>
@@ -1115,20 +1132,29 @@ ellipse(50, 50, 60, 30); // Ellipse ohne Füllung</pre
               ( /* ... */ ).
             </li>
           </ul>
-          <p>Teste es aus !</p>
-          <pre><code> //Das wird ein Beispiel für einen einzeiligen Kommentar
+          <p>Teste es aus!</p>
+          <pre><code>//Das wird ein Beispiel für einen einzeiligen Kommentar
 
-/* Hier wird ein Mehrzeiliger Kommentar geschrieben.
+/* Hier wird ein mehrzeiliger Kommentar geschrieben.
 Alles was jetzt kommt, wird ignoriert
 und nicht als Befehl ausgeführt.
-Es sei denn es kommt ein */
-</code></pre>
+Es sei denn, es kommt ein */
+            </code></pre>
         </div>
       </details>
 
       <!-- Konsolenausgabe -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Mit welchem Befehl kann ich etwas auf der
           <strong>Konsole</strong> ausgeben?
         </summary>
@@ -1140,20 +1166,20 @@ Es sei denn es kommt ein */
           </p>
           <ul>
             <li>
-              print() schreibt Text in einer Zeile der Konsole bis zum Ende und
-              springt dann in die nächste Zeile.
+              <code>print()</code> schreibt Text in einer Zeile der Konsole bis
+              zum Ende und springt dann in die nächste Zeile.
             </li>
             <li>
-              println() schreibt Text in die Konsole und springt danach direkt
-              in die nächste Zeile.
+              <code>println()</code> schreibt Text in die Konsole und springt
+              danach direkt in die nächste Zeile.
             </li>
           </ul>
-          <p>Teste es aus !</p>
+          <p>Teste es aus!</p>
           <pre><code>print("Text ");
 print("in ");
 print("einer ");
 print("Zeile!");
-println(); //eine Leere Zeile + Sprung in die nächste Zeile.
+println(); //eine leere Zeile + Sprung in die nächste Zeile.
 println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
         </div>
       </details>
@@ -1161,11 +1187,20 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
       <!-- ellipse -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Mit welchem Befehl zeichne ich eine <strong>Ellipse</strong> und
           welche Parameter werden benötigt?
         </summary>
         <div class="box-command">
-          <p>⚪ ellipse(x, y, b, h) - <strong>Ellipse</strong></p>
+          <p>⚪ <code>ellipse(x, y, b, h)</code> - <strong>Ellipse</strong></p>
           <ul>
             <li>x1, y2 - Koordinaten Mittelpunkts</li>
             <li>b - Durchmesser der Breite</li>
@@ -1182,6 +1217,15 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
       <!-- Ellipse Zeichenmodus -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Mit welchem Befehl kann man den
           <strong>Zeichenmodus für die Ellipse</strong> ändern und welche Modi
           gibt es?
@@ -1189,7 +1233,7 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
         <div class="box-command">
           <p>
             <strong><code>ellipseMode(MODUS)</code></strong
-            >. <br /><br />"MODUS"steht hier für die drei Modi CENTER
+            >. <br /><br />"MODUS" steht hier für die drei Modi CENTER
             (standard), CORNER und CORNERS.
           </p>
           <ul>
@@ -1241,8 +1285,17 @@ ellipse(100, 200, 200, 300);</pre
       <!-- Rechteck -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Mit welchem Befehl zeichne ich ein <strong>Rechteck</strong> und
-          welche Parameter werden benöltigt?
+          welche Parameter werden benötigt?
         </summary>
         <div class="box-command">
           <p>
@@ -1266,6 +1319,15 @@ ellipse(100, 200, 200, 300);</pre
       <!-- Rechteck Zeichenmodus -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Mit welchem Befehl kann man den
           <strong>Zeichenmodus für das Rechteck</strong> ändern und welche Modi
           gibt es?
@@ -1273,7 +1335,7 @@ ellipse(100, 200, 200, 300);</pre
         <div class="box-command">
           <p>
             <strong><code>rectMode(MODUS)</code></strong
-            >. <br /><br />"MODUS"steht hier für die drei Modi CORNER
+            >. <br /><br />"MODUS" steht hier für die drei Modi CORNER
             (standard), CENTER und CORNERS.
           </p>
           <ul>
@@ -1325,6 +1387,15 @@ rect(100, 200, 200, 300);</pre
       <!-- Kreisbogens -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Wie kann man einen <strong>Kreisbogen</strong> zeichnen?
         </summary>
         <div class="box-command">
@@ -1348,7 +1419,7 @@ rect(100, 200, 200, 300);</pre
 
           <pre>
       arc(100, 100, 80, 80, radians(0), radians(90));
-</pre
+            </pre
           >
 
           <div id="sketch-arc" class="sketch"></div>
@@ -1369,7 +1440,16 @@ rect(100, 200, 200, 300);</pre
       <!-- Polygon -->
       <details class="box-question">
         <summary>
-          Wie kann man ein <strong>Polygon (Vieleck)</strong>zeichnen?
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie kann man ein <strong>Polygon (Vieleck)</strong> zeichnen?
         </summary>
         <div class="box-command">
           <p>
@@ -1378,14 +1458,14 @@ rect(100, 200, 200, 300);</pre
             >
           </p>
           <ul>
-            <li><code>beginShape()</code>startet das Zeichnen des Polygons</li>
+            <li><code>beginShape()</code> startet das Zeichnen des Polygons</li>
             <li>
-              <code>vertex(x1, y1)</code>gibt den nächsten Punkt an, der zum
+              <code>vertex(x1, y1)</code> gibt den nächsten Punkt an, der zum
               Polygon gehört (Malen nach Zahlen)
             </li>
-            <li><code>endShape()</code>beendet das Zeichnen des Polygons.</li>
+            <li><code>endShape()</code> beendet das Zeichnen des Polygons.</li>
             <li>
-              <code>endShape(CLOSE)</code>beendet das Zeichnen und verbindet
+              <code>endShape(CLOSE)</code> beendet das Zeichnen und verbindet
               außerdem den letzten mit dem ersten Punkt.
             </li>
           </ul>

@@ -25,8 +25,7 @@
     </script>
   </head>
   <body>
-
-      <!-- Lernziele Kapitel 2 -->
+    <!-- Lernziele Kapitel 2 -->
     <div class="box-learning-goals">
       <details>
         <summary>Lernziele für Kapitel 2</summary>
@@ -1325,13 +1324,23 @@ void setup() {
       >Übungsaufgaben 2.7a bis 2.7c</a
     >
 
-    <!-- Fragen zu Kapitel 1 -->
+    <!-- Fragen zu Kapitel 2 -->
+    <!-- Fragen zu Kapitel 2 -->
     <details class="top">
       <summary><strong id="question">Fragen zu Kapitel 2</strong></summary>
 
       <!-- Aktiver Modus plus Grundgerüst -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Was ist der aktive Modus und wie sieht in Processing das Grundgerüst
           dazu aus?
         </summary>
@@ -1368,7 +1377,7 @@ void draw() {
   background(220);
   // dein Code hier
 }
-  </code></pre>
+                </code></pre>
           </div>
         </div>
       </details>
@@ -1376,6 +1385,15 @@ void draw() {
       <!-- Interaktionen mit dem Nutzer? -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Welche Funktionen gibt es für die Interaktion mit dem Nutzer?
         </summary>
         <div class="box-command">
@@ -1387,7 +1405,7 @@ void mousePressed() {
 void mouseReleased() {
   // Wird aufgerufen, wenn die Maustaste losgelassen wird
 }
-  </code></pre>
+            </code></pre>
           <br />
           <pre><code>
 void keyPressed() {
@@ -1397,13 +1415,22 @@ void keyPressed() {
 void keyReleased() {
   // Wird aufgerufen, wenn die Taste losgelassen wird
 }
-  </code></pre>
+            </code></pre>
         </div>
       </details>
 
       <!-- Bildschirmtextausgabe -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Mit welchem Befehl kann ich Text auf dem Bildschirm ausgeben?
         </summary>
         <div class="box-command">
@@ -1427,7 +1454,18 @@ void keyReleased() {
 
       <!-- random() -->
       <details class="box-question">
-        <summary>Mit welchem Befehl kann Zufallzahlen generieren?</summary>
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Mit welchem Befehl kann Zufallszahlen generieren?
+        </summary>
         <div class="box-command">
           <p>
             🎲 <code>random(min, max)</code> - <strong>Zufallszahlen</strong>
@@ -1456,6 +1494,15 @@ void keyReleased() {
       <!-- Variablendeklaration -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Wie deklariere und initialisiere ich eine Variable in Processing?
         </summary>
         <div class="box-command">
@@ -1470,34 +1517,23 @@ char zeichen = 'A';</code></pre>
             Variablen können später im Code verwendet werden, z. B.:
             <code>text(name, 10, 20);</code>
           </p>
-
-          <!-- <p>
-          Damit man Variablen benutzen kann, muss man sie dem
-          Compiler/Interpreter <strong>"bekanntmachen" - deklarieren</strong> .
-          Außerdem sollte eine Variable einen
-          <strong>Initialwert bekommen</strong>.
-        </p>
-        <p>🛠️ <strong>Deklaration</strong></p>
-        <ul>
-          <li>Dabei wird eine Variable „angekündigt“: <code>int x;</code></li>
-          <li>
-            Man teilt dem Programm den Namen und den Datentyp der Variable mit.
-          </li>
-        </ul>
-
-        <p>🎯 <strong>Initialisierung</strong></p>
-        <ul>
-          <li>
-            Der Variable wird ein Startwert zugewiesen: <code>x = 100;</code>
-          </li>
-          <li>Beides zusammen: <code>int x = 100;</code> → sehr häufig!</li>
-        </ul> -->
         </div>
       </details>
 
       <!-- Datentypen -->
       <details class="box-question">
-        <summary>Nenne fünf Datentypen und ihre Werte in Processing.</summary>
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Nenne fünf Datentypen und ihre Werte in Processing.
+        </summary>
         <div class="box-info">
           <ul>
             <li>
@@ -1525,6 +1561,15 @@ char zeichen = 'A';</code></pre>
       <!-- Wertzuweisungen und Erhöhung von Variablen -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Welche Möglichkeiten gibt es, den Wert einer Variablen zu erhöhen?
         </summary>
         <div class="box-info">
@@ -1553,6 +1598,15 @@ char zeichen = 'A';</code></pre>
       <!-- Globale und lokale Variablen -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Was sind globale und lokale Variablen? Wie unterscheiden sie sich?
         </summary>
         <div class="box-info">
@@ -1576,6 +1630,15 @@ char zeichen = 'A';</code></pre>
       <!-- Modulo Operator -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Was ist der Modulo-Operator (%) und wofür wird er verwendet?
         </summary>
         <div class="box-info">
@@ -1588,7 +1651,7 @@ char zeichen = 'A';</code></pre>
             <li>
               Teilbarkeit einer Zahl herausfinden. (<code
                 >if (zahl % 3 == 0)</code
-              >) Kapitel 3
+              >)
             </li>
             <li>Gerade oder ungerade Zahlen erkennen (<code>x % 2</code>)</li>
             <li>Wiederholende Muster erzeugen (z. B. Farbwechsel)</li>
