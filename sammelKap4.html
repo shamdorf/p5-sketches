@@ -469,7 +469,10 @@ void draw() {
           Sound-Dateien zu laden und abzuspielen.
         </p>
         <details>
-          <summary>Anleitung</summary>
+          <summary>
+            <strong>Anleitung zum Importieren von Librarys</strong>
+          </summary>
+          <p></p>
           <img
             src="https://p5-sketches-demo.netlify.app/img/libraryEinbinden.png"
             alt="KEIN BILD GEFUNDEN"
@@ -478,10 +481,9 @@ void draw() {
             src="https://p5-sketches-demo.netlify.app/img/soundLibrary.png"
             alt="KEIN BILD GEFUNDEN"
           />
-          <a href="https://pixabay.com/de/sound-effects/search/shoot/"></a>
         </details>
-
-        <h4>Hintergrundmusik einfügen</h4>
+        <hr />
+        <h4>Beispiel - Hintergrundmusik einfügen</h4>
         <pre><code>import processing.sound.*;  //importieren der Sound-Library
 
 SoundFile background;  //Deklarieren des SoundFile-Objekts background 
@@ -494,13 +496,22 @@ void draw() {
     background.loop(); // Hintergrundmusik abspielen
     // Hier kannst du weitere Zeichnungen oder Animationen hinzufügen
 }</code></pre>
-        <h2>Kurze Sounds abspielen</h2>
+        <a
+          class="important"
+          href="https://p5-sketches-demo.netlify.app/sounds/background.mp3"
+          download="background.mp3"
+        >
+          Download background.mp3
+        </a>
+        <hr />
+        <h4>Beispiel - Kurze Sounds abspielen</h4>
         <p>
           Um kurze Sounds nacheinander abzuspielen, kannst du die Methode
           <code>play()</code> verwenden. Hier ist ein Beispiel:
         </p>
         <pre><code>import processing.sound.*;  //importieren der Sound-Library
 
+          
 //Deklarieren der SoundFile-Objekte shoot und horn
 SoundFile shoot;  
 SoundFile horn;
@@ -521,11 +532,21 @@ void draw() {
         }
     }
 }</code></pre>
-        <h4>Beispiel: Schuss- und Hup-Sounds mit Tasten abspielen</h4>
-        <p>Drückt s oder h zum Abspielen der Sound-Dateien</p>
-
-        <h4>Beispiel: Gruselambiente mit Hintergrundmusik</h4>
-        <p>Drückt s oder h zum Abspielen der Sound-Dateien</p>
+        <a
+          class="important"
+          href="https://p5-sketches-demo.netlify.app/sounds/horn.mp3"
+          download="background.mp3"
+        >
+          Download horn.mp3
+        </a>
+        <br /><br />
+        <a
+          class="important"
+          href="https://p5-sketches-demo.netlify.app/sounds/shoot.mp3"
+          download="background.mp3"
+        >
+          Download shoot.mp3
+        </a>
       </div>
     </details>
 
