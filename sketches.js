@@ -26,7 +26,7 @@ function sketchMoveImage(p) {
 
   p.setup = () => {
     p.createCanvas(600, 600); // Fenstergröße
-    p.noCursur(); // Mauszeiger ausblenden
+    p.noCursor(); // Mauszeiger ausblenden
     img.resize(50, 50);
     autoResizeCanvas(p); // Anpassung für das iframe
   };
