@@ -445,11 +445,11 @@ String result = text1 + " " + text2; // "Hallo Welt"
 
 void setup() {
     img = loadImage("sonnensystem.svg"); // Laden des Bildes aus dem Ordner data
-    size(400, 400);
+    size(600, 600);
 }
 
 void draw() {
-    image(img, 0, 0); // Bild an der Position (0, 0) zeichnen
+    image(img, 0, 0, width, height); // Bild an der Position (0, 0) mit größe (width, height) zeichnen
 }
 </code></pre>
 

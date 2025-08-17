@@ -1159,7 +1159,7 @@ function sketchBilder(p) {
 
   p.draw = () => {
     p.background(255);
-    p.image(img, 0, 0);
+    p.image(img, 0, 0, 600, 600);
     autoResizeCanvas(p); // Anpassung für das iframe
   };
 }
