@@ -1412,11 +1412,8 @@ void draw() {
 }</code></pre>
           <div class="box-warning">
             Hinter der Klammer darf <strong>KEIN</strong> Semikolon stehen!
-            <pre><code>if (Bedingung); {
-    // Code, der ausgeführt wird, wenn die Bedingung wahr ist
-} else {
-    // Code, der ausgeführt wird, wenn die Bedingung falsch ist
-}</code></pre>
+            <pre><code>if (Bedingung)<strong>;</strong> // FALSCH!
+    ...</code></pre>
           </div>
         </div>
       </details>
@@ -1424,12 +1421,22 @@ void draw() {
       <!-- Flussdiagramm erstellen -->
       <details class="box-question">
         <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
           Kannst du aus folgendem Code ein Flussdiagramm erstellen?
           <pre><code>if (x &gt; 100) { 
     fill(255, 0, 0);
 } else { 
     fill(0, 255, 0);
-}</code></pre>
+}
+</code></pre>
         </summary>
         <div class="box-info">
           <p>Das Flussdiagramm für den obigen Code würde wie folgt aussehen:</p>
@@ -1446,24 +1453,31 @@ void draw() {
       <!-- Flussdiagramm in Programmcode -->
       <details class="box-question">
         <summary>
-          Kannst du folgendes Flussdiagramm in Programmcode überführen?
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Kannst du folgendes Flussdiagramm in Programmcode überführen?<br /><img
+            src="https://p5-sketches-demo.netlify.app/img/flussdiagrammFragenKapitel3.png"
+            alt=""
+          />
         </summary>
-        <img
-          src="https://p5-sketches-demo.netlify.app/img/flussdiagrammIf.png"
-          alt=""
-        />
-        <div class="box-command">
-          <p>
-            Hier ist ein Beispiel für einen Programmcode, der einem typischen
-            Flussdiagramm entspricht:
-          </p>
-          <pre><code>if (Bedingung) {
-    // Code für den Fall, dass die Bedingung wahr ist
-} else if (andereBedingung) {
-    // Code für den Fall, dass die andere Bedingung wahr ist
+
+        <div class="box-info">
+          <p></p>
+          <pre><code>int punkte = 75;
+
+if (punkte > 50) {
+   println("bestanden");
 } else {
-    // Code für den Fall, dass keine der Bedingungen wahr ist
-}</code></pre>
+   println("durchgefallen");
+}
+println("tschüs");</code></pre>
         </div>
       </details>
 
