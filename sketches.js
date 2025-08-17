@@ -17,6 +17,25 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchMoveImage(p) {
+  let img; // Variable für das Bild
+
+  p.preload = () => {
+    img = p.loadImage("https://p5-sketches-demo.netlify.app/delfin.png"); // Bild laden
+  };
+
+  p.setup = () => {
+    p.createCanvas(800, 600); // Fenstergröße
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255); // Hintergrundfarbe
+    // Bild an der Mausposition zeichnen
+    p.image(img, p.mouseX - img.width / 2, p.mouseY - img.height / 2);
+  };
+}
+
 function sketchHorrorBackground(p) {
   let backgroundSound; // Deklarieren des SoundFile-Objekts
 
@@ -1126,7 +1145,7 @@ function sketchBilder(p) {
   let img;
 
   p.preload = () => {
-    img = p.loadImage("rgb.png");
+    img = p.loadImage("sonnensystem.svg");
   };
 
   p.setup = () => {

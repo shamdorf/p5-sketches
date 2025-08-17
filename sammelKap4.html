@@ -428,32 +428,60 @@ String result = text1 + " " + text2; // "Hallo Welt"
 
     <!-- Bilder einfügen -->
     <details class="top">
-      <summary><strong>Bilder in Processing einfügen</strong></summary>
-      <div class="info">
+      <summary id="info">
+        <strong>Bilder in Processing einfügen</strong>
+      </summary>
+      <div class="box-info">
         <p>
-          Um Bilder in Processing zu verwenden, müssen sie zuerst in das
-          Projektverzeichnis geladen werden. Hier ist ein einfaches Beispiel:
+          Procesing unterstützt unterschiedliche Bildformate wie
+          <strong>jpg</strong>, <strong>svg</strong> oder <strong>png</strong>.
+          Um Bilder in Processing zu verwenden, müssen wir im Projektverzeichnis
+          (sketch-Ordner) erst einen Ordner "data" erstellen. In diesen Ordner
+          können wir dann unsere Bilddateien speichern.
         </p>
-        <pre><code>PImage img;
+
+        <h4>Beispiel für ein Hintergrundbild</h4>
+        <pre><code>PImage img;  //Erstellen eines PImage-Objekts mit dem Namen img
 
 void setup() {
-    img = loadImage("bild.png"); // Bild laden
+    img = loadImage("sonnensystem.svg"); // Laden des Bildes aus dem Ordner data
     size(400, 400);
 }
 
 void draw() {
-    image(img, 0, 0); // Bild anzeigen
+    image(img, 0, 0); // Bild an der Position (0, 0) zeichnen
 }
 </code></pre>
-      </div>
-    </details>
 
-    <!-- Beispielsketch für Bilder -->
-    <details class="top">
-      <summary><strong>Beispielsketch für Bilder</strong></summary>
-      <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
-      ></iframe>
+        <!-- Beispielsketch für Bilder -->
+
+        <h4><strong>Beispielsketch für Bilder</strong></h4>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
+        ></iframe>
+
+        <h4>Beispiel für ein bewegtes Bild</h4>
+        <pre><code>PImage img; // //Erstellen eines PImage-Objekts mit dem Namen img
+
+void setup() {
+    size(800, 600); // Fenstergröße
+    img = loadImage("delfin.png"); // Laden des Bildes aus dem Ordner data
+    img.resize(50, 50); // Befehl um die Bildgröße anzupassen
+}
+
+void draw() {
+    background(255); // Hintergrundfarbe
+    // Bild an der Mausposition zeichnen
+    image(img, mouseX - img.width / 2, mouseY - img.height / 2);
+}</code></pre>
+
+        <!-- Beispielsketch für Bilder -->
+
+        <h4><strong>Beispielsketch für Bilder</strong></h4>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMoveImage"
+        ></iframe>
+      </div>
     </details>
 
     <!-- Hintergrundmusik und Sounds -->
@@ -462,6 +490,7 @@ void draw() {
         <strong>Hintergrundmusik und Sounds in Processing</strong>
       </summary>
       <div class="box-info">
+        <h4>Sound-Library installieren</h4>
         <p>
           Um Sounds in Processing zu verwenden, musst du eine
           <strong>Sound-Library importieren</strong>. Wir benutzen im folgenden
@@ -469,9 +498,12 @@ void draw() {
           Foundation. Diese ermöglicht es, Sound-Dateien zu laden und
           abzuspielen.
         </p>
+
         <details>
           <summary>
-            <strong>Anleitung zum Importieren von Librarys</strong>
+            <strong class="important"
+              >Anleitung zum Importieren von Librarys</strong
+            >
           </summary>
           <p></p>
           <img
@@ -483,6 +515,18 @@ void draw() {
             alt="KEIN BILD GEFUNDEN"
           />
         </details>
+        <h4>Sounds runterladen und im data-Ordner speichern</h4>
+        <p>
+          Processing kann unter anderem die Sound-Formate
+          <strong>wav</strong> und <strong>mp3</strong> abspielen. Für das
+          Abspielen müssen sich die Dateien wie bei den Bildern im Ordner data
+          befinden.
+        </p>
+        <a
+          class="important"
+          href="https://pixabay.com/de/sound-effects/search/shoot/"
+          >Kostenlose Sounds auf pixaby</a
+        >
         <hr />
         <h4>Beispiel - Hintergrundmusik einfügen</h4>
         <pre><code>import processing.sound.*;  //importieren der Sound-Library
@@ -499,7 +543,8 @@ void draw() {
 }</code></pre>
         <a
           class="important"
-          href="https://p5-sketches-demo.netlify.app/sounds/background.mp3"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/background.mp3"
           download="background.mp3"
         >
           Download background.mp3
@@ -535,7 +580,7 @@ void draw() {
 }</code></pre>
         <a
           class="important"
-          href="https://p5-sketches-demo.netlify.app/sounds/horn.mp3"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/horn.mp3"
           download="background.mp3"
         >
           Download horn.mp3
@@ -543,7 +588,7 @@ void draw() {
         <br /><br />
         <a
           class="important"
-          href="https://p5-sketches-demo.netlify.app/sounds/shoot.mp3"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/shoot.mp3"
           download="background.mp3"
         >
           Download shoot.mp3
