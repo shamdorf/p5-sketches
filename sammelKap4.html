@@ -230,8 +230,8 @@
           Wir haben schon den Objekt-Datentyp bzw. die Klasse
           <code><u>String</u></code> für Zeichenketten kennengelernt. Wie lernen
           in diesem Kapitel noch weitere Klassen wie <code><u>PVector</u></code
-          >, <code><u>PImage</u></code> und <code><u>Soundfile</u></code
-          >kennen.
+          >, <code><u>PImage</u></code> und
+          <code><u>Soundfile</u></code> kennen.
         </p>
         <p>
           In <strong>Kapitel 8</strong> werden wir unsere eigenen Klassen für
@@ -244,6 +244,190 @@
         <pre><code>PVector vec;  //Deklariert einen Vektor
 vec = new PVector(10, 20); // Erzeugt ein PVector-Objekt mit x=10 und y=20</code></pre>
       </details>
+    </details>
+
+    <!-- Vektoren (PVector) -->
+    <details class="top">
+      <summary id="info"><strong>Vektoren (PVector)</strong></summary>
+      <div class="box-info">
+        <p>
+          Vektoren werden in Processing verwendet, um den Ort und die
+          Geschwindigkeit von Objekten zu definieren und zu verändern. Sie sind
+          besonders nützlich in der Physik und Computergrafik, da sie sowohl
+          Richtung als auch Größe darstellen können.
+        </p>
+        <h3>Eigenschaften von Vektoren</h3>
+        <ul>
+          <li class="important">
+            <code>x</code>: Die x-Koordinate des Vektors.
+          </li>
+          <li class="important">
+            <code>y</code>: Die y-Koordinate des Vektors.
+          </li>
+          <li>
+            <code>z</code>: Die z-Koordinate des Vektors (optional, für
+            3D-Anwendungen).
+          </li>
+          <li><code>magnitude()</code>: Gibt die Länge des Vektors zurück.</li>
+          <li>
+            <code>normalize()</code>: Wandelt den Vektor in einen Einheitsvektor
+            um.
+          </li>
+          <li class="important">
+            <code>add(PVector v)</code>: Addiert einen anderen Vektor zu diesem
+            Vektor.
+          </li>
+          <li>
+            <code>sub(PVector v)</code>: Subtrahiert einen anderen Vektor von
+            diesem Vektor.
+          </li>
+          <li>
+            <code>mult(float n)</code>: Multipliziert den Vektor mit einem
+            Skalar.
+          </li>
+          <li>
+            <code>div(float n)</code>: Teilt den Vektor durch einen Skalar.
+          </li>
+        </ul>
+
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/superposition.svg"
+          alt="KEIN BILD GEFUNDEN "
+        />
+        <details class="box-info">
+          <summary>📚 PVector in Processing</summary>
+
+          <h4>1. Objekt erzeugen</h4>
+          <p>
+            Ein Vektor hat eine x- und eine y-Komponente, das sind die
+            Eigenschaften eines jeden Objekts. Wir wollen einen neuen Vektor mit
+            den Werten (4, 2) erstellen. Dazu definieren wir zunächst eine neue
+            Variable <code>vec</code> vom Typ <code>PVector</code>:
+          </p>
+          <pre><code>PVector vec; // kann einen Vektor speichern</code></pre>
+          <p>
+            Die Großschreibung weist darauf hin, dass wir es mit einem
+            Objekttypen bzw. einer Klasse zu tun haben.
+          </p>
+
+          <h4>2. Variablen zeigen auf Objekte</h4>
+          <p>
+            Eine wichtige Unterscheidung zwischen primitiven Datentypen und
+            Objekttypen ist, dass die Variable <code>vec</code> zunächst "leer"
+            ist und das Stichwort <code>null</code> enthält. Das bedeutet, dass
+            die Variable derzeit "auf kein Objekt zeigt".
+          </p>
+          <p>Jetzt erzeugen wir das neue Vektorobjekt:</p>
+          <pre><code>vec = new PVector(4, 2); // neuer Vektor mit x=4 und y=2</code></pre>
+          <p>
+            Hierbei wird ein neues Objekt im Speicher angelegt, und die Variable
+            <code>vec</code> erhält eine Referenz auf dieses Objekt.
+          </p>
+          <p>
+            Wir können die Variablendeklaration und Zuweisung auch auf einer
+            Zeile durchführen:
+          </p>
+          <pre><code>PVector vec = new PVector(4, 2);</code></pre>
+          <p>Für einen Nullvektor:</p>
+          <pre><code>PVector vec = new PVector(); // Nullvektor</code></pre>
+
+          <h4>3. Eigenschaften</h4>
+          <p>
+            Wir können Eigenschaften wie <code>x</code> und
+            <code>y</code> auslesen:
+          </p>
+          <pre><code>println(vec.x);
+println(vec.y);</code></pre>
+          <p>Wir können auch neue Vektoren erstellen:</p>
+          <pre><code>PVector vec2 = new PVector(10, -30);</code></pre>
+          <p>Um die Objekte in ihrer Gesamtheit zu betrachten:</p>
+          <pre><code>println(vec);
+println(vec2);</code></pre>
+          <p>Wir können die Eigenschaften durch Zuweisung verändern:</p>
+          <pre><code>v.x = 200;
+v.y = 1;</code></pre>
+
+          <h4>4. Methoden</h4>
+          <p>Objekte bieten Aktionen an, die etwas berechnen oder bewegen:</p>
+          <pre><code>float l = vec.mag(); // Länge des Vektors</code></pre>
+          <p>
+            Um die Eigenschaften x und y zu ändern, können Sie die Methode
+            <code>set()</code> verwenden:
+          </p>
+          <pre><code>vec.set(0, 50);</code></pre>
+          <p>
+            Die Methode <code>mult()</code> multipliziert den gesamten Vektor:
+          </p>
+          <pre><code>vec.mult(10);</code></pre>
+          <p>Die Methode <code>add()</code> addiert einen anderen Vektor:</p>
+          <pre><code>vec.add(vec2);</code></pre>
+
+          <h4>5. Identität und Gleichheit</h4>
+          <p>Um zu prüfen, ob zwei Vektoren gleich sind, verwenden wir:</p>
+          <pre><code>println(v.equals(w));</code></pre>
+          <p>
+            Identität wird mit <code>==</code> geprüft, während Gleichheit mit
+            <code>equals()</code> geprüft wird.
+          </p>
+
+          <h4>6. Anwendungsbeispiel</h4>
+          <p>
+            Um einen Ball zu animieren, benötigen wir seine Position und
+            Geschwindigkeit:
+          </p>
+          <pre><code>PVector pos = new PVector(); // Nullvektor
+PVector velocity = new PVector(3, 2); // Geschwindigkeit</code></pre>
+          <p>
+            Im <code>draw()</code>-Block können wir die Position aktualisieren:
+          </p>
+          <pre><code>pos.add(velocity);</code></pre>
+          <p>
+            Hiermit fliegt der Ball diagonal, und wir können die Position und
+            Geschwindigkeit kompakt mit Vektoren darstellen.
+          </p>
+        </details>
+
+        <!-- Beispielsketch für Vektoren -->
+        <h4>🔢 Vektoren Beispiel: Ortsvektor und Geschwindigkeitsvektor</h4>
+        <p>
+          In diesem Beispiel wird ein Ball dargestellt, der sich basierend auf
+          seiner Geschwindigkeit bewegt. Der Ortsvektor wird mit dem
+          Geschwindigkeitsvektor addiert, um die Position des Balls zu
+          aktualisieren.
+        </p>
+        <pre><code>
+<strong>PVector position;</strong> // Ortsvektor deklarieren
+<strong>PVector velocity;</strong> // Geschwindigkeitsvektor deklarieren
+
+void setup() {
+    size(800, 600);
+    <strong>position = new PVector(width / 2, height / 2);</strong> // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
+    <strong>velocity = new PVector(2, 3);</strong> // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
+}
+
+void draw() {
+    background(255);
+
+    // Aktualisiere die Position durch Addition des Geschwindigkeitsvektors
+    <strong>position.add(velocity);</strong>
+
+    // Überprüfe, ob der Ball den Rand des Canvas erreicht hat, und kehre die Richtung um
+    if <strong>(position.x > width || position.x < 0)</strong> {
+        <strong>velocity.x *= -1;</strong> // Umkehren der x-Richtung
+    }
+    if <strong>(position.y > height || position.y < 0)</strong> {
+        <strong>velocity.y *= -1;</strong> // Umkehren der y-Richtung
+    }
+
+    // Zeichne den Ball
+    fill(0);
+    ellipse(<strong>position.x, position.y</strong>, 30, 30); // Zeichne den Ball mit dem aktuellen Ortsvektor
+}</code></pre>
+        <p>Hier ist der interaktive Sketch:</p>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVektoren"
+        ></iframe>
+      </div>
     </details>
 
     <details class="top">
@@ -305,89 +489,6 @@ vec = new PVector(10, 20); // Erzeugt ein PVector-Objekt mit x=10 und y=20</code
       </div>
     </details>
 
-    <!-- Vektoren (PVector) -->
-    <details class="box-info">
-      <summary><strong>Vektoren (PVector)</strong></summary>
-      <p>
-        Vektoren werden in Processing verwendet, um den Ort und die
-        Geschwindigkeit von Objekten zu definieren und zu verändern. Sie sind
-        besonders nützlich in der Physik und Computergrafik, da sie sowohl
-        Richtung als auch Größe darstellen können.
-      </p>
-      <h3>Eigenschaften von Vektoren</h3>
-      <ul>
-        <li class="important"><code>x</code>: Die x-Koordinate des Vektors.</li>
-        <li class="important"><code>y</code>: Die y-Koordinate des Vektors.</li>
-        <li>
-          <code>z</code>: Die z-Koordinate des Vektors (optional, für
-          3D-Anwendungen).
-        </li>
-        <li><code>magnitude()</code>: Gibt die Länge des Vektors zurück.</li>
-        <li>
-          <code>normalize()</code>: Wandelt den Vektor in einen Einheitsvektor
-          um.
-        </li>
-        <li class="important">
-          <code>add(PVector v)</code>: Addiert einen anderen Vektor zu diesem
-          Vektor.
-        </li>
-        <li>
-          <code>sub(PVector v)</code>: Subtrahiert einen anderen Vektor von
-          diesem Vektor.
-        </li>
-        <li>
-          <code>mult(float n)</code>: Multipliziert den Vektor mit einem Skalar.
-        </li>
-        <li><code>div(float n)</code>: Teilt den Vektor durch einen Skalar.</li>
-      </ul>
-
-      <img
-        src="https://p5-sketches-demo.netlify.app/img/superposition.svg"
-        alt="KEIN BILD GEFUNDEN "
-      />
-
-      <!-- Beispielsketch für Vektoren -->
-      <h4>🔢 Vektoren Beispiel: Ortsvektor und Geschwindigkeitsvektor</h4>
-      <p>
-        In diesem Beispiel wird ein Ball dargestellt, der sich basierend auf
-        seiner Geschwindigkeit bewegt. Der Ortsvektor wird mit dem
-        Geschwindigkeitsvektor addiert, um die Position des Balls zu
-        aktualisieren.
-      </p>
-      <pre><code>
-PVector position; // Ortsvektor
-PVector velocity; // Geschwindigkeitsvektor
-
-void setup() {
-    size(800, 600);
-    position = new PVector(width / 2, height / 2); // Setze den Anfangs-Ortsvektor in die Mitte des Canvas
-    velocity = new PVector(2, 3); // Setze den Geschwindigkeitsvektor (x: 2, y: 3)
-}
-
-void draw() {
-    background(255);
-
-    // Aktualisiere die Position durch Addition des Geschwindigkeitsvektors
-    position.add(velocity);
-
-    // Überprüfe, ob der Ball den Rand des Canvas erreicht hat, und kehre die Richtung um
-    if (position.x > width || position.x < 0) {
-        velocity.x *= -1; // Umkehren der x-Richtung
-    }
-    if (position.y > height || position.y < 0) {
-        velocity.y *= -1; // Umkehren der y-Richtung
-    }
-
-    // Zeichne den Ball
-    fill(0);
-    ellipse(position.x, position.y, 30, 30); // Zeichne den Ball mit dem aktuellen Ortsvektor
-}</code></pre>
-      <p>Hier ist der interaktive Sketch:</p>
-      <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVektoren"
-      ></iframe>
-    </details>
-
     <!-- Strings -->
     <details class="top">
       <summary><strong>Strings in Processing</strong></summary>
@@ -428,86 +529,219 @@ String result = text1 + " " + text2; // "Hallo Welt"
 
     <!-- Bilder einfügen -->
     <details class="top">
-      <summary><strong>Bilder in Processing einfügen</strong></summary>
-      <div class="info">
+      <summary id="info">
+        <strong>Bilder in Processing einfügen</strong>
+      </summary>
+      <div class="box-info">
         <p>
-          Um Bilder in Processing zu verwenden, müssen sie zuerst in das
-          Projektverzeichnis geladen werden. Hier ist ein einfaches Beispiel:
+          Procesing unterstützt unterschiedliche Bildformate wie
+          <strong>jpg</strong>, <strong>svg</strong> oder <strong>png</strong>.
         </p>
-        <pre><code>PImage img;
+        <p>
+          Um Bilder in Processing zu verwenden, müssen wir im Projektverzeichnis
+          (sketch-Ordner) erst einen Ordner "data" erstellen. In diesen Ordner
+          können wir dann unsere Bild- und Sounddateien speichern.
+        </p>
 
+        <a class="important" target="_blank" href="https://pixabay.com/de/"
+          >Kostenlose Bilder auf pixaby</a
+        >
+        <h4>Was muss ich machen, um ein Bild in Processing zu benutzen?</h4>
+        <ul>
+          <li>Im Projektverzeichnis einen data-Ordner erstellen</li>
+          <li>Ein Bild herrunterladen und in den data-Ordner kopieren</li>
+          <li>Ein PImage-Objekt erstellen</li>
+          <li>Die Bilddatei in das Objekt laden</li>
+          <li>Das Bild zeichnen</li>
+        </ul>
+
+        <h4>Beispiel für ein Hintergrundbild</h4>
+
+        <a
+          class="important"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/img/sonnensystem.jpg"
+          download="delfin.png"
+        >
+          Download sonnensystem.jpg
+        </a>
+        <pre><code><strong>PImage img;</strong> //Erstellen eines PImage-Objekts mit dem Namen img
 void setup() {
-    img = loadImage("bild.png"); // Bild laden
-    size(400, 400);
+    size(800, 600);
+    <strong>img = loadImage("sonnensystem.jpg");</strong> // Laden des Bildes aus dem Ordner data
+    
 }
 
 void draw() {
-    image(img, 0, 0); // Bild anzeigen
+    <strong>image(img, 0, 0, width, height);</strong> // Bild an der Position (0, 0) mit größe (width, height) zeichnen
 }
 </code></pre>
-      </div>
-    </details>
 
-    <!-- Beispielsketch für Bilder -->
-    <details class="top">
-      <summary><strong>Beispielsketch für Bilder</strong></summary>
-      <iframe
-        src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
-      ></iframe>
+        <!-- Beispielsketch für Bilder -->
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
+        ></iframe>
+
+        <h4>Beispiel für ein bewegtes Bild</h4>
+        <a
+          class="important"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/img/delfin.png"
+          download="delfin.png"
+        >
+          Download deflin.png
+        </a>
+        <pre><code><strong>PImage img;</strong> // //Erstellen eines PImage-Objekts mit dem Namen img
+
+void setup() {
+    size(800, 600); // Fenstergröße
+    <strong>img = loadImage("delfin.png"); // Laden des Bildes aus dem Ordner data
+    img.resize(50, 50);</strong> // Befehl um die Bildgröße anzupassen
+    noCursor(); // Mauszeiger ausblenden
+}
+
+void draw() {
+    background(255); // Hintergrundfarbe
+    <strong>image(img, mouseX - img.width / 2, mouseY - img.height / 2);</strong> // Bild zentriert auf die Mausposition zeichnen
+}</code></pre>
+
+        <!-- Beispielsketch für Bilder -->
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMoveImage"
+        ></iframe>
+      </div>
     </details>
 
     <!-- Hintergrundmusik und Sounds -->
     <details class="top">
-      <summary>
+      <summary id="info">
         <strong>Hintergrundmusik und Sounds in Processing</strong>
       </summary>
-      <div class="info">
-        <h2>Hintergrundmusik einfügen</h2>
-        <pre><code>PApplet app;
+      <div class="box-info">
+        <p>
+          Processing unterstützt unter anderem die Sound-Formate
+          <strong>wav</strong> und <strong>mp3</strong>.
+        </p>
+        <p>
+          Für das Abspielen müssen sich die Sound-Dateien wie bei den Bildern im
+          Ordner data befinden.
+        </p>
+
+        <a
+          class="important"
+          target="_blank"
+          href="https://pixabay.com/de/sound-effects/search/shoot/"
+          >Kostenlose Sounds auf pixaby</a
+        >
+        <h4>Was muss ich machen, um Sounds in Processing zu benutzen?</h4>
+        <ul>
+          <li>Im Projektverzeichnis einen data-Ordner erstellen</li>
+          <li>
+            Einen Soundfile herrunterladen und in den data-Ordner kopieren
+          </li>
+          <li>Eine Sound-Library in der Processing IDE installieren</li>
+          <li>Die Sound-Library im Sketch importieren</li>
+          <li>Ein Sound-Objekt erstellen</li>
+          <li>Den Sound in das Objekt laden</li>
+          <li>Den Sound abspielen</li>
+        </ul>
+
+        <details>
+          <summary>
+            <strong class="important"
+              >Anleitung zum Installieren der Sound-Library</strong
+            >
+          </summary>
+          <p>
+            Um Sounds in Processing zu verwenden, musst du eine
+            <strong>Sound-Library importieren</strong>. Wir benutzen im
+            folgenden Beispiel die <strong>Library Sound</strong> von der
+            Processing Foundation. Diese ermöglicht es, Sound-Dateien zu laden
+            und abzuspielen.
+          </p>
+          <img
+            src="https://p5-sketches-demo.netlify.app/img/libraryEinbinden.png"
+            alt="KEIN BILD GEFUNDEN"
+          />
+          <img
+            src="https://p5-sketches-demo.netlify.app/img/soundLibrary.png"
+            alt="KEIN BILD GEFUNDEN"
+          />
+        </details>
+
+        <hr />
+        <h4>Beispiel - Hintergrundmusik einfügen</h4>
+        <p>
+          Um Musik einzufügen müssen wir die Musik-Datei in den data-Ordner
+          speichern.
+        </p>
+        <a
+          class="important"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/background.mp3"
+          download="background.mp3"
+        >
+          Download background.mp3
+        </a>
+        <pre><code><strong>import processing.sound.*;</strong>  //importieren der Sound-Library
+
+<strong>SoundFile background;</strong>  //Deklarieren des SoundFile-Objekts background 
 
 void setup() {
-    app = this;
-    app.sound = new SoundFile(app, "musik.mp3");
-    app.sound.loop(); // Musik im Hintergrund abspielen
+    <strong>background = new SoundFile(this, "music.mp3");</strong> //Erzeugen des Objekts mit dem new-Operator
 }
-</code></pre>
-        <h2>Kurze Sounds abspielen</h2>
+
+void draw() {
+    <strong>background.loop();</strong> // Hintergrundmusik abspielen
+    // Hier kannst du weitere Zeichnungen oder Animationen hinzufügen
+}</code></pre>
+
+        <hr />
+        <h4>Beispiel - Kurze Sounds abspielen</h4>
         <p>
           Um kurze Sounds nacheinander abzuspielen, kannst du die Methode
           <code>play()</code> verwenden. Hier ist ein Beispiel:
         </p>
-        <pre><code>import processing.sound.*;  //importieren der Sound-Library
+        <pre><code><strong>import processing.sound.*;</strong>  //importieren der Sound-Library
 
+          
 //Deklarieren der SoundFile-Objekte shoot und horn
-SoundFile shoot;  
-SoundFile horn;
+<strong>SoundFile shoot;  
+SoundFile horn;</strong>
 
 void setup() {
     //Erzeugen der Objekte mit dem new-Operator
-    shoot = new SoundFile(this, "shoot.mp3");
-    horn = new SoundFile(this, "horn.mp3");
+    <strong>shoot = new SoundFile(this, "shoot.mp3");
+    horn = new SoundFile(this, "horn.mp3");</strong>
 }
 
 void draw() {
     // Beispiel: Abspielen von Sounds bei Tastendruck
     if (keyPressed) {
         if (key == 's') {
-            shoot.play(); // Schuss abspielen
+           <strong> shoot.play();</strong> // Schuss abspielen
         } else if (key == 'h') {
-            horn.play(); // Hupe abspielen
+            <strong>horn.play();</strong> // Hupe abspielen
         }
     }
 }</code></pre>
-        <h4>Beispiel: Schuss- und Hup-Sounds mit Tasten abspielen</h4>
-        <p>Drückt s oder h zum Abspielen der Sound-Dateien</p>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
-        ></iframe>
-        <h4>Beispiel: Gruselambiente mit Hintergrundmusik</h4>
-        <p>Drückt s oder h zum Abspielen der Sound-Dateien</p>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchHorrorBackground"
-        ></iframe>
+        <a
+          class="important"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/horn.mp3"
+          download="background.mp3"
+        >
+          Download horn.mp3
+        </a>
+        <br /><br />
+        <a
+          class="important"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/shoot.mp3"
+          download="background.mp3"
+        >
+          Download shoot.mp3
+        </a>
       </div>
     </details>
 

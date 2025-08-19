@@ -25,8 +25,6 @@
     </script>
   </head>
   <body>
-
-    
     <!-- Lernziele Kapitel 3 -->
     <div class="box-learning-goals">
       <details>
@@ -227,10 +225,10 @@ void draw() {
   textAlign(CENTER, CENTER);
   text("Bewege die Maus!", width / 2, height / 2);
   <strong>if (mouseX < width / 2) {
-    background(255, 0, 0); // rot
-  } else {
-    background(0, 0, 255); // blau
-  }</strong>
+    background(255, 0, 0);</strong> // rot
+  <strong>} else {
+    background(0, 0, 255);</strong> // blau
+  <strong>}</strong>
   textAlign(CENTER, CENTER);
   textSize(30);
   text("Bewege die Maus!", width / 2, height / 2);
@@ -1380,41 +1378,410 @@ void draw() {
     >
 
     <!-- Fragen Kapitel 3 -->
+    <!-- Fragen Kapitel 3 -->
     <details class="top">
-      <summary id="question">🧠 Fragen zu Kapitel 3</summary>
-      <details class="box-question">
-        <summary>Was macht eine if-Verzweigung?</summary>
-        <div class="box-info">
-          <p>
-            Sie prüft eine Bedingung und führt Anweisungen aus, wenn diese
-            erfüllt ist.
-          </p>
-        </div>
-      </details>
+      <summary><strong id="question">🧠 Fragen zu Kapitel 3</strong></summary>
+
+      <!-- Kontrollfluss -->
       <details class="box-question">
         <summary>
-          Was ist der Unterschied zwischen <code>=</code> und <code>==</code>?
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was versteht man unter Kontrollfluss und wie beeinflusst ein
+          <strong>if-else</strong> den Kontrollfluss?
         </summary>
         <div class="box-info">
           <p>
-            <code>=</code> weist einen Wert zu, <code>==</code> vergleicht zwei
-            Werte.
+            Der Kontrollfluss eines Programms beschreibt die Reihenfolge, in der
+            die Anweisungen ausgeführt werden. Ein <code>if-else</code>-Block
+            beeinflusst den Kontrollfluss, indem er Bedingungen prüft. Wenn die
+            Bedingung wahr ist, wird der Code im <code>if</code>-Block
+            ausgeführt; andernfalls wird der Code im <code>else</code>-Block
+            ausgeführt.
           </p>
         </div>
       </details>
+
+      <!-- Syntax für if-else -->
       <details class="box-question">
-        <summary>Was passiert bei mehreren Bedingungen?</summary>
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie ist die allgemeine Syntax für ein <code>if-else</code>?
+        </summary>
+        <div class="box-info">
+          <pre><code>if (Bedingung) {
+    // Code, der ausgeführt wird, wenn die Bedingung wahr ist
+} else {
+    // Code, der ausgeführt wird, wenn die Bedingung falsch ist
+}</code></pre>
+          <div class="box-warning">
+            Hinter der Klammer darf <strong>KEIN</strong> Semikolon stehen!
+            <pre><code>if (Bedingung)<strong>; // FALSCH!</strong></code></pre>
+          </div>
+        </div>
+      </details>
+
+      <!-- Flussdiagramm erstellen -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Kannst du aus folgendem Code ein Flussdiagramm erstellen?
+          <pre><code>if (x &gt; 100) { 
+    fill(255, 0, 0);
+} else { 
+    fill(0, 255, 0);
+}
+circle(50, 50, 30);
+</code></pre>
+        </summary>
+        <div class="box-info">
+          <p>Das Flussdiagramm für den obigen Code würde wie folgt aussehen:</p>
+          <img
+            src="https://p5-sketches-demo.netlify.app/img/flussdiagrammFragenKapitel3.png"
+            alt=""
+          />
+        </div>
+      </details>
+
+      <!-- Flussdiagramm in Programmcode -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Kannst du folgendes Flussdiagramm in Programmcode überführen?<br /><img
+            src="https://p5-sketches-demo.netlify.app/img/flussdiagrammIf.png"
+            alt=""
+          />
+        </summary>
+
+        <div class="box-info">
+          <p>Processing code für das Flussdiagramm:</p>
+          <pre><code>int punkte = 75;
+
+if (punkte > 50) {
+   println("bestanden");
+} else {
+   println("durchgefallen");
+}
+println("tschüs");</code></pre>
+        </div>
+      </details>
+
+      <!-- Möglichkeiten mit IF-Else -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Welche Möglichkeiten gibt es, um mit <code>IF-Else</code> verschiedene
+          Zahlenbereiche zu erfassen?
+        </summary>
         <div class="box-info">
           <p>
-            Du kannst <code>else if</code> und <code>else</code> nutzen, um
-            weitere Bedingungen zu prüfen.
+            Man kann mehrere <code>if-else</code>-Bedingungen verwenden, um
+            verschiedene Bereiche zu prüfen:
           </p>
+          <pre><code>if (x &gt; 100) {
+    // Code für x > 100
+} else if (x &gt;= 50) {
+    // Code für 50 ≤ x ≤ 100
+} else {
+    // Code für x < 50
+}</code></pre>
+          <p>
+            Eine weitere Möglichkeit ist, <code>if</code>-Anweisungen zu
+            verschachteln:
+          </p>
+          <pre><code>if (x &gt; 0) {
+    if (x &gt; 100) {
+        // Code für x > 100
+    } else {
+        // Code für 0 < x ≤ 100
+    }
+} else {
+    // Code für x ≤ 0
+}</code></pre>
+          <p>
+            Man kann auch logische Operatoren verwenden, um mehrere Bedingungen
+            in einer <code>if</code>-Anweisung zu kombinieren:
+          </p>
+          <pre><code>if (x &gt; 0 &amp;&amp; x &lt;= 100) {
+    // Code für 0 < x ≤ 100
+} else if (x &gt; 100) {
+    // Code für x > 100
+} else {
+    // Code für x ≤ 0
+}</code></pre>
         </div>
       </details>
+
+      <!-- Logische Operatoren -->
       <details class="box-question">
-        <summary>Wie prüft man, ob zwei Dinge gleichzeitig gelten?</summary>
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Mit welchen logischen Operatoren kann man boolesche Ausdrücke
+          kombinieren?
+        </summary>
         <div class="box-info">
-          <p>Mit dem logischen UND <code>&&</code>.</p>
+          <p>Die gängigen logischen Operatoren sind:</p>
+          <ul>
+            <li><code>&&</code> (logisches UND)</li>
+            <li><code>||</code> (logisches ODER)</li>
+            <li><code>!</code> (logisches NICHT)</li>
+          </ul>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Nenne einen Anwendungsfall für boolesche Variablen.
+        </summary>
+        <div class="box-info">
+          <p>
+            Boolesche Variablen können in verschiedenen Szenarien verwendet
+            werden, z.B.:
+          </p>
+          <ul>
+            <li>
+              <strong>Schaltflächenstatus</strong>: Verfolgt, ob eine
+              Schaltfläche gedrückt ist.
+              <pre><code>boolean isButtonPressed = false;</code></pre>
+            </li>
+            <li>
+              <strong>Spielzustand</strong>: Überprüft, ob ein Spieler lebt oder
+              gestorben ist.
+              <pre><code>boolean isPlayerAlive = true;</code></pre>
+            </li>
+            <li>
+              <strong>Lichtsteuerung</strong>: Steuert, ob ein Licht an oder aus
+              ist.
+              <pre><code>boolean isLightOn = false;</code></pre>
+            </li>
+            <li>
+              <strong>Einstellungen speichern</strong>: Speichert, ob der
+              Vollbildmodus aktiviert ist.
+              <pre><code>boolean isFullscreen = false;</code></pre>
+            </li>
+            <li>
+              <strong>Benutzereingaben validieren</strong>: Überprüft die
+              Gültigkeit eines Formulars.
+              <pre><code>boolean isFormValid = true;</code></pre>
+            </li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Überprüfung von Tastendruck -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie kann ich überprüfen, ob eine Taste auf der Tastatur gedrückt
+          wurde?
+        </summary>
+        <div class="box-info">
+          <p>
+            In Processing kann dies mit der Funktion
+            <code>keyPressed()</code> erfolgen:
+          </p>
+          <pre><code>void keyPressed() {
+    // Code, der ausgeführt wird, wenn eine Taste gedrückt wird
+}</code></pre>
+          <p>
+            Alternativ kann auch die Systemvariable <code>keyPressed</code> in
+            der <code>draw()</code>-Methode verwendet werden, um kontinuierlich
+            zu überprüfen, ob eine Taste gedrückt ist:
+          </p>
+          <pre><code>void draw() {
+    if (keyPressed) {
+        // Code, der ausgeführt wird, solange eine Taste gedrückt ist
+    }
+}</code></pre>
+        </div>
+      </details>
+
+      <!-- Vor- und Nachteile der Tasteneingabe -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Welche Vor- und Nachteile hat das Abfragen von Tasten in der Funktion
+          <code>keyPressed()</code> und das direkte Abfragen in der
+          <code>draw()</code>-Methode mit der Systemvariablen
+          <code>keyPressed</code>?
+        </summary>
+        <div class="box-info">
+          <table class="operator-table">
+            <thead>
+              <tr>
+                <th>Methode</th>
+                <th>Vorteile</th>
+                <th>Nachteile</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>keyPressed()</code> Funktion</td>
+                <td>
+                  <ul>
+                    <li>Reagiert sofort auf Tastenanschläge.</li>
+                    <li>Einfach zu implementieren für einmalige Aktionen.</li>
+                    <li>Gute Lesbarkeit des Codes.</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      Kann nicht für kontinuierliche Eingaben verwendet werden.
+                    </li>
+                    <li>
+                      Erfordert mehr Code, um mehrere Tastenanschläge zu
+                      verwalten.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+              <tr>
+                <td>Direkte Abfrage in <code>draw()</code></td>
+                <td>
+                  <ul>
+                    <li>Erlaubt kontinuierliche Eingaben (z.B. Bewegung).</li>
+                    <li>Einfach zu kombinieren mit anderen Bedingungen.</li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      Kann weniger lesbar sein, wenn mehrere Tastenanschläge
+                      überprüft werden.
+                    </li>
+                    <li>
+                      Reagiert nicht sofort, da es von der Frame-Rate abhängt.
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </details>
+
+      <!-- Überprüfung des Mauszeigers im Kreis -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie prüft man, ob der Mauszeiger in einem Kreis liegt?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man kann die Distanz zwischen dem Mauszeiger und dem Mittelpunkt des
+            Kreises verwenden:
+          </p>
+          <pre><code>if (dist(mouseX, mouseY, kreisX, kreisY) &lt; radius) {
+    // Mauszeiger ist im Kreis
+}</code></pre>
+        </div>
+      </details>
+
+      <!-- Bedingungen für den Mauszeiger im Rechteck -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Welche Bedingungen müssen gelten, dass der Mauszeiger in einem
+          Rechteck liegt?
+        </summary>
+        <div class="box-info">
+          <p>
+            Um zu prüfen, ob der Mauszeiger in einem Rechteck liegt, kann man
+            folgende Bedingungen verwenden:
+          </p>
+          <pre><code>if (mouseX &gt;= rectX &amp;&amp; mouseX &lt;= rectX + rectWidth &amp;&amp;
+    mouseY &gt;= rectY &amp;&amp; mouseY &lt;= rectY + rectHeight) {
+    // Mauszeiger ist im Rechteck
+}</code></pre>
         </div>
       </details>
     </details>
