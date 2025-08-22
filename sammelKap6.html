@@ -20,7 +20,6 @@
     </script>
   </head>
   <body>
-
     <!-- Link Kapitel 6 -->
     <a
       class="button"
@@ -29,32 +28,342 @@
       >Link zum Processing Kurs - Kapitel 6</a
     >
 
-    <!-- Informationsbox über Arrays -->
-   
-    <details class="top">
-      <summary id="info"><strong>Arrays</strong></summary>
-      <div class="box-info">
-        <p>
-          Arrays sind Sammlungen von Elementen des gleichen Typs, die unter
-          einem gemeinsamen Namen gespeichert werden. Sie ermöglichen den
-          Zugriff auf mehrere Werte über einen Index.
-        </p>
-        <h3>Eigenschaften von Arrays</h3>
-        <ul>
-          <li><code>length</code>: Gibt die Anzahl der Elemente im Array zurück.</li>
-          <li><code>indexOf()</code>: Sucht nach einem Element und gibt dessen Index zurück.</li>
-          <li><code>push()</code>: Fügt ein Element am Ende des Arrays hinzu.</li>
-          <li><code>pop()</code>: Entfernt das letzte Element aus dem Array.</li>
+    <!-- Lernziele Kapitel 6 -->
+    <div class="box-learning-goals">
+      <details>
+        <summary>Lernziele für Kapitel 6</summary>
+        <ul class="learning-goals-list">
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal42" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal42" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können erklären, was ein <strong>Array</strong> ist, und warum
+            man ein solches Konstrukt benötigt.
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal43" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal43" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können neue <strong>Arrays</strong> erstellen, mit Werten
+            befüllen und die Werte eines Arrays über den
+            <strong>Index</strong> abrufen.
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal44" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal44" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können mit Hilfe einer <strong>Schleife</strong> einen Array
+            verarbeiten (z.B. ihn befüllen, auslesen oder ändern).
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal45" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal45" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können mehrere <strong>Entitäten</strong> verwalten, indem Sie
+            Eigenschaften in Arrays verwalten (z.B.
+            <strong>Koordinaten</strong> bei der Animation von mehreren Bällen).
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal46" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal46" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können <strong>Arrays von Objekten</strong> bilden und mit
+            diesen arbeiten.
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal47" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal47" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können Arrays so verwenden, dass die
+            <strong>Länge flexibel</strong> ist.
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal48" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal48" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            Sie können <strong>zwei-dimensionale Arrays</strong> erstellen,
+            befüllen und verwenden.
+          </li>
         </ul>
-      </div>  
+        <div class="challenge">
+          <h4>Challenge!</h4>
+          <p>Kannst du am Ende des Kapitels sowas programmieren?</p>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBunteKreise"
+            target="blank"
+          ></iframe>
+          <p>Siehe Aufgabe 6.3b</p>
+        </div>
+      </details>
+    </div>
 
-    <!-- Aufgaben verschachtelte-Schleifen -->
+    <!-- Informationsbox über Arrays -->
+
+    <!-- Einführung in Arrays -->
+    <details class="top">
+      <summary id="info"><strong>Einführung in Arrays</strong></summary>
+
+      <!-- Was sind Arrays? -->
+      <details class="box-info">
+        <summary>Was sind Arrays?</summary>
+        <div class="info">
+          <p>
+            Ein <strong>Array</strong> ist eine Datenstruktur, die es
+            ermöglicht, mehrere Werte des <strong>gleichen Datentyp</strong>s in
+            einer einzigen Variablen zu speichern.
+          </p>
+          <p>
+            Man kann sich ein Array wie einen Becherhalter vorstellen, in dem
+            mehrere Becher (Werte) Platz finden. Dies ist besonders nützlich,
+            wenn man mit einer Vielzahl von Daten arbeitet, wie z.B. den
+            Positionen von Objekten oder den Werten von Messungen.
+          </p>
+          <img
+            src="https://p5-sketches-demo.netlify.app/img/arrayLeer.png"
+            alt="KEIN BILD GEFUNDEN"
+          />
+          <p>
+            In Processing/Java wird ein Array wie folgt deklariert und
+            initialisiert:
+          </p>
+          <pre><code>int[] xarray = new int[5]; // Erzeugt ein Array mit 5 Integer-Elementen</code></pre>
+          <p>
+            Hierbei ist <code>xarray</code> der Name des Arrays, und die eckigen
+            Klammern zeigen an, dass es sich um ein Array handelt. Die Anzahl
+            der Elemente im Array wird in den Klammern angegeben.
+          </p>
+          <ul>
+            <li><code>xarray</code> - Name des Arrays</li>
+            <li>[] - Eckigen Klammern zeigen an, dass es ein Array ist</li>
+            <li>[5] - 5 ist die Anzahl der Elemente</li>
+          </ul>
+        </div>
+      </details>
+
+      <!-- Elemente zugreifen -->
+      <details class="box-info">
+        <summary>Auf Elemente zugreifen</summary>
+        <div class="info">
+          <p>
+            Jedes Element eines Arrays kann über seinen Index, der bei 0
+            beginnt, angesprochen werden. Zum Beispiel:
+          </p>
+          <pre><code>println(xarray[0]); // Gibt das erste Element des Arrays aus</code></pre>
+          <p>
+            Um den Wert eines Elements zu ändern, kann man einfach eine
+            Zuweisung vornehmen:
+          </p>
+          <pre><code>xarray[3] = 42; // Setzt das vierte Element auf 42</code></pre>
+        </div>
+      </details>
+
+      <!-- Größe des Arrays -->
+      <details class="box-info">
+        <summary>Größe des Arrays</summary>
+        <div class="info">
+          <p>
+            Die Größe eines Arrays kann mit der Eigenschaft
+            <code>length</code> abgerufen werden:
+          </p>
+          <pre><code>println(xarray.length); // Gibt die Anzahl der Elemente im Array aus</code></pre>
+          <p>
+            Dies ist nützlich, um sicherzustellen, dass man nicht versucht, auf
+            ein nicht vorhandenes Element zuzugreifen.
+          </p>
+        </div>
+      </details>
+
+      <!-- Fehler vermeiden -->
+      <details class="box-info">
+        <summary>Fehler vermeiden</summary>
+        <div class="info">
+          <p>
+            Ein häufiger Fehler bei der Arbeit mit Arrays ist, dass die Indizes
+            von 0 bis n-1 reichen, wobei n die Größe des Arrays ist. Ein Zugriff
+            auf einen Index, der außerhalb dieses Bereichs liegt, führt zu einer
+            <strong>ArrayIndexOutOfBoundsException</strong>.
+          </p>
+          <pre><code>xarray[10] = 23; // Fehler: Index 10 existiert nicht!</code></pre>
+        </div>
+      </details>
+
+      <!-- Motivation -->
+      <details class="box-info">
+        <summary>Warum sind Arrays sinnvoll?</summary>
+        <div class="info">
+          <p>
+            Arrays sind besonders nützlich, wenn man mit großen Datenmengen
+            arbeitet. Sie ermöglichen es, mehrere Werte effizient zu speichern
+            und zu verwalten, ohne dass man für jeden Wert eine separate
+            Variable erstellen muss. Dies führt zu übersichtlicherem und
+            wartbarem Code. Mit Arrays kann man auch einfacher Schleifen
+            verwenden, um durch die Werte zu iterieren, was mit einzelnen
+            Variablen umständlicher wäre.
+          </p>
+        </div>
+      </details>
+    </details>
+
+    <!-- Aufgaben - Einführung in Arrays -->
     <a
       class="task"
       target="_blank"
-      href="https://michaelkipp.de/processing/schleifen.html#sec_5_4_2"
-      >Übungsaufgaben 5.4 - mindestens 5 Aufgaben</a
+      href="https://michaelkipp.de/processing/arrays.html#sec_6_1_10"
+      >Übungsaufgaben 6.1a - 6.1c</a
     >
+
+    <!-- Aufgaben - Arrays mit Schleifen -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/arrays.html#sec_6_2_6"
+      >Übungsaufgaben 6.2</a
+    >
+
+    <!-- Aufgaben - Eigenschaften in Arrays speichern -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/arrays.html#sec_6_3_3"
+      >Übungsaufgaben 6.3</a
+    >
+
+    <!-- Aufgaben - Objekte in Arrays speichern -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/arrays.html#sec_6_4_2"
+      >Übungsaufgaben 6.4</a
+    >
+
+    <!-- Aufgaben - Flexible Arrays -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/arrays.html#sec_6_5_2"
+      >Übungsaufgaben 6.5a</a
+    >
+
+    <!-- Aufgaben - Zweidimensionale Arrays -->
+    <a
+      class="task"
+      target="_blank"
+      href="https://michaelkipp.de/processing/arrays.html#sec_6_6_4"
+      >Übungsaufgaben 6.6</a
+    >
+
+    <!-- Fragen zu Arrays -->
+    <details class="top">
+      <summary><strong id="question">Fragen zu Arrays</strong></summary>
+
+      <!-- Fragen -->
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal1" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal1" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was ist der Hauptvorteil von Arrays?
+        </summary>
+        <div class="box-info">
+          <p>
+            Arrays ermöglichen die Speicherung mehrerer Werte des gleichen
+            Datentyps in einer einzigen Variable, was zu einem übersichtlicheren
+            und wartbareren Code führt.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal2" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal2" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie greift man auf ein Element in einem Array zu?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man greift auf ein Element in einem Array zu, indem man den Index
+            des Elements in eckigen Klammern angibt, z.B.
+            <code>xarray[0]</code> für das erste Element.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal3" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal3" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was passiert, wenn man auf einen nicht existierenden Index zugreift?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man erhält eine <strong>ArrayIndexOutOfBoundsException</strong>, da
+            der Index außerhalb des gültigen Bereichs liegt.
+          </p>
+        </div>
+      </details>
+    </details>
 
     <script src="sketches.js"></script>
   </body>
