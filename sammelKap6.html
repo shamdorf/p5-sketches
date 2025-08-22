@@ -146,104 +146,96 @@
       <summary id="info"><strong>Einführung in Arrays</strong></summary>
 
       <!-- Was sind Arrays? -->
-      <details class="box-info">
-        <summary>Was sind Arrays?</summary>
-        <div class="info">
-          <p>
-            Ein <strong>Array</strong> ist eine Datenstruktur, die es
-            ermöglicht, mehrere Werte des <strong>gleichen Datentyp</strong>s in
-            einer einzigen Variablen zu speichern.
-          </p>
-          <p>
-            Man kann sich ein Array wie einen Becherhalter vorstellen, in dem
-            mehrere Becher (Werte) Platz finden. Dies ist besonders nützlich,
-            wenn man mit einer Vielzahl von Daten arbeitet, wie z.B. den
-            Positionen von Objekten oder den Werten von Messungen.
-          </p>
-          <img
-            src="https://p5-sketches-demo.netlify.app/img/arrayLeer.png"
-            alt="KEIN BILD GEFUNDEN"
-          />
-          <p>
-            In Processing/Java wird ein Array wie folgt deklariert und
-            initialisiert:
-          </p>
-          <pre><code>int[] xarray = new int[5]; // Erzeugt ein Array mit 5 Integer-Elementen</code></pre>
-          <p>
-            Hierbei ist <code>xarray</code> der Name des Arrays, und die eckigen
-            Klammern zeigen an, dass es sich um ein Array handelt. Die Anzahl
-            der Elemente im Array wird in den Klammern angegeben.
-          </p>
-          <ul>
-            <li><code>xarray</code> - Name des Arrays</li>
-            <li>[] - Eckigen Klammern zeigen an, dass es ein Array ist</li>
-            <li>[5] - 5 ist die Anzahl der Elemente</li>
-          </ul>
-        </div>
-      </details>
+      <div class="box-info">
+        <h4>Was sind Arrays?</h4>
 
-      <!-- Elemente zugreifen -->
-      <details class="box-info">
-        <summary>Auf Elemente zugreifen</summary>
-        <div class="info">
-          <p>
-            Jedes Element eines Arrays kann über seinen Index, der bei 0
-            beginnt, angesprochen werden. Zum Beispiel:
-          </p>
-          <pre><code>println(xarray[0]); // Gibt das erste Element des Arrays aus</code></pre>
-          <p>
-            Um den Wert eines Elements zu ändern, kann man einfach eine
-            Zuweisung vornehmen:
-          </p>
-          <pre><code>xarray[3] = 42; // Setzt das vierte Element auf 42</code></pre>
-        </div>
-      </details>
+        <p>
+          Ein <strong>Array</strong> ist eine <strong>Datenstruktur</strong>,
+          die es ermöglicht, mehrere Werte des
+          <strong>gleichen Datentyp</strong>s in einer einzigen Variablen zu
+          speichern.
+        </p>
+        <p>
+          Man kann sich ein Array wie einen Becherhalter vorstellen, in dem
+          mehrere Becher (Werte) Platz finden. Dies ist besonders nützlich, wenn
+          man mit einer Vielzahl von Daten arbeitet, wie z.B. den Positionen von
+          Objekten oder den Werten von Messungen.
+        </p>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayLeer.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+        <hr />
 
-      <!-- Größe des Arrays -->
-      <details class="box-info">
-        <summary>Größe des Arrays</summary>
-        <div class="info">
-          <p>
-            Die Größe eines Arrays kann mit der Eigenschaft
-            <code>length</code> abgerufen werden:
-          </p>
-          <pre><code>println(xarray.length); // Gibt die Anzahl der Elemente im Array aus</code></pre>
-          <p>
-            Dies ist nützlich, um sicherzustellen, dass man nicht versucht, auf
-            ein nicht vorhandenes Element zuzugreifen.
-          </p>
-        </div>
-      </details>
+        <!-- Motivation -->
 
-      <!-- Fehler vermeiden -->
-      <details class="box-info">
-        <summary>Fehler vermeiden</summary>
-        <div class="info">
-          <p>
-            Ein häufiger Fehler bei der Arbeit mit Arrays ist, dass die Indizes
-            von 0 bis n-1 reichen, wobei n die Größe des Arrays ist. Ein Zugriff
-            auf einen Index, der außerhalb dieses Bereichs liegt, führt zu einer
-            <strong>ArrayIndexOutOfBoundsException</strong>.
-          </p>
-          <pre><code>xarray[10] = 23; // Fehler: Index 10 existiert nicht!</code></pre>
-        </div>
-      </details>
+        <h4>Motivation - Warum sind Arrays sinnvoll?</h4>
 
-      <!-- Motivation -->
-      <details class="box-info">
-        <summary>Warum sind Arrays sinnvoll?</summary>
-        <div class="info">
-          <p>
-            Arrays sind besonders nützlich, wenn man mit großen Datenmengen
-            arbeitet. Sie ermöglichen es, mehrere Werte effizient zu speichern
-            und zu verwalten, ohne dass man für jeden Wert eine separate
-            Variable erstellen muss. Dies führt zu übersichtlicherem und
-            wartbarem Code. Mit Arrays kann man auch einfacher Schleifen
-            verwenden, um durch die Werte zu iterieren, was mit einzelnen
-            Variablen umständlicher wäre.
-          </p>
+        <p>
+          Arrays sind besonders nützlich, wenn man mit großen Datenmengen
+          arbeitet. Sie ermöglichen es, mehrere Werte effizient zu speichern und
+          zu verwalten, ohne dass man für jeden Wert eine separate Variable
+          erstellen muss. Dies führt zu übersichtlicherem und wartbarem Code.
+          <br />
+          Außerdem lassen sich Arrays mit Hilfe von Schleifen elegant und
+          effizient verändern und auslesen.
+        </p>
+
+        <hr />
+        <h4>Deklaration eines Arrays</h4>
+        <pre><code><strong>int[] xarray = new int[5];</strong> // Erzeugt ein Array mit 5 Integer-Elementen</code></pre>
+        <ul>
+          <li><code>xarray</code> - Name des Arrays</li>
+          <li>[] - Eckigen Klammern zeigen an, dass es ein Array ist</li>
+          <li>new int [5] - Erstellt ein Integer-Array der Länge 5</li>
+        </ul>
+
+        <hr />
+        <!-- Größe des Arrays -->
+
+        <h4>Größe des Arrays</h4>
+
+        <p>
+          Die Größe eines Arrays kann mit der Eigenschaft
+          <code>length</code> abgerufen werden:
+        </p>
+        <pre><code>println(<strong>xarray.length</strong>); // Gibt die Anzahl der Elemente im Array aus</code></pre>
+        <p>
+          Dies ist nützlich, um sicherzustellen, dass man nicht versucht, auf
+          ein nicht vorhandenes Element zuzugreifen.
+        </p>
+        <hr />
+        <!-- Elemente zugreifen -->
+
+        <h4>Auf Elemente zugreifen</h4>
+
+        <p>
+          Jedes Element eines Arrays kann über seinen Index, der bei 0 beginnt,
+          angesprochen werden. Zum Beispiel:
+        </p>
+        <pre><code>println(<strong>xarray[0]</strong>); // Element 0 ausgeben
+println(<strong>xarray[1]</strong>); // Element 1 ausgeben
+println(<strong>xarray[2]</strong>);
+println(<strong>xarray[3]</strong>);
+println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
+        <p>
+          Um den Wert eines Elements zu ändern, kann man einfach eine Zuweisung
+          vornehmen:
+        </p>
+        <pre><code>xarray[3] = 42; // Setzt das vierte Element auf 42</code></pre>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayLeer42.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+
+        <div class="box-warning">
+          Der Arrayindex beginnt bei 0, daher ist das erste Element
+          <code>xarray[0]</code>. Wenn <code>xarray</code> die Länge 5 hat, kann
+          man nicht auf <code>xarray[5]</code> zugreifen. Die Processing IDE
+          wirft dann eine ArrayIndexOutOfBoundsException.
         </div>
-      </details>
+        <hr />
+      </div>
     </details>
 
     <!-- Aufgaben - Einführung in Arrays -->
