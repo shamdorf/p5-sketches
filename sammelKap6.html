@@ -510,8 +510,51 @@ int[] ypos = new int[100];</code></pre>
         }
     }
 }</code></pre>
-
+        <hr />
         <h4>Gesamter Sketch für grafische Objekte repräsentieren</h4>
+        <pre><code>void setup() {
+  size(400, 200);
+  // Initialisiere die Positionen der Rechtecke
+  for (int i = 0; i < xpos.length; i++) {
+    xpos[i] = (int)random(0, width);
+    ypos[i] = (int)random(0, height);
+  }
+}
+
+void draw() {
+  background(0); // Hintergrundfarbe
+  fill(255); // Füllfarbe für die Rechtecke
+
+  // Zeichne die Rechtecke
+  for (int i = 0; i < xpos.length; i++) {
+    rect(xpos[i], ypos[i], 10, 10);
+  }
+}
+
+void keyPressed() {
+  // Bewege alle Rechtecke nach links
+  if (keyCode == LEFT) {
+    for (int i = 0; i < xpos.length; i++) {
+      xpos[i]--;
+    }
+  }
+
+  // Bewege alle Rechtecke nach rechts
+  if (keyCode == RIGHT) {
+    for (int i = 0; i < xpos.length; i++) {
+      xpos[i]++;
+    }
+  }
+
+  // Setze neue zufällige Positionen für alle Rechtecke
+  if (key == ' ') {
+    for (int i = 0; i < xpos.length; i++) {
+      xpos[i] = (int)random(0, width);
+      ypos[i] = (int)random(0, height);
+    }
+  }
+}</code></pre>
+
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrafischeObjekte"
         ></iframe>
@@ -545,6 +588,10 @@ int[] ypos = new int[100];</code></pre>
         </p>
 
         <pre><code>println(spaceships[0]); // Ausgabe: null</code></pre>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrobj1.png"
+          alt="KEIN BILLD GEFUNDEN"
+        />
 
         <div class="box-warning">
           <p>
@@ -563,6 +610,10 @@ int[] ypos = new int[100];</code></pre>
         <pre><code>for (int i = 0; i < spaceships.length; i++) {
     spaceships[i] = new PVector();
 }</code></pre>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrobj2.png"
+          alt="KEIN BILLD GEFUNDEN"
+        />
         <p>
           Jetzt sind die Arrayzellen mit Referenzen auf die erstellten Objekte
           gefüllt. Sie können auch Zufallswerte verwenden, um die Vektoren zu
@@ -580,6 +631,7 @@ int[] ypos = new int[100];</code></pre>
         <pre><code>for (int i = 0; i < spaceships.length; i++) {
     rect(spaceships[i].x, spaceships[i].y, 20, 20);
 }</code></pre>
+        <hr />
         <h4>Gesamter Sketch für Objekte in Arrays speichern</h4>
         <pre><code class="language-processing">PVector[] spaceships = new PVector[5];
 
@@ -602,6 +654,15 @@ void draw() {
     for (int i = 0; i < spaceships.length; i++) {
         rect(spaceships[i].x, spaceships[i].y, 20, 20);
     }
+
+void keyPressed() {  
+  // Neue Zufallspositionen generieren
+  for (int i = 0; i < spaceships.length; i++) {
+      float x = random(400);
+      float y = random(400);
+      spaceships[i] = new PVector(x, y);
+  }
+    
 }</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchObjekteInArraysSpeichern"
@@ -616,6 +677,82 @@ void draw() {
       href="https://michaelkipp.de/processing/arrays.html#sec_6_4_2"
       >Übungsaufgaben 6.4</a
     >
+
+    <details class="top">
+      <summary id="info">Flexible Arrays</summary>
+      <div class="box-info">
+        <p>
+          Arrays haben einen großen Nachteil: Die Länge muss zu Beginn
+          festgelegt werden. Wenn Sie während des Programmlaufs neue "Objekte"
+          zu Ihrem Array hinzufügen möchten, müssen Sie eine Strategie finden.
+          Die Grundidee ist, einen Array zu erzeugen, der wesentlich größer ist,
+          als Sie zunächst brauchen, und nur einen Teil davon zu verwenden.
+        </p>
+
+        <p>
+          Angenommen, Sie möchten sich Punkte merken. Sie speichern die x- und
+          y-Koordinaten in zwei Arrays. Zu Beginn möchten Sie sich nur zwei
+          Punkte merken, aber Sie erzeugen dennoch Arrays der Länge 100:
+        </p>
+        <pre><code>int[] punktX = new int[100];
+int[] punktY = new int[100];
+
+void setup() {
+  punktX[0] = 20;
+  punktY[0] = 20;
+
+  punktX[1] = 40;
+  punktY[1] = 40;
+
+  punktX[2] = 60;
+  punktY[2] = 60;
+}</code></pre>
+
+        <p>
+          Da Sie nicht wissen, wie viele Elemente dieser zwei Arrays wirklich
+          "sinnvoll" verwendet werden, können Sie keine Schleife definieren, um
+          die sinnvoll gefüllten Elemente für das Zeichnen zu verwenden. Die
+          Lösung ist, eine neue Variable einzuführen, die angibt, wie weit das
+          Array befüllt ist. In unserem Fall wäre die "Länge" gleich 3:
+        </p>
+        <pre><code>int[] punktX = new int[100];
+int[] punktY = new int[100];
+int num = 3;</code></pre>
+
+        <p>
+          Jetzt können Sie eine Zeichenroutine einführen, die auf
+          <code>num</code> basiert:
+        </p>
+        <pre><code>void draw() {
+  for (int i= 0; i < num; i++) {
+    ellipse(punktX[i], punktY[i], 10, 10);
+  }
+}</code></pre>
+
+        <p>Sie können zum Beispiel per Mausklick neue Kreise hinzufügen:</p>
+        <pre><code>void mousePressed() {
+  punktX[num] = int(random(0, width));
+  punktY[num] = int(random(0, height));
+  num++;
+}</code></pre>
+
+        <p>
+          Beachten Sie, dass <code>num</code> immer eins höher ist als der
+          aktuell verwendete Index, da es sich um die Länge des verwendeten
+          Bereichs im Array handelt. Außerdem führt der obige Code zu einem
+          Fehler, wenn mehr als 100 Punkte erreicht sind. Sie sollten Maßnahmen
+          ergreifen, um diesen Fehler zu verhindern.
+        </p>
+
+        <p>
+          Sie können auch Bälle wieder entfernen, indem Sie einfach
+          <code>num</code> um eins verringern. Probieren Sie es aus, indem Sie
+          beim Druck auf eine Tastaturtaste einen Ball entfernen. Auch hier
+          könnte ein Fehler auftreten! Überlegen Sie, wann dieses Problem
+          auftreten kann und wie Sie es vermeiden können.
+        </p>
+      </div>
+    </details>
 
     <!-- Aufgaben - Flexible Arrays -->
     <a
