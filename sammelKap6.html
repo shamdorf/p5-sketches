@@ -526,6 +526,89 @@ int[] ypos = new int[100];</code></pre>
       >Übungsaufgaben 6.3</a
     >
 
+    <details class="top">
+      <summary id="info">Objekte in Arrays speichern</summary>
+      <div class="box-info">
+        <h4>Objekt-Arrays deklarieren</h4>
+        <p>
+          Sie können Objekte wie Vektoren oder Bilder in Arrays speichern, indem
+          Sie den Klassennamen (z.B. <strong>PVector</strong>) als Typ verwenden
+          und ihn mit eckigen Klammern versehen:
+        </p>
+        <pre><code>PVector[] spaceships = new PVector[5];</code></pre>
+        <hr />
+        <h4>Instanzieren der Objekte</h4>
+        <p>
+          Wichtig ist, dass das Array zunächst keine Objekte enthält, da noch
+          kein <code>new</code> verwendet wurde. Wenn Sie versuchen, auf ein
+          Element zuzugreifen, sehen Sie <code>null</code>:
+        </p>
+
+        <pre><code>println(spaceships[0]); // Ausgabe: null</code></pre>
+
+        <div class="box-warning">
+          <p>
+            Ein Versuch, auf eine Eigenschaft eines nicht initialisierten
+            Objekts zuzugreifen, führt zu einer
+            <strong>NullPointerException</strong>:
+          </p>
+          <pre><code>println(spaceships[0].x); // NullPointerException</code></pre>
+        </div>
+
+        <p>
+          Um Objekte im Array zu erstellen, müssen Sie durch das Array laufen
+          und neue <strong>Objekte instanziieren</strong>. Zum Beispiel können
+          Sie (0,0)-Vektoren verwenden:
+        </p>
+        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+    spaceships[i] = new PVector();
+}</code></pre>
+        <p>
+          Jetzt sind die Arrayzellen mit Referenzen auf die erstellten Objekte
+          gefüllt. Sie können auch Zufallswerte verwenden, um die Vektoren zu
+          initialisieren:
+        </p>
+        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+    float x = random(100);
+    float y = random(100);
+    spaceships[i] = new PVector(x, y);
+}</code></pre>
+        <p>
+          Der Zugriff auf die einzelnen Zellen des Arrays erfolgt ebenfalls über
+          die eckigen Klammern und den Index:
+        </p>
+        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+    rect(spaceships[i].x, spaceships[i].y, 20, 20);
+}</code></pre>
+        <h4>Gesamter Sketch für Objekte in Arrays speichern</h4>
+        <pre><code class="language-processing">PVector[] spaceships = new PVector[5];
+
+void setup() {
+    size(400, 400);
+    
+    // Objekte im Array initialisieren
+    for (int i = 0; i < spaceships.length; i++) {
+        float x = random(100);
+        float y = random(100);
+        spaceships[i] = new PVector(x, y);
+    }
+}
+
+void draw() {
+    background(0);
+    fill(255);
+    
+    // Rechtecke an den Positionen der Vektoren zeichnen
+    for (int i = 0; i < spaceships.length; i++) {
+        rect(spaceships[i].x, spaceships[i].y, 20, 20);
+    }
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchObjekteInArraysSpeichern"
+        ></iframe>
+      </div>
+    </details>
+
     <!-- Aufgaben - Objekte in Arrays speichern -->
     <a
       class="task"

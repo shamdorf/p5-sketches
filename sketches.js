@@ -17,6 +17,32 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchObjekteInArraysSpeichern(p) {
+  let spaceships = new Array(5);
+
+  p.setup = () => {
+    p.createCanvas(400, 400);
+
+    // Objekte im Array initialisieren
+    for (let i = 0; i < spaceships.length; i++) {
+      let x = p.random(100);
+      let y = p.random(100);
+      spaceships[i] = new p5.Vector(x, y);
+    }
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(0);
+    p.fill(255);
+
+    // Rechtecke an den Positionen der Vektoren zeichnen
+    for (let i = 0; i < spaceships.length; i++) {
+      p.rect(spaceships[i].x, spaceships[i].y, 20, 20);
+    }
+  };
+}
+
 function sketchGrafischeObjekte(p) {
   let xpos = new Array(100);
   let ypos = new Array(100);
