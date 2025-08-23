@@ -743,14 +743,55 @@ int num = 3;</code></pre>
           Fehler, wenn mehr als 100 Punkte erreicht sind. Sie sollten Maßnahmen
           ergreifen, um diesen Fehler zu verhindern.
         </p>
+        <hr />
+        <h4>Gesamter Sketch für Flexible Arrays</h4>
+        <pre><code class="language-processing">int[] punktX = new int[100];
+int[] punktY = new int[100];
+int num = 3;
 
-        <p>
-          Sie können auch Bälle wieder entfernen, indem Sie einfach
-          <code>num</code> um eins verringern. Probieren Sie es aus, indem Sie
-          beim Druck auf eine Tastaturtaste einen Ball entfernen. Auch hier
-          könnte ein Fehler auftreten! Überlegen Sie, wann dieses Problem
-          auftreten kann und wie Sie es vermeiden können.
-        </p>
+void setup() {
+    size(400, 400);
+    
+    // Initialisiere die Positionen der Punkte
+    punktX[0] = 20;
+    punktY[0] = 20;
+
+    punktX[1] = 40;
+    punktY[1] = 40;
+
+    punktX[2] = 60;
+    punktY[2] = 60;
+}
+
+void draw() {
+    background(0); // Hintergrundfarbe
+    fill(255); // Füllfarbe für die Punkte
+
+    // Zeichne die Punkte
+    for (int i = 0; i < num; i++) {
+        ellipse(punktX[i], punktY[i], 10, 10);
+    }
+}
+
+void mousePressed() {
+    // Füge einen neuen Punkt hinzu
+    punktX[num] = (int)random(0, width);
+    punktY[num] = (int)random(0, height);
+    num++;
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlexibleArrays"
+        ></iframe>
+
+        <div class="box-question">
+          <p>
+            Sie können auch Bälle wieder entfernen, indem Sie einfach
+            <code>num</code> um eins verringern. Probieren Sie es aus, indem Sie
+            beim Druck auf eine Tastaturtaste einen Ball entfernen. Auch hier
+            könnte ein Fehler auftreten! Überlegen Sie, wann dieses Problem
+            auftreten kann und wie Sie es vermeiden können.
+          </p>
+        </div>
       </div>
     </details>
 

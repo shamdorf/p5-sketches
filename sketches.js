@@ -17,6 +17,51 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchFlexibleArrays(p) {
+  let punktX = new Array(100);
+  let punktY = new Array(100);
+  let num = 3;
+
+  p.setup = () => {
+    p.createCanvas(400, 400);
+
+    // Initialisiere die Positionen der Punkte
+    punktX[0] = 20;
+    punktY[0] = 20;
+
+    punktX[1] = 40;
+    punktY[1] = 40;
+
+    punktX[2] = 60;
+    punktY[2] = 60;
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(0); // Hintergrundfarbe
+    p.fill(255); // Füllfarbe für die Punkte
+
+    // Zeichne die Punkte
+    for (let i = 0; i < num; i++) {
+      p.ellipse(punktX[i], punktY[i], 10, 10);
+    }
+  };
+
+  p.mousePressed = () => {
+    // Füge einen neuen Punkt hinzu
+    punktX[num] = p.floor(p.random(0, p.width));
+    punktY[num] = p.floor(p.random(0, p.height));
+    num++;
+  };
+
+  p.keyPressed = () => {
+    // Entferne den letzten Punkt
+    if (num > 0) {
+      num--;
+    }
+  };
+}
+
 function sketchObjekteInArraysSpeichern(p) {
   let spaceships = new Array(5);
 
