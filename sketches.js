@@ -25,8 +25,8 @@ function sketchObjekteInArraysSpeichern(p) {
 
     // Objekte im Array initialisieren
     for (let i = 0; i < spaceships.length; i++) {
-      let x = p.random(100);
-      let y = p.random(100);
+      let x = p.random(400);
+      let y = p.random(400);
       spaceships[i] = new p5.Vector(x, y);
     }
     autoResizeCanvas(p); // Anpassung für das iframe
@@ -39,6 +39,14 @@ function sketchObjekteInArraysSpeichern(p) {
     // Rechtecke an den Positionen der Vektoren zeichnen
     for (let i = 0; i < spaceships.length; i++) {
       p.rect(spaceships[i].x, spaceships[i].y, 20, 20);
+    }
+  };
+
+  p.keyPressed = () => {
+    for (let i = 0; i < spaceships.length; i++) {
+      let x = p.random(400);
+      let y = p.random(400);
+      spaceships[i] = new p5.Vector(x, y);
     }
   };
 }
