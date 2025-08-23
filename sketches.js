@@ -17,6 +17,56 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchGrafischeObjekte(p) {
+  let xpos = new Array(100);
+  let ypos = new Array(100);
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+
+    // Initialisiere die Positionen der Rechtecke
+    for (let i = 0; i < xpos.length; i++) {
+      xpos[i] = p.floor(p.random(0, p.width));
+      ypos[i] = p.floor(p.random(0, p.height));
+    }
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(0); // Hintergrundfarbe
+    p.fill(255); // Füllfarbe für die Rechtecke
+
+    // Zeichne die Rechtecke
+    for (let i = 0; i < xpos.length; i++) {
+      p.rect(xpos[i], ypos[i], 10, 10);
+    }
+  };
+
+  p.keyPressed = () => {
+    // Bewege alle Rechtecke nach links
+    if (p.keyCode === p.LEFT_ARROW) {
+      for (let i = 0; i < xpos.length; i++) {
+        xpos[i]--;
+      }
+    }
+
+    // Bewege alle Rechtecke nach rechts
+    if (p.keyCode === p.RIGHT_ARROW) {
+      for (let i = 0; i < xpos.length; i++) {
+        xpos[i]++;
+      }
+    }
+
+    // Setze neue zufällige Positionen für alle Rechtecke
+    if (p.key === " ") {
+      for (let i = 0; i < xpos.length; i++) {
+        xpos[i] = p.floor(p.random(0, p.width));
+        ypos[i] = p.floor(p.random(0, p.height));
+      }
+    }
+  };
+}
+
 function sketchMoveImage(p) {
   let img; // Variable für das Bild
 
