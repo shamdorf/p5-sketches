@@ -232,7 +232,7 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
           Der Arrayindex beginnt bei 0, daher ist das erste Element
           <code>xarray[0]</code>. Wenn <code>xarray</code> die Länge 5 hat, kann
           man nicht auf <code>xarray[5]</code> zugreifen. Die Processing IDE
-          wirft dann eine ArrayIndexOutOfBoundsException.
+          wirft dann eine <strong>ArrayIndexOutOfBoundsException</strong>.
         </div>
         <hr />
       </div>
@@ -246,6 +246,156 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
       >Übungsaufgaben 6.1a - 6.1c</a
     >
 
+    <!-- Einführung in Arrays und Schleifen -->
+    <details class="top">
+      <summary id="info"><strong>Arrays und Schleifen</strong></summary>
+
+      <!-- Array initialisieren -->
+      <details class="box-info">
+        <summary>Array deklarieren und initialisieren</summary>
+        <div class="info">
+          <p>
+            Ein <strong>Array</strong> wird in Processing/Java mit der folgenden
+            Syntax deklariert:
+          </p>
+
+          <pre><code><strong>int[] fuenfer = new int[10];</strong> // Erzeugt ein Array mit 10 Integer-Elementen</code></pre>
+          <hr />
+          <h4>Initialisieren eines Arrays</h4>
+          <p>
+            Will man zum Beispiel alle Elemente des Arrays auf den Wert 5
+            setzen, kann man das zum Beispiel so machen:
+          </p>
+          <pre><code>// Füllen ohne Schleife
+int[] fuenfer = new int[10];
+fuenfer[0] = 5;
+fuenfer[1] = 5;
+fuenfer[2] = 5;
+fuenfer[3] = 5;
+fuenfer[4] = 5;
+fuenfer[5] = 5;
+fuenfer[6] = 5;
+fuenfer[7] = 5;
+fuenfer[8] = 5;
+fuenfer[9] = 5;</code></pre>
+          <div class="box-question">
+            Bei vielen Elementen wird das schnell sehr unhandlich! Was macht
+            ihr, wenn ihr 100, 1000 oder mehr Elemente initialisieren müsst?
+          </div>
+          <hr />
+          <h4>Initialisieren mit Schleife</h4>
+          <p>
+            Eleganter und übersichtlicher geht es mit einer
+            <strong>for-Schleife</strong>, die über alle Elemente des Arrays
+            iteriert:
+          </p>
+          <pre><code>// Füllen mit Schleife
+int[] fuenfer = new int[10]; // Erzeugt ein Array mit 10 Integer-Elementen
+for (int i = 0; i < 10; i++) {
+    <strong>fuenfer[i] = 5;</strong>
+}</code></pre>
+          <p>
+            Wir sehen, dass alles gleich bleibt, bis auf den Index (die Zahl in
+            Klammern). Durch die Verwendung einer Schleife wird der Code kürzer
+            und einfacher wartbar. Wenn Sie die Anzahl der Elemente ändern
+            möchten, müssen Sie nur die Größe des Arrays anpassen.
+          </p>
+          <hr />
+          <h4>Größe eines Arrays bestimmen</h4>
+          <p>
+            In der Schleife oben kann man die Zahl 10 durch
+            <code><strong>fuenfer.length</strong></code> ersetzen. So passt sich
+            die Schleife automatisch an die Größe des Arrays an:
+          </p>
+          <pre><code>// Füllen mit Schleife
+int[] fuenfer = new int[10];  // Erzeugt ein Array mit 10 Integer-Elementen
+for (int i = 0; <strong>i < fuenfer.length;</strong> i++) {
+    fuenfer[i] = 5;
+}</code></pre>
+          <div class="box-question">
+            <p>
+              Gegeben ist ein Integer Array der Länge 1000. Schreibe eine
+              Schleife, um alle Werte des Arrays auf 42 zu setzen. Gebe
+              anschließend das Array auf der Konsole aus.
+            </p>
+            <pre><code>int[] foo = new int[1000]; // Erzeugt ein Array mit 1000 Integer-Elementen</code></pre>
+
+            <details>
+              <summary class="solution-button">
+                Drücke hier für die Lösung:
+              </summary>
+              <h5>Möglichkeit 1 - klappt in Processing</h5>
+              <pre><code>int[] foo = new int[1000]; // Erzeugt ein Array mit 1000 Integer-Elementen
+for (int i = 0; i < 1000; i++) {
+    foo[i] = 42;
+}
+<strong>println(foo);</strong> // Gibt das gesamte Array aus </code></pre>
+              <h5>
+                Alternative, die auch in anderen Programmiersprachen klappt
+              </h5>
+              <pre><code>int[] foo = new int[1000]; // Erzeugt ein Array mit 1000 Integer-Elementen
+for (int i = 0; i < 1000; i++) {
+    foo[i] = 42;
+    <strong>println(foo[i]);</strong> // Gibt jedes Element einzeln aus 
+}</code></pre>
+            </details>
+          </div>
+        </div>
+      </details>
+
+      <!-- Beispiel: Bewegung von Bällen -->
+      <details class="box-info">
+        <summary>Beispiel: Bewegung von Bällen</summary>
+        <div class="info">
+          <p>
+            Hier ist ein Beispiel, wie man drei Bälle mit normalen Variablen
+            erstellt, die sich über den Bildschirm bewegen:
+          </p>
+          <pre><code>int x1, x2, x3;
+
+void setup() {
+    size(400, 200);
+    x1 = 0;
+    x2 = 20;
+    x3 = 40;
+}
+
+void draw() {
+    background(255);
+    ellipse(x1, 50, 10, 10);
+    ellipse(x2, 50, 10, 10);
+    ellipse(x3, 50, 10, 10);
+    
+    x1++;
+    x2++;
+    x3++;
+}</code></pre>
+          <p>
+            Der Nachteil dieser Methode ist, dass man für jeden Ball eine
+            separate Variable benötigt. Wenn man die Anzahl der Bälle erhöhen
+            möchte, muss man den Code an mehreren Stellen ändern.
+          </p>
+          <p>Eine bessere Lösung ist die Verwendung eines Arrays:</p>
+          <pre><code>int[] xarray = new int[3];
+
+void setup() {
+    size(400, 200);
+    for (int i = 0; i < xarray.length; i++) {
+        xarray[i] = i * 20; // Berechne die x-Startposition
+    }
+}
+
+void draw() {
+    background(255);
+    for (int i = 0; i < xarray.length; i++) {
+        ellipse(xarray[i], 50, 10, 10); // Zeichnen
+        xarray[i]++; // Hochzählen
+    }
+}</code></pre>
+        </div>
+      </details>
+    </details>
+
     <!-- Aufgaben - Arrays mit Schleifen -->
     <a
       class="task"
@@ -253,6 +403,163 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
       href="https://michaelkipp.de/processing/arrays.html#sec_6_2_6"
       >Übungsaufgaben 6.2</a
     >
+
+    <!-- Eigenschaften in Arrays speichern -->
+
+    <details class="top">
+      <summary id="info">
+        <strong>Eigenschaften in Arrays speichern</strong>
+      </summary>
+      <!-- Personen repräsentieren -->
+      <details class="box-example">
+        <summary>Personen repräsentieren</summary>
+
+        <p>
+          Um mehrere Personen mit verschiedenen Eigenschaften zu speichern,
+          verwenden wir <strong>separate Arrays für jede Eigenschaft</strong>.
+          Zum Beispiel können wir ein String-Array für Namen, ein int-Array für
+          Alter und ein boolean-Array für das Geschlecht nutzen:
+        </p>
+        <pre><code>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
+int[] alter = { 33, 28, 12 };
+boolean[] weiblich = { false, true, false };</code></pre>
+        <p>
+          Der Index verbindet die Arrays: Index 0 steht für "Max Schmidt" und 33
+          Jahre, Index 1 für "Lisa Marx" und 28 Jahre, usw.
+        </p>
+        <p>
+          Um alle Personen mit ihren Eigenschaften auszugeben, können wir eine
+          Schleife verwenden:
+        </p>
+        <pre><code>for (int i = 0; i < namen.length; i++) {
+    if (weiblich[i]) {
+        print("Frau ");
+    } else {
+        print("Herr ");
+    }
+    println(namen[i] + ", " + alter[i] + " Jahre alt");
+}</code></pre>
+
+        <!-- Beispiel-Sketch für Personen -->
+
+        <h4>Gesamter Sketch für Personen repräsentieren</h4>
+        <pre><code>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
+int[] alter = { 33, 28, 12 };
+boolean[] weiblich = { false, true, false };
+
+void setup() {
+    size(400, 200);
+    for (int i = 0; i < namen.length; i++) {
+        if (weiblich[i]) {
+            println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
+        } else {
+            println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
+        }
+    }
+}</code></pre>
+        <h4>Konsolenausgabe</h4>
+        <p>
+          Herr Max Schmidt, 33 Jahre alt <br />Frau Lisa Marx, 28 Jahre alt
+          <br />Herr Robin Meier, 12 Jahre alt
+        </p>
+      </details>
+
+      <!-- Grafische Objekte repräsentieren -->
+      <details class="box-example">
+        <summary>Grafische Objekte repräsentieren</summary>
+
+        <p>
+          Um mehrere grafische Objekte und deren Eigenschaften zu speichern,
+          verwenden wir <strong>Arrays für die x- und y-Koordinaten</strong>. In
+          diesem Beispiel speichern wir die Positionen von 100 Rechtecken in
+          zwei Arrays:
+        </p>
+        <pre><code>int[] xpos = new int[100];
+int[] ypos = new int[100];</code></pre>
+        <p>
+          Wir initialisieren die Positionen der Rechtecke mit Zufallswerten:
+        </p>
+        <pre><code>for (int i = 0; i < xpos.length; i++) {
+    xpos[i] = <strong>(int)random(0, width);</strong>  // Zufallswert zwischen 0 und Breite
+    ypos[i] = <strong>(int)random(0, height);</strong>  // (int) castet float zu int
+}</code></pre>
+        <p>Um die Rechtecke zu zeichnen, verwenden wir eine Schleife:</p>
+        <pre><code>for (int i = 0; i < xpos.length; i++) {
+    <strong>rect(xpos[i], ypos[i], 10, 10);</strong>  // Zeichnen
+}</code></pre>
+        <p>
+          Zudem können wir die Positionen der Rechtecke mit den Cursortasten
+          ändern und neue Zufallspositionen generieren, wenn die Leertaste
+          gedrückt wird:
+        </p>
+        <pre><code>void keyPressed() {
+    if (keyCode == LEFT) {
+        for (int i = 0; i < xpos.length; i++) {
+            xpos[i]--;
+        }
+    }
+    if (keyCode == RIGHT) {
+        for (int i = 0; i < xpos.length; i++) {
+            xpos[i]++;
+        }
+    }
+    if (key == ' ') {
+        for (int i = 0; i < xpos.length; i++) {
+            xpos[i] = (int)random(0, width);
+            ypos[i] = (int)random(0, height);
+        }
+    }
+}</code></pre>
+        <hr />
+        <h4>Gesamter Sketch für grafische Objekte repräsentieren</h4>
+        <pre><code>void setup() {
+  size(400, 200);
+  // Initialisiere die Positionen der Rechtecke
+  for (int i = 0; i < xpos.length; i++) {
+    xpos[i] = (int)random(0, width);
+    ypos[i] = (int)random(0, height);
+  }
+}
+
+void draw() {
+  background(0); // Hintergrundfarbe
+  fill(255); // Füllfarbe für die Rechtecke
+
+  // Zeichne die Rechtecke
+  for (int i = 0; i < xpos.length; i++) {
+    rect(xpos[i], ypos[i], 10, 10);
+  }
+}
+
+void keyPressed() {
+  // Bewege alle Rechtecke nach links
+  if (keyCode == LEFT) {
+    for (int i = 0; i < xpos.length; i++) {
+      xpos[i]--;
+    }
+  }
+
+  // Bewege alle Rechtecke nach rechts
+  if (keyCode == RIGHT) {
+    for (int i = 0; i < xpos.length; i++) {
+      xpos[i]++;
+    }
+  }
+
+  // Setze neue zufällige Positionen für alle Rechtecke
+  if (key == ' ') {
+    for (int i = 0; i < xpos.length; i++) {
+      xpos[i] = (int)random(0, width);
+      ypos[i] = (int)random(0, height);
+    }
+  }
+}</code></pre>
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrafischeObjekte"
+        ></iframe>
+      </details>
+    </details>
 
     <!-- Aufgaben - Eigenschaften in Arrays speichern -->
     <a
@@ -262,6 +569,107 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
       >Übungsaufgaben 6.3</a
     >
 
+    <details class="top">
+      <summary id="info">Objekte in Arrays speichern</summary>
+      <div class="box-info">
+        <h4>Objekt-Arrays deklarieren</h4>
+        <p>
+          Sie können Objekte wie Vektoren oder Bilder in Arrays speichern, indem
+          Sie den Klassennamen (z.B. <strong>PVector</strong>) als Typ verwenden
+          und ihn mit eckigen Klammern versehen:
+        </p>
+        <pre><code>PVector[] spaceships = new PVector[5];</code></pre>
+        <hr />
+        <h4>Instanzieren der Objekte</h4>
+        <p>
+          Wichtig ist, dass das Array zunächst keine Objekte enthält, da noch
+          kein <code>new</code> verwendet wurde. Wenn Sie versuchen, auf ein
+          Element zuzugreifen, sehen Sie <code>null</code>:
+        </p>
+
+        <pre><code>println(spaceships[0]); // Ausgabe: null</code></pre>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrobj1.png"
+          alt="KEIN BILLD GEFUNDEN"
+        />
+
+        <div class="box-warning">
+          <p>
+            Ein Versuch, auf eine Eigenschaft eines nicht initialisierten
+            Objekts zuzugreifen, führt zu einer
+            <strong>NullPointerException</strong>:
+          </p>
+          <pre><code>println(spaceships[0].x); // NullPointerException</code></pre>
+        </div>
+
+        <p>
+          Um Objekte im Array zu erstellen, müssen Sie durch das Array laufen
+          und neue <strong>Objekte instanziieren</strong>. Zum Beispiel können
+          Sie (0,0)-Vektoren verwenden:
+        </p>
+        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+    spaceships[i] = new PVector();
+}</code></pre>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrobj2.png"
+          alt="KEIN BILLD GEFUNDEN"
+        />
+        <p>
+          Jetzt sind die Arrayzellen mit Referenzen auf die erstellten Objekte
+          gefüllt. Sie können auch Zufallswerte verwenden, um die Vektoren zu
+          initialisieren:
+        </p>
+        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+    float x = random(400);
+    float y = random(400);
+    spaceships[i] = new PVector(x, y);
+}</code></pre>
+        <p>
+          Der Zugriff auf die einzelnen Zellen des Arrays erfolgt ebenfalls über
+          die eckigen Klammern und den Index:
+        </p>
+        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+    rect(spaceships[i].x, spaceships[i].y, 20, 20);
+}</code></pre>
+        <hr />
+        <h4>✅ Gesamter Sketch für Objekte in Arrays speichern</h4>
+        <pre><code class="language-processing">PVector[] spaceships = new PVector[5];
+
+void setup() {
+    size(400, 400);
+    
+    // Objekte im Array initialisieren
+    for (int i = 0; i < spaceships.length; i++) {
+        float x = random(400);
+        float y = random(400);
+        spaceships[i] = new PVector(x, y);
+    }
+}
+
+void draw() {
+    background(0);
+    fill(255);
+    
+    // Rechtecke an den Positionen der Vektoren zeichnen
+    for (int i = 0; i < spaceships.length; i++) {
+        rect(spaceships[i].x, spaceships[i].y, 20, 20);
+    }
+
+void keyPressed() {  
+  // Neue Zufallspositionen generieren
+  for (int i = 0; i < spaceships.length; i++) {
+      float x = random(400);
+      float y = random(400);
+      spaceships[i] = new PVector(x, y);
+  }
+    
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchObjekteInArraysSpeichern"
+        ></iframe>
+      </div>
+    </details>
+
     <!-- Aufgaben - Objekte in Arrays speichern -->
     <a
       class="task"
@@ -269,6 +677,129 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
       href="https://michaelkipp.de/processing/arrays.html#sec_6_4_2"
       >Übungsaufgaben 6.4</a
     >
+
+    <details class="top">
+      <summary id="info">Flexible Arrays</summary>
+      <div class="box-info">
+        <p>
+          Arrays haben einen großen Nachteil: Die Länge muss zu Beginn
+          festgelegt werden. Wenn Sie während des Programmlaufs neue "Objekte"
+          zu Ihrem Array hinzufügen möchten, müssen Sie eine Strategie finden.
+          Die Grundidee ist, einen Array zu erzeugen, der wesentlich größer ist,
+          als Sie zunächst brauchen, und nur einen Teil davon zu verwenden.
+        </p>
+
+        <p>
+          Angenommen, Sie möchten sich Punkte merken. Sie speichern die x- und
+          y-Koordinaten in zwei Arrays. Zu Beginn möchten Sie sich nur zwei
+          Punkte merken, aber Sie erzeugen dennoch Arrays der Länge 100:
+        </p>
+        <pre><code>int[] punktX = new int[100];
+int[] punktY = new int[100];
+
+void setup() {
+  punktX[0] = 20;
+  punktY[0] = 20;
+
+  punktX[1] = 40;
+  punktY[1] = 40;
+
+  punktX[2] = 60;
+  punktY[2] = 60;
+}</code></pre>
+
+        <p>
+          Da Sie nicht wissen, wie viele Elemente dieser zwei Arrays wirklich
+          "sinnvoll" verwendet werden, können Sie keine Schleife definieren, um
+          die sinnvoll gefüllten Elemente für das Zeichnen zu verwenden. Die
+          Lösung ist, eine neue Variable einzuführen, die angibt, wie weit das
+          Array befüllt ist. In unserem Fall wäre die "Länge" gleich 3:
+        </p>
+        <pre><code>int[] punktX = new int[100];
+int[] punktY = new int[100];
+int num = 3;</code></pre>
+
+        <p>
+          Jetzt können Sie eine Zeichenroutine einführen, die auf
+          <code>num</code> basiert:
+        </p>
+        <pre><code>void draw() {
+  for (int i= 0; i < num; i++) {
+    ellipse(punktX[i], punktY[i], 10, 10);
+  }
+}</code></pre>
+
+        <p>Sie können zum Beispiel per Mausklick neue Kreise hinzufügen:</p>
+        <pre><code>void mousePressed() {
+  punktX[num] = int(random(0, width));
+  punktY[num] = int(random(0, height));
+  num++;
+}</code></pre>
+
+        <p>
+          Beachten Sie, dass <code>num</code> immer eins höher ist als der
+          aktuell verwendete Index, da es sich um die Länge des verwendeten
+          Bereichs im Array handelt. Außerdem führt der obige Code zu einem
+          Fehler, wenn mehr als 100 Punkte erreicht sind. Sie sollten Maßnahmen
+          ergreifen, um diesen Fehler zu verhindern.
+        </p>
+        <hr />
+        <h4>✅ Gesamter Sketch für Flexible Arrays</h4>
+        <pre><code class="language-processing">int[] punktX = new int[100];
+int[] punktY = new int[100];
+int num = 3;
+
+void setup() {
+    size(400, 400);
+    
+    // Initialisiere die Positionen der Punkte
+    punktX[0] = 20;
+    punktY[0] = 20;
+
+    punktX[1] = 40;
+    punktY[1] = 40;
+
+    punktX[2] = 60;
+    punktY[2] = 60;
+}
+
+void draw() {
+    background(0); // Hintergrundfarbe
+    fill(255); // Füllfarbe für die Punkte
+
+    // Zeichne die Punkte
+    for (int i = 0; i < num; i++) {
+        ellipse(punktX[i], punktY[i], 10, 10);
+    }
+}
+
+void mousePressed() {
+    // Füge einen neuen Punkt hinzu
+    punktX[num] = (int)random(0, width);
+    punktY[num] = (int)random(0, height);
+    num++;
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlexibleArrays"
+        ></iframe>
+
+        <div class="box-question">
+          <p>
+            Sie können auch Bälle wieder entfernen, indem Sie einfach
+            <code>num</code> um eins verringern. Probieren Sie es aus, indem Sie
+            beim Druck auf eine Tastaturtaste einen Ball entfernen. Auch hier
+            könnte ein Fehler auftreten! Überlegen Sie, wann dieses Problem
+            auftreten kann und wie Sie es vermeiden können.
+          </p>
+        </div>
+      </div>
+    </details>
+
+    <!-- Abgabe in Moodle -->
+    <!-- <p>
+      Füge eine Löschoption hinzu, wenn eine Taste gedrückt wird. Achte darauf,
+      dass kein Fehler auftritt, wenn keine Punkte mehr vorhanden sind.
+    </p> -->
 
     <!-- Aufgaben - Flexible Arrays -->
     <a
