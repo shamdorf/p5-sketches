@@ -48,7 +48,8 @@ canvas {
 pre {
     background-color: rgb(197, 184, 184);
     border-radius: var(--box-radius);
-    padding: 0.5rem;
+    padding: 1.5rem;
+    border: 1px solid black;
 }
 
 code {

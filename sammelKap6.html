@@ -235,6 +235,16 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
           wirft dann eine <strong>ArrayIndexOutOfBoundsException</strong>.
         </div>
         <hr />
+        <h4>Weiteres Beispiel zu Veranschaulichung</h4>
+        <pre><code>int[] a = {10, 7, 0, -5, 33};</code></pre>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayD1.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayD2.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
       </div>
     </details>
 
@@ -827,6 +837,7 @@ void mousePressed() {
     <details class="top">
       <summary id="info">Zweidimensionale Arrays</summary>
       <div class="box-info">
+        <h4>Motivation</h4>
         <p>
           In einem Array kann man wunderbar eine Reihe von Zahlen (oder Strings)
           speichern. Oft möchte man jedoch Zahlen (oder Strings) in einer Art
@@ -862,22 +873,29 @@ void mousePressed() {
 
         <h4>Die zweite Dimension</h4>
         <p>Ein Array mit zwei Dimensionen wird so erzeugt:</p>
-        <pre><code>int[][] b = new int[2][5];</code></pre>
+        <pre><code><strong>int[][] b = new int[2][5];</strong></code></pre>
         <p>
           Der 2-dimensionale Array hat zwei Indices. Die Länge des Arrays kann
           abgefragt werden:
         </p>
-        <pre><code>println(b.length); // Ausgabe: 2</code></pre>
+        <pre><code><strong>println(b.length);</strong> // Ausgabe: 2</code></pre>
         <p>Jedes Element enthält einen weiteren Array der Länge 5:</p>
-        <pre><code>println(b[0].length); // Ausgabe: 5
-println(b[1].length); // Ausgabe: 5</code></pre>
+        <pre><code><strong>println(b[0].length);</strong> // Ausgabe: 5
+<strong>println(b[1].length);</strong> // Ausgabe: 5</code></pre>
 
         <h4>2-dimensionaler Array als Tabelle</h4>
         <p>
           Sie können auf einzelne Elemente mit folgender Notation zugreifen:
         </p>
-        <pre><code>b[0][0] = 4;
-b[1][4] = 2;</code></pre>
+        <pre><code><strong>b[0][0] = 4;
+b[1][4] = 2;</strong></code></pre>
+
+        <div class="box-warning">
+          <p>
+            Denkt daran, dass wir bei 0 anfangen zu zählen. Auf
+            <code><strong>b[2][5]</strong></code> kann man nicht zugreifen!
+          </p>
+        </div>
 
         <h4>Array mit Schleifen durchlaufen</h4>
         <p>
@@ -890,9 +908,31 @@ b[1][4] = 2;</code></pre>
   }
   println();
 }</code></pre>
-        <p>Beispielausgabe:</p>
-        <pre><code>4 0 0 0 0
-0 0 0 0 2</code></pre>
+        <h4>Beispiel - Zweidimensionale Arrays</h4>
+        <pre><code class="language-processing"><strong>int[][] b = {
+  {4, 0, 0, 0, 0},
+  {0, 0, 0, 0, 2}
+};</strong>
+
+void setup() {
+  size(400, 200);
+  textSize(16);
+}
+
+void draw() {
+  background(255);
+  fill(0);
+
+  // Zeichne die Werte in der Konsole
+  <strong>for (int k = 0; k < b.length; k++) {
+    for (int i = 0; i < b[k].length; i++) {
+      text(b[k][i], 20 + i * 40, 40 + k * 40); // Werte zeichnen
+    }
+  }</strong>
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchZweidimensionaleArrays"
+        ></iframe>
 
         <h4>Kurzschreibweise für das Initialisieren</h4>
         <p>Eine Kurzschreibweise für einen neuen Array mit Anfangswerten:</p>
@@ -933,9 +973,6 @@ b[1][4] = 2;</code></pre>
     {0, 255}
   }
 };</code></pre>
-        <iframe
-          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchZweidimensionaleArrays"
-        ></iframe>
       </div>
     </details>
     <!-- Aufgaben - Zweidimensionale Arrays -->
