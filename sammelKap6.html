@@ -420,9 +420,9 @@ void draw() {
           Zum Beispiel können wir ein String-Array für Namen, ein int-Array für
           Alter und ein boolean-Array für das Geschlecht nutzen:
         </p>
-        <pre><code>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
+        <pre><code><strong>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
 int[] alter = { 33, 28, 12 };
-boolean[] weiblich = { false, true, false };</code></pre>
+boolean[] weiblich = { false, true, false };</strong></code></pre>
         <p>
           Der Index verbindet die Arrays: Index 0 steht für "Max Schmidt" und 33
           Jahre, Index 1 für "Lisa Marx" und 28 Jahre, usw.
@@ -432,29 +432,25 @@ boolean[] weiblich = { false, true, false };</code></pre>
           Schleife verwenden:
         </p>
         <pre><code>for (int i = 0; i < namen.length; i++) {
-    if (weiblich[i]) {
-        print("Frau ");
+    <strong>if (weiblich[i])</strong> {
+        println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
     } else {
-        print("Herr ");
+        println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
     }
-    println(namen[i] + ", " + alter[i] + " Jahre alt");
 }</code></pre>
 
         <!-- Beispiel-Sketch für Personen -->
 
         <h4>Gesamter Sketch für Personen repräsentieren</h4>
-        <pre><code>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
+        <pre><code><strong>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
 int[] alter = { 33, 28, 12 };
-boolean[] weiblich = { false, true, false };
+boolean[] weiblich = { false, true, false };</strong>
 
-void setup() {
-    size(400, 200);
-    for (int i = 0; i < namen.length; i++) {
-        if (weiblich[i]) {
-            println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
-        } else {
-            println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
-        }
+for (int i = 0; i < namen.length; i++) {
+    <strong>if (weiblich[i])</strong> {
+        println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
+    } else {
+        println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
     }
 }</code></pre>
         <h4>Konsolenausgabe</h4>
@@ -578,7 +574,7 @@ void keyPressed() {
           Sie den Klassennamen (z.B. <strong>PVector</strong>) als Typ verwenden
           und ihn mit eckigen Klammern versehen:
         </p>
-        <pre><code>PVector[] spaceships = new PVector[5];</code></pre>
+        <pre><code><strong>PVector[] spaceships = new PVector[5];</strong></code></pre>
         <hr />
         <h4>Instanzieren der Objekte</h4>
         <p>
@@ -614,36 +610,38 @@ void keyPressed() {
           src="https://p5-sketches-demo.netlify.app/img/arrobj2.png"
           alt="KEIN BILLD GEFUNDEN"
         />
+        <hr />
+        <h4>Initialisieren der Vektoren</h4>
         <p>
           Jetzt sind die Arrayzellen mit Referenzen auf die erstellten Objekte
           gefüllt. Sie können auch Zufallswerte verwenden, um die Vektoren zu
           initialisieren:
         </p>
-        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+        <pre><code><strong>for (int i = 0; i < spaceships.length; i++) {
     float x = random(400);
     float y = random(400);
     spaceships[i] = new PVector(x, y);
-}</code></pre>
+}</strong></code></pre>
         <p>
           Der Zugriff auf die einzelnen Zellen des Arrays erfolgt ebenfalls über
           die eckigen Klammern und den Index:
         </p>
-        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+        <pre><code><strong>for (int i = 0; i < spaceships.length; i++) {
     rect(spaceships[i].x, spaceships[i].y, 20, 20);
-}</code></pre>
+}</strong></code></pre>
         <hr />
         <h4>✅ Gesamter Sketch für Objekte in Arrays speichern</h4>
-        <pre><code class="language-processing">PVector[] spaceships = new PVector[5];
+        <pre><code class="language-processing"><strong>PVector[] spaceships = new PVector[5];</strong>  // Array für 5 PVector-Objekte
 
 void setup() {
     size(400, 400);
     
     // Objekte im Array initialisieren
-    for (int i = 0; i < spaceships.length; i++) {
+    <strong>for (int i = 0; i < spaceships.length; i++) {
         float x = random(400);
         float y = random(400);
         spaceships[i] = new PVector(x, y);
-    }
+    }</strong>
 }
 
 void draw() {
@@ -651,9 +649,10 @@ void draw() {
     fill(255);
     
     // Rechtecke an den Positionen der Vektoren zeichnen
-    for (int i = 0; i < spaceships.length; i++) {
+    <strong>for (int i = 0; i < spaceships.length; i++) {
         rect(spaceships[i].x, spaceships[i].y, 20, 20);
-    }
+    }</strong>
+}
 
 void keyPressed() {  
   // Neue Zufallspositionen generieren
@@ -681,21 +680,36 @@ void keyPressed() {
     <details class="top">
       <summary id="info">Flexible Arrays</summary>
       <div class="box-info">
+        <h4>Nachteil von Arrays</h4>
+        <ul>
+          <li>Die <strong>Arraygröße ist fest</strong></li>
+          <li>
+            Sie muss bei der <strong>Deklaration angegeben werden</strong> und
+            kann nicht verändert werden
+          </li>
+          <li>
+            Oft weiß man nicht, <strong>wie viele</strong> Variablen oder
+            Objekte man insgesamt benötigt werden.
+          </li>
+        </ul>
         <p>
-          Arrays haben einen großen Nachteil: Die Länge muss zu Beginn
-          festgelegt werden. Wenn Sie während des Programmlaufs neue "Objekte"
-          zu Ihrem Array hinzufügen möchten, müssen Sie eine Strategie finden.
+          Wenn Sie während des Programmlaufs neue "Objekte" zu Ihrem Array
+          hinzufügen möchten, müssen Sie eine Strategie finden.
+        </p>
+        <p>
+          Angenommen, Sie möchten sich Koordinatenpunkte merken. Sie speichern
+          die x- und y-Koordinaten in zwei Arrays. Zu Beginn möchten Sie sich
+          nur zwei Punkte merken, aber Sie erzeugen dennoch Arrays der Länge
+          100.
+        </p>
+        <hr />
+        <h4>Lösung:</h4>
+        <p>
           Die Grundidee ist, einen Array zu erzeugen, der wesentlich größer ist,
           als Sie zunächst brauchen, und nur einen Teil davon zu verwenden.
         </p>
-
-        <p>
-          Angenommen, Sie möchten sich Punkte merken. Sie speichern die x- und
-          y-Koordinaten in zwei Arrays. Zu Beginn möchten Sie sich nur zwei
-          Punkte merken, aber Sie erzeugen dennoch Arrays der Länge 100:
-        </p>
-        <pre><code>int[] punktX = new int[100];
-int[] punktY = new int[100];
+        <pre><code><strong>int[] punktX = new int[100];
+int[] punktY = new int[100];</strong>
 
 void setup() {
   punktX[0] = 20;
@@ -712,19 +726,20 @@ void setup() {
           Da Sie nicht wissen, wie viele Elemente dieser zwei Arrays wirklich
           "sinnvoll" verwendet werden, können Sie keine Schleife definieren, um
           die sinnvoll gefüllten Elemente für das Zeichnen zu verwenden. Die
-          Lösung ist, eine neue Variable einzuführen, die angibt, wie weit das
-          Array befüllt ist. In unserem Fall wäre die "Länge" gleich 3:
+          Lösung ist, <strong>eine neue Variable einzuführen</strong>, die
+          angibt, wie weit das Array befüllt ist. In unserem Fall wäre die
+          "Länge" gleich 3:
         </p>
         <pre><code>int[] punktX = new int[100];
 int[] punktY = new int[100];
-int num = 3;</code></pre>
+<strong>int num = 3;</strong></code></pre>
 
         <p>
           Jetzt können Sie eine Zeichenroutine einführen, die auf
           <code>num</code> basiert:
         </p>
         <pre><code>void draw() {
-  for (int i= 0; i < num; i++) {
+  for (int i= 0; <strong>i < num;</strong> i++) {
     ellipse(punktX[i], punktY[i], 10, 10);
   }
 }</code></pre>
@@ -733,7 +748,7 @@ int num = 3;</code></pre>
         <pre><code>void mousePressed() {
   punktX[num] = int(random(0, width));
   punktY[num] = int(random(0, height));
-  num++;
+  <strong>num++;</strong>
 }</code></pre>
 
         <p>
@@ -745,9 +760,9 @@ int num = 3;</code></pre>
         </p>
         <hr />
         <h4>✅ Gesamter Sketch für Flexible Arrays</h4>
-        <pre><code class="language-processing">int[] punktX = new int[100];
+        <pre><code class="language-processing"><strong>int[] punktX = new int[100];
 int[] punktY = new int[100];
-int num = 3;
+int num = 3;</strong>
 
 void setup() {
     size(400, 400);
@@ -768,7 +783,7 @@ void draw() {
     fill(255); // Füllfarbe für die Punkte
 
     // Zeichne die Punkte
-    for (int i = 0; i < num; i++) {
+    for (int i = 0; <strong>i < num;</strong> i++) {
         ellipse(punktX[i], punktY[i], 10, 10);
     }
 }
@@ -777,7 +792,7 @@ void mousePressed() {
     // Füge einen neuen Punkt hinzu
     punktX[num] = (int)random(0, width);
     punktY[num] = (int)random(0, height);
-    num++;
+    <strong>num++;</strong>
 }</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlexibleArrays"
@@ -809,6 +824,120 @@ void mousePressed() {
       >Übungsaufgaben 6.5a</a
     >
 
+    <details class="top">
+      <summary id="info">Zweidimensionale Arrays</summary>
+      <div class="box-info">
+        <p>
+          In einem Array kann man wunderbar eine Reihe von Zahlen (oder Strings)
+          speichern. Oft möchte man jedoch Zahlen (oder Strings) in einer Art
+          Tabelle speichern. In der Mathematik nennt man das eine Matrix. Im
+          Alltag kennen Sie Tabellenkalkulationsprogramme wie Excel, wo die
+          Elemente mit zwei Indexzahlen angesprochen werden, z.B. mit
+          Zeilennummer und Spaltennummer.
+        </p>
+
+        <h4>Beispiele für 2-dimensionale Strukturen:</h4>
+        <ul>
+          <li>Eine Tabelle, z.B. in einem Tabellenkalkulationsprogramm</li>
+          <li>
+            Ein Spielfeld wie ein Schachbrett oder das Spielfeld bei PacMan
+          </li>
+          <li>Ein Graustufen-Bild mit z.B. 2000x3000 Pixeln</li>
+        </ul>
+
+        <p>
+          Zu beachten ist, dass in einem 2-dimensionalen Array alle Elemente vom
+          gleichen Typ sein müssen, also z.B. nur ganze Zahlen, nur Booleans
+          oder nur Strings.
+        </p>
+
+        <h4>Einfache Arrays</h4>
+        <p>Ein einfacher Zahlenarray wird wie folgt erstellt:</p>
+        <pre><code>int[] a = new int[5];</code></pre>
+        <p>Zu Beginn ist er mit Nullen gefüllt:</p>
+        <pre><code>for (int i = 0; i < a.length; i++) {
+  print(a[i] + " ");
+}</code></pre>
+        <p>Ausgabe: <code>0 0 0 0 0</code></p>
+
+        <h4>Die zweite Dimension</h4>
+        <p>Ein Array mit zwei Dimensionen wird so erzeugt:</p>
+        <pre><code>int[][] b = new int[2][5];</code></pre>
+        <p>
+          Der 2-dimensionale Array hat zwei Indices. Die Länge des Arrays kann
+          abgefragt werden:
+        </p>
+        <pre><code>println(b.length); // Ausgabe: 2</code></pre>
+        <p>Jedes Element enthält einen weiteren Array der Länge 5:</p>
+        <pre><code>println(b[0].length); // Ausgabe: 5
+println(b[1].length); // Ausgabe: 5</code></pre>
+
+        <h4>2-dimensionaler Array als Tabelle</h4>
+        <p>
+          Sie können auf einzelne Elemente mit folgender Notation zugreifen:
+        </p>
+        <pre><code>b[0][0] = 4;
+b[1][4] = 2;</code></pre>
+
+        <h4>Array mit Schleifen durchlaufen</h4>
+        <p>
+          Um alle Elemente zu durchlaufen, benötigen wir zwei verschachtelte
+          Schleifen:
+        </p>
+        <pre><code>for (int k = 0; k < b.length; k++) {
+  for (int i = 0; i < b[k].length; i++) {
+    print(b[k][i] + " ");
+  }
+  println();
+}</code></pre>
+        <p>Beispielausgabe:</p>
+        <pre><code>4 0 0 0 0
+0 0 0 0 2</code></pre>
+
+        <h4>Kurzschreibweise für das Initialisieren</h4>
+        <p>Eine Kurzschreibweise für einen neuen Array mit Anfangswerten:</p>
+        <pre><code>int[][] a = { {4, 0, 0, 0, 0}, {0, 0, 0, 0, 2} };</code></pre>
+
+        <h4>Beispiel: Tic Tac Toe</h4>
+        <pre><code>String[][] ticTacToe = {
+  {"X", "O", "O"},
+  {"-", "X", "-"},
+  {"X", "O", "-"}
+};</code></pre>
+
+        <h4>Beispiel: Auswahl</h4>
+        <pre><code>boolean[][] selection = {
+  {false, true},
+  {false, true},
+  {true, false},
+  {false, false}
+};</code></pre>
+
+        <h4>Mehrdimensionale Arrays</h4>
+        <p>
+          Ja, es gibt auch 3- oder 4-dimensionale Arrays, allgemein als Tensoren
+          bezeichnet. Ein Beispiel sind die Pixel in einem Bild, wo für jeden
+          Pixel drei Farbwerte (RGB) definiert werden.
+        </p>
+        <pre><code>int[][][] tensor = {
+  {
+    {255, 0},
+    {0,   0}
+  },
+  {
+    {0, 255},
+    {255, 0}
+  },
+  {
+    {0, 0  },
+    {0, 255}
+  }
+};</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchZweidimensionaleArrays"
+        ></iframe>
+      </div>
+    </details>
     <!-- Aufgaben - Zweidimensionale Arrays -->
     <a
       class="task"

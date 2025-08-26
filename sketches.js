@@ -17,6 +17,35 @@ function autoResizeCanvas(p) {
   }, 50); // Verzögerung, damit Canvas wirklich da ist
 }
 
+function sketchZweidimensionaleArrays(p) {
+  let b = new Array(2);
+  for (let i = 0; i < b.length; i++) {
+    b[i] = new Array(5).fill(0); // Initialisiere mit Nullen
+  }
+
+  // Beispielwerte setzen
+  b[0][0] = 4;
+  b[1][4] = 2;
+
+  p.setup = () => {
+    p.createCanvas(400, 200);
+    p.textSize(16);
+    autoResizeCanvas(p); // Anpassung für das iframe
+  };
+
+  p.draw = () => {
+    p.background(255);
+    p.fill(0);
+
+    // Zeichne die Werte in der Konsole
+    for (let k = 0; k < b.length; k++) {
+      for (let i = 0; i < b[k].length; i++) {
+        p.text(b[k][i], 20 + i * 40, 40 + k * 40); // Werte zeichnen
+      }
+    }
+  };
+}
+
 function sketchFlexibleArrays(p) {
   let punktX = new Array(100);
   let punktY = new Array(100);
