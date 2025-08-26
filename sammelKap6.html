@@ -235,6 +235,19 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
           wirft dann eine <strong>ArrayIndexOutOfBoundsException</strong>.
         </div>
         <hr />
+        <h4>Weiteres Beispiel zu Veranschaulichung der Array-Datenstruktur</h4>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayD2.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+        <pre><code>int[] a = {10, 7, 0, -5, 33};</code></pre>
+
+        <br />
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayD1.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+        <hr />
       </div>
     </details>
 
@@ -420,9 +433,9 @@ void draw() {
           Zum Beispiel können wir ein String-Array für Namen, ein int-Array für
           Alter und ein boolean-Array für das Geschlecht nutzen:
         </p>
-        <pre><code>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
+        <pre><code><strong>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
 int[] alter = { 33, 28, 12 };
-boolean[] weiblich = { false, true, false };</code></pre>
+boolean[] weiblich = { false, true, false };</strong></code></pre>
         <p>
           Der Index verbindet die Arrays: Index 0 steht für "Max Schmidt" und 33
           Jahre, Index 1 für "Lisa Marx" und 28 Jahre, usw.
@@ -432,29 +445,25 @@ boolean[] weiblich = { false, true, false };</code></pre>
           Schleife verwenden:
         </p>
         <pre><code>for (int i = 0; i < namen.length; i++) {
-    if (weiblich[i]) {
-        print("Frau ");
+    <strong>if (weiblich[i])</strong> {
+        println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
     } else {
-        print("Herr ");
+        println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
     }
-    println(namen[i] + ", " + alter[i] + " Jahre alt");
 }</code></pre>
 
         <!-- Beispiel-Sketch für Personen -->
 
         <h4>Gesamter Sketch für Personen repräsentieren</h4>
-        <pre><code>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
+        <pre><code><strong>String[] namen = { "Max Schmidt", "Lisa Marx", "Robin Meier" };
 int[] alter = { 33, 28, 12 };
-boolean[] weiblich = { false, true, false };
+boolean[] weiblich = { false, true, false };</strong>
 
-void setup() {
-    size(400, 200);
-    for (int i = 0; i < namen.length; i++) {
-        if (weiblich[i]) {
-            println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
-        } else {
-            println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
-        }
+for (int i = 0; i < namen.length; i++) {
+    <strong>if (weiblich[i])</strong> {
+        println("Frau " + namen[i] + ", " + alter[i] + " Jahre alt");
+    } else {
+        println("Herr " + namen[i] + ", " + alter[i] + " Jahre alt");
     }
 }</code></pre>
         <h4>Konsolenausgabe</h4>
@@ -578,7 +587,7 @@ void keyPressed() {
           Sie den Klassennamen (z.B. <strong>PVector</strong>) als Typ verwenden
           und ihn mit eckigen Klammern versehen:
         </p>
-        <pre><code>PVector[] spaceships = new PVector[5];</code></pre>
+        <pre><code><strong>PVector[] spaceships = new PVector[5];</strong></code></pre>
         <hr />
         <h4>Instanzieren der Objekte</h4>
         <p>
@@ -614,36 +623,38 @@ void keyPressed() {
           src="https://p5-sketches-demo.netlify.app/img/arrobj2.png"
           alt="KEIN BILLD GEFUNDEN"
         />
+        <hr />
+        <h4>Initialisieren der Vektoren</h4>
         <p>
           Jetzt sind die Arrayzellen mit Referenzen auf die erstellten Objekte
           gefüllt. Sie können auch Zufallswerte verwenden, um die Vektoren zu
           initialisieren:
         </p>
-        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+        <pre><code><strong>for (int i = 0; i < spaceships.length; i++) {
     float x = random(400);
     float y = random(400);
     spaceships[i] = new PVector(x, y);
-}</code></pre>
+}</strong></code></pre>
         <p>
           Der Zugriff auf die einzelnen Zellen des Arrays erfolgt ebenfalls über
           die eckigen Klammern und den Index:
         </p>
-        <pre><code>for (int i = 0; i < spaceships.length; i++) {
+        <pre><code><strong>for (int i = 0; i < spaceships.length; i++) {
     rect(spaceships[i].x, spaceships[i].y, 20, 20);
-}</code></pre>
+}</strong></code></pre>
         <hr />
         <h4>✅ Gesamter Sketch für Objekte in Arrays speichern</h4>
-        <pre><code class="language-processing">PVector[] spaceships = new PVector[5];
+        <pre><code class="language-processing"><strong>PVector[] spaceships = new PVector[5];</strong>  // Array für 5 PVector-Objekte
 
 void setup() {
     size(400, 400);
     
     // Objekte im Array initialisieren
-    for (int i = 0; i < spaceships.length; i++) {
+    <strong>for (int i = 0; i < spaceships.length; i++) {
         float x = random(400);
         float y = random(400);
         spaceships[i] = new PVector(x, y);
-    }
+    }</strong>
 }
 
 void draw() {
@@ -651,9 +662,10 @@ void draw() {
     fill(255);
     
     // Rechtecke an den Positionen der Vektoren zeichnen
-    for (int i = 0; i < spaceships.length; i++) {
+    <strong>for (int i = 0; i < spaceships.length; i++) {
         rect(spaceships[i].x, spaceships[i].y, 20, 20);
-    }
+    }</strong>
+}
 
 void keyPressed() {  
   // Neue Zufallspositionen generieren
@@ -681,21 +693,36 @@ void keyPressed() {
     <details class="top">
       <summary id="info">Flexible Arrays</summary>
       <div class="box-info">
+        <h4>Nachteil von Arrays</h4>
+        <ul>
+          <li>Die <strong>Arraygröße ist fest</strong></li>
+          <li>
+            Sie muss bei der <strong>Deklaration angegeben werden</strong> und
+            kann nicht verändert werden
+          </li>
+          <li>
+            Oft weiß man nicht, <strong>wie viele</strong> Variablen oder
+            Objekte man insgesamt benötigt werden.
+          </li>
+        </ul>
         <p>
-          Arrays haben einen großen Nachteil: Die Länge muss zu Beginn
-          festgelegt werden. Wenn Sie während des Programmlaufs neue "Objekte"
-          zu Ihrem Array hinzufügen möchten, müssen Sie eine Strategie finden.
+          Wenn Sie während des Programmlaufs neue "Objekte" zu Ihrem Array
+          hinzufügen möchten, müssen Sie eine Strategie finden.
+        </p>
+        <p>
+          Angenommen, Sie möchten sich Koordinatenpunkte merken. Sie speichern
+          die x- und y-Koordinaten in zwei Arrays. Zu Beginn möchten Sie sich
+          nur zwei Punkte merken, aber Sie erzeugen dennoch Arrays der Länge
+          100.
+        </p>
+        <hr />
+        <h4>Lösung:</h4>
+        <p>
           Die Grundidee ist, einen Array zu erzeugen, der wesentlich größer ist,
           als Sie zunächst brauchen, und nur einen Teil davon zu verwenden.
         </p>
-
-        <p>
-          Angenommen, Sie möchten sich Punkte merken. Sie speichern die x- und
-          y-Koordinaten in zwei Arrays. Zu Beginn möchten Sie sich nur zwei
-          Punkte merken, aber Sie erzeugen dennoch Arrays der Länge 100:
-        </p>
-        <pre><code>int[] punktX = new int[100];
-int[] punktY = new int[100];
+        <pre><code><strong>int[] punktX = new int[100];
+int[] punktY = new int[100];</strong>
 
 void setup() {
   punktX[0] = 20;
@@ -712,19 +739,20 @@ void setup() {
           Da Sie nicht wissen, wie viele Elemente dieser zwei Arrays wirklich
           "sinnvoll" verwendet werden, können Sie keine Schleife definieren, um
           die sinnvoll gefüllten Elemente für das Zeichnen zu verwenden. Die
-          Lösung ist, eine neue Variable einzuführen, die angibt, wie weit das
-          Array befüllt ist. In unserem Fall wäre die "Länge" gleich 3:
+          Lösung ist, <strong>eine neue Variable einzuführen</strong>, die
+          angibt, wie weit das Array befüllt ist. In unserem Fall wäre die
+          "Länge" gleich 3:
         </p>
         <pre><code>int[] punktX = new int[100];
 int[] punktY = new int[100];
-int num = 3;</code></pre>
+<strong>int num = 3;</strong></code></pre>
 
         <p>
           Jetzt können Sie eine Zeichenroutine einführen, die auf
           <code>num</code> basiert:
         </p>
         <pre><code>void draw() {
-  for (int i= 0; i < num; i++) {
+  for (int i= 0; <strong>i < num;</strong> i++) {
     ellipse(punktX[i], punktY[i], 10, 10);
   }
 }</code></pre>
@@ -733,7 +761,7 @@ int num = 3;</code></pre>
         <pre><code>void mousePressed() {
   punktX[num] = int(random(0, width));
   punktY[num] = int(random(0, height));
-  num++;
+  <strong>num++;</strong>
 }</code></pre>
 
         <p>
@@ -745,9 +773,9 @@ int num = 3;</code></pre>
         </p>
         <hr />
         <h4>✅ Gesamter Sketch für Flexible Arrays</h4>
-        <pre><code class="language-processing">int[] punktX = new int[100];
+        <pre><code class="language-processing"><strong>int[] punktX = new int[100];
 int[] punktY = new int[100];
-int num = 3;
+int num = 3;</strong>
 
 void setup() {
     size(400, 400);
@@ -768,7 +796,7 @@ void draw() {
     fill(255); // Füllfarbe für die Punkte
 
     // Zeichne die Punkte
-    for (int i = 0; i < num; i++) {
+    for (int i = 0; <strong>i < num;</strong> i++) {
         ellipse(punktX[i], punktY[i], 10, 10);
     }
 }
@@ -777,7 +805,7 @@ void mousePressed() {
     // Füge einen neuen Punkt hinzu
     punktX[num] = (int)random(0, width);
     punktY[num] = (int)random(0, height);
-    num++;
+    <strong>num++;</strong>
 }</code></pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchFlexibleArrays"
@@ -809,6 +837,159 @@ void mousePressed() {
       >Übungsaufgaben 6.5a</a
     >
 
+    <details class="top">
+      <summary id="info">Zweidimensionale Arrays</summary>
+      <div class="box-info">
+        <h4>Motivation</h4>
+        <p>
+          In einem Array kann man wunderbar eine Reihe von Zahlen (oder Strings)
+          speichern. Oft möchte man jedoch Zahlen (oder Strings) in einer Art
+          Tabelle speichern. In der Mathematik nennt man das eine Matrix. Im
+          Alltag kennen Sie Tabellenkalkulationsprogramme wie Excel, wo die
+          Elemente mit zwei Indexzahlen angesprochen werden, z.B. mit
+          Zeilennummer und Spaltennummer.
+        </p>
+
+        <h4>Beispiele für 2-dimensionale Strukturen:</h4>
+        <ul>
+          <li>Eine Tabelle, z.B. in einem Tabellenkalkulationsprogramm</li>
+          <li>
+            Ein Spielfeld wie ein Schachbrett oder das Spielfeld bei PacMan
+          </li>
+          <li>Punkte im Koordinatensystem in Processing</li>
+        </ul>
+
+        <p>
+          Zu beachten ist, dass in einem 2-dimensionalen Array
+          <u><strong>alle Elemente vom gleichen Typ sein müssen</strong></u
+          >, also z.B. nur ganze Zahlen, nur Booleans oder nur Strings.
+        </p>
+        <hr />
+        <h4>Einfache Arrays</h4>
+        <p>Ein einfacher Zahlenarray wird wie folgt erstellt:</p>
+        <pre><code>int[] a = new int[5];</code></pre>
+        <p>Zu Beginn ist er mit Nullen gefüllt:</p>
+        <pre><code>for (int i = 0; i < a.length; i++) {
+  print(a[i] + " ");
+}</code></pre>
+        <p>Ausgabe: <code>0 0 0 0 0</code></p>
+        <hr />
+        <h4>Die zweite Dimension</h4>
+        <p>Ein Array mit zwei Dimensionen wird so erzeugt:</p>
+        <pre><code><strong>int[][] b = new int[2][5];</strong></code></pre>
+        <p>
+          Der 2-dimensionale Array hat zwei Indices. Die Länge des Arrays kann
+          abgefragt werden:
+        </p>
+        <pre><code><strong>println(b.length);</strong> // Ausgabe: 2</code></pre>
+        <p>Jedes Element enthält einen weiteren Array der Länge 5:</p>
+        <pre><code><strong>println(b[0].length);</strong> // Ausgabe: 5
+<strong>println(b[1].length);</strong> // Ausgabe: 5</code></pre>
+
+        <p>
+          Sie können auf einzelne Elemente wie in einer Tabelle mit folgender
+          Notation zugreifen:
+        </p>
+        <pre><code><strong>b[0][0] = 4;
+b[1][4] = 2;</strong></code></pre>
+
+        <div class="box-warning">
+          <p>
+            Denkt daran, dass wir bei 0 anfangen zu zählen. Auf
+            <code><strong>b[2][5]</strong></code> kann man nicht zugreifen!
+          </p>
+        </div>
+        <h4>Kurzschreibweise für das Initialisieren</h4>
+        <p>Eine Kurzschreibweise für einen neuen Array mit Anfangswerten:</p>
+        <pre><code><strong>int[][] a = { {4, 0, 0, 0, 0}, {0, 0, 0, 0, 2} };</strong></code></pre>
+
+        <h4>Array mit Schleifen durchlaufen</h4>
+        <p>
+          Um alle Elemente zu durchlaufen, benötigen wir zwei verschachtelte
+          Schleifen:
+        </p>
+        <pre><code><strong>for (int k = 0; k < b.length; k++) {
+  for (int i = 0; i < b[k].length; i++) {
+    print(b[k][i] + " ");
+  }
+  println();
+}</strong></code></pre>
+
+        <h4>Beispiel - Zweidimensionale Arrays</h4>
+        <pre><code class="language-processing"><strong>int[][] b = {
+  {4, 0, 0, 0, 0},
+  {0, 0, 0, 0, 2}
+};</strong>
+
+void setup() {
+  size(400, 200);
+  textSize(16);
+}
+
+void draw() {
+  background(255);
+  fill(0);
+
+  // Zeichne die Werte in der Konsole
+  <strong>for (int k = 0; k < b.length; k++) {
+    for (int i = 0; i < b[k].length; i++) {
+      text(b[k][i], 20 + i * 40, 40 + k * 40); // Werte zeichnen
+    }
+  }</strong>
+}</code></pre>
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchZweidimensionaleArrays"
+        ></iframe>
+
+        <h4>Beispiel: Tic Tac Toe</h4>
+        <pre><code>String[][] ticTacToe = {
+  {"X", "O", "O"},
+  {"-", "X", "-"},
+  {"X", "O", "-"}
+};</code></pre>
+
+        <h4>Beispiel: Auswahl</h4>
+        <pre><code>boolean[][] selection = {
+  {false, true},
+  {false, true},
+  {true, false},
+  {false, false}
+};</code></pre>
+
+        <h4>Mehrdimensionale Arrays</h4>
+        <p>
+          Ja, es gibt auch 3- oder 4-dimensionale Arrays, allgemein als Tensoren
+          bezeichnet. Ein Beispiel sind die Pixel in einem Bild, wo für jeden
+          Pixel drei Farbwerte (RGB) definiert werden.
+        </p>
+        <pre><code>int[][][] tensor = {
+  {
+    {255, 0},
+    {0,   0}
+  },
+  {
+    {0, 255},
+    {255, 0}
+  },
+  {
+    {0, 0  },
+    {0, 255}
+  }
+};</code></pre>
+        <hr />
+        <h4>Illustration von 1- 2- und 3-dimensionalen Arrays</h4>
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayM.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+        <div class="box-question">
+          <p>
+            Wie viele Zeilen und Spalten haben die Arrays ticTacToe, selection
+            und tensor?
+          </p>
+        </div>
+      </div>
+    </details>
     <!-- Aufgaben - Zweidimensionale Arrays -->
     <a
       class="task"
@@ -841,6 +1022,41 @@ void mousePressed() {
             Datentyps in einer einzigen Variable, was zu einem übersichtlicheren
             und wartbareren Code führt.
           </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal8" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal8" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was sind die Nachteile von Arrays?
+        </summary>
+        <div class="box-info">
+          Die Hauptnachteile von Arrays sind:
+          <ul>
+            <li>
+              Die <strong>Größe ist fest</strong>: Die Länge eines Arrays muss
+              bei der Deklaration angegeben werden und kann nicht nachträglich
+              geändert werden.
+            </li>
+            <li>
+              <strong>Speicherplatzverschwendung</strong>: Wenn die tatsächliche
+              Anzahl der benötigten Elemente kleiner ist als die Größe des
+              Arrays, wird Speicherplatz verschwendet.
+            </li>
+            <li>
+              <strong>Keine dynamische Anpassung</strong>: Arrays können nicht
+              dynamisch wachsen oder schrumpfen, was die Flexibilität
+              einschränkt.
+            </li>
+          </ul>
         </div>
       </details>
 
@@ -883,6 +1099,95 @@ void mousePressed() {
           <p>
             Man erhält eine <strong>ArrayIndexOutOfBoundsException</strong>, da
             der Index außerhalb des gültigen Bereichs liegt.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal4" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal4" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie initialisiert man ein Array mit Werten in einer Zeile?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man kann ein Array mit Werten in einer Zeile initialisieren, indem
+            man die Kurzschreibweise verwendet, z.B.:
+            <code>int[] a = {10, 20, 30};</code>
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal5" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal5" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was ist der Unterschied zwischen einem eindimensionalen und einem
+          zweidimensionalen Array?
+        </summary>
+        <div class="box-info">
+          <p>
+            Ein eindimensionaler Array speichert Werte in einer einzigen Liste,
+            während ein zweidimensionaler Array Werte in einer Tabelle mit
+            Zeilen und Spalten speichert.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal6" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal6" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie kann man die Größe eines Arrays zur Laufzeit ändern?
+        </summary>
+        <div class="box-info">
+          <p>
+            In Java und Processing sind Arrays statisch. Um die Größe eines
+            Arrays zur Laufzeit zu ändern, muss man ein neues Array erstellen
+            und die Werte aus dem alten Array in das neue kopieren.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal7" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal7" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was passiert, wenn Sie versuchen, ein Array mit unterschiedlichen
+          Datentypen zu erstellen?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man erhält einen Kompilierungsfehler, da alle Elemente in einem
+            Array vom gleichen Datentyp sein müssen.
           </p>
         </div>
       </details>
