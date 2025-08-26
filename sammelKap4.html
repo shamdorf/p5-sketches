@@ -19,8 +19,6 @@
     </script>
   </head>
   <body>
-
-    
     <!-- Link Kapitel 4 -->
     <a
       class="button"
@@ -251,8 +249,8 @@
           Um ein Objekt einer Klasse zu erstellen muss man es wie eine Variable
           deklarieren und anschließend erzeugen.
         </p>
-        <pre><code>PVector vec;  //Deklariert einen Vektor
-vec = new PVector(10, 20); // Erzeugt ein PVector-Objekt mit x=10 und y=20</code></pre>
+        <pre><code><strong>PVector vec;</strong>  //Deklariert einen Vektor
+<strong>vec = new PVector(10, 20);</strong> // Erzeugt ein PVector-Objekt mit x=10 und y=20</code></pre>
       </details>
     </details>
 
@@ -264,9 +262,10 @@ vec = new PVector(10, 20); // Erzeugt ein PVector-Objekt mit x=10 und y=20</code
           Vektoren werden in Processing verwendet, um den Ort und die
           Geschwindigkeit von Objekten zu definieren und zu verändern. Sie sind
           besonders nützlich in der Physik und Computergrafik, da sie sowohl
-          Richtung als auch Größe darstellen können.
+          <strong>Richtung</strong> als auch <strong>Größe</strong> darstellen
+          können.
         </p>
-        <h3>Eigenschaften von Vektoren</h3>
+        <h4>Eigenschaften von Vektoren</h4>
         <ul>
           <li class="important">
             <code>x</code>: Die x-Koordinate des Vektors.
@@ -279,6 +278,9 @@ vec = new PVector(10, 20); // Erzeugt ein PVector-Objekt mit x=10 und y=20</code
             3D-Anwendungen).
           </li>
           <li><code>magnitude()</code>: Gibt die Länge des Vektors zurück.</li>
+        </ul>
+        <h4>Methoden von Vektoren</h4>
+        <ul>
           <li>
             <code>normalize()</code>: Wandelt den Vektor in einen Einheitsvektor
             um.
