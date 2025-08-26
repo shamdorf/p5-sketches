@@ -49,7 +49,14 @@ pre {
     background-color: rgb(197, 184, 184);
     border-radius: var(--box-radius);
     padding: 1.5rem;
+    font-size: 1rem;
     border: 1px solid black;
+}
+
+pre strong {
+    color: #482de0;
+    font-size: 1.1rem;
+
 }
 
 code {
@@ -489,11 +496,7 @@ table.operator-table {
     font-size: 1.1rem;
 }
 
-pre strong {
-    color: #482de0;
-    font-size: 0.9rem;
 
-}
 
 .definition {
     border: 2px solid #3498db;

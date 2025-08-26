@@ -235,16 +235,19 @@ println(<strong>xarray[4]</strong>); // letztes Element ausgeben</code></pre>
           wirft dann eine <strong>ArrayIndexOutOfBoundsException</strong>.
         </div>
         <hr />
-        <h4>Weiteres Beispiel zu Veranschaulichung</h4>
-        <pre><code>int[] a = {10, 7, 0, -5, 33};</code></pre>
-        <img
-          src="https://p5-sketches-demo.netlify.app/img/arrayD1.png"
-          alt="KEIN BILD GEFUNDEN"
-        />
+        <h4>Weiteres Beispiel zu Veranschaulichung der Array-Datenstruktur</h4>
         <img
           src="https://p5-sketches-demo.netlify.app/img/arrayD2.png"
           alt="KEIN BILD GEFUNDEN"
         />
+        <pre><code>int[] a = {10, 7, 0, -5, 33};</code></pre>
+
+        <br />
+        <img
+          src="https://p5-sketches-demo.netlify.app/img/arrayD1.png"
+          alt="KEIN BILD GEFUNDEN"
+        />
+        <hr />
       </div>
     </details>
 
@@ -853,15 +856,15 @@ void mousePressed() {
           <li>
             Ein Spielfeld wie ein Schachbrett oder das Spielfeld bei PacMan
           </li>
-          <li>Ein Graustufen-Bild mit z.B. 2000x3000 Pixeln</li>
+          <li>Punkte im Koordinatensystem in Processing</li>
         </ul>
 
         <p>
-          Zu beachten ist, dass in einem 2-dimensionalen Array alle Elemente vom
-          gleichen Typ sein müssen, also z.B. nur ganze Zahlen, nur Booleans
-          oder nur Strings.
+          Zu beachten ist, dass in einem 2-dimensionalen Array
+          <u><strong>alle Elemente vom gleichen Typ sein müssen</strong></u
+          >, also z.B. nur ganze Zahlen, nur Booleans oder nur Strings.
         </p>
-
+        <hr />
         <h4>Einfache Arrays</h4>
         <p>Ein einfacher Zahlenarray wird wie folgt erstellt:</p>
         <pre><code>int[] a = new int[5];</code></pre>
@@ -870,7 +873,7 @@ void mousePressed() {
   print(a[i] + " ");
 }</code></pre>
         <p>Ausgabe: <code>0 0 0 0 0</code></p>
-
+        <hr />
         <h4>Die zweite Dimension</h4>
         <p>Ein Array mit zwei Dimensionen wird so erzeugt:</p>
         <pre><code><strong>int[][] b = new int[2][5];</strong></code></pre>
@@ -883,9 +886,9 @@ void mousePressed() {
         <pre><code><strong>println(b[0].length);</strong> // Ausgabe: 5
 <strong>println(b[1].length);</strong> // Ausgabe: 5</code></pre>
 
-        <h4>2-dimensionaler Array als Tabelle</h4>
         <p>
-          Sie können auf einzelne Elemente mit folgender Notation zugreifen:
+          Sie können auf einzelne Elemente wie in einer Tabelle mit folgender
+          Notation zugreifen:
         </p>
         <pre><code><strong>b[0][0] = 4;
 b[1][4] = 2;</strong></code></pre>
@@ -896,18 +899,22 @@ b[1][4] = 2;</strong></code></pre>
             <code><strong>b[2][5]</strong></code> kann man nicht zugreifen!
           </p>
         </div>
+        <h4>Kurzschreibweise für das Initialisieren</h4>
+        <p>Eine Kurzschreibweise für einen neuen Array mit Anfangswerten:</p>
+        <pre><code><strong>int[][] a = { {4, 0, 0, 0, 0}, {0, 0, 0, 0, 2} };</strong></code></pre>
 
         <h4>Array mit Schleifen durchlaufen</h4>
         <p>
           Um alle Elemente zu durchlaufen, benötigen wir zwei verschachtelte
           Schleifen:
         </p>
-        <pre><code>for (int k = 0; k < b.length; k++) {
+        <pre><code><strong>for (int k = 0; k < b.length; k++) {
   for (int i = 0; i < b[k].length; i++) {
     print(b[k][i] + " ");
   }
   println();
-}</code></pre>
+}</strong></code></pre>
+
         <h4>Beispiel - Zweidimensionale Arrays</h4>
         <pre><code class="language-processing"><strong>int[][] b = {
   {4, 0, 0, 0, 0},
@@ -933,10 +940,6 @@ void draw() {
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchZweidimensionaleArrays"
         ></iframe>
-
-        <h4>Kurzschreibweise für das Initialisieren</h4>
-        <p>Eine Kurzschreibweise für einen neuen Array mit Anfangswerten:</p>
-        <pre><code>int[][] a = { {4, 0, 0, 0, 0}, {0, 0, 0, 0, 2} };</code></pre>
 
         <h4>Beispiel: Tic Tac Toe</h4>
         <pre><code>String[][] ticTacToe = {
@@ -973,6 +976,12 @@ void draw() {
     {0, 255}
   }
 };</code></pre>
+        <div class="box-question">
+          <p>
+            Wie viele Zeilen und Spalten haben die Arrays ticTacToe, selection
+            und tensor?
+          </p>
+        </div>
       </div>
     </details>
     <!-- Aufgaben - Zweidimensionale Arrays -->
@@ -1007,6 +1016,41 @@ void draw() {
             Datentyps in einer einzigen Variable, was zu einem übersichtlicheren
             und wartbareren Code führt.
           </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal8" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal8" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was sind die Nachteile von Arrays?
+        </summary>
+        <div class="box-info">
+          Die Hauptnachteile von Arrays sind:
+          <ul>
+            <li>
+              Die <strong>Größe ist fest</strong>: Die Länge eines Arrays muss
+              bei der Deklaration angegeben werden und kann nicht nachträglich
+              geändert werden.
+            </li>
+            <li>
+              <strong>Speicherplatzverschwendung</strong>: Wenn die tatsächliche
+              Anzahl der benötigten Elemente kleiner ist als die Größe des
+              Arrays, wird Speicherplatz verschwendet.
+            </li>
+            <li>
+              <strong>Keine dynamische Anpassung</strong>: Arrays können nicht
+              dynamisch wachsen oder schrumpfen, was die Flexibilität
+              einschränkt.
+            </li>
+          </ul>
         </div>
       </details>
 
@@ -1049,6 +1093,95 @@ void draw() {
           <p>
             Man erhält eine <strong>ArrayIndexOutOfBoundsException</strong>, da
             der Index außerhalb des gültigen Bereichs liegt.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal4" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal4" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie initialisiert man ein Array mit Werten in einer Zeile?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man kann ein Array mit Werten in einer Zeile initialisieren, indem
+            man die Kurzschreibweise verwendet, z.B.:
+            <code>int[] a = {10, 20, 30};</code>
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal5" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal5" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was ist der Unterschied zwischen einem eindimensionalen und einem
+          zweidimensionalen Array?
+        </summary>
+        <div class="box-info">
+          <p>
+            Ein eindimensionaler Array speichert Werte in einer einzigen Liste,
+            während ein zweidimensionaler Array Werte in einer Tabelle mit
+            Zeilen und Spalten speichert.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal6" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal6" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Wie kann man die Größe eines Arrays zur Laufzeit ändern?
+        </summary>
+        <div class="box-info">
+          <p>
+            In Java und Processing sind Arrays statisch. Um die Größe eines
+            Arrays zur Laufzeit zu ändern, muss man ein neues Array erstellen
+            und die Werte aus dem alten Array in das neue kopieren.
+          </p>
+        </div>
+      </details>
+
+      <details class="box-question">
+        <summary>
+          <div class="radio-container">
+            <label
+              ><input type="radio" name="goal7" value="verstehe" /> ✅</label
+            >
+            <label
+              ><input type="radio" name="goal7" value="nicht_verstehe" />
+              ❌</label
+            >
+          </div>
+          Was passiert, wenn Sie versuchen, ein Array mit unterschiedlichen
+          Datentypen zu erstellen?
+        </summary>
+        <div class="box-info">
+          <p>
+            Man erhält einen Kompilierungsfehler, da alle Elemente in einem
+            Array vom gleichen Datentyp sein müssen.
           </p>
         </div>
       </details>
