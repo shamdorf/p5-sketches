@@ -25,15 +25,14 @@
     </script>
   </head>
   <body>
-
-       <!-- Link Kapitel 1  -->
+    <!-- Link Kapitel 1  -->
     <a
       class="button"
       href="https://michaelkipp.de/processing/erste-schritte.html"
       target="_blank"
       >Link zum Processing Kurs - Kapitel 1</a
     >
-   <!-- Lernziele Kapitel 1 -->
+    <!-- Lernziele Kapitel 1 -->
     <div class="box-learning-goals">
       <details>
         <summary>Lernziele für Kapitel 1</summary>
@@ -469,7 +468,8 @@ ellipse(100, 200, 200, 300);</pre
       <!-- ARC -->
       <details class="box-command">
         <summary>
-          🌙 arc(x, y, breite, höhe, radians(start), radians(stop)) - Kreisbogen
+          🌙 arc(x, y, breite, höhe, radians(start), radians(stop)) -
+          <strong>Kreisbogen</strong>
         </summary>
         <ul>
           <li><code>x, y b, h</code> sind wie bei der Ellipse</li>
@@ -557,6 +557,7 @@ endShape();</pre
         🛠️ Wichtige Befehle/Funktionen in Processing
       </summary>
 
+      <!-- println -->
       <details class="box-command">
         <summary>
           🖥️ print(), println() - <strong>Konsolenausgabe</strong>
@@ -587,6 +588,7 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
         </div>
       </details>
       <!-- Size -->
+
       <details class="box-command">
         <summary>🔲 size(x, y) - <strong>Bildschirmauflösung</strong></summary>
         <p>
@@ -602,6 +604,24 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchSize"
         ></iframe>
       </details>
+      <!-- strokeWeight -->
+      <details class="box-command">
+        <summary>
+          🔲 strokeWeight(d) - <strong>Punkt- und Linienstärke</strong>
+        </summary>
+        <p>
+          Mit dem Befehl <code>strokeWeight(dicke)</code> kann man festlegen,
+          wie dick Punkte und Linien gezeichnet werden.
+        </p>
+
+        <ul>
+          <li>d - Dicke in Pixeln</li>
+        </ul>
+        <pre>
+strokeWeight(4);  // Dicke von 4 Pixeln
+point(50, 50);</pre
+        >
+      </details>
     </details>
 
     <!-- Koordinatensystem -->
@@ -616,6 +636,7 @@ println("Etwas Text"); //Mit Sprung in eine neue Zeile</code></pre>
 size(800, 600);
 int abstand = 50;
 textSize(20);
+fill(0);
 for (float i = 0; i < width; i += abstand) {
   line(i, 0, i, height);
   text((int)i, i, 20);
@@ -624,7 +645,7 @@ for (float i = 0; i < height; i += abstand) {
   line(0, i, width, i);
   text((int)i, 10, i);
 }
-      </pre
+fill(255);</pre
         >
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrid"
