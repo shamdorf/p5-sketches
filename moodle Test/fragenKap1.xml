@@ -206,7 +206,7 @@
         </feedback>
     </question>
 
-    <!-- Frage 7: Lückenf��llfrage -->
+    <!-- Frage 7: Lückenfüllfrage -->
     <question type="shortanswer">
         <name>
             <text>Lückenfüllfrage zu circle, arc und rectMode</text>
