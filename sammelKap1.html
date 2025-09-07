@@ -1536,28 +1536,6 @@ endShape();</pre
       </details>
     </details>
 
-    <script>
-      // Diese Funktion wird in der geladenen HTML-Datei aufgerufen
-      function autoResizeCanvas() {
-        const canvas = document.getElementById("yourCanvasId"); // Ersetze 'yourCanvasId' durch die ID deines Canvas-Elements
-        if (canvas) {
-          const width = canvas.offsetWidth || canvas.width;
-          const height = canvas.offsetHeight || canvas.height;
-
-          // Sende die neuen Dimensionen an das übergeordnete Fenster
-          window.parent.postMessage(
-            {
-              type: "resize-iframe",
-              width,
-              height,
-            },
-            "*"
-          );
-        }
-      }
-
-      // Rufe die Funktion auf, wenn der Inhalt vollständig geladen ist
-      window.onload = autoResizeCanvas;
-    </script>
+    <script></script>
   </body>
 </html>
