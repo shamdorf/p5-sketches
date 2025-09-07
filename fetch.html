@@ -1,0 +1,23 @@
+<div id="content" style="width: 100%"></div>
+
+<script>
+  const url = "https://p5-sketches-demo.netlify.app/sammelkap1"; // URL zur HTML-Datei
+
+  function loadContent() {
+    fetch(url)
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Netzwerkantwort war nicht ok");
+        }
+        return response.text();
+      })
+      .then((html) => {
+        document.getElementById("content").innerHTML = html;
+      })
+      .catch((error) => {
+        console.error("Es gab ein Problem mit der Fetch-Operation:", error);
+      });
+  }
+
+  document.addEventListener("DOMContentLoaded", loadContent);
+</script>
