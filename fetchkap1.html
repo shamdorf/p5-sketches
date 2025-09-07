@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="content" style="width: 100%"></div>
+
+    <script>
+      (function () {
+        const url = "https://p5-sketches-demo.netlify.app/sammelkap1"; // URL hier
+
+        function loadContent() {
+          fetch(url)
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Netzwerkantwort war nicht ok");
+              }
+              return response.text();
+            })
+            .then((html) => {
+              document.getElementById("content").innerHTML = html;
+              const contentDiv = document.getElementById("content");
+              contentDiv.style.height = contentDiv.scrollHeight + "px";
+            })
+            .catch((error) => {
+              console.error(
+                "Es gab ein Problem mit der Fetch-Operation:",
+                error
+              );
+            });
+        }
+
+        document.addEventListener("DOMContentLoaded", loadContent);
+      })(); // Sofortige Ausführung
+    </script>
+  </body>
+</html>
