@@ -85,7 +85,16 @@ details summary {
   list-style: none;
   /* Entfernt das Standard-Dreieck */
   cursor: pointer;
-  text-decoration: underline;
+
+  /* position: relative; */
+  /* padding-left: .2em; */
+}
+
+details summary :hover {
+  list-style: none;
+  /* Entfernt das Standard-Dreieck */
+  cursor: pointer;
+  font-size: 1.1rem;
   /* position: relative; */
   /* padding-left: .2em; */
 }
