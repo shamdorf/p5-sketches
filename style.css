@@ -90,14 +90,27 @@ details summary {
   /* padding-left: .2em; */
 }
 
-details summary :hover {
+details summary:hover {
   list-style: none;
   /* Entfernt das Standard-Dreieck */
   cursor: pointer;
-  font-size: 1.1rem;
+  /* font-size: 1.3rem; */
+  /* transform: translateY(-2px) scale(1.03); */
   /* position: relative; */
   /* padding-left: .2em; */
 }
+
+/*
+summary::before {
+  content: "▶";  
+  position: absolute;
+  left: 0; 
+  transition: transform 0.3s; 
+}
+
+details[open] summary::before {
+  transform: rotate(90deg); 
+} */
 
 #question {
   font-weight: 900;
