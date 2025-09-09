@@ -567,7 +567,7 @@ strong {
     margin: 0;
     border-radius: 1rem;
     padding: 2rem;
-    border-left: 7px solid red;
+    border-left: 7px solid red !important;
     background: linear-gradient(to bottom, #ffd580, #ffb84d);
     text-align: left;
 }
