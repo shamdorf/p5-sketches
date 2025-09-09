@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <link
       rel="stylesheet"
       href="https://p5-sketches-demo.netlify.app/style.css"
@@ -13,6 +14,7 @@
         if (event.data?.type === "resize-iframe") {
           const iframes = document.querySelectorAll("iframe");
           for (const iframe of iframes) {
+            // Prüfen, ob Nachricht von diesem iframe kam
             if (iframe.contentWindow === event.source) {
               iframe.style.width = event.data.width + "px";
               iframe.style.height = event.data.height + "px";
@@ -24,12 +26,6 @@
   </head>
   <body>
     <!-- Link Kapitel 4 -->
-    <a
-      class="button"
-      href="https://michaelkipp.de/processing/if.html"
-      target="_blank"
-      >Link zum Processing Kurs - Kapitel 4</a
-    >
 
     <!-- Lernziele für Kapitel 4 -->
     <div class="box-learning-goals">
@@ -250,10 +246,7 @@
           Eigenschaften/Variablen als auch Aktionen/Methoden beinhaltet. Sie
           wird irgendwo im Speicher abgelegt und kann mehrere Daten speichern.
         </p>
-        <!-- <img
-          src="https://p5-sketches-demo.netlify.app/img/obj0.png"
-          alt="KEIN BILD GEFUNDEN"
-        /> -->
+
         <p>
           Wir haben schon den Objekt-Datentyp bzw. die Klasse
           <code><u>String</u></code> für Zeichenketten kennengelernt. Wie lernen
@@ -309,12 +302,14 @@
         <pre><code><strong>PImage img;</strong> //Erstellen eines PImage-Objekts mit dem Namen img
 void setup() {
     size(800, 600);
-    <strong>img = loadImage("sonnensystem.jpg");</strong> // Laden des Bildes aus dem Ordner data
-    
+    // Laden des Bildes aus dem Ordner data
+    <strong>img = loadImage("sonnensystem.jpg");</strong> 
+        
 }
 
 void draw() {
-    <strong>image(img, 0, 0, width, height);</strong> // Bild an der Position (0, 0) mit größe (width, height) zeichnen
+    // Bild an der Position (0, 0) mit größe (width, height) zeichnen
+    <strong>image(img, 0, 0, width, height);</strong> 
 }
 </code></pre>
 
@@ -333,18 +328,20 @@ void draw() {
         >
           Download deflin.png
         </a>
-        <pre><code><strong>PImage img;</strong> // //Erstellen eines PImage-Objekts mit dem Namen img
+        <pre><code><strong>PImage img;</strong> //Erstellen eines PImage-Objekts mit dem Namen img
 
 void setup() {
   size(800, 600); // Fenstergröße
-  <strong>img = loadImage("delfin.png"); // Laden des Bildes aus dem Ordner data
+  // Laden des Bildes aus dem Ordner data
+  <strong>img = loadImage("delfin.png"); 
   img.resize(100, 100);</strong> // Befehl um die Bildgröße anzupassen
   noCursor(); // Mauszeiger ausblenden
 }
 
 void draw() {
   background(0, 0, 255); // Hintergrundfarbe
-  <strong>image(img, mouseX - img.width / 2, mouseY - img.height / 2);</strong> // Bild zentriert auf die Mausposition zeichnen
+  // Bild zentriert auf die Mausposition zeichnen
+  <strong>image(img, mouseX - img.width / 2, mouseY - img.height / 2);</strong> 
 }</code></pre>
 
         <!-- Beispielsketch für Bilder -->
