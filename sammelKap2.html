@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://p5-sketches-demo.netlify.app/style.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
     <script>
       window.addEventListener("message", (event) => {
         if (event.data?.type === "resize-iframe") {
@@ -521,7 +521,8 @@ void draw() {
       <div class="box-info">
         <p>
           Man kann in Processing mit Werten rechnen. Es gibt zum Beispiel die
-          vier Grundrechenarten, die wir aus der Mathematik kennen.
+          vier Grundrechenarten, die wir aus der Mathematik kennen. Außerdem
+          kann man mit dem +-Zeichen auch Texte miteinander verketten.
         </p>
 
         <table class="operator-table">
@@ -552,6 +553,13 @@ void draw() {
               <td>/</td>
               <td>Division</td>
               <td><span class="example">8 / 2</span></td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>String-Konkatenation (Texte verketten)</td>
+              <td>
+                <span class="example">"Hallo " + ", wie geht es dir?"</span>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -738,15 +746,15 @@ void setup() {
             verwenden. (Highscores, Nicknames, Geburtsdatum...)
           </li>
           <li>
+            Ein einmal gespeicherter Wert kann
+            <strong>verändert oder überprüft</strong>
+            werden.
+          </li>
+          <li>
             Sie ermöglichen
             <strong>Animationen und Interaktionen</strong>. Positionen, Farben,
             und Zustände können ihre Werte ändern und damit ihren Aufenthaltsort
             oder ihr Aussehen.
-          </li>
-          <li>
-            Ein einmal gespeicherter Wert kann
-            <strong>verändert oder überprüft</strong>
-            werden.
           </li>
         </ul>
 
@@ -755,7 +763,7 @@ void setup() {
           bewegt. Mit einem Tastendruck startet er von vorne.
         </p>
         <pre>
-int x = 0;  //Deklaration mit Initialisierung
+<strong>int x = 0;</strong>  //Deklaration mit Initialisierung
 
 void setup() {
   size(400, 200);
@@ -764,14 +772,13 @@ void setup() {
 void draw() {
   background(255);
   text("Drücke eine Taste!", 40, 40);
-  ellipse(x, 100, 50, 50);
-  x = x + 2;  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
+  <strong>ellipse(x, 100, 50, 50);</strong>
+  <strong>x = x + 2;</strong>  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
 }
 
 void keyPressed() {
-  x = 0; // Bei Tastendruck Startposition zurücksetzen
-}</pre
-        >
+  <strong>x = 0;</strong> // Bei Tastendruck Startposition zurücksetzen
+}</pre>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
         ></iframe>
@@ -779,56 +786,68 @@ void keyPressed() {
 
       <details class="box-info">
         <summary>🔧 Deklaration & Initialisierung</summary>
-        <p>
-          Damit man Variablen benutzen kann, muss man sie dem
-          Compiler/Interpreter <strong>"bekanntmachen" - deklarieren</strong> .
-          Außerdem sollte eine Variable einen
-          <strong>Initialwert bekommen</strong>.
-        </p>
-        <p>🛠️ <strong>Deklaration</strong></p>
+        <h4>🛠️ Deklaration</h4>
         <ul>
           <li>
-            Dabei wird eine Variable „angekündigt“:
-            <code class="xlFont">int x;</code>
-          </li>
-          <li>
-            Man teilt dem Programm den Datentyp (int) und den Namen (x) Variable
-            mit.
+            Variablen müssen deklariert werden, damit der Compiler/Interpreter
+            sie verarbeiten kann.
           </li>
         </ul>
 
-        <p>🎯 <strong>Initialisierung</strong></p>
-        <ul>
-          <li>
-            Der Variable wird ein Startwert zugewiesen:
-            <code class="xlFont">x = 100;</code>
-          </li>
-          <li>
-            Beides zusammen: <code class="xlFont">int x = 100;</code> → sehr
-            häufig!
-          </li>
-        </ul>
-
-        <p>🔁 <strong>Verwendung</strong></p>
-        <ul>
-          <li>
-            Einmal gespeichert, kann der Wert im Programm verwendet werden:
-          </li>
-          <li><code>ellipse(x, 50, 30, 30);</code></li>
-        </ul>
-
-        <p>
-          📚 Beispiel für das Erstellen einer Zahl-Variablen und deren
-          Verwendung beim Zeichnen einer Ellipse.
-        </p>
         <pre>
-int x = 100;
+<strong>int x;</strong> // Man teilt dem Programm den Datentyp (int) und den Namen (x) Variable mit.
+</pre>
+        <hr />
+        <h4>Wertzuweisung</h4>
+        <p>
+          Man kann einer Variablen einen neuen Wert zuweisen. Hierfür gibt es
+          den Zuweisungsoperator: <strong><u>das Gleicheitszeichen</u></strong
+          ><br />
+        </p>
+
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Bezeichnung</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>=</td>
+              <td>Zuweisungsoperator</td>
+              <td><span class="example">zahl = 5;</span></td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+        <h4>🎯 Initialisierung</h4>
+        <ul>
+          <li>Variablen sollten einen Initialwert/Startwert erhalten!</li>
+        </ul>
+
+        <pre>
+<strong>x = 100;</strong> // Der Variable wird ein Startwert zugewiesen.
+</pre>
+        <h4>Deklaration mit Initialisierung</h4>
+        <p>Häufig macht man beides zusammen in einem Schritt:</p>
+        <pre><strong>int x = 100;</strong></pre>
+
+        <h4>🔁 Verwendung</h4>
+
+        <p>Einmal gespeichert, kann der Wert im Programm verwendet werden.</p>
+
+        <h4>
+          📚 Beispiel: Ellipse wird an der Position der Variable x gezeichnet
+        </h4>
+        <pre>
+<strong>int x = 100;</strong>
 
 void setup() {
   size(300, 150);
-  ellipse(x, 75, 50, 50);
-}</pre
-        >
+  <strong>ellipse(x, 75, 50, 50);</strong>
+}</pre>
 
         <div id="sketch-variable-example" class="sketch"></div>
         <iframe
@@ -878,53 +897,64 @@ void setup() {
           Koordinaten sind ebenfalls in Variablen gespeichert.
         </p>
         <pre>
-int x = 100;       // Ganzzahl speichern
-float y = 150.5;   // Kommazahl
-String text = "Hallo!";
-boolean sichtbar = true;
-
-void setup() {
-  size(300, 200);
-  if (sichtbar) {
-    textSize(20);
-    text(text, x, y);
-  }
-}</pre
-        >
+<strong>int x = 100;</strong>                // Ganzzahl speichern
+<strong>float y = 150.5;</strong>            // Kommazahl
+<strong>String text = "Hallo!";</strong>    // Text speichern
+<strong>boolean sichtbar = true;</strong>   // Wahr/Falsch speichern
+<strong>char zeichen = 'w';</strong>         // einzelnes Zeichen speichern</pre>
 
         <div id="sketch-variablen" class="sketch"></div>
-        <iframe
+        <!-- <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVariablen"
-        ></iframe>
+        ></iframe> -->
       </details>
 
+      <!-- Wertzuweisung & Erhöhung von Variablen -->
       <details class="box-info">
         <summary>📈 Wertzuweisung & Erhöhung von Variablen</summary>
         <h4>Wertzuweisung</h4>
         <ul>
-          <li><code>x = 5; // Variable x bekommt den Wert 5</code></li>
           <li>
-            <code>name = "Janosch"; //Veränderung einer String-Variablen</code>
+            Die Variable, die man verändern möchte steht auf der linken Seite
+            des Gleichheitszeichens.
           </li>
           <li>
-            <code>=</code> ist der Zuweisungsoperator. Er weist den Wert auf der
-            rechten Seite der Variablen auf der linken Seite zu.
+            Auf der rechten Seite können Werte oder auch komplexe Ausdrücke
+            stehen.
           </li>
         </ul>
+        <pre><code>// Deklaration
+int x;
+String name;
+int rechnung;
+
+// Wertzuweisungen
+<strong>x = 5;</strong>
+<strong>name = "Jansosch";</strong>
+<strong>rechnung = 15 / 3 + 17;</strong></code></pre>
+
+        <p>Man kann auf der rechten Seite auch beliebige Variablen benutzen.</p>
+        <pre><code>int a = 5;
+int b = 10;
+<strong>int c = a + b;</strong>
+</code></pre>
 
         <h4>Variable erhöhen</h4>
-        <ul>
-          <li><code>x = x + 1;</code> – Addiert 1 zu x (Standardform)</li>
-          <li><code>x++;</code> – Kurzform für <code>x = x + 1</code></li>
-          <li>
-            <code>x += 1;</code> – Addiert ebenfalls 1, funktioniert aber auch
-            mit anderen Werten (<code>x += 5;</code>)
-          </li>
-        </ul>
+        <p>
+          Oft will man eine Variable nicht auf einen konkreten Wert setzen,
+          sondern sie kontinuirlich erhöhen. Dafür setzt man die Variable auf
+          der rechten Seite des Zuweisungsoperators ein.
+        </p>
+        <pre><code>int x = 0;
+int y = 0;
+int z = 1;
+<strong>x = x + 1;</strong> // x wird um 1 erhöht
+<strong>y = y + 5;</strong> // y wird um 5 erhöht
+<strong>z = z * 2;</strong> // z wird verdoppelt</code></pre>
 
-        <h4>📚 Beispiel</h4>
+        <h4>📚 Beispiel: Kreis bewegt sich von links nach rechts</h4>
         <pre>
-int x = 0;  //Deklaration mit Initialisierung
+<strong>int x = 0;</strong>  //Deklaration mit Initialisierung
 
 void setup() {
   size(400, 200);
@@ -933,19 +963,67 @@ void setup() {
 void draw() {
   background(255);
   text("Drücke eine Taste!", 40, 40);
-  ellipse(x, 100, 50, 50);
-  x = x + 2;  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
+  <strong>ellipse(x, 100, 50, 50);
+  x = x + 2;</strong>  //Wert der Variable wird in jedem Durchlauf von draw() um 2 erhöht
 }
 
 void keyPressed() {
-  x = 0; // Bei Tastendruck Startposition zurücksetzen
-}</pre
-        >
+  <strong>x = 0;</strong> // Bei Tastendruck Startposition zurücksetzen
+}</pre>
 
         <div id="sketch-increment" class="sketch"></div>
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBallMoveReset"
         ></iframe>
+
+        <h4>Kurzschreibweisen</h4>
+        <p>Es gibt auch Kurzschreibweisen:</p>
+
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Bezeichnung</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>++</td>
+              <td>Increment-Operator</td>
+              <td><span class="example">x++; //x wird um 1 erhöht</span></td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>Decrement-Operator</td>
+              <td>
+                <span class="example">x--; //x wird um 1 verringert</span>
+              </td>
+            </tr>
+            <tr>
+              <td>+=</td>
+              <td>Additionszuweisung</td>
+              <td><span class="example">x += 1; //x wird um 1 erhöht</span></td>
+            </tr>
+            <tr>
+              <td>-=</td>
+              <td>Subtraktionszuweisung</td>
+              <td>
+                <span class="example">x -= 1; //x wird um 1 verringert</span>
+              </td>
+            </tr>
+            <tr>
+              <td>*=</td>
+              <td>Multiplikationszuweisung</td>
+              <td><span class="example">x *= 2; //x wird veroppelt</span></td>
+            </tr>
+            <tr>
+              <td>/=</td>
+              <td>Divisionszuweisung</td>
+              <td><span class="example">x /= 2; //x wird halbiert</span></td>
+            </tr>
+          </tbody>
+        </table>
       </details>
       <details class="box-info">
         <summary>🌍 Globale & lokale Variablen (Scope)</summary>
@@ -1028,15 +1106,129 @@ void draw() {
 
       <!-- Grundrechenarten -->
       <details class="box-info">
-        <summary>Grundrechenarten mit Variablen</summary>
-        <ul>
-          <li><strong>+</strong> → Addition (z. B. <code>5 + 3</code>)</li>
-          <li><strong>-</strong> → Subtraktion (z. B. <code>9 - 4</code>)</li>
-          <li>
-            <strong>*</strong> → Multiplikation (z. B. <code>2 * 6</code>)
-          </li>
-          <li><strong>/</strong> → Division (z. B. <code>8 / 2</code>)</li>
-        </ul>
+        <summary>Operatorenliste mit Variablen</summary>
+        <p>
+          Man unterscheidet zwischen <strong>Rechenoperatoren</strong> und
+          <strong>Zuweisungsoperatoren</strong>. Zuweisungsoperatoren verändern
+          die Werte von Variablen.
+        </p>
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Operator</th>
+              <th>Bezeichnung</th>
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td
+                colspan="3"
+                style="
+                  background-color: #4caf50;
+                  color: white;
+                  text-align: left;
+                "
+              >
+                <strong>Rechenoperatoren</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>+</td>
+              <td>Addition</td>
+              <td>
+                <span class="example"
+                  >a + b; // a = 5, b = 3, Ergebnis ist 8</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>-</td>
+              <td>Subtraktion</td>
+              <td>
+                <span class="example"
+                  >c - d; // c = 9, d = 4, Ergebnis ist ...</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>*</td>
+              <td>Multiplikation</td>
+              <td>
+                <span class="example"
+                  >e * f; // e = 2, f = 6, Ergebnis ist ...</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>/</td>
+              <td>Division</td>
+              <td>
+                <span class="example"
+                  >g / h; // g = 8, h = 2, Ergebnis ist ...</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>%</td>
+              <td>Modulo</td>
+              <td>
+                <span class="example"
+                  >i % j; // i = 10, j = 3, Ergebnis ist ...</span
+                >
+              </td>
+            </tr>
+            <tr>
+              <td
+                colspan="3"
+                style="
+                  background-color: #2196f3;
+                  color: white;
+                  text-align: left;
+                "
+              >
+                <strong>Zuweisungsoperatoren</strong>
+              </td>
+            </tr>
+            <tr>
+              <td>++</td>
+              <td>Increment-Operator</td>
+              <td><span class="example">x++; // x wird um 1 erhöht</span></td>
+            </tr>
+            <tr>
+              <td>--</td>
+              <td>Decrement-Operator</td>
+              <td>
+                <span class="example">x--; // x wird um 1 verringert</span>
+              </td>
+            </tr>
+            <tr>
+              <td>+=</td>
+              <td>Additionszuweisung</td>
+              <td>
+                <span class="example">x += 1; // x wird um 1 erhöht</span>
+              </td>
+            </tr>
+            <tr>
+              <td>-=</td>
+              <td>Subtraktionszuweisung</td>
+              <td>
+                <span class="example">x -= 1; // x wird um 1 verringert</span>
+              </td>
+            </tr>
+            <tr>
+              <td>*=</td>
+              <td>Multiplikationszuweisung</td>
+              <td><span class="example">x *= 2; // x wird veroppelt</span></td>
+            </tr>
+            <tr>
+              <td>/=</td>
+              <td>Divisionszuweisung</td>
+              <td><span class="example">x /= 2; // x wird halbiert</span></td>
+            </tr>
+          </tbody>
+        </table>
+
         <pre><code>int a = 10;
 int b = 4;
 
@@ -1046,11 +1238,9 @@ int produkt = a * b;    // Multiplikation → 40
 int division1 = a / b;      // Division → 2
 float division2 = a / (float)b;  // Division → 2.5</code></pre>
 
-        <br />
-
-        <iframe
+        <!-- <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchGrundrechenarten"
-        ></iframe>
+        ></iframe> -->
         <div class="box-warning">
           <strong>Hinweis:</strong> Bei der Division darauf achten:
           <ul>
@@ -1062,7 +1252,7 @@ float division2 = a / (float)b;  // Division → 2.5</code></pre>
       </details>
 
       <!-- Increment -->
-      <details class="box-info">
+      <!-- <details class="box-info">
         <summary>Increment-Operator (++): Erhöhe den Wert um 1</summary>
         <ul>
           <li><strong>++</strong> → Erhöht eine Variable um 1</li>
@@ -1095,10 +1285,10 @@ void mousePressed() {
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchIncrementOperator"
         ></iframe>
-      </details>
+      </details> -->
 
       <!-- decrement -->
-      <details class="box-info">
+      <!-- <details class="box-info">
         <summary>Decrement-Operator (--): Verringere den Wert um 1</summary>
         <ul>
           <li><strong>--</strong> → Verringert eine Variable um 1</li>
@@ -1130,7 +1320,7 @@ void mousePressed() {
         <iframe
           src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchDecrementOperator"
         ></iframe>
-      </details>
+      </details> -->
 
       <!-- Modulo -->
       <details class="box-info">
