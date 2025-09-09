@@ -2224,19 +2224,6 @@ function sketchBeginShape(p) {
     p.vertex(30, 30);
     p.endShape(p.CLOSE);
 
-    p.noFill();
-    p.beginShape();
-    p.vertex(100, 300);
-    p.vertex(100, 100);
-    p.vertex(200, 300);
-    p.vertex(100, 300);
-    p.vertex(200, 100);
-    p.vertex(100, 100);
-    p.vertex(150, 50);
-    p.vertex(200, 100);
-    p.vertex(200, 300);
-    p.endShape();
-
     autoResizeCanvas(p);
   };
 }

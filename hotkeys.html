@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hotkeys Tabelle</title>
+    <style>
+      /* Container für die Hotkeys-Tabelle */
+      .hotkeys-table-container {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 20px;
+      }
+
+      .hotkeys-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .hotkeys-table th,
+      .hotkeys-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
+
+      .hotkeys-table th {
+        background-color: #4caf50;
+        color: white;
+      }
+
+      .hotkeys-table tr:hover {
+        background-color: #f1f1f1;
+      }
+
+      .shortcut {
+        font-family: "Courier New", Courier, monospace;
+        background-color: #e8e8e8;
+        padding: 4px 8px;
+        border-radius: 4px;
+      }
+
+      .header {
+        background-color: #ffcc80; /* Heller Hintergrund für die Überschrift */
+        font-weight: bold;
+        text-align: center;
+      }
+
+      /* Styles für das Details-Element und das Summary */
+      .hotkeys-table-container details {
+        border: 1px solid #4caf50; /* Rahmen um das Details-Element */
+        border-radius: 5px; /* Abgerundete Ecken */
+        margin: 10px 0; /* Abstand zu anderen Elementen */
+      }
+
+      .hotkeys-table-container details summary {
+        background-color: #4caf50; /* Hintergrundfarbe für das Summary */
+        color: white; /* Textfarbe */
+        padding: 10px; /* Innenabstand */
+        border-radius: 5px; /* Abgerundete Ecken */
+        cursor: pointer; /* Zeigt an, dass das Element klickbar ist */
+        font-weight: bold; /* Fettgedruckt */
+        border: none; /* Entfernt den Standardrahmen */
+      }
+
+      summary.hotkey {
+        background-color: #4caf50; /* Hintergrundfarbe für das Summary */
+        color: white; /* Textfarbe */
+        padding: 10px; /* Innenabstand */
+        border-radius: 5px; /* Abgerundete Ecken */
+        cursor: pointer; /* Zeigt an, dass das Element klickbar ist */
+        font-weight: bold; /* Fettgedruckt */
+        border: none; /* Entfernt den Standardrahmen */
+      }
+
+      .hotkeys-table-container details summary:hover {
+        background-color: #45a049; /* Dunklere Farbe beim Hover */
+      }
+    </style>
+  </head>
+  <body>
+    <details>
+      <summary class="hotkey">Hotkeys anzeigen</summary>
+      <div class="hotkeys-table-container">
+        <table class="hotkeys-table">
+          <thead>
+            <tr>
+              <th>Aktion</th>
+              <th>Hotkey</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="header">
+              <td colspan="2">Allgemeine Hotkeys</td>
+            </tr>
+            <tr>
+              <td>Aktion zurück</td>
+              <td><span class="shortcut">STRG + z</span></td>
+            </tr>
+            <tr>
+              <td>Ausschneiden</td>
+              <td><span class="shortcut">STRG + x</span></td>
+            </tr>
+            <tr>
+              <td>Kopieren</td>
+              <td><span class="shortcut">STRG + c</span></td>
+            </tr>
+            <tr>
+              <td>Einfügen</td>
+              <td><span class="shortcut">STRG + v</span></td>
+            </tr>
+            <tr>
+              <td>Speichern</td>
+              <td><span class="shortcut">STRG + s</span></td>
+            </tr>
+            <tr>
+              <td>Erweiterte Zwischenablage</td>
+              <td><span class="shortcut">WIN + v</span></td>
+            </tr>
+            <tr>
+              <td>Geschlossene Webseite öffnen</td>
+              <td><span class="shortcut">STRG + SHIFT + t</span></td>
+            </tr>
+            <tr class="header">
+              <td colspan="2">Processing</td>
+            </tr>
+            <tr>
+              <td>Codevervollständigung</td>
+              <td><span class="shortcut">STRG + Leertaste</span></td>
+            </tr>
+            <tr>
+              <td>Ein- und auskommentieren</td>
+              <td><span class="shortcut">STRG + /</span></td>
+            </tr>
+            <tr>
+              <td>Programm ausführen</td>
+              <td><span class="shortcut">STRG + r</span></td>
+            </tr>
+            <tr>
+              <td>Programmcode sortieren/aufräumen</td>
+              <td><span class="shortcut">STRG + t</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </body>
+</html>

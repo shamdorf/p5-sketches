@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grundrechenarten in Processing</title>
+  </head>
+  <body>
+    <p>
+      Man kann in Processing mit Werten rechnen. Es gibt zum Beispiel die vier
+      Grundrechenarten, die wir aus der Mathematik kennen.
+    </p>
+
+    <table class="operator-table">
+      <thead>
+        <tr>
+          <th>Operator</th>
+          <th>Bezeichnung</th>
+          <th>Beispiel</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>+</td>
+          <td>Addition</td>
+          <td><span class="example">5 + 3</span></td>
+        </tr>
+        <tr>
+          <td>-</td>
+          <td>Subtraktion</td>
+          <td><span class="example">9 - 4</span></td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>Multiplikation</td>
+          <td><span class="example">2 * 6</span></td>
+        </tr>
+        <tr>
+          <td>/</td>
+          <td>Division</td>
+          <td><span class="example">8 / 2</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="system-variable-examples">
+      <h4>Beispiele mit Systemvariablen</h4>
+      <p>
+        In Processing können auch Systemvariablen in Berechnungen verwendet
+        werden:
+      </p>
+      <pre><code>point(width/2, height/2); //Malt einen Punkt in die Bildschirmmitte</code></pre>
+
+      <pre><code>void setup() {
+}
+          
+void draw() {
+    point(mouseX + 10, mouseY); //Malt einen Punkt an der Mausposition wobei der Punkt 10 Pixel in x-Richtung verschoben
+}</code></pre>
+    </div>
+  </body>
+</html>
