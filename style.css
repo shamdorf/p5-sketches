@@ -1,103 +1,103 @@
 html,
 html,
 body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit;
+    box-sizing: inherit;
 }
 
 p {
-  margin: 1rem;
+    margin: 1rem;
 }
 
 iframe {
-  overflow: hidden;
-  margin: 0.5rem;
+    overflow: hidden;
+    margin: 0.5rem;
 }
 
 .sketch-container {
-  display: none;
+    display: none;
 }
 
 canvas {
-  display: block;
+    display: block;
 }
 
 .active {
-  display: block;
+    display: block;
 }
 
 :root {
-  --box-padding: 1.5rem;
-  --box-symbol-position-left: 0.2rem;
-  --box-symbol-position-top: 0.2rem;
-  --box-margin: 1rem 0 0 1.2rem;
-  --box-margin-answer: 0 0 0 2.2rem;
-  --box-right: 4rem;
-  --box-radius: 6px;
-  --border-width: 5px;
+    --box-padding: 1.5rem;
+    --box-symbol-position-left: 0.2rem;
+    --box-symbol-position-top: 0.2rem;
+    --box-margin: 1rem 0 0 1.2rem;
+    --box-margin-answer: 0 0 0 2.2rem;
+    --box-right: 4rem;
+    --box-radius: 6px;
+    --border-width: 5px;
 }
 
 pre {
-  background-color: rgb(197, 184, 184);
-  border-radius: var(--box-radius);
-  padding: 1.5rem;
-  font-size: 1rem;
-  border: 1px solid black;
+    background-color: rgb(197, 184, 184);
+    border-radius: var(--box-radius);
+    padding: 1.5rem;
+    font-size: 1rem;
+    border: 1px solid black;
 }
 
 pre strong {
-  color: #482de0;
-  font-size: 1.1rem;
+    color: #482de0;
+    font-size: 1.1rem;
 }
 
 code {
-  color: black;
+    color: black;
 }
 
 ul {
-  margin: 1rem 1rem;
+    margin: 1rem 1rem;
 }
 
 details {
-  margin: var(--box-margin);
+    margin: var(--box-margin);
 }
 
 details.top {
-  margin: 1rem 0;
+    margin: 1rem 0;
 }
 
 .important {
-  padding: 0.2rem;
-  background: linear-gradient(to right, #528efc, #bed1f5);
-  border-radius: 0.2rem;
-  text-decoration: underline;
-  /* font-size: 1.1rem; */
+    padding: 0.2rem;
+    background: linear-gradient(to right, #528efc, #bed1f5);
+    border-radius: 0.2rem;
+    text-decoration: underline;
+    /* font-size: 1.1rem; */
 }
 
 details summary {
-  list-style: none;
-  /* Entfernt das Standard-Dreieck */
-  cursor: pointer;
+    list-style: none;
+    /* Entfernt das Standard-Dreieck */
+    cursor: pointer;
 
-  /* position: relative; */
-  /* padding-left: .2em; */
+    /* position: relative; */
+    /* padding-left: .2em; */
 }
 
 details summary:hover {
-  list-style: none;
-  /* Entfernt das Standard-Dreieck */
-  cursor: pointer;
-  /* font-size: 1.3rem; */
-  /* transform: translateY(-2px) scale(1.03); */
-  /* position: relative; */
-  /* padding-left: .2em; */
+    list-style: none;
+    /* Entfernt das Standard-Dreieck */
+    cursor: pointer;
+    /* font-size: 1.3rem; */
+    /* transform: translateY(-2px) scale(1.03); */
+    /* position: relative; */
+    /* padding-left: .2em; */
 }
 
 /*
@@ -113,332 +113,332 @@ details[open] summary::before {
 } */
 
 #question {
-  font-weight: 900;
-  background-color: #ffefb0;
-  background: linear-gradient(to right, #fbe29d, #fff4cc);
-  position: relative;
-  display: block;
-  border-left: 4px solid #ffcc00;
-  padding: var(--box-padding);
-  margin-top: 2rem;
-  border-radius: var(--box-radius);
+    font-weight: 900;
+    background-color: #ffefb0;
+    background: linear-gradient(to right, #fbe29d, #fff4cc);
+    position: relative;
+    display: block;
+    border-left: 4px solid #ffcc00;
+    padding: var(--box-padding);
+    margin-top: 2rem;
+    border-radius: var(--box-radius);
 }
 
 #question::before {
-  content: "\2753";
-  position: absolute;
-  font-size: 1rem;
-  left: 0.2rem;
-  top: 0.5rem;
+    content: "\2753";
+    position: absolute;
+    font-size: 1rem;
+    left: 0.2rem;
+    top: 0.5rem;
 }
 
 .box-question {
-  position: relative;
-  background-color: #fff9e6;
-  background: linear-gradient(to right, #fffbe0, #ffffff);
-  border-left: 4px solid #ffcc00;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    position: relative;
+    background-color: #fff9e6;
+    background: linear-gradient(to right, #fffbe0, #ffffff);
+    border-left: 4px solid #ffcc00;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 .box-question::before {
-  content: "\2753";
-  position: absolute;
-  font-size: 1rem;
-  font-weight: 100;
-  left: var(--box-symbol-position-left);
-  top: var(--box-symbol-position-top);
+    content: "\2753";
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 100;
+    left: var(--box-symbol-position-left);
+    top: var(--box-symbol-position-top);
 }
 
 .box-answer {
-  position: relative;
-  background-color: #f5f5f5;
-  /* border-left: 4px solid #b3b3b3; */
-  border: 2px ridge black;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    position: relative;
+    background-color: #f5f5f5;
+    /* border-left: 4px solid #b3b3b3; */
+    border: 2px ridge black;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 .box-answer::before {
-  content: "";
-  position: absolute;
-  font-size: 1.5rem;
-  font-weight: 100;
-  left: var(--box-symbol-position-left);
-  top: var(--box-symbol-position-top);
+    content: "";
+    position: absolute;
+    font-size: 1.5rem;
+    font-weight: 100;
+    left: var(--box-symbol-position-left);
+    top: var(--box-symbol-position-top);
 }
 
 #info {
-  font-weight: 900;
-  background-color: #000000;
-  background: linear-gradient(to right, #3399ff, #b7d2ec);
-  position: relative;
-  display: block;
-  border-left: 4px solid #002c58;
-  padding: var(--box-padding);
-  margin-top: 2rem;
-  border-radius: var(--box-radius);
+    font-weight: 900;
+    background-color: #000000;
+    background: linear-gradient(to right, #3399ff, #b7d2ec);
+    position: relative;
+    display: block;
+    border-left: 4px solid #002c58;
+    padding: var(--box-padding);
+    margin-top: 2rem;
+    border-radius: var(--box-radius);
 }
 
 #info::before {
-  content: "\2139";
-  position: absolute;
-  font-size: 2rem;
-  left: 0.2rem;
-  top: 0.5rem;
+    content: "\2139";
+    position: absolute;
+    font-size: 2rem;
+    left: 0.2rem;
+    top: 0.5rem;
 }
 
 .box-info {
-  position: relative;
-  background-color: #e6f4ff;
-  background: linear-gradient(to right, #e0f2ff, #f0f9ff);
-  border-left: 4px solid #3399ff;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    position: relative;
+    background-color: #e6f4ff;
+    background: linear-gradient(to right, #e0f2ff, #f0f9ff);
+    border-left: 4px solid #3399ff;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 .box-info::before {
-  content: "\2139";
-  position: absolute;
-  font-size: 1rem;
-  font-weight: 900;
-  left: var(--box-symbol-position-left);
-  top: var(--box-symbol-position-top);
+    content: "\2139";
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 900;
+    left: var(--box-symbol-position-left);
+    top: var(--box-symbol-position-top);
 }
 
 #command {
-  font-weight: 900;
-  background-color: #e6fff7;
-  background: linear-gradient(to right, #33cc99 40%, #f0fff4 100%);
-  position: relative;
-  display: block;
-  border-left: 6px solid #009966;
-  padding: var(--box-padding);
-  margin-top: 1rem;
-  border-radius: var(--box-radius);
-  font-size: 1.1rem;
-  color: #00664d;
-  box-shadow: 0 2px 10px rgba(51, 204, 153, 0.08);
+    font-weight: 900;
+    background-color: #e6fff7;
+    background: linear-gradient(to right, #33cc99 40%, #f0fff4 100%);
+    position: relative;
+    display: block;
+    border-left: 6px solid #009966;
+    padding: var(--box-padding);
+    margin-top: 1rem;
+    border-radius: var(--box-radius);
+    font-size: 1.1rem;
+    color: #00664d;
+    box-shadow: 0 2px 10px rgba(51, 204, 153, 0.08);
 }
 
 #command::before {
-  content: "\2699";
-  /* Zahnrad als Symbol für Befehls-Oberkategorie */
-  position: absolute;
-  font-size: 1.5rem;
-  left: 0.2rem;
-  top: 0rem;
+    content: "\2699";
+    /* Zahnrad als Symbol für Befehls-Oberkategorie */
+    position: absolute;
+    font-size: 1.5rem;
+    left: 0.2rem;
+    top: 0rem;
 }
 
 .box-command {
-  position: relative;
-  background-color: #f0fff4;
-  background: linear-gradient(to right, #d2ffe6, #f0fff4);
-  border-left: 4px solid #33cc99;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    position: relative;
+    background-color: #f0fff4;
+    background: linear-gradient(to right, #d2ffe6, #f0fff4);
+    border-left: 4px solid #33cc99;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 .box-command::before {
-  content: "\2699";
-  /* Zahnrad als Symbol für Befehl */
-  position: absolute;
-  font-size: 1.2rem;
-  font-weight: 900;
-  left: var(--box-symbol-position-left);
-  top: var(--box-symbol-position-top);
+    content: "\2699";
+    /* Zahnrad als Symbol für Befehl */
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 900;
+    left: var(--box-symbol-position-left);
+    top: var(--box-symbol-position-top);
 }
 
 div.info {
-  border: 0px solid black;
-  margin: 0rem;
-  padding: 1rem;
+    border: 0px solid black;
+    margin: 0rem;
+    padding: 1rem;
 }
 
 .box-warning {
-  position: relative;
-  background-color: #ffe6e6;
-  border-left: 4px solid #ffcc00;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    position: relative;
+    background-color: #ffe6e6;
+    border-left: 4px solid #ffcc00;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 .box-warning::before {
-  content: "\2757";
-  position: absolute;
-  font-size: 1rem;
-  font-weight: 100;
-  left: var(--box-symbol-position-left);
-  top: var(--box-symbol-position-top);
+    content: "\2757";
+    position: absolute;
+    font-size: 1rem;
+    font-weight: 100;
+    left: var(--box-symbol-position-left);
+    top: var(--box-symbol-position-top);
 }
 
 .box-task {
-  background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 
-  display: inline-block;
-  padding: 0.7em 2em;
-  margin: 0.5em 0.3em;
-  background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
-  color: #222;
-  text-decoration: none;
-  border-radius: 0.4em;
-  font-weight: 700;
+    display: inline-block;
+    padding: 0.7em 2em;
+    margin: 0.5em 0.3em;
+    background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
+    color: #222;
+    text-decoration: none;
+    border-radius: 0.4em;
+    font-weight: 700;
 
-  box-shadow: 0 2px 10px rgba(67, 233, 123, 0.15);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    box-shadow: 0 2px 10px rgba(67, 233, 123, 0.15);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
 
-  width: 100%;
-  overflow: hidden;
+    width: 100%;
+    overflow: hidden;
 }
 
 #example {
-  font-weight: 900;
-  background-color: #f0f0f0;
-  background: linear-gradient(to right, #d9d9d9, #ffffff);
-  position: relative;
-  display: block;
-  border-left: 4px solid #cccccc;
-  padding: var(--box-padding);
-  margin-top: 2rem;
-  border-radius: var(--box-radius);
+    font-weight: 900;
+    background-color: #f0f0f0;
+    background: linear-gradient(to right, #d9d9d9, #ffffff);
+    position: relative;
+    display: block;
+    border-left: 4px solid #cccccc;
+    padding: var(--box-padding);
+    margin-top: 2rem;
+    border-radius: var(--box-radius);
 }
 
 .box-example {
-  position: relative;
-  background-color: #f0f0f0;
-  border-left: 4px solid #cccccc;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    position: relative;
+    background-color: #f0f0f0;
+    border-left: 4px solid #cccccc;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 canvas {
-  border: 1px black solid;
+    border: 1px black solid;
 }
 
 #right {
-  margin-left: var(--box-right);
+    margin-left: var(--box-right);
 }
 
 a.button {
-  display: inline-block;
-  padding: 0.5em 1.2em;
-  margin: 0.3em 0.2em;
-  background: linear-gradient(to right, #528efc, #bed1f5);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 0.4em;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(80, 120, 200, 0.12);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-  border: none;
-  cursor: pointer;
+    display: inline-block;
+    padding: 0.5em 1.2em;
+    margin: 0.3em 0.2em;
+    background: linear-gradient(to right, #528efc, #bed1f5);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 0.4em;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(80, 120, 200, 0.12);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
 }
 
 a.task {
-  display: inline-block;
-  padding: 0.7em 2em;
-  margin: 0.5em 0.3em;
-  background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
-  color: #222;
-  text-decoration: none;
-  border-radius: 0.4em;
-  font-weight: 700;
-  font-size: 1.1em;
-  letter-spacing: 0.05em;
-  box-shadow: 0 2px 10px rgba(67, 233, 123, 0.15);
-  transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-  overflow: hidden;
+    display: inline-block;
+    padding: 0.7em 2em;
+    margin: 0.5em 0.3em;
+    background: linear-gradient(90deg, #e84d0b 0%, #e49270 100%);
+    color: #222;
+    text-decoration: none;
+    border-radius: 0.4em;
+    font-weight: 700;
+    font-size: 1.1em;
+    letter-spacing: 0.05em;
+    box-shadow: 0 2px 10px rgba(67, 233, 123, 0.15);
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    overflow: hidden;
 }
 
 .button:hover,
 .button:focus {
-  background: linear-gradient(to right, #3a6edc, #a7c4e8);
-  box-shadow: 0 4px 12px rgba(80, 120, 200, 0.18);
-  transform: translateY(-2px) scale(1.03);
-  outline: none;
+    background: linear-gradient(to right, #3a6edc, #a7c4e8);
+    box-shadow: 0 4px 12px rgba(80, 120, 200, 0.18);
+    transform: translateY(-2px) scale(1.03);
+    outline: none;
 }
 
 .example {
-  border: 3px ridge black;
-  padding: 1rem;
+    border: 3px ridge black;
+    padding: 1rem;
 }
 
 .xlFont {
-  font-size: 1.2rem;
-  /* font-weight: bold; */
+    font-size: 1.2rem;
+    /* font-weight: bold; */
 }
 
 /*************************************** TABELLEN */
 table.operator-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-  font-family: sans-serif;
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+    font-family: sans-serif;
 }
 
 .operator-table th,
 .operator-table td {
-  padding: 10px 14px;
-  text-align: left;
-  border: 1px solid #ccc;
+    padding: 10px 14px;
+    text-align: left;
+    border: 1px solid #ccc;
 }
 
 .operator-table th {
-  background-color: #f2f2f2;
-  font-weight: bold;
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
 .operator-table code {
-  font-size: 1.1rem;
-  color: #2a4d9b;
+    font-size: 1.1rem;
+    color: #2a4d9b;
 }
 
 .operator-table tr:nth-child(even) {
-  background-color: #fafafa;
+    background-color: #fafafa;
 }
 
 .solution-button {
-  background-color: #4caf50;
-  /* Grüner Hintergrund */
-  color: white;
-  /* Weiße Schriftfarbe */
-  border: none;
-  /* Keine Umrandung */
-  padding: 10px 20px;
-  /* Innenabstand */
-  text-align: center;
-  /* Text zentrieren */
-  text-decoration: none;
-  /* Keine Unterstreichung */
-  display: inline-block;
-  /* Inline-Block für Layout */
-  font-size: 16px;
-  /* Schriftgröße */
-  margin-top: 10px;
-  /* Abstand oben */
-  cursor: pointer;
-  /* Zeiger beim Hover */
-  border-radius: 5px;
-  /* Abgerundete Ecken */
-  transition: background-color 0.3s;
-  /* Übergangseffekt */
+    background-color: #4caf50;
+    /* Grüner Hintergrund */
+    color: white;
+    /* Weiße Schriftfarbe */
+    border: none;
+    /* Keine Umrandung */
+    padding: 10px 20px;
+    /* Innenabstand */
+    text-align: center;
+    /* Text zentrieren */
+    text-decoration: none;
+    /* Keine Unterstreichung */
+    display: inline-block;
+    /* Inline-Block für Layout */
+    font-size: 16px;
+    /* Schriftgröße */
+    margin-top: 10px;
+    /* Abstand oben */
+    cursor: pointer;
+    /* Zeiger beim Hover */
+    border-radius: 5px;
+    /* Abgerundete Ecken */
+    transition: background-color 0.3s;
+    /* Übergangseffekt */
 }
 
 .solution-button:hover {
-  background-color: #45a049;
-  /* Dunklerer Grünton beim Hover */
+    background-color: #45a049;
+    /* Dunklerer Grünton beim Hover */
 }
 
 /* Zusätzliche CSS für Lernziele
@@ -446,119 +446,128 @@ table.operator-table {
  */
 /* Zusätzliche CSS für Lernziele */
 .box-learning-goals {
-  background: linear-gradient(to right, #ffcc00, #ffeb3b);
-  border-left: 4px solid #ff9900;
-  padding: var(--box-padding);
-  margin: var(--box-margin);
-  border-radius: var(--box-radius);
+    background: linear-gradient(to right, #ffcc00, #ffeb3b);
+    border-left: 4px solid #ff9900;
+    padding: var(--box-padding);
+    margin: var(--box-margin);
+    border-radius: var(--box-radius);
 }
 
 .box-learning-goals summary {
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.2rem;
-  /* Größere Schriftgröße für die Zusammenfassung */
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.2rem;
+    /* Größere Schriftgröße für die Zusammenfassung */
 }
 
 .learning-goals-list {
-  list-style-type: none;
-  /* Keine Aufzählungszeichen */
-  padding-left: 0;
-  /* Kein Abstand für die Aufzählungszeichen */
-  font-size: 1.1rem;
-  /* Größere Schriftgröße für die Listenpunkte */
+    list-style-type: none;
+    /* Keine Aufzählungszeichen */
+    padding-left: 0;
+    /* Kein Abstand für die Aufzählungszeichen */
+    font-size: 1.1rem;
+    /* Größere Schriftgröße für die Listenpunkte */
 }
 
 .learning-goals-list li {
-  margin: 0.5rem 0;
-  /* Abstand zwischen den Listenpunkten */
-  line-height: 1.5;
-  /* Erhöhe den Zeilenabstand für bessere Lesbarkeit */
+    margin: 0.5rem 0;
+    /* Abstand zwischen den Listenpunkten */
+    line-height: 1.5;
+    /* Erhöhe den Zeilenabstand für bessere Lesbarkeit */
 }
 
 .radio-container {
-  display: inline-block;
-  /* Radio-Buttons nebeneinander */
-  margin-right: 10px;
-  /* Abstand zwischen Radio-Buttons und Lernziel */
+    display: inline-block;
+    /* Radio-Buttons nebeneinander */
+    margin-right: 10px;
+    /* Abstand zwischen Radio-Buttons und Lernziel */
 }
 
 .radio-container input {
-  margin-right: 5px;
-  /* Abstand zwischen Radio-Button und Label */
+    margin-right: 5px;
+    /* Abstand zwischen Radio-Button und Label */
 }
 
 .challenge {
-  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
-  /* Farbverlauf */
-  border: 2px solid #009688;
-  /* Grüner Rand */
-  border-radius: 10px;
-  /* Abgerundete Ecken */
-  padding: 20px;
-  /* Innenabstand */
-  margin: 20px 0;
-  /* Außenabstand */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  /* Schatteneffekt */
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+    /* Farbverlauf */
+    border: 2px solid #009688;
+    /* Grüner Rand */
+    border-radius: 10px;
+    /* Abgerundete Ecken */
+    padding: 20px;
+    /* Innenabstand */
+    margin: 20px 0;
+    /* Außenabstand */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Schatteneffekt */
 }
 
 .challenge h4 {
-  color: #00796b;
-  /* Dunkler Grünton für die Überschrift */
-  margin-bottom: 10px;
-  /* Abstand unter der Überschrift */
-  font-size: 1.5rem;
+    color: #00796b;
+    /* Dunkler Grünton für die Überschrift */
+    margin-bottom: 10px;
+    /* Abstand unter der Überschrift */
+    font-size: 1.5rem;
 }
 
 .challenge p {
-  color: #004d40;
-  /* Dunklerer Grünton für den Text */
-  line-height: 1.5;
-  /* Zeilenhöhe für bessere Lesbarkeit */
-  font-size: 1.1rem;
+    color: #004d40;
+    /* Dunklerer Grünton für den Text */
+    line-height: 1.5;
+    /* Zeilenhöhe für bessere Lesbarkeit */
+    font-size: 1.1rem;
 }
 
 .definition {
-  border: 2px solid #3498db;
-  /* Rahmenfarbe */
-  border-radius: 8px;
-  /* Abgerundete Ecken */
-  background-color: #ecf6fd;
-  /* Hintergrundfarbe */
-  padding: 15px;
-  /* Innenabstand */
-  margin: 20px 0;
-  /* Abstand nach oben und unten */
-  font-family: Arial, sans-serif;
-  /* Schriftart */
-  font-size: 16px;
-  /* Schriftgröße */
-  color: #2c3e50;
-  /* Textfarbe */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  /* Schatten für Tiefe */
-  transition: transform 0.2s;
-  /* Übergangseffekt */
+    border: 2px solid #3498db;
+    /* Rahmenfarbe */
+    border-radius: 8px;
+    /* Abgerundete Ecken */
+    background-color: #ecf6fd;
+    /* Hintergrundfarbe */
+    padding: 15px;
+    /* Innenabstand */
+    margin: 20px 0;
+    /* Abstand nach oben und unten */
+    font-family: Arial, sans-serif;
+    /* Schriftart */
+    font-size: 16px;
+    /* Schriftgröße */
+    color: #2c3e50;
+    /* Textfarbe */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* Schatten für Tiefe */
+    transition: transform 0.2s;
+    /* Übergangseffekt */
 }
 
 .definition:hover {
-  /* transform: scale(1.02); */
-  /* Vergrößerungseffekt beim Hover */
-  /* border-color: #2980b9; */
-  /* Dunklere Rahmenfarbe beim Hover */
+    /* transform: scale(1.02); */
+    /* Vergrößerungseffekt beim Hover */
+    /* border-color: #2980b9; */
+    /* Dunklere Rahmenfarbe beim Hover */
 }
 
 .definition h4 {
-  margin: 0 0 10px;
-  /* Abstand unter dem Titel */
-  font-size: 18px;
-  /* Titelgröße */
-  color: #2980b9;
-  /* Titel-Farbe */
+    margin: 0 0 10px;
+    /* Abstand unter dem Titel */
+    font-size: 18px;
+    /* Titelgröße */
+    color: #2980b9;
+    /* Titel-Farbe */
 }
 
 strong {
-  color: #000000;
-  /* Rote Farbe für wichtige Begriffe */
+    color: #000000;
+    /* Rote Farbe für wichtige Begriffe */
+}
+
+.abgaben {
+    margin: 0;
+    border-radius: 1rem;
+    padding: 2rem;
+    border-left: 7px solid red;
+    background: linear-gradient(to bottom, #ffd580, #ffb84d);
+    text-align: left;
 }

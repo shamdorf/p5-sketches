@@ -365,57 +365,63 @@
       </details>
       <details class="box-info">
         <summary>📚 PVector in Processing</summary>
-
-        <h4>1. Objekt erzeugen</h4>
         <p>
-          Ein Vektor hat eine x- und eine y-Komponente, das sind die
-          Eigenschaften eines jeden Objekts. Wir wollen einen neuen Vektor mit
-          den Werten (4, 2) erstellen. Dazu definieren wir zunächst eine neue
-          Variable <code>vec</code> vom Typ <code>PVector</code>:
+          In Processing gibt es die Klasse <code><strong>PVector</strong></code
+          >, um mit Vektoren zu arbeiten.
         </p>
-        <pre><code>PVector vec; // kann einen Vektor speichern</code></pre>
+        <h4>Objekt erzeugen</h4>
+        <p>
+          Ein PVektor hat eine x- und eine y-Komponente, das sind die
+          <strong>Eigenschaften</strong> eines jeden Objekts. Wir wollen einen
+          neuen Vektor mit den Werten (4, 2) erstellen. Dazu definieren wir
+          zunächst eine neue Variable <code>vec</code> vom Typ
+          <code>PVector</code>:
+        </p>
+        <pre><code><strong>PVector vec;</strong> // kann einen Vektor speichern</code></pre>
         <p>
           Die Großschreibung weist darauf hin, dass wir es mit einem Objekttypen
           bzw. einer Klasse zu tun haben.
         </p>
-
-        <h4>2. Variablen zeigen auf Objekte</h4>
+        <hr />
+        <h4>Variablen zeigen auf Objekte</h4>
         <p>
           Eine wichtige Unterscheidung zwischen primitiven Datentypen und
           Objekttypen ist, dass die Variable <code>vec</code> zunächst "leer"
-          ist und das Stichwort <code>null</code> enthält. Das bedeutet, dass
-          die Variable derzeit "auf kein Objekt zeigt".
+          ist und das Stichwort <code><strong>null</strong></code> enthält. Das
+          bedeutet, dass die Variable derzeit
+          <strong>"auf kein Objekt zeigt"</strong>.
         </p>
         <p>Jetzt erzeugen wir das neue Vektorobjekt:</p>
-        <pre><code>vec = new PVector(4, 2); // neuer Vektor mit x=4 und y=2</code></pre>
+        <pre><code><strong>vec = new PVector(4, 2);</strong> // neuer Vektor mit x=4 und y=2</code></pre>
         <p>
-          Hierbei wird ein neues Objekt im Speicher angelegt, und die Variable
-          <code>vec</code> erhält eine Referenz auf dieses Objekt.
+          Hierbei wird ein <u>neues Objekt im Speicher angelegt</u>, und die
+          Variable <code>vec</code> erhält eine <strong>Referenz</strong> auf
+          dieses Objekt.
         </p>
         <p>
           Wir können die Variablendeklaration und Zuweisung auch auf einer Zeile
           durchführen:
         </p>
-        <pre><code>PVector vec = new PVector(4, 2);</code></pre>
+        <pre><code><strong>PVector vec = new PVector(4, 2);</strong></code></pre>
         <p>Für einen Nullvektor:</p>
         <pre><code>PVector vec = new PVector(); // Nullvektor</code></pre>
-
-        <h4>3. Eigenschaften</h4>
+        <hr />
+        <h4>Eigenschaften</h4>
         <p>
-          Wir können Eigenschaften wie <code>x</code> und
-          <code>y</code> auslesen:
+          Wir können Eigenschaften wie <code>x</code> und <code>y</code> mit dem
+          Punkt-Operator auslesen:
         </p>
-        <pre><code>println(vec.x);
-println(vec.y);</code></pre>
+        <pre><code><strong>println(vec.x);
+println(vec.y);</strong></code></pre>
         <p>Wir können auch neue Vektoren erstellen:</p>
         <pre><code>PVector vec2 = new PVector(10, -30);</code></pre>
         <p>Um die Objekte in ihrer Gesamtheit zu betrachten:</p>
         <pre><code>println(vec);
 println(vec2);</code></pre>
         <p>Wir können die Eigenschaften durch Zuweisung verändern:</p>
-        <pre><code>v.x = 200;
-v.y = 1;</code></pre>
-
+        <pre><code><strong>vec.x = 200;
+vec.y = 1;</strong></code></pre>
+        <hr />
         <h4>4. Methoden</h4>
         <p>Objekte bieten Aktionen an, die etwas berechnen oder bewegen:</p>
         <pre><code>float l = vec.mag(); // Länge des Vektors</code></pre>
