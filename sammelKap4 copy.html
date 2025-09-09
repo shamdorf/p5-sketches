@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://p5-sketches-demo.netlify.app/style.css"
+    />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data?.type === "resize-iframe") {
+          const iframes = document.querySelectorAll("iframe");
+          for (const iframe of iframes) {
+            if (iframe.contentWindow === event.source) {
+              iframe.style.width = event.data.width + "px";
+              iframe.style.height = event.data.height + "px";
+            }
+          }
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <!-- Link Kapitel 4 -->
+    <a
+      class="button"
+      href="https://michaelkipp.de/processing/if.html"
+      target="_blank"
+      >Link zum Processing Kurs - Kapitel 4</a
+    >
+
+    <!-- Lernziele für Kapitel 4 -->
+    <div class="box-learning-goals">
+      <details>
+        <summary>Lernziele für Kapitel 4</summary>
+        <ul class="learning-goals-list">
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal72" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal72" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können die Unterschiede zwischen einem
+              <strong>primitiven Datentyp</strong> und einem
+              <strong>Objekttyp</strong> (Klasse) anhand der Begriffe
+              <strong>Referenz</strong> bzw.
+              <strong>Zeiger</strong> erklären.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal73" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal73" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können <strong>(Vektor-)Objekte</strong> erzeugen und in
+              entsprechenden <strong>Variablen</strong> speichern.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal74" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal74" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können mit <strong>Punktnotation</strong> auf Eigenschaften
+              und Methoden von Objekten zugreifen.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal75" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal75" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie kennen den Unterschied zwischen
+              <strong>Identität</strong> (das selbe Objekt) und
+              <strong>Gleichheit</strong> (z.B. gleiche Inhalte) und können dies
+              mit Beispielen erläutern.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal76" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal76" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie wissen, wie man <strong>Gleichheit</strong> von zwei Objekten
+              (z.B. Vektoren, Strings) prüft.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal77" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal77" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können <strong>Referenzen</strong> auf Objekte im Code so
+              verfolgen, dass klar ist, welches Objekt welche Werte hat.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal78" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal78" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie können mit <strong>Vektorobjekten</strong> programmieren,
+              z.B. rechnen oder animieren.</span
+            >
+          </li>
+          <li>
+            <div class="radio-container">
+              <label
+                ><input type="radio" name="goal79" value="verstehe" /> ✅</label
+              >
+              <label
+                ><input type="radio" name="goal79" value="nicht_verstehe" />
+                ❌</label
+              >
+            </div>
+            <span class="goal-text"
+              >Sie verstehen, dass <strong>Strings</strong> Objekte sind, und
+              erkennen Eigenschaften und Methoden von Strings als Mechanismen
+              von Objekten.</span
+            >
+          </li>
+        </ul>
+        <div class="challenge">
+          <h4>Challenge!</h4>
+          <p>Kannst du am Ende des Kapitels sowas programmieren?</p>
+          <iframe
+            src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchVectorChallenge"
+            target="blank"
+          ></iframe>
+          <p>Siehe Aufgabe 4.2f</p>
+        </div>
+      </details>
+    </div>
+
+    <!-- Info-Boxen für primitive Datentypen und Objekte -->
+    <details class="top">
+      <summary id="info">
+        <strong>Primitive Datentypen vs Objekte</strong>
+      </summary>
+
+      <details class="box-info">
+        <summary>Primitive Datentypen</summary>
+        <p class="definition">
+          Primitive Datentypen sind die Datentypen die einfache Werte speichern
+          wie ganze Zahlen, Kommazahlen, einzelne Zeichen oder Wahrheitswerte.
+        </p>
+        <h4>Variable als einfachste Datenstruktur</h4>
+        <ul>
+          <li>
+            Speichern genau <strong>einen Wert von einem Datentyp</strong>
+          </li>
+          <li>Haben einen <strong>Namen</strong></li>
+          <li>Wert kann sich bei Variablen zur Laufzeit ändern</li>
+          <li>
+            Besitzen einen <strong>Gültigkeitsbereich</strong> (den sogenannten
+            <strong>Scope</strong>)
+            <br />
+            Scope einer Variable: der Anweisungsblock, in dem die Variable
+            deklariert wurde, <strong>lokal oder global</strong>
+          </li>
+        </ul>
+        <p>
+          In Processing und vielen anderen Programmiersprachen gibt es folgende
+          Datentypen:
+        </p>
+        <table class="operator-table">
+          <thead>
+            <tr>
+              <th>Primitiver Datentyp</th>
+
+              <th>Beispiel</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>int</code></td>
+              <td><code>int z = 10;</code> – ganze Zahl</td>
+            </tr>
+            <tr>
+              <td><code>float</code></td>
+              <td><code>float y = 3.14;</code> – Kommazahl</td>
+            </tr>
+            <tr>
+              <td><code>boolean</code></td>
+              <td><code>boolean sichtbar = true;</code> – wahr/falsch</td>
+            </tr>
+            <tr>
+              <td><code>char</code></td>
+              <td><code>char taste = 'A';</code> – einzelnes Zeichen</td>
+            </tr>
+          </tbody>
+        </table>
+      </details>
+
+      <details class="box-info">
+        <summary>Objekte</summary>
+        <p>
+          Jetzt wollen wir
+          <strong>mehrere zusammengehörige Informationen</strong> in einem
+          Container bündeln, z.B. den x- und y-Wert eines Objekts oder die
+          unterschiedlichen Informationen zu einem Kunden (Vorname, Nachname,
+          Mailadresse etc.). Hierfür gibt es in vielen Programmiersprachen
+          sogenannte Objekte.
+        </p>
+        <p class="definition">
+          Ein Objekt ist eine Speicherstruktur, die sowohl
+          Eigenschaften/Variablen als auch Aktionen/Methoden beinhaltet. Sie
+          wird irgendwo im Speicher abgelegt und kann mehrere Daten speichern.
+        </p>
+        <!-- <img
+          src="https://p5-sketches-demo.netlify.app/img/obj0.png"
+          alt="KEIN BILD GEFUNDEN"
+        /> -->
+        <p>
+          Wir haben schon den Objekt-Datentyp bzw. die Klasse
+          <code><u>String</u></code> für Zeichenketten kennengelernt. Wie lernen
+          in diesem Kapitel noch weitere Klassen wie <code><u>PVector</u></code
+          >, <code><u>PImage</u></code> und
+          <code><u>Soundfile</u></code> kennen.
+        </p>
+        <p>
+          In <strong>Kapitel 8</strong> werden wir unsere eigenen Klassen für
+          weitere Objekte erstellen.
+        </p>
+      </details>
+    </details>
+
+    <!-- Bilder einfügen -->
+    <details class="top">
+      <summary id="info">
+        <strong>Bilder in Processing einfügen</strong>
+      </summary>
+      <div class="box-info">
+        <p>
+          Procesing unterstützt unterschiedliche Bildformate wie
+          <strong>jpg</strong>, <strong>svg</strong> oder <strong>png</strong>.
+        </p>
+        <p>
+          Um Bilder in Processing zu verwenden, müssen wir im Projektverzeichnis
+          (sketch-Ordner) erst einen Ordner "data" erstellen. In diesen Ordner
+          können wir dann unsere Bild- und Sounddateien speichern.
+        </p>
+
+        <a class="important" target="_blank" href="https://pixabay.com/de/"
+          >Kostenlose Bilder auf pixaby</a
+        >
+        <h4>Was muss ich machen, um ein Bild in Processing zu benutzen?</h4>
+        <ul>
+          <li>Im Projektverzeichnis einen data-Ordner erstellen</li>
+          <li>Ein Bild herrunterladen und in den data-Ordner kopieren</li>
+          <li>Ein PImage-Objekt erstellen</li>
+          <li>Die Bilddatei in das Objekt laden</li>
+          <li>Das Bild zeichnen</li>
+        </ul>
+
+        <h4>Beispiel für ein Hintergrundbild</h4>
+
+        <a
+          class="important"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/img/sonnensystem.jpg"
+          download="delfin.png"
+        >
+          Download sonnensystem.jpg
+        </a>
+        <pre><code><strong>PImage img;</strong> //Erstellen eines PImage-Objekts mit dem Namen img
+void setup() {
+    size(800, 600);
+    <strong>img = loadImage("sonnensystem.jpg");</strong> // Laden des Bildes aus dem Ordner data
+    
+}
+
+void draw() {
+    <strong>image(img, 0, 0, width, height);</strong> // Bild an der Position (0, 0) mit größe (width, height) zeichnen
+}
+</code></pre>
+
+        <!-- Beispielsketch für Bilder -->
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchBilder"
+        ></iframe>
+
+        <h4>Beispiel für ein bewegtes Bild</h4>
+        <a
+          class="important"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/img/delfin.png"
+          download="delfin.png"
+        >
+          Download deflin.png
+        </a>
+        <pre><code><strong>PImage img;</strong> // //Erstellen eines PImage-Objekts mit dem Namen img
+
+void setup() {
+    size(800, 600); // Fenstergröße
+    <strong>img = loadImage("delfin.png"); // Laden des Bildes aus dem Ordner data
+    img.resize(50, 50);</strong> // Befehl um die Bildgröße anzupassen
+    noCursor(); // Mauszeiger ausblenden
+}
+
+void draw() {
+    background(255); // Hintergrundfarbe
+    <strong>image(img, mouseX - img.width / 2, mouseY - img.height / 2);</strong> // Bild zentriert auf die Mausposition zeichnen
+}</code></pre>
+
+        <!-- Beispielsketch für Bilder -->
+
+        <iframe
+          src="https://p5-sketches-demo.netlify.app/template.html?sketch=sketchMoveImage"
+        ></iframe>
+      </div>
+    </details>
+
+    <!-- Hintergrundmusik und Sounds -->
+    <details class="top">
+      <summary id="info">
+        <strong>Hintergrundmusik und Sounds in Processing</strong>
+      </summary>
+      <div class="box-info">
+        <p>
+          Processing unterstützt unter anderem die Sound-Formate
+          <strong>wav</strong> und <strong>mp3</strong>.
+        </p>
+        <p>
+          Für das Abspielen müssen sich die Sound-Dateien wie bei den Bildern im
+          Ordner data befinden.
+        </p>
+
+        <a
+          class="important"
+          target="_blank"
+          href="https://pixabay.com/de/sound-effects/search/shoot/"
+          >Kostenlose Sounds auf pixaby</a
+        >
+        <h4>Was muss ich machen, um Sounds in Processing zu benutzen?</h4>
+        <ul>
+          <li>Im Projektverzeichnis einen data-Ordner erstellen</li>
+          <li>
+            Einen Soundfile herrunterladen und in den data-Ordner kopieren
+          </li>
+          <li>Eine Sound-Library in der Processing IDE installieren</li>
+          <li>Die Sound-Library im Sketch importieren</li>
+          <li>Ein Sound-Objekt erstellen</li>
+          <li>Den Sound in das Objekt laden</li>
+          <li>Den Sound abspielen</li>
+        </ul>
+
+        <details>
+          <summary>
+            <strong class="important"
+              >Anleitung zum Installieren der Sound-Library</strong
+            >
+          </summary>
+          <p>
+            Um Sounds in Processing zu verwenden, musst du eine
+            <strong>Sound-Library importieren</strong>. Wir benutzen im
+            folgenden Beispiel die <strong>Library Sound</strong> von der
+            Processing Foundation. Diese ermöglicht es, Sound-Dateien zu laden
+            und abzuspielen.
+          </p>
+          <img
+            src="https://p5-sketches-demo.netlify.app/img/libraryEinbinden.png"
+            alt="KEIN BILD GEFUNDEN"
+          />
+          <img
+            src="https://p5-sketches-demo.netlify.app/img/soundLibrary.png"
+            alt="KEIN BILD GEFUNDEN"
+          />
+        </details>
+
+        <hr />
+        <h4>Beispiel - Hintergrundmusik einfügen</h4>
+        <p>
+          Um Musik einzufügen müssen wir die Musik-Datei in den data-Ordner
+          speichern.
+        </p>
+        <a
+          class="important"
+          target="_blank"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/background.mp3"
+          download="background.mp3"
+        >
+          Download background.mp3
+        </a>
+        <pre><code><strong>import processing.sound.*;</strong>  //importieren der Sound-Library
+
+<strong>SoundFile background;</strong>  //Deklarieren des SoundFile-Objekts background 
+
+void setup() {
+    <strong>background = new SoundFile(this, "music.mp3");</strong> //Erzeugen des Objekts mit dem new-Operator
+}
+
+void draw() {
+    <strong>background.loop();</strong> // Hintergrundmusik abspielen
+    // Hier kannst du weitere Zeichnungen oder Animationen hinzufügen
+}</code></pre>
+
+        <hr />
+        <h4>Beispiel - Kurze Sounds abspielen</h4>
+        <p>
+          Um kurze Sounds nacheinander abzuspielen, kannst du die Methode
+          <code>play()</code> verwenden. Hier ist ein Beispiel:
+        </p>
+        <pre><code><strong>import processing.sound.*;</strong>  //importieren der Sound-Library
+
+          
+//Deklarieren der SoundFile-Objekte shoot und horn
+<strong>SoundFile shoot;  
+SoundFile horn;</strong>
+
+void setup() {
+    //Erzeugen der Objekte mit dem new-Operator
+    <strong>shoot = new SoundFile(this, "shoot.mp3");
+    horn = new SoundFile(this, "horn.mp3");</strong>
+}
+
+void draw() {
+    // Beispiel: Abspielen von Sounds bei Tastendruck
+    if (keyPressed) {
+        if (key == 's') {
+           <strong> shoot.play();</strong> // Schuss abspielen
+        } else if (key == 'h') {
+            <strong>horn.play();</strong> // Hupe abspielen
+        }
+    }
+}</code></pre>
+        <a
+          class="important"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/horn.mp3"
+          download="background.mp3"
+        >
+          Download horn.mp3
+        </a>
+        <br /><br />
+        <a
+          class="important"
+          href="https://github.com/shamdorf/p5-sketches/raw/refs/heads/first-Branch/sounds/shoot.mp3"
+          download="background.mp3"
+        >
+          Download shoot.mp3
+        </a>
+      </div>
+    </details>
+
+    <script src="sketches.js"></script>
+  </body>
+</html>
