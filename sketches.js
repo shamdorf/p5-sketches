@@ -190,7 +190,7 @@ function sketchMoveImage(p) {
   };
 
   p.draw = () => {
-    p.background(255); // Hintergrundfarbe
+    p.background(0, 0, 255); // Hintergrundfarbe
     // Bild an der Mausposition zeichnen
     p.image(img, p.mouseX - img.width / 2, p.mouseY - img.height / 2);
   };

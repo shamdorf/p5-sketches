@@ -336,15 +336,15 @@ void draw() {
         <pre><code><strong>PImage img;</strong> // //Erstellen eines PImage-Objekts mit dem Namen img
 
 void setup() {
-    size(800, 600); // Fenstergröße
-    <strong>img = loadImage("delfin.png"); // Laden des Bildes aus dem Ordner data
-    img.resize(50, 50);</strong> // Befehl um die Bildgröße anzupassen
-    noCursor(); // Mauszeiger ausblenden
+  size(800, 600); // Fenstergröße
+  <strong>img = loadImage("delfin.png"); // Laden des Bildes aus dem Ordner data
+  img.resize(50, 50);</strong> // Befehl um die Bildgröße anzupassen
+  noCursor(); // Mauszeiger ausblenden
 }
 
 void draw() {
-    background(255); // Hintergrundfarbe
-    <strong>image(img, mouseX - img.width / 2, mouseY - img.height / 2);</strong> // Bild zentriert auf die Mausposition zeichnen
+  background(0, 0, 255); // Hintergrundfarbe
+  <strong>image(img, mouseX - img.width / 2, mouseY - img.height / 2);</strong> // Bild zentriert auf die Mausposition zeichnen
 }</code></pre>
 
         <!-- Beispielsketch für Bilder -->
