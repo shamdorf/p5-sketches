@@ -566,7 +566,7 @@ strong {
 .abgaben {
     margin: 0;
     border-radius: 1rem;
-    padding: 2rem !important;
+    padding: 1.5rem !important;
     border-left: 7px solid red !important;
     background: linear-gradient(to bottom, #ffd580, #ffb84d);
     text-align: left;
