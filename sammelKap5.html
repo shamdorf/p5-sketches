@@ -1050,9 +1050,9 @@ void draw() {
       <summary id="info">🔄 Verschachtelte Schleifen</summary>
       <div class="box-info">
         <h4>Syntax</h4>
-        <pre><code>for (int i = 0; i < 5; i++) {
-  for (int j = 0; j < 5; j++) {
-    // Zugriff auf das Element an der Position (i, j)
+        <pre><code>for (int y = 0; y < 5; y++) {
+  for (int x = 0; x < 5; x++) {
+    // Zugriff auf das Element an der Position (x, y)
   }
 }</code></pre>
         <h4>Was sind verschachtelte Schleifen?</h4>
@@ -1087,8 +1087,6 @@ void draw() {
         </p>
         <pre><code><strong>int cols = 5;</strong> // Anzahl der Spalten
 <strong>int rows = 5;</strong> // Anzahl der Zeilen
-int w = 60;   // Breite der Rechtecke
-int h = 60;   // Höhe der Rechtecke
 
 void setup() {
     size(400, 400); // Erstelle ein 400x400 Pixel großes Fenster
@@ -1100,7 +1098,7 @@ void draw() {
     // Zeichne eine Matrix von Rechtecken
     <strong>for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
-            rect(j * w, i * h, w, h); // Rechteck zeichnen
+            rect(j * 60, i * 60, 60, 60); // Rechteck zeichnen
         }
     }</strong>
 }</code></pre>
